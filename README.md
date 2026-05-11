@@ -6,6 +6,17 @@ Its purpose is simple: help coding agents produce HTML artifacts that improve te
 
 `visual-explainer` is the rendering and command foundation. `html-explainer` adds the missing decision layer: when to use HTML, which artifact pattern to choose, what evidence must be verified first, and how to avoid attractive but shallow reports.
 
+## Attribution
+
+This project is built as a complementary layer around two important prior contributions:
+
+- **Visual Explainer by Nico Bailon** — the upstream agent skill that generates rich, self-contained HTML pages for diagrams, visual plans, slides, diff reviews, plan audits, project recaps, fact checks, and complex tables.
+- **The HTML effectiveness approach by Thariq S. Bate** — the idea that HTML can be a superior medium for many agent outputs because it can represent structure, comparison, interaction, visual hierarchy, and decision context better than flat Markdown.
+
+`html-explainer` is not an official project of Nico Bailon or Thariq S. Bate. It is an independent integration and operating layer that credits both sources: Visual Explainer as the implementation foundation, and Thariq's HTML effectiveness approach as the conceptual pattern library.
+
+See [`CREDITS.md`](CREDITS.md) for details.
+
 ## What problem this solves
 
 Agents often produce long Markdown responses for work that is not naturally linear:
