@@ -1,10 +1,13 @@
 # html-explainer
 
-`html-explainer` is an installer and Claude Code skill layer that extends `visual-explainer` with a stricter operating model inspired by Thariq S. Bate's "The unreasonable effectiveness of HTML" examples.
+`html-explainer` is a Claude Code skill layer and installer that extends `visual-explainer` with an evidence-first operating model inspired by Thariq S. Bate's "The unreasonable effectiveness of HTML" approach.
 
-Its purpose is simple: help coding agents produce HTML artifacts that improve technical judgment, not just presentation.
+Its purpose is not to make agent output prettier. Its purpose is to help coding agents produce HTML artifacts that improve technical judgment: review, comparison, diagnosis, planning, triage, reentry, and decision-making.
 
-`visual-explainer` is the rendering and command foundation. `html-explainer` adds the missing decision layer: when to use HTML, which artifact pattern to choose, what evidence must be verified first, and how to avoid attractive but shallow reports.
+```text
+visual-explainer = HTML artifact capability
+html-explainer   = disciplined operating layer for using that capability well
+```
 
 ## Attribution
 
@@ -21,54 +24,66 @@ See [`CREDITS.md`](CREDITS.md) for details.
 
 Agents often produce long Markdown responses for work that is not naturally linear:
 
-- architecture maps
-- diffs and pull requests
-- implementation plans
-- dependency graphs
-- timelines
-- UI states
-- workflow diagrams
-- issue triage
-- prompt and agent-behavior tuning
-- incident reports
+- architecture maps;
+- diffs and pull requests;
+- implementation plans;
+- dependency graphs;
+- timelines;
+- UI states;
+- workflow diagrams;
+- issue triage;
+- prompt and agent-behavior tuning;
+- incident reports.
 
 Markdown can describe these things, but it flattens them. The user must mentally reconstruct relationships, risk, sequence, and scope.
 
-HTML solves a different problem: it lets an agent create a review surface. A good HTML artifact can show structure, comparison, evidence, uncertainty, interaction, and next action in one navigable place.
+HTML lets an agent create a review surface: a navigable artifact that can show structure, comparison, evidence, uncertainty, interaction, and next action in one place.
 
 ## How this complements visual-explainer
 
-`visual-explainer` already provides useful HTML generation capabilities for diagrams, visual plans, slides, diff reviews, plan reviews, project recaps, fact checks, and complex tables.
-
-`html-explainer` does not replace it. It wraps and strengthens it.
+`visual-explainer` already provides useful HTML generation capabilities. `html-explainer` does not replace it. It wraps and strengthens it.
 
 | Layer | visual-explainer | html-explainer |
 |---|---|---|
 | Core role | Generate useful HTML artifacts | Decide when, why, and how HTML should be used |
 | Strength | Rendering, command patterns, visual reports | Operating discipline, pattern selection, evidence-first workflow |
-| Main risk addressed | Markdown is a poor medium for complex technical structure | HTML can become beautiful but unverifiable |
+| Main risk addressed | Markdown is weak for complex visual structure | HTML can become beautiful but unverifiable |
 | Best use | Produce visual diagrams, plans, reviews, recaps | Make those artifacts safer, sharper, and more decision-oriented |
 | Output focus | HTML artifact | Verified HTML artifact tied to intent, evidence, risks, and success criteria |
 
-In short:
+## The operating model
+
+Every serious artifact follows this sequence:
 
 ```text
-visual-explainer = HTML artifact capability
-html-explainer   = professional review protocol for using that capability well
+route -> pattern file -> evidence -> fact sheet -> artifact -> quality bar -> decision
 ```
+
+That means the agent must:
+
+1. decide whether HTML is justified;
+2. use `docs/pattern-router.md` to select one primary pattern;
+3. open the matching file in `patterns/`;
+4. inspect real evidence;
+5. create a fact sheet;
+6. generate the smallest useful HTML artifact;
+7. apply `docs/QUALITY_BAR.md` before finalizing;
+8. expose uncertainty and next action.
 
 ## How the Thariq ideas are used case by case
 
-The Thariq idea is not copied as one generic prompt. It is decomposed into reusable working patterns.
+The Thariq idea is not copied as one generic prompt. It is decomposed into 20 executable patterns.
 
-Each pattern answers four questions for the agent:
+Each pattern answers:
 
 1. What is this HTML artifact for?
 2. When should it be used?
-3. What must the artifact contain?
-4. What failure mode must it avoid?
-
-That makes the approach useful in real engineering workflows instead of only producing visually impressive examples.
+3. What evidence must be inspected?
+4. What prompt shape should the model follow?
+5. What HTML structure should be produced?
+6. What quality checklist applies?
+7. What failure modes must be avoided?
+8. What acceptance criteria prove the artifact is useful?
 
 | Thariq-style case | Idea extracted | How `html-explainer` operationalizes it | Extra value added |
 |---|---|---|---|
@@ -93,90 +108,88 @@ That makes the approach useful in real engineering workflows instead of only pro
 | Feature flag / config editor | Config states interact and can create invalid combinations. | Encourages controls, resulting config preview, invalid-state warnings, and export. | Makes configuration safer and more visible. |
 | Prompt / agent behavior tuner | Agent instructions require trade-offs, failure modes, and exportable prompts. | Creates interfaces for tuning behavior dimensions, expected output, and final prompt text. | Makes prompt engineering less vague and more operational. |
 
-The key adaptation is this:
-
-```text
-Thariq shows that HTML can make agent outputs more useful.
-html-explainer turns that into a disciplined workflow for choosing, verifying, and generating the right artifact.
-```
-
 ## What this repo adds
 
-### 1. A safe installer
+### 1. Safe installer
 
-The installer can install the upstream `visual-explainer` skill and then adds the `html-explainer` layer.
+The installer can install upstream `visual-explainer` and then adds the `html-explainer` layer.
 
-It also adds safeguards that matter in real workflows:
+It includes:
 
-- backs up replaced files
-- verifies installed files
-- supports dry-run mode
-- can skip upstream installation
-- can skip local example downloads
-- installs into `~/.claude` by default
+- backups for replaced files;
+- post-install verification;
+- dry-run mode;
+- optional upstream installation;
+- optional example download;
+- installation into `~/.claude` by default.
 
-Why this matters: the tool should be easy to adopt without damaging an existing Claude Code setup.
+### 2. Claude Code skill
 
-### 2. A Claude Code skill: `thariq-html-effectiveness`
+The skill `thariq-html-effectiveness` teaches Claude Code to use router + pattern file + fact sheet + quality bar before generating HTML.
 
-This skill teaches the agent a stricter rule:
+### 3. Pattern router
 
-```text
-explore -> verify -> fact sheet -> choose pattern -> generate HTML -> audit -> decide
-```
+`docs/pattern-router.md` maps task signals to the correct pattern.
 
-Why this matters: without this sequence, a model can generate HTML that looks impressive but is based on weak inspection.
+Example:
 
-### 3. A 20-case HTML pattern library
+- git diff present -> annotated diff review;
+- many issues -> ticket triage board;
+- workflow with retries/failures -> process flowchart;
+- prompt tuning -> prompt / agent behavior tuner.
 
-The repo includes `docs/thariq-20-case-library.md`, which turns the HTML effectiveness examples into operational agent guidance.
+### 4. Twenty executable pattern files
 
-It covers patterns such as:
+Each file in `patterns/` is a compact recipe for one artifact type.
 
-- code approach comparison
-- visual implementation plans
-- annotated PR / diff review
-- module maps
-- design token contact sheets
-- component state matrices
-- interactive flow prototypes
-- microinteraction sandboxes
-- architecture diagrams
-- process flowcharts
-- technical decision decks
-- project progress decks
-- concept explainers
-- research comparison maps
-- incident reports
-- audit reports
-- project recaps
-- ticket triage boards
-- feature flag/config editors
-- prompt and agent behavior tuners
+Example pattern files:
 
-Why this matters: the model does not just know that HTML is possible. It knows what each pattern is for, when to use it, what it must contain, and what failure modes to avoid.
+- `patterns/01-code-approach-comparison.md`
+- `patterns/03-annotated-pr-diff-review.md`
+- `patterns/09-architecture-diagram.md`
+- `patterns/17-project-recap.md`
+- `patterns/20-prompt-agent-behavior-tuner.md`
 
-### 4. A pattern selection guide
+### 5. Fact-sheet protocol
 
-The command `/html-pattern-select` forces the agent to choose the smallest useful artifact before generating anything.
+`docs/fact-sheet-protocol.md` prevents attractive but false HTML by separating:
 
-Why this matters: not every task deserves HTML. This prevents dashboard bloat and keeps the workflow lean.
+- verified facts;
+- inferences;
+- unknowns;
+- risk-bearing claims;
+- minimum validation.
 
-### 5. A fact-sheet protocol
+### 6. Quality bar
 
-The fact sheet separates:
+`docs/QUALITY_BAR.md` defines what makes an HTML artifact acceptable.
 
-- verified facts
-- inferences
-- unknowns
-- risk-bearing claims
-- minimum validation required
+An artifact must improve decision quality over Markdown, show evidence, expose uncertainty, use the correct visual form, stay small, and end with a concrete next action.
 
-Why this matters: the most dangerous failure mode is not a bad-looking artifact. It is a convincing artifact that presents unverified claims as facts.
+### 7. Audit command
 
-### 6. High-value Claude commands
+`/html-audit-artifact` reviews an existing artifact and scores it against:
 
-This repo adds commands aimed at real development workflows:
+- pattern fit;
+- decision value;
+- evidence visibility;
+- fact/inference/unknown separation;
+- visual clarity;
+- interaction usefulness;
+- exportability;
+- risk visibility;
+- simplicity;
+- next-action clarity.
+
+### 8. Minimal examples
+
+The repo includes small example artifacts so models have concrete shapes to imitate:
+
+- `examples/plan-review-minimal.example.html`
+- `examples/diff-review-minimal.example.html`
+- `examples/prompt-tuner-minimal.example.html`
+
+## Commands
 
 ```text
 /html-pattern-select
@@ -185,9 +198,8 @@ This repo adds commands aimed at real development workflows:
 /html-diff-review-plus
 /html-project-recap-plus
 /html-custom-editor-plus
+/html-audit-artifact
 ```
-
-Each command has a specific job:
 
 | Command | Intent | Main value |
 |---|---|---|
@@ -197,6 +209,7 @@ Each command has a specific job:
 | `/html-diff-review-plus` | Review code changes before accepting them | Makes diffs easier to audit |
 | `/html-project-recap-plus` | Re-enter a repo/project quickly | Restores context and identifies next action |
 | `/html-custom-editor-plus` | Build a temporary decision editor | Turns triage/config/prompt tuning into an interactive tool |
+| `/html-audit-artifact` | Audit an existing HTML artifact | Prevents pretty but weak artifacts from being trusted |
 
 ## Safe install
 
@@ -242,16 +255,16 @@ The installer backs up replaced files under:
 
 ## Use in Claude Code
 
-Inside a repo, start with pattern selection:
+Start with pattern selection:
 
 ```text
 /html-pattern-select revisa esta tarea y dime qué patrón HTML conviene usar. No generes todavía el HTML.
 ```
 
-Then generate the artifact:
+Then generate:
 
 ```text
-/html-effectiveness genera el artefacto HTML correcto usando fact sheet, evidencia, riesgos, incertidumbre y criterio de éxito.
+/html-effectiveness genera el artefacto HTML correcto usando router, pattern file, fact sheet, quality bar, evidencia, riesgos, incertidumbre y criterio de éxito.
 ```
 
 For repo workflows:
@@ -261,51 +274,8 @@ For repo workflows:
 /html-diff-review-plus revisa el diff actual antes de aceptar el cambio.
 /html-project-recap-plus crea un recap visual del repo para reentrar contexto.
 /html-custom-editor-plus diseña un editor HTML temporal con exportación para esta decisión.
+/html-audit-artifact revisa este HTML y dime si realmente cumple el approach.
 ```
-
-## Operating rule
-
-Use HTML only when the work has spatial, comparative, interactive, or review-heavy structure.
-
-Good uses:
-
-- architecture
-- plans
-- diffs
-- flows
-- timelines
-- design systems
-- prototypes
-- reports
-- custom editing loops
-
-Bad uses:
-
-- simple answers
-- tiny fixes
-- one-command replies
-- explanations that fit cleanly in a short Markdown response
-
-## Core workflow
-
-```text
-explore -> verify -> fact sheet -> choose pattern -> generate HTML -> audit -> decide
-```
-
-The HTML is the final interface, not the analysis itself.
-
-## Installed files
-
-- `skills/thariq-html-effectiveness/SKILL.md`
-- `commands/html-effectiveness.md`
-- `commands/html-pattern-select.md`
-- `commands/html-plan-review-plus.md`
-- `commands/html-diff-review-plus.md`
-- `commands/html-project-recap-plus.md`
-- `commands/html-custom-editor-plus.md`
-- `docs/thariq-20-case-library.md`
-- `docs/html-artifact-selection-guide.md`
-- `docs/fact-sheet-protocol.md`
 
 ## Design principles
 
@@ -319,7 +289,7 @@ Use one main pattern and at most two supporting sections. Avoid bloated dashboar
 
 ### Decision over decoration
 
-The artifact must help the user decide, review, compare, or act.
+The artifact must help the user decide, review, compare, diagnose, prioritize, teach, or act.
 
 ### Uncertainty must be visible
 
@@ -329,20 +299,8 @@ Unknowns, unsupported claims, and inferred conclusions must be clearly separated
 
 Custom editors must produce usable output: Markdown, JSON, config, issue body, prompt, or checklist.
 
-## Why this can add high value to development workflows
-
-This repo is useful when coding agents are doing work that a human must supervise:
-
-- reviewing plans before code is touched
-- checking whether a diff is safe
-- understanding an unfamiliar repo
-- turning vague app ideas into structured implementation options
-- reviewing agent-generated issues
-- triaging multiple possible tasks
-- designing safer prompts and agent instructions
-
-The practical benefit is lower cognitive load and fewer hidden assumptions. The user should be able to see what the agent inspected, what it believes, what remains uncertain, what can go wrong, and what should happen next.
-
 ## Current status
 
 This repo is intended as a practical Claude Code skill and installer. It is not a fork of `visual-explainer`; it is a complementary layer that makes `visual-explainer` more disciplined and useful for real engineering review workflows.
+
+See [`CHANGELOG.md`](CHANGELOG.md) for recent changes.
