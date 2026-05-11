@@ -46,6 +46,49 @@ visual-explainer = HTML artifact capability
 html-explainer   = professional review protocol for using that capability well
 ```
 
+## How the Thariq ideas are used case by case
+
+The Thariq idea is not copied as one generic prompt. It is decomposed into reusable working patterns.
+
+Each pattern answers four questions for the agent:
+
+1. What is this HTML artifact for?
+2. When should it be used?
+3. What must the artifact contain?
+4. What failure mode must it avoid?
+
+That makes the approach useful in real engineering workflows instead of only producing visually impressive examples.
+
+| Thariq-style case | Idea extracted | How `html-explainer` operationalizes it | Extra value added |
+|---|---|---|---|
+| Code approach comparison | Implementation choices are easier to judge side by side than as prose. | Requires alternatives, trade-offs, constraints, likely files, risks, and recommendation. | Prevents agents from choosing an approach too early or hiding architectural cost. |
+| Visual implementation plan | Plans have sequence, dependencies, validation points, and rollback paths. | Turns plans into staged visual artifacts tied to files, checks, and definition of done. | Makes plans executable and reviewable before coding starts. |
+| Annotated PR / diff review | Diffs are spatial and risk-based, not just line-by-line text. | Uses changed files, behavior before/after, severity-coded findings, test review, and release risk. | Helps decide whether to accept, revise, reject, or split a change. |
+| Module map | Understanding code requires seeing entry points, dependencies, and hot paths. | Produces maps of module responsibilities, data flow, imports, and gotchas. | Reduces blind edits in unfamiliar repo areas. |
+| Design token contact sheet | Design systems are visual; tokens and styles need to be seen. | Guides agents to expose colors, typography, spacing, radii, shadows, and inconsistencies. | Prevents UI changes that ignore the existing design language. |
+| Component state matrix | UI quality depends on states, not just static components. | Requires variants, empty/loading/error/disabled states, responsiveness, and accessibility notes. | Makes UI review more realistic before implementation. |
+| Interactive flow prototype | Some UX decisions need to be felt, not described. | Encourages small self-contained clickable prototypes with visible states and implementation notes. | Lets the user validate friction before code is touched. |
+| Microinteraction sandbox | Motion and feedback need timing, controls, and reduced-motion awareness. | Defines animation sandboxes with before/after comparison and control over state or speed. | Prevents decorative animation that hurts usability. |
+| Architecture diagram | Systems are relationships between components, boundaries, and failure points. | Requires components, data flow, trust boundaries, external dependencies, and operational risks. | Turns architecture into an inspectable risk map. |
+| Process / workflow flowchart | Workflows need success paths, failure paths, retries, and validation points. | Guides diagrams for deploys, auth, payments, n8n flows, and agent orchestration. | Forces the agent to expose error paths, not only the happy path. |
+| Technical decision deck | Some outputs are for alignment and communication. | Converts recommendations into concise slide-like HTML with context, alternatives, evidence, and next steps. | Makes technical decisions easier to share and defend. |
+| Project progress deck | Status is useful only when it shows progress, blocks, risk, and next decisions. | Creates structured progress artifacts instead of vague updates. | Reduces status theater and improves handoff. |
+| Concept explainer | Learning improves when relationships and examples are visible. | Requires simple model, deeper model, examples, counterexamples, diagrams, and mistakes. | Makes technical explanations actionable instead of generic. |
+| Research comparison map | Tool or architecture choices require criteria and source quality. | Uses comparison matrices, assumptions, constraints, and recommendations by use case. | Prevents rankings without criteria. |
+| Incident / postmortem report | Failures need timeline, impact, causes, unknowns, and prevention. | Produces structured incident artifacts separating confirmed facts from hypotheses. | Reduces blame and false certainty. |
+| Audit report | Serious review needs a rubric, evidence, severity, and prioritized fixes. | Guides repo, workflow, prompt, or system audits with scores and gaps. | Avoids superficial review based only on structure or naming. |
+| Project recap | Re-entering a project requires operational context, not just README summary. | Requires project identity, architecture, recent activity, decisions, risks, and next action. | Restores context faster and reduces repeated repo exploration. |
+| Ticket triage board | Prioritization is interactive and comparative. | Defines sortable/filterable issue boards with scoring criteria and exportable output. | Turns a backlog into a decision tool. |
+| Feature flag / config editor | Config states interact and can create invalid combinations. | Encourages controls, resulting config preview, invalid-state warnings, and export. | Makes configuration safer and more visible. |
+| Prompt / agent behavior tuner | Agent instructions require trade-offs, failure modes, and exportable prompts. | Creates interfaces for tuning behavior dimensions, expected output, and final prompt text. | Makes prompt engineering less vague and more operational. |
+
+The key adaptation is this:
+
+```text
+Thariq shows that HTML can make agent outputs more useful.
+html-explainer turns that into a disciplined workflow for choosing, verifying, and generating the right artifact.
+```
+
 ## What this repo adds
 
 ### 1. A safe installer
