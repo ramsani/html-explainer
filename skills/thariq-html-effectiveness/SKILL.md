@@ -10,13 +10,16 @@ Never generate the HTML first.
 
 Always follow:
 
-1. Explore sources.
-2. Verify facts.
-3. Build a fact sheet.
-4. Select the right artifact pattern.
-5. Generate the HTML.
-6. Mark uncertainty.
-7. Give the user a minimal decision summary.
+1. Decide whether HTML is justified. If Markdown is clearer, do not use HTML.
+2. Use `docs/pattern-router.md` to choose one primary pattern.
+3. Open the matching file in `patterns/` and apply its evidence requirements, HTML structure, quality checklist, failure modes, and acceptance criteria.
+4. Explore sources.
+5. Verify facts.
+6. Build a fact sheet using `docs/fact-sheet-protocol.md`.
+7. Generate the smallest useful HTML artifact.
+8. Apply `docs/QUALITY_BAR.md` before finalizing.
+9. Mark uncertainty visibly.
+10. Give the user a minimal decision summary.
 
 ## When to use
 
@@ -54,39 +57,50 @@ HTML is a review surface, not a substitute for analysis.
 
 If a statement in the HTML is not supported by read source, command output, repo evidence, user-provided content, or explicit inference, label it as uncertain.
 
-## Required HTML sections
+## Pattern files
 
-Every serious artifact should include:
-
-- Intent
-- What was inspected
-- Fact sheet
-- Current state
-- Proposed or changed state
-- Visual structure: diagram, map, comparison, timeline, table, or interaction
-- Risks
-- Assumptions
-- Unknowns
-- Decision or recommendation
-- Success criteria
-
-## Pattern selection
-
-Choose one primary pattern:
+The skill includes 20 operational pattern files under `patterns/`:
 
 1. Code approach comparison
 2. Visual implementation plan
 3. Annotated PR / diff review
 4. Module map
-5. Design system contact sheet
-6. Interactive flow prototype
-7. System diagram
-8. HTML deck
-9. Research explainer
-10. Report / incident / status
-11. Custom editor
+5. Design token contact sheet
+6. Component state matrix
+7. Interactive flow prototype
+8. Microinteraction sandbox
+9. Architecture diagram
+10. Process / workflow flowchart
+11. Technical decision deck
+12. Project progress deck
+13. Concept explainer
+14. Research comparison map
+15. Incident / postmortem report
+16. Audit report
+17. Project recap
+18. Ticket triage board
+19. Feature flag / config editor
+20. Prompt / agent behavior tuner
 
-If multiple patterns apply, choose the one that best helps the user decide. Add secondary sections only when necessary.
+Do not rely only on the general list. Select and apply the specific pattern file.
+
+## Required HTML sections
+
+Every serious artifact should include:
+
+- Intent
+- Selected pattern
+- What was inspected
+- Fact sheet
+- Current state
+- Proposed or changed state when applicable
+- Visual structure: diagram, map, comparison, timeline, table, prototype, or editor
+- Risks
+- Assumptions
+- Unknowns
+- Decision or recommendation
+- Success criteria
+- Next action
 
 ## Failure modes to avoid
 
@@ -98,6 +112,7 @@ If multiple patterns apply, choose the one that best helps the user decide. Add 
 - Hiding uncertainty
 - Using charts or diagrams that do not clarify the decision
 - Creating an interactive editor without exportable output
+- Combining too many patterns into a bloated artifact
 
 ## Minimal response after generating HTML
 
@@ -106,6 +121,7 @@ After generating an HTML artifact, respond briefly:
 - artifact path
 - primary pattern used
 - what decision it supports
+- quality-bar result
 - major uncertainty if any
 
 Do not rewrite the entire artifact in chat.
