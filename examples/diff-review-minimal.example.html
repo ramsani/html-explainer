@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Diff Review Example</title>
+<style>
+body{font-family:system-ui,-apple-system,sans-serif;margin:32px;line-height:1.45;color:#111827}main{max-width:1100px;margin:auto}.card{border:1px solid #d1d5db;border-radius:12px;padding:16px;margin:14px 0}.critical{border-left:6px solid #991b1b}.medium{border-left:6px solid #d97706}.good{border-left:6px solid #15803d}.files span{display:inline-block;background:#eef2ff;margin:4px;padding:6px 8px;border-radius:8px}table{width:100%;border-collapse:collapse}td,th{border:1px solid #e5e7eb;padding:8px;text-align:left}</style>
+</head>
+<body><main>
+<h1>Diff Review — Minimal Example</h1>
+<section class="card"><h2>Intent</h2><p>Decide whether the current diff is safe to accept.</p></section>
+<section class="card"><h2>Evidence inspected</h2><p><code>git diff --stat</code>, <code>git diff --name-status</code>, changed files and related tests.</p></section>
+<section class="card files"><h2>Changed files</h2><span>src/hooks/useDebouncedValue.ts</span><span>src/components/SearchBox.tsx</span><span>src/components/SearchBox.test.tsx</span></section>
+<section class="card"><h2>Behavior before / after</h2><table><tr><th>Before</th><th>After</th></tr><tr><td>Filter fired on every keypress.</td><td>Filter waits 250ms after typing stops.</td></tr></table></section>
+<section class="card medium"><h2>Finding</h2><p>Test coverage includes typing delay but does not verify clearing input immediately resets visible results.</p></section>
+<section class="card good"><h2>Recommendation</h2><p>Revise before accepting: add one clear-input test. No architecture risk found.</p></section>
+</main></body></html>
