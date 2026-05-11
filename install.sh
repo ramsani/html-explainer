@@ -94,10 +94,12 @@ else
 fi
 
 backup_path "$CLAUDE_HOME/skills/thariq-html-effectiveness" "skills/thariq-html-effectiveness"
-for cmd in html-effectiveness html-pattern-select html-plan-review-plus html-diff-review-plus html-project-recap-plus html-custom-editor-plus; do
+for cmd in html-effectiveness html-pattern-select html-plan-review-plus html-diff-review-plus html-project-recap-plus html-custom-editor-plus html-audit-artifact; do
   backup_path "$CLAUDE_HOME/commands/$cmd.md" "commands/$cmd.md"
 done
 backup_path "$CLAUDE_HOME/html-explainer/docs" "docs"
+backup_path "$CLAUDE_HOME/html-explainer/patterns" "patterns"
+backup_path "$CLAUDE_HOME/html-explainer/local-examples" "local-examples"
 
 if [ "$INSTALL_UPSTREAM" = "1" ]; then
   say "Installing upstream visual-explainer when available"
@@ -120,6 +122,10 @@ say "Installing Thariq HTML effectiveness skill"
 copy_dir_clean "$PACKAGE_DIR/skills/thariq-html-effectiveness" "$CLAUDE_HOME/skills/thariq-html-effectiveness"
 copy_files "$PACKAGE_DIR/commands" "$CLAUDE_HOME/commands"
 copy_dir_clean "$PACKAGE_DIR/docs" "$CLAUDE_HOME/html-explainer/docs"
+copy_dir_clean "$PACKAGE_DIR/patterns" "$CLAUDE_HOME/html-explainer/patterns"
+if [ -d "$PACKAGE_DIR/examples" ]; then
+  copy_dir_clean "$PACKAGE_DIR/examples" "$CLAUDE_HOME/html-explainer/local-examples"
+fi
 
 if [ "$FETCH_EXAMPLES" = "1" ]; then
   say "Optionally fetching Thariq HTML examples for local reference"
@@ -151,9 +157,14 @@ if [ "$DRY_RUN" = "0" ]; then
   verify_file "$CLAUDE_HOME/commands/html-diff-review-plus.md"
   verify_file "$CLAUDE_HOME/commands/html-project-recap-plus.md"
   verify_file "$CLAUDE_HOME/commands/html-custom-editor-plus.md"
+  verify_file "$CLAUDE_HOME/commands/html-audit-artifact.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/thariq-20-case-library.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/html-artifact-selection-guide.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/fact-sheet-protocol.md"
+  verify_file "$CLAUDE_HOME/html-explainer/docs/pattern-router.md"
+  verify_file "$CLAUDE_HOME/html-explainer/docs/QUALITY_BAR.md"
+  verify_file "$CLAUDE_HOME/html-explainer/patterns/01-code-approach-comparison.md"
+  verify_file "$CLAUDE_HOME/html-explainer/patterns/20-prompt-agent-behavior-tuner.md"
 fi
 
 say "Installed safely. Restart Claude Code if it was already open."
@@ -164,4 +175,5 @@ printf '  /html-plan-review-plus\n'
 printf '  /html-diff-review-plus\n'
 printf '  /html-project-recap-plus\n'
 printf '  /html-custom-editor-plus\n'
+printf '  /html-audit-artifact\n'
 printf '\nBackup directory, if anything was replaced:\n  %s\n' "$BACKUP_DIR"
