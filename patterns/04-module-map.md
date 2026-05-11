@@ -1,0 +1,47 @@
+# 04 — Module Map
+
+Intent: understand a repo area before modifying it.
+
+Use when the user asks to work inside an unfamiliar module, package, feature area, or workflow.
+
+Do not use when the relevant code path is already obvious and small.
+
+Evidence required:
+- entry points;
+- module files;
+- imports/exports;
+- call/data flow;
+- tests;
+- neighboring modules.
+
+Prompt template:
+```text
+Generate a self-contained HTML module map. Inspect the module and adjacent files first. Show entry points, responsibilities, dependencies, data flow, hot paths, gotchas, and safe modification boundaries.
+```
+
+HTML structure:
+- intent;
+- evidence inspected;
+- module responsibility summary;
+- entry points;
+- dependency map;
+- data/control flow;
+- hot paths;
+- gotchas;
+- safe edit zones;
+- unknowns.
+
+Quality checklist:
+- runtime behavior is distinguished from folder structure;
+- dependencies are real;
+- safe boundaries are practical;
+- hidden coupling is called out.
+
+Failure modes:
+- summarizing folders only;
+- mapping the whole repo unnecessarily;
+- inventing call paths;
+- ignoring tests.
+
+Acceptance criteria:
+The user can understand where to change code and what not to touch.
