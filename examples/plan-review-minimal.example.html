@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Plan Review Example</title>
+<style>
+body{font-family:system-ui,-apple-system,sans-serif;margin:32px;line-height:1.45;color:#1f2937}main{max-width:1100px;margin:auto}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.card{border:1px solid #d1d5db;border-radius:12px;padding:16px;background:#fff}.risk-high{border-left:6px solid #b91c1c}.risk-med{border-left:6px solid #d97706}.ok{border-left:6px solid #15803d}code{background:#f3f4f6;padding:2px 5px;border-radius:4px}table{width:100%;border-collapse:collapse}td,th{border:1px solid #e5e7eb;padding:8px;text-align:left}</style>
+</head>
+<body><main>
+<h1>Plan Review — Minimal Example</h1>
+<section class="card"><h2>Intent</h2><p>Review a proposed implementation plan before code is changed.</p></section>
+<section class="grid">
+<div class="card"><h2>Evidence inspected</h2><ul><li><code>src/components/SearchBox.tsx</code></li><li><code>src/hooks/useTasks.ts</code></li><li><code>package.json</code></li></ul></div>
+<div class="card"><h2>Fact sheet</h2><ul><li>Search input already owns local state.</li><li>No debounce helper exists.</li><li>Task filtering happens client-side.</li></ul></div>
+</section>
+<section class="card"><h2>Plan fit</h2><table><tr><th>Claim</th><th>Status</th><th>Evidence</th></tr><tr><td>Add debounce hook</td><td>Reasonable</td><td>No existing helper found</td></tr><tr><td>No API change</td><td>Likely</td><td>Filtering is client-side</td></tr></table></section>
+<section class="card risk-med"><h2>Main risk</h2><p>The plan does not mention tests for rapid typing and clear/reset behavior.</p></section>
+<section class="card ok"><h2>Recommendation</h2><p>Approve with revision: add validation for rapid typing, clearing input, and preserving current filter semantics.</p></section>
+</main></body></html>
