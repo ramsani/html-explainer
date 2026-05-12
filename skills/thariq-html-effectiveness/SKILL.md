@@ -13,22 +13,23 @@ Always follow:
 1. Decide whether HTML is justified. If Markdown is clearer, do not use HTML.
 2. Open `docs/INTENT_DISTILLATION.md` and identify primary intent, obvious secondary intents, base concept, and fastest path to value.
 3. Open `docs/CONTEXT_PACKS.md` and select the smallest context pack that can support the decision.
-4. Open `docs/HTML_ADVANTAGE_GATE.md` and identify why HTML beats Markdown point by point.
-5. Open `docs/ARTIFACT_BUDGET.md` and choose compact, standard, or interactive. Default to compact.
-6. Use `docs/pattern-router.md` to choose one primary pattern.
-7. Open the matching file in `patterns/` and apply its evidence requirements, HTML structure, quality checklist, failure modes, and acceptance criteria.
-8. Open `docs/HTML_UX_STANDARD.md` and define the first-screen contract, interaction contract, and export requirement.
-9. Explore sources.
-10. Verify facts.
-11. Build a fact sheet using `docs/fact-sheet-protocol.md`.
-12. Generate the smallest useful HTML artifact.
-13. Apply `docs/QUALITY_BAR.md` before finalizing.
-14. Compare against `docs/GOLDEN_OUTPUTS.md` when the artifact matches a golden case.
-15. Mark uncertainty visibly.
-16. Apply `docs/HTML_ARTIFACT_CHAINS.md` when the work is better handled as exploration -> plan -> review or similar.
-17. Apply `docs/SHARE_AND_REENTRY.md` when the artifact should be shareable or useful to another agent.
-18. Apply `docs/NEXT_ACTION_HANDOFF.md` so the next command is obvious and copy-ready.
-19. Give the user a minimal decision summary.
+4. Open `docs/EXPLAINER_CLARITY.md` and define the reader contract in plain language.
+5. Open `docs/HTML_ADVANTAGE_GATE.md` and identify why HTML beats Markdown point by point.
+6. Open `docs/ARTIFACT_BUDGET.md` and choose compact, standard, or interactive. Default to compact.
+7. Use `docs/pattern-router.md` to choose one primary pattern.
+8. Open the matching file in `patterns/` and apply its evidence requirements, HTML structure, quality checklist, failure modes, and acceptance criteria.
+9. Open `docs/HTML_UX_STANDARD.md` and define the first-screen contract, interaction contract, and export requirement.
+10. Explore sources.
+11. Verify facts.
+12. Build a fact sheet using `docs/fact-sheet-protocol.md`.
+13. Generate the smallest useful HTML artifact.
+14. Apply `docs/QUALITY_BAR.md` before finalizing.
+15. Compare against `docs/GOLDEN_OUTPUTS.md` when the artifact matches a golden case.
+16. Mark uncertainty visibly.
+17. Apply `docs/HTML_ARTIFACT_CHAINS.md` when the work is better handled as exploration -> plan -> review or similar.
+18. Apply `docs/SHARE_AND_REENTRY.md` when the artifact should be shareable or useful to another agent.
+19. Apply `docs/NEXT_ACTION_HANDOFF.md` so the next command is obvious and copy-ready.
+20. Give the user a minimal decision summary.
 
 ## When to use
 
@@ -109,6 +110,7 @@ Every serious artifact should include:
 - UX contract: audience, decision, primary action, export when relevant
 - What was inspected
 - Fact sheet
+- Reader contract
 - Artifact chain position when useful
 - Share-ready summary when useful
 - Agent reentry block when useful
@@ -157,6 +159,19 @@ Not doing:
 ```
 
 The primary intent must dominate the first screen. Secondary intents support it; they do not compete with it.
+
+## Explanation discipline
+
+Every artifact must feel like an explanation, not an inventory.
+
+Apply `docs/EXPLAINER_CLARITY.md`:
+
+- define who is reading;
+- state what they came to do;
+- make the first 30 seconds decisive;
+- use plain action language;
+- include a visual model that explains the core concept;
+- offer the next options the user is most likely to need.
 
 The base concept should be simple enough to explain in one sentence. If it takes a paragraph, distill again.
 

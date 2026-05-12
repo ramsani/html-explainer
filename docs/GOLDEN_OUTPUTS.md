@@ -16,7 +16,9 @@ Input shape:
 
 Expected output:
 
+- first screen explains in plain language what decision is being made;
 - first screen shows recommendation: accept, revise, reject, or split;
+- decision ladder shows only likely next options;
 - changed files grouped by risk;
 - inline or grouped findings cite file/line evidence;
 - tests run and missing validation are separate;
@@ -30,6 +32,7 @@ Hard fails:
 - reviews filenames only;
 - ends with vague advice;
 - hides blocking risks below decoration.
+- offers revert for a safe change where rollback is not a likely next move.
 
 ## Golden 2: Visual exploration
 
@@ -63,6 +66,7 @@ Input shape:
 
 Expected output:
 
+- first screen explains what the repo helps the user do;
 - first screen states project identity, current state, risk, and next action;
 - architecture map shows entry points and major flows;
 - evidence inspected is visible;
@@ -74,6 +78,7 @@ Expected output:
 Hard fails:
 
 - summarizes README only;
+- lists repo inventory without explaining what it means;
 - no operational entry points;
 - no risk or unknowns;
 - user still has to invent the next prompt.

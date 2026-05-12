@@ -44,6 +44,8 @@ Before generating HTML:
 4. Separate verified facts, inferences, and unknowns.
 
 The HTML must help a user or agent re-enter the project and decide the next safe action.
+
+Write for a reader who may not remember the repo. Explain the project in plain language before listing files.
 ```
 
 ## Minimum HTML structure
@@ -52,7 +54,7 @@ Use a dashboard-like but compact layout:
 
 ```text
 <header>
-  Project name, purpose, confidence level, recommended next action
+  Project name, plain-language purpose, confidence level, recommended next action, reader contract
 
 <section id="evidence">
   Files, commands, docs, and git signals inspected
@@ -84,6 +86,7 @@ Use a dashboard-like but compact layout:
 
 Good visual forms:
 
+- orientation map;
 - repo map;
 - entry-point cards;
 - recent activity timeline;
@@ -99,6 +102,8 @@ Good visual forms:
 - Risks are operational.
 - Next action is specific and low ambiguity.
 - The recap distinguishes current facts from stale/inferred context.
+- The first screen answers "what is this, why does it matter, and what should I do next?"
+- It includes at least one visual orientation model: system map, workflow map, risk map, or reentry path.
 
 ## Bad artifact examples
 
@@ -143,6 +148,7 @@ Why bad: not enough to re-enter a real project.
 - No next action.
 - No uncertainty markers.
 - Treating old docs as current without checking.
+- Creating a technical inventory instead of a reentry explanation.
 
 ## Acceptance criteria
 

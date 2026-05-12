@@ -16,6 +16,7 @@ Use:
 - `docs/HTML_ADVANTAGE_GATE.md` to prove HTML is better than Markdown for this request.
 - `docs/ARTIFACT_BUDGET.md` to choose compact, standard, or interactive and justify the cost.
 - `docs/CONTEXT_PACKS.md` to avoid reading more context than the decision needs.
+- `docs/EXPLAINER_CLARITY.md` to identify the reader, their likely confusion, and the action they need.
 - `docs/pattern-router.md` to map task signals to the right pattern.
 - The selected file in `patterns/` to determine evidence requirements, HTML structure, quality checklist, failure modes, and acceptance criteria.
 - `docs/HTML_UX_STANDARD.md` to decide the first-screen contract, interaction value, mobile requirement, and export need.
@@ -29,20 +30,21 @@ Use:
 1. Identify the decision the user needs to make.
 2. Determine whether HTML is justified or Markdown is better.
 3. Distill primary intent, obvious secondary intents, and base concept.
-4. Apply the HTML advantage gate.
-5. Choose the artifact budget: compact, standard, or interactive.
-6. State what wall of text or mental reconstruction the HTML replaces.
-7. Use the router to select one primary pattern.
-8. Open/read the matching pattern file.
-9. Define the UX contract.
-10. Optionally select up to two supporting sections.
-11. State what evidence must be inspected before generation.
-12. State the minimum validation required.
-13. State the recommended next action.
-14. State whether this is standalone or part of an artifact chain.
-15. State whether share/reentry blocks are needed.
-16. Provide a copy-ready command or prompt.
-17. Provide up to three selectable alternatives only when real branches exist.
+4. Define the reader contract.
+5. Apply the HTML advantage gate.
+6. Choose the artifact budget: compact, standard, or interactive.
+7. State what wall of text or mental reconstruction the HTML replaces.
+8. Use the router to select one primary pattern.
+9. Open/read the matching pattern file.
+10. Define the UX contract.
+11. Optionally select up to two supporting sections.
+12. State what evidence must be inspected before generation.
+13. State the minimum validation required.
+14. State the recommended next action.
+15. State whether this is standalone or part of an artifact chain.
+16. State whether share/reentry blocks are needed.
+17. Provide a copy-ready command or prompt.
+18. Provide up to three selectable alternatives only when real branches exist.
 
 ## Output
 
@@ -54,6 +56,8 @@ Intent:
 HTML justified: yes | no
 
 Intent distillation:
+
+Reader contract:
 
 HTML advantage:
 

@@ -79,6 +79,19 @@ Output produced:
 Decision:
 ```
 
+## Explainer advantage
+
+HTML must explain faster than Markdown, not only display more.
+
+Ask:
+
+- What concept becomes visible?
+- What decision becomes easier?
+- What uncertainty becomes less scary?
+- What next option becomes obvious?
+
+If the artifact is only a prettier inventory, revise it.
+
 `Decision` must be one of:
 
 ```text

@@ -182,6 +182,7 @@ if [ "$DRY_RUN" = "0" ]; then
   verify_file "$CLAUDE_HOME/html-explainer/docs/html-artifact-selection-guide.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/ARTIFACT_BUDGET.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/CONTEXT_PACKS.md"
+  verify_file "$CLAUDE_HOME/html-explainer/docs/EXPLAINER_CLARITY.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/GOLDEN_OUTPUTS.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/HTML_ARTIFACT_CHAINS.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/HTML_ADVANTAGE_GATE.md"

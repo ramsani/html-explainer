@@ -17,6 +17,7 @@ Every generated HTML artifact must help the user do at least one of these faster
 - re-enter a project;
 - decide the next action.
 - keep the user in the loop across exploration, implementation, and review.
+- explain the core idea so the user does not need to decode technical inventory.
 
 If none of those are true, do not generate HTML.
 
@@ -32,6 +33,7 @@ Within the first screen, the artifact must answer:
 - who it is for;
 - what primary intent it answers;
 - which obvious secondary intents it covers;
+- what the reader probably came to do;
 - what base concept makes the issue simple;
 - what decision it supports;
 - what evidence was inspected;
@@ -43,14 +45,16 @@ Do not hide the recommendation below decorative sections.
 
 The first screen should create relief. The user should see the shape of the answer before reading every detail.
 
+Apply `docs/EXPLAINER_CLARITY.md` before layout decisions. A correct artifact that feels like an inventory is not finished.
+
 ## Artifact fit
 
 Use the form that matches the work:
 
 - alternatives -> side-by-side comparison;
 - plan -> timeline, dependency map, risk table;
-- diff -> annotated file review and behavior before/after;
-- module understanding -> map with entry points and hot paths;
+- diff -> decision ladder, annotated file review, and behavior before/after;
+- module understanding -> map with entry points, hot paths, and gotchas;
 - design system -> swatches, type scale, states;
 - prototype -> clickable flow with visible state changes;
 - workflow -> flowchart with happy path and failure paths;
@@ -71,6 +75,7 @@ The artifact should reduce the user's mental assembly work.
 Required:
 
 - distill the base concept to one sentence or one visible model;
+- include one visual model that explains the main idea, not only data tables;
 - make the primary action obvious;
 - show secondary intents as support, not as competing sections;
 - include one "surprising ease" element when useful: export, checklist, side-by-side view, risk map, filter, or copy-ready output.
@@ -148,6 +153,7 @@ Required:
 Avoid:
 
 - decorative charts;
+- technical inventory without explanation;
 - repeated prose in cards;
 - dense panels with no scan path;
 - generic dark dashboards;

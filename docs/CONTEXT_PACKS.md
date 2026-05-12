@@ -10,6 +10,7 @@ Every serious artifact uses:
 
 - `docs/INTENT_DISTILLATION.md`
 - `docs/HTML_ADVANTAGE_GATE.md`
+- `docs/EXPLAINER_CLARITY.md`
 - `docs/ARTIFACT_BUDGET.md`
 - `docs/pattern-router.md`
 - selected `patterns/NN-*.md`

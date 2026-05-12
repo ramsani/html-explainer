@@ -189,6 +189,22 @@ Add credit when it includes:
 
 Subtract 10 if a serious plan, PR review, recap, or report cannot be shared or reused without the original chat.
 
+### 17. Explainer clarity
+
+Apply `docs/EXPLAINER_CLARITY.md`.
+
+Add credit when:
+
+- the first screen names what the reader came to do;
+- the main answer is understandable in 30 seconds;
+- the artifact includes a visual model that explains the core concept;
+- next options match likely user intent;
+- technical terms are translated into action language.
+
+Subtract 20 if the artifact is mostly a technical inventory.
+Subtract 15 if next options are unlikely or scary for the situation.
+Subtract 10 if it mixes languages in a way that makes reading harder.
+
 ## Visual exploration overlay
 
 Apply this when the artifact explores UI directions.

@@ -44,6 +44,8 @@ Before generating HTML:
 5. Do not claim tests passed unless they were actually run or verified.
 
 The HTML must include changed files, severity-coded findings, behavior before/after, test coverage, blast radius, missing validation, recommendation, and a next action handoff.
+
+It must explain the decision in plain language before showing technical inventory.
 ```
 
 ## Minimum HTML structure
@@ -52,7 +54,11 @@ Use a navigable layout with these sections:
 
 ```text
 <header>
-  Pattern, intent, recommendation badge, quality score
+  Plain-language answer, recommendation badge, quality score, reader contract
+
+<section id="decision-ladder">
+  Accept | fix | verify | split | share
+  Mark only the options that fit this diff
 
 <section id="evidence">
   Commands/files inspected and confidence level
@@ -84,6 +90,7 @@ Use a navigable layout with these sections:
 
 Good visual forms:
 
+- decision ladder;
 - severity cards;
 - before/after table;
 - file-risk matrix;
@@ -100,6 +107,7 @@ Good visual forms:
 - No test/build claim is made without evidence.
 - Recommendation is one of: accept, revise, reject, split.
 - The user can see what to do next and has a ready-to-run command.
+- Revert is not offered unless rollback is actually likely or requested.
 
 ## Bad artifact examples
 
@@ -144,6 +152,8 @@ Why bad: frontend changes can still break auth, routing, API assumptions, access
 - Ignoring changed config or dependency files.
 - Omitting rollback or release risk.
 - Ending with vague advice instead of selectable next steps.
+- Offering revert for a safe documentation or prompt change.
+- Producing a file inventory without explaining the decision.
 
 ## Acceptance criteria
 

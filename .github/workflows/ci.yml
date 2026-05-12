@@ -60,6 +60,7 @@ jobs:
           test -f docs/INTENT_DISTILLATION.md
           test -f docs/ARTIFACT_BUDGET.md
           test -f docs/CONTEXT_PACKS.md
+          test -f docs/EXPLAINER_CLARITY.md
           test -f docs/GOLDEN_OUTPUTS.md
           test -f docs/HTML_ARTIFACT_CHAINS.md
           test -f docs/HTML_ADVANTAGE_GATE.md
