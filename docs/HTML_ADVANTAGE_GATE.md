@@ -92,6 +92,8 @@ Ask:
 
 If the artifact is only a prettier inventory, revise it.
 
+The selected primary visual model should come from `docs/VISUAL_EXPLAINER_PLAYBOOK.md`.
+
 `Decision` must be one of:
 
 ```text

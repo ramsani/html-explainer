@@ -64,6 +64,7 @@ jobs:
           test -f docs/GOLDEN_OUTPUTS.md
           test -f docs/HTML_ARTIFACT_CHAINS.md
           test -f docs/HTML_ADVANTAGE_GATE.md
+          test -f docs/VISUAL_EXPLAINER_PLAYBOOK.md
           test -f docs/NEXT_ACTION_HANDOFF.md
           test -f docs/SHARE_AND_REENTRY.md
           test -f docs/HTML_UX_STANDARD.md

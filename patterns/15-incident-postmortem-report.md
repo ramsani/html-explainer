@@ -18,3 +18,7 @@ Quality checklist: timeline is explicit, uncertainty is visible, prevention acti
 Failure modes: blame, false certainty, no timeline, vague prevention.
 
 Acceptance criteria: the user can understand what failed, why it likely failed, and what prevents recurrence.
+
+## Visual explainer contract
+
+Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.

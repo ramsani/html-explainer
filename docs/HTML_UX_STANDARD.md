@@ -47,6 +47,8 @@ The first screen should create relief. The user should see the shape of the answ
 
 Apply `docs/EXPLAINER_CLARITY.md` before layout decisions. A correct artifact that feels like an inventory is not finished.
 
+Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` before choosing components. The artifact needs a primary visual model, not just styled sections.
+
 ## Artifact fit
 
 Use the form that matches the work:

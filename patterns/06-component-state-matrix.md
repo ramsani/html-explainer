@@ -18,3 +18,7 @@ Quality checklist: states are real or clearly proposed, gaps are visible, access
 Failure modes: static-only mockups, invented states, pretty UI that ignores product constraints.
 
 Acceptance criteria: the user can judge UI completeness before implementation.
+
+## Visual explainer contract
+
+Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.

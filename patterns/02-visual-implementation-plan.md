@@ -44,3 +44,7 @@ Failure modes:
 
 Acceptance criteria:
 A coding agent can execute the plan with low ambiguity and the user can approve or reject it safely.
+
+## Visual explainer contract
+
+Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.

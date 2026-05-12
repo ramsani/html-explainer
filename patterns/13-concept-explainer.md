@@ -18,3 +18,7 @@ Quality checklist: explanation is contextual, visual structure clarifies relatio
 Failure modes: generic tutorial, no counterexamples, no practical use.
 
 Acceptance criteria: the user can explain and apply the concept after reading the artifact.
+
+## Visual explainer contract
+
+Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.

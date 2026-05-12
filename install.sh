@@ -186,6 +186,7 @@ if [ "$DRY_RUN" = "0" ]; then
   verify_file "$CLAUDE_HOME/html-explainer/docs/GOLDEN_OUTPUTS.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/HTML_ARTIFACT_CHAINS.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/HTML_ADVANTAGE_GATE.md"
+  verify_file "$CLAUDE_HOME/html-explainer/docs/VISUAL_EXPLAINER_PLAYBOOK.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/NEXT_ACTION_HANDOFF.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/SHARE_AND_REENTRY.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/fact-sheet-protocol.md"

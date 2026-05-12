@@ -18,3 +18,7 @@ Quality checklist: controls map to real config, invalid states are visible, outp
 Failure modes: editor cannot export, hiding dangerous combinations, invented settings.
 
 Acceptance criteria: the user can test combinations and copy a safe resulting config.
+
+## Visual explainer contract
+
+Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.

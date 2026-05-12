@@ -14,6 +14,7 @@ required_sections=(
   "Quality checklist"
   "Failure modes"
   "Acceptance criteria"
+  "Visual explainer contract"
 )
 
 fail() {

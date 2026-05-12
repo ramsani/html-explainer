@@ -163,19 +163,20 @@ That means the agent must:
 2. apply `docs/INTENT_DISTILLATION.md`;
 3. apply `docs/CONTEXT_PACKS.md`;
 4. apply `docs/EXPLAINER_CLARITY.md`;
-5. apply `docs/ARTIFACT_BUDGET.md`;
-6. use `docs/pattern-router.md` to select one primary pattern;
-7. open the matching file in `patterns/`;
-8. apply `docs/HTML_UX_STANDARD.md`;
-9. inspect real evidence;
-10. create a fact sheet;
-11. generate the smallest useful HTML artifact;
-12. apply `docs/QUALITY_BAR.md` before finalizing;
-13. compare against `docs/GOLDEN_OUTPUTS.md` when a reference case applies;
-14. apply `docs/HTML_ARTIFACT_CHAINS.md` when one artifact should lead to another;
-15. apply `docs/SHARE_AND_REENTRY.md` when the artifact should be shareable or reusable by another agent;
-16. apply `docs/NEXT_ACTION_HANDOFF.md`;
-17. expose uncertainty and next action.
+5. apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md`;
+6. apply `docs/ARTIFACT_BUDGET.md`;
+7. use `docs/pattern-router.md` to select one primary pattern;
+8. open the matching file in `patterns/`;
+9. apply `docs/HTML_UX_STANDARD.md`;
+10. inspect real evidence;
+11. create a fact sheet;
+12. generate the smallest useful HTML artifact;
+13. apply `docs/QUALITY_BAR.md` before finalizing;
+14. compare against `docs/GOLDEN_OUTPUTS.md` when a reference case applies;
+15. apply `docs/HTML_ARTIFACT_CHAINS.md` when one artifact should lead to another;
+16. apply `docs/SHARE_AND_REENTRY.md` when the artifact should be shareable or reusable by another agent;
+17. apply `docs/NEXT_ACTION_HANDOFF.md`;
+18. expose uncertainty and next action.
 
 ## How the Thariq ideas are used case by case
 

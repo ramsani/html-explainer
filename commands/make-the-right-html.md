@@ -12,22 +12,23 @@ Create an artifact that helps the user inspect, compare, verify, decide, or re-e
 2. Open `docs/INTENT_DISTILLATION.md` and define primary intent, obvious secondary intents, base concept, and fastest path to value.
 3. Open `docs/CONTEXT_PACKS.md` and choose the smallest context pack that can support the decision.
 4. Open `docs/EXPLAINER_CLARITY.md` and define the reader contract.
-5. Open `docs/HTML_ADVANTAGE_GATE.md` and prove HTML beats Markdown for this task.
-6. Open `docs/ARTIFACT_BUDGET.md` and choose compact, standard, or interactive.
-7. Use `docs/pattern-router.md` to select one primary pattern.
-8. Open the matching file in `patterns/` and apply its evidence requirements, prompt template, HTML structure, quality checklist, failure modes, and acceptance criteria.
-9. Open `docs/HTML_UX_STANDARD.md` and define the artifact's UX contract.
-10. Inspect real sources before generation.
-11. Build a fact sheet using `docs/fact-sheet-protocol.md`.
-12. Separate facts, inferences, unsupported claims, and unknowns.
-13. Generate the smallest useful HTML artifact.
-14. Apply `docs/QUALITY_BAR.md` before finalizing.
-15. Compare against `docs/GOLDEN_OUTPUTS.md` when the artifact is a PR review, visual exploration, or project reentry.
-16. Include uncertainty visibly.
-17. Apply `docs/HTML_ARTIFACT_CHAINS.md` when the work naturally needs exploration, planning, review, or handoff across multiple artifacts.
-18. Apply `docs/SHARE_AND_REENTRY.md` when the artifact may be shared or used by another agent later.
-19. Apply `docs/NEXT_ACTION_HANDOFF.md` so the artifact ends with a copy-ready next step.
-20. Save the artifact to a reasonable local path when tool access allows it.
+5. Open `docs/VISUAL_EXPLAINER_PLAYBOOK.md` and choose the primary visual model.
+6. Open `docs/HTML_ADVANTAGE_GATE.md` and prove HTML beats Markdown for this task.
+7. Open `docs/ARTIFACT_BUDGET.md` and choose compact, standard, or interactive.
+8. Use `docs/pattern-router.md` to select one primary pattern.
+9. Open the matching file in `patterns/` and apply its evidence requirements, prompt template, HTML structure, visual explainer contract, quality checklist, failure modes, and acceptance criteria.
+10. Open `docs/HTML_UX_STANDARD.md` and define the artifact's UX contract.
+11. Inspect real sources before generation.
+12. Build a fact sheet using `docs/fact-sheet-protocol.md`.
+13. Separate facts, inferences, unsupported claims, and unknowns.
+14. Generate the smallest useful HTML artifact.
+15. Apply `docs/QUALITY_BAR.md` before finalizing.
+16. Compare against `docs/GOLDEN_OUTPUTS.md` when the artifact is a PR review, visual exploration, or project reentry.
+17. Include uncertainty visibly.
+18. Apply `docs/HTML_ARTIFACT_CHAINS.md` when the work naturally needs exploration, planning, review, or handoff across multiple artifacts.
+19. Apply `docs/SHARE_AND_REENTRY.md` when the artifact may be shared or used by another agent later.
+20. Apply `docs/NEXT_ACTION_HANDOFF.md` so the artifact ends with a copy-ready next step.
+21. Save the artifact to a reasonable local path when tool access allows it.
 
 ## Required artifact sections
 
@@ -37,6 +38,7 @@ Create an artifact that helps the user inspect, compare, verify, decide, or re-e
 - Artifact budget and cost justification
 - Selected pattern
 - Reader contract
+- Primary visual model
 - UX contract
 - Evidence inspected
 - Fact sheet

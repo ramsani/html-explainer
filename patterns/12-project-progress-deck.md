@@ -18,3 +18,7 @@ Quality checklist: status is evidence-backed, blockers are actionable, next deci
 Failure modes: status theater, hiding open questions, summarizing without next action.
 
 Acceptance criteria: the user can understand project state and decide what to do next.
+
+## Visual explainer contract
+
+Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.

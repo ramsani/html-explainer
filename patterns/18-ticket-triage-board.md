@@ -141,3 +141,7 @@ Why bad: the user cannot convert the decision into work.
 The user can select the next tasks, understand why they are prioritized, see what is blocked, and export the result into a usable plan.
 
 A strong triage board reduces indecision and converts a backlog into an actionable sequence.
+
+## Visual explainer contract
+
+Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.

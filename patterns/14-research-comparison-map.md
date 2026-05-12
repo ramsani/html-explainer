@@ -18,3 +18,7 @@ Quality checklist: criteria are explicit, source freshness is visible, recommend
 Failure modes: ranking without criteria, outdated sources, mixing fact and opinion.
 
 Acceptance criteria: the user can choose an option and understand why it fits their context.
+
+## Visual explainer contract
+
+Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.

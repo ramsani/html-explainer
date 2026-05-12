@@ -146,3 +146,7 @@ Why bad: invalid if no auth service was actually found or verified.
 The user can see how the system works, what depends on what, where trust/data boundaries exist, and where a proposed change may break behavior.
 
 A strong artifact lets the user identify safe zones, risky zones, and unknown zones quickly.
+
+## Visual explainer contract
+
+Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.

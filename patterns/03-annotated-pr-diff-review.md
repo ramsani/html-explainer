@@ -162,3 +162,7 @@ The user can decide whether to accept, revise, reject, or split the change witho
 A strong artifact makes the change's behavior, risks, missing validation, and next action visible within 60 seconds.
 
 The final section gives one recommended action and up to three alternatives, each phrased so the user can approve it without rewriting the prompt.
+
+## Visual explainer contract
+
+Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.

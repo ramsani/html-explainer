@@ -18,3 +18,7 @@ Quality checklist: prototype is scoped, interaction clarifies the decision, not 
 Failure modes: over-polished fake app, interactions outside scope, no implementation grounding.
 
 Acceptance criteria: the user can validate whether the flow reduces friction before code is changed.
+
+## Visual explainer contract
+
+Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.

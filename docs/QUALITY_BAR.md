@@ -205,6 +205,21 @@ Subtract 20 if the artifact is mostly a technical inventory.
 Subtract 15 if next options are unlikely or scary for the situation.
 Subtract 10 if it mixes languages in a way that makes reading harder.
 
+### 18. Visual explainer value
+
+Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md`.
+
+Add credit when:
+
+- the primary visual model matches the selected pattern;
+- the first screen uses that model to answer the main decision;
+- interaction changes understanding or exports output;
+- the artifact uses maps, flows, matrices, timelines, ladders, sandboxes, or editors instead of prose cards.
+
+Subtract 20 if the artifact could be pasted into Markdown with little loss.
+Subtract 15 if it uses cards/tables only when a stronger visual model was available.
+Subtract 15 if interaction is decorative.
+
 ## Visual exploration overlay
 
 Apply this when the artifact explores UI directions.

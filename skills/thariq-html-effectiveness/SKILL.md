@@ -14,22 +14,23 @@ Always follow:
 2. Open `docs/INTENT_DISTILLATION.md` and identify primary intent, obvious secondary intents, base concept, and fastest path to value.
 3. Open `docs/CONTEXT_PACKS.md` and select the smallest context pack that can support the decision.
 4. Open `docs/EXPLAINER_CLARITY.md` and define the reader contract in plain language.
-5. Open `docs/HTML_ADVANTAGE_GATE.md` and identify why HTML beats Markdown point by point.
-6. Open `docs/ARTIFACT_BUDGET.md` and choose compact, standard, or interactive. Default to compact.
-7. Use `docs/pattern-router.md` to choose one primary pattern.
-8. Open the matching file in `patterns/` and apply its evidence requirements, HTML structure, quality checklist, failure modes, and acceptance criteria.
-9. Open `docs/HTML_UX_STANDARD.md` and define the first-screen contract, interaction contract, and export requirement.
-10. Explore sources.
-11. Verify facts.
-12. Build a fact sheet using `docs/fact-sheet-protocol.md`.
-13. Generate the smallest useful HTML artifact.
-14. Apply `docs/QUALITY_BAR.md` before finalizing.
-15. Compare against `docs/GOLDEN_OUTPUTS.md` when the artifact matches a golden case.
-16. Mark uncertainty visibly.
-17. Apply `docs/HTML_ARTIFACT_CHAINS.md` when the work is better handled as exploration -> plan -> review or similar.
-18. Apply `docs/SHARE_AND_REENTRY.md` when the artifact should be shareable or useful to another agent.
-19. Apply `docs/NEXT_ACTION_HANDOFF.md` so the next command is obvious and copy-ready.
-20. Give the user a minimal decision summary.
+5. Open `docs/VISUAL_EXPLAINER_PLAYBOOK.md` and select the primary visual model for the chosen pattern.
+6. Open `docs/HTML_ADVANTAGE_GATE.md` and identify why HTML beats Markdown point by point.
+7. Open `docs/ARTIFACT_BUDGET.md` and choose compact, standard, or interactive. Default to compact.
+8. Use `docs/pattern-router.md` to choose one primary pattern.
+9. Open the matching file in `patterns/` and apply its evidence requirements, HTML structure, visual explainer contract, quality checklist, failure modes, and acceptance criteria.
+10. Open `docs/HTML_UX_STANDARD.md` and define the first-screen contract, interaction contract, and export requirement.
+11. Explore sources.
+12. Verify facts.
+13. Build a fact sheet using `docs/fact-sheet-protocol.md`.
+14. Generate the smallest useful HTML artifact.
+15. Apply `docs/QUALITY_BAR.md` before finalizing.
+16. Compare against `docs/GOLDEN_OUTPUTS.md` when the artifact matches a golden case.
+17. Mark uncertainty visibly.
+18. Apply `docs/HTML_ARTIFACT_CHAINS.md` when the work is better handled as exploration -> plan -> review or similar.
+19. Apply `docs/SHARE_AND_REENTRY.md` when the artifact should be shareable or useful to another agent.
+20. Apply `docs/NEXT_ACTION_HANDOFF.md` so the next command is obvious and copy-ready.
+21. Give the user a minimal decision summary.
 
 ## When to use
 
@@ -111,6 +112,7 @@ Every serious artifact should include:
 - What was inspected
 - Fact sheet
 - Reader contract
+- Primary visual model
 - Artifact chain position when useful
 - Share-ready summary when useful
 - Agent reentry block when useful

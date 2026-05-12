@@ -155,3 +155,7 @@ Why bad: not enough to re-enter a real project.
 The user can resume work without re-exploring the repo from zero.
 
 A strong recap answers: what this is, how it works, what changed recently, what is risky, what is unknown, and what to do next.
+
+## Visual explainer contract
+
+Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.

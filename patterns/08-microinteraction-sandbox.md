@@ -18,3 +18,7 @@ Quality checklist: motion has purpose, timing is inspectable, accessibility is c
 Failure modes: decorative animation, slow interactions, no reduced-motion path.
 
 Acceptance criteria: the user can decide whether the interaction improves usability.
+
+## Visual explainer contract
+
+Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.

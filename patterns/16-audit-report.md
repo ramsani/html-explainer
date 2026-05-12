@@ -18,3 +18,7 @@ Quality checklist: rubric is explicit, findings cite evidence, recommendations a
 Failure modes: superficial structure review, unweighted laundry list, no evidence, touching things only to polish.
 
 Acceptance criteria: the user can distinguish high-impact fixes from noise.
+
+## Visual explainer contract
+
+Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.

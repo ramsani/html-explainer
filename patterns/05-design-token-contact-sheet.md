@@ -18,3 +18,7 @@ Quality checklist: tokens are real, examples map to components, inconsistencies 
 Failure modes: inventing a design system, proposing new style before reading existing style, ignoring accessibility, producing only swatches with no usage guidance.
 
 Acceptance criteria: the user and a future agent can see the existing visual system and avoid inconsistent UI changes.
+
+## Visual explainer contract
+
+Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.

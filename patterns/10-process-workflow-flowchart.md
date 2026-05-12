@@ -18,3 +18,7 @@ Quality checklist: error paths are visible, timing assumptions are clear, repeat
 Failure modes: happy-path-only diagram, no retry logic, no validation points, treating sequence as proof.
 
 Acceptance criteria: the user can identify where the workflow succeeds, fails, repeats, or needs protection.
+
+## Visual explainer contract
+
+Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.

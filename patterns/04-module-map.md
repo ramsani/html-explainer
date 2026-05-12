@@ -45,3 +45,7 @@ Failure modes:
 
 Acceptance criteria:
 The user can understand where to change code and what not to touch.
+
+## Visual explainer contract
+
+Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.
