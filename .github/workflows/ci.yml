@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Validate installer and skill structure
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate bash syntax
+        run: |
+          bash -n install.sh
+          bash -n scripts/validate-patterns.sh
+          bash -n scripts/smoke-install.sh
+
+      - name: Make scripts executable
+        run: chmod +x scripts/*.sh install.sh
+
+      - name: Validate pattern files
+        run: scripts/validate-patterns.sh
+
+      - name: Dry-run installer
+        run: DRY_RUN=1 INSTALL_UPSTREAM=0 FETCH_EXAMPLES=0 bash install.sh
+
+      - name: Smoke test installer with temporary CLAUDE_HOME
+        run: scripts/smoke-install.sh
+
+      - name: Verify required repository files
+        run: |
+          test -f README.md
+          test -f CREDITS.md
+          test -f CHANGELOG.md
+          test -f docs/pattern-router.md
+          test -f docs/QUALITY_BAR.md
+          test -f docs/fact-sheet-protocol.md
+          test -f skills/thariq-html-effectiveness/SKILL.md
+          test -f commands/html-audit-artifact.md
+          test -f examples/plan-review-minimal.example.html
+          test -f examples/diff-review-minimal.example.html
+          test -f examples/prompt-tuner-minimal.example.html
