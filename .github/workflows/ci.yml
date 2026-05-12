@@ -80,3 +80,4 @@ jobs:
           test -f examples/project-recap.example.html
           test -f examples/ticket-triage.example.html
           test -f examples/prompt-tuner-full.example.html
+          test -f examples/visual-direction-explorer.example.html
