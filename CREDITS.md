@@ -10,7 +10,7 @@
 
 `visual-explainer` is credited as the upstream implementation foundation for rich HTML artifacts in agent workflows.
 
-`html-explainer` can install `visual-explainer` and then adds additional Claude Code commands, selection rules, fact-sheet discipline, and a 20-pattern operating library.
+`html-explainer` can install `visual-explainer` and then adds additional Claude Code commands, selection rules, fact-sheet discipline, and a 21-pattern operating library.
 
 This repository is not a fork unless explicitly changed in GitHub metadata. It is a complementary installer and skill layer.
 
@@ -35,7 +35,7 @@ This project contributes:
 - safe installation workflow;
 - Claude Code skill layer;
 - slash commands;
-- 20-case operating library;
+- 21-pattern operating library;
 - fact-sheet protocol;
 - pattern selection guide;
 - explicit rules for evidence-first HTML generation.

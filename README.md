@@ -42,6 +42,82 @@ This project is built as a complementary layer around two important prior contri
 
 See [`CREDITS.md`](CREDITS.md) for details.
 
+## Quick start
+
+Use this when installing for the first time:
+
+```bash
+git clone https://github.com/ramsani/html-explainer.git /tmp/html-explainer
+cd /tmp/html-explainer
+DRY_RUN=1 bash install.sh
+bash install.sh
+```
+
+Restart Claude Code after installation.
+
+You should then see these commands:
+
+```text
+/pick-the-right-html
+/make-the-right-html
+/check-the-plan
+/check-the-diff
+/reenter-project
+/build-decision-tool
+/audit-html
+```
+
+## Update an existing install
+
+You can safely install over an older `html-explainer` version.
+
+The installer backs up the previous skill, command files, docs, patterns, and local examples before replacing them. It also removes older command names from previous versions.
+
+If you already cloned the repo:
+
+```bash
+cd /tmp/html-explainer
+git pull origin main
+DRY_RUN=1 bash install.sh
+bash install.sh
+```
+
+If the old clone no longer exists:
+
+```bash
+rm -rf /tmp/html-explainer
+git clone https://github.com/ramsani/html-explainer.git /tmp/html-explainer
+cd /tmp/html-explainer
+DRY_RUN=1 bash install.sh
+bash install.sh
+```
+
+Backup location:
+
+```text
+~/.claude/html-explainer/backups/<timestamp>/
+```
+
+## Restore or uninstall
+
+Preview uninstall:
+
+```bash
+DRY_RUN=1 bash uninstall.sh
+```
+
+Restore the latest backup, or remove managed files if no backup exists:
+
+```bash
+bash uninstall.sh
+```
+
+Remove without restoring backup:
+
+```bash
+RESTORE_BACKUP=0 bash uninstall.sh
+```
+
 ## What problem this solves
 
 Agents often produce long Markdown responses for work that is not naturally linear:
@@ -169,7 +245,7 @@ It supports:
 
 ### 3. Claude Code skill
 
-The skill `thariq-make-the-right-html` teaches Claude Code to use router + pattern file + fact sheet + quality bar before generating HTML.
+The skill `thariq-html-effectiveness` teaches Claude Code to use router + pattern file + fact sheet + quality bar before generating HTML.
 
 ### 4. Pattern router
 
@@ -182,7 +258,7 @@ Example:
 - workflow with retries/failures -> process flowchart;
 - prompt tuning -> prompt / agent behavior tuner.
 
-### 5. Twenty executable pattern files
+### 5. Twenty-one executable pattern files
 
 Each file in `patterns/` is a compact recipe for one artifact type.
 
@@ -276,7 +352,7 @@ The repo includes GitHub Actions and scripts to validate:
 - installer smoke test with temporary `CLAUDE_HOME`;
 - uninstaller dry-run;
 - uninstaller smoke test with temporary `CLAUDE_HOME`;
-- exactly 20 pattern files;
+- exactly 21 pattern files;
 - required sections in each pattern.
 - example artifact UX minimums.
 
@@ -316,7 +392,7 @@ The repo includes example artifacts so models have concrete shapes to imitate:
 | `/build-decision-tool` | Build a temporary decision editor | Turns triage/config/prompt tuning into an interactive tool |
 | `/audit-html` | Audit an existing HTML artifact | Prevents pretty but weak artifacts from being trusted |
 
-## Safe install
+## Install from curl
 
 Recommended first run:
 
