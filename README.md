@@ -85,18 +85,20 @@ That means the agent must:
 
 1. decide whether HTML is justified;
 2. apply `docs/INTENT_DISTILLATION.md`;
-3. apply `docs/ARTIFACT_BUDGET.md`;
-4. use `docs/pattern-router.md` to select one primary pattern;
-5. open the matching file in `patterns/`;
-6. apply `docs/HTML_UX_STANDARD.md`;
-7. inspect real evidence;
-8. create a fact sheet;
-9. generate the smallest useful HTML artifact;
-10. apply `docs/QUALITY_BAR.md` before finalizing;
-11. apply `docs/HTML_ARTIFACT_CHAINS.md` when one artifact should lead to another;
-12. apply `docs/SHARE_AND_REENTRY.md` when the artifact should be shareable or reusable by another agent;
-13. apply `docs/NEXT_ACTION_HANDOFF.md`;
-14. expose uncertainty and next action.
+3. apply `docs/CONTEXT_PACKS.md`;
+4. apply `docs/ARTIFACT_BUDGET.md`;
+5. use `docs/pattern-router.md` to select one primary pattern;
+6. open the matching file in `patterns/`;
+7. apply `docs/HTML_UX_STANDARD.md`;
+8. inspect real evidence;
+9. create a fact sheet;
+10. generate the smallest useful HTML artifact;
+11. apply `docs/QUALITY_BAR.md` before finalizing;
+12. compare against `docs/GOLDEN_OUTPUTS.md` when a reference case applies;
+13. apply `docs/HTML_ARTIFACT_CHAINS.md` when one artifact should lead to another;
+14. apply `docs/SHARE_AND_REENTRY.md` when the artifact should be shareable or reusable by another agent;
+15. apply `docs/NEXT_ACTION_HANDOFF.md`;
+16. expose uncertainty and next action.
 
 ## How the Thariq ideas are used case by case
 

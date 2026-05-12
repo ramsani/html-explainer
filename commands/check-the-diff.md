@@ -16,14 +16,16 @@ Make changed code inspectable as a decision surface before accepting, committing
 2. Read changed files where needed.
 3. Inspect related tests, docs, configs, routes, schemas, or workflows.
 4. Define the intent distillation from `docs/INTENT_DISTILLATION.md`.
-5. Apply `docs/HTML_ADVANTAGE_GATE.md`.
-6. Define the artifact budget from `docs/ARTIFACT_BUDGET.md`.
-7. Define the UX contract from `docs/HTML_UX_STANDARD.md`.
-8. Build a fact sheet.
-9. Identify behavioral changes, not only textual changes.
-10. Apply `docs/SHARE_AND_REENTRY.md` so the review can be attached to a PR or handed to another agent.
-11. Apply `docs/NEXT_ACTION_HANDOFF.md` to turn findings into selectable next steps.
-12. Generate HTML after verification.
+5. Apply the `/check-the-diff` pack from `docs/CONTEXT_PACKS.md`.
+6. Apply `docs/HTML_ADVANTAGE_GATE.md`.
+7. Define the artifact budget from `docs/ARTIFACT_BUDGET.md`.
+8. Define the UX contract from `docs/HTML_UX_STANDARD.md`.
+9. Build a fact sheet.
+10. Identify behavioral changes, not only textual changes.
+11. Compare against the PR review reference in `docs/GOLDEN_OUTPUTS.md`.
+12. Apply `docs/SHARE_AND_REENTRY.md` so the review can be attached to a PR or handed to another agent.
+13. Apply `docs/NEXT_ACTION_HANDOFF.md` to turn findings into selectable next steps.
+14. Generate HTML after verification.
 
 ## HTML sections
 

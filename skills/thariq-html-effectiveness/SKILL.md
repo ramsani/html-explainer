@@ -12,21 +12,23 @@ Always follow:
 
 1. Decide whether HTML is justified. If Markdown is clearer, do not use HTML.
 2. Open `docs/INTENT_DISTILLATION.md` and identify primary intent, obvious secondary intents, base concept, and fastest path to value.
-3. Open `docs/HTML_ADVANTAGE_GATE.md` and identify why HTML beats Markdown point by point.
-4. Open `docs/ARTIFACT_BUDGET.md` and choose compact, standard, or interactive. Default to compact.
-5. Use `docs/pattern-router.md` to choose one primary pattern.
-6. Open the matching file in `patterns/` and apply its evidence requirements, HTML structure, quality checklist, failure modes, and acceptance criteria.
-7. Open `docs/HTML_UX_STANDARD.md` and define the first-screen contract, interaction contract, and export requirement.
-8. Explore sources.
-9. Verify facts.
-10. Build a fact sheet using `docs/fact-sheet-protocol.md`.
-11. Generate the smallest useful HTML artifact.
-12. Apply `docs/QUALITY_BAR.md` before finalizing.
-13. Mark uncertainty visibly.
-14. Apply `docs/HTML_ARTIFACT_CHAINS.md` when the work is better handled as exploration -> plan -> review or similar.
-15. Apply `docs/SHARE_AND_REENTRY.md` when the artifact should be shareable or useful to another agent.
-16. Apply `docs/NEXT_ACTION_HANDOFF.md` so the next command is obvious and copy-ready.
-17. Give the user a minimal decision summary.
+3. Open `docs/CONTEXT_PACKS.md` and select the smallest context pack that can support the decision.
+4. Open `docs/HTML_ADVANTAGE_GATE.md` and identify why HTML beats Markdown point by point.
+5. Open `docs/ARTIFACT_BUDGET.md` and choose compact, standard, or interactive. Default to compact.
+6. Use `docs/pattern-router.md` to choose one primary pattern.
+7. Open the matching file in `patterns/` and apply its evidence requirements, HTML structure, quality checklist, failure modes, and acceptance criteria.
+8. Open `docs/HTML_UX_STANDARD.md` and define the first-screen contract, interaction contract, and export requirement.
+9. Explore sources.
+10. Verify facts.
+11. Build a fact sheet using `docs/fact-sheet-protocol.md`.
+12. Generate the smallest useful HTML artifact.
+13. Apply `docs/QUALITY_BAR.md` before finalizing.
+14. Compare against `docs/GOLDEN_OUTPUTS.md` when the artifact matches a golden case.
+15. Mark uncertainty visibly.
+16. Apply `docs/HTML_ARTIFACT_CHAINS.md` when the work is better handled as exploration -> plan -> review or similar.
+17. Apply `docs/SHARE_AND_REENTRY.md` when the artifact should be shareable or useful to another agent.
+18. Apply `docs/NEXT_ACTION_HANDOFF.md` so the next command is obvious and copy-ready.
+19. Give the user a minimal decision summary.
 
 ## When to use
 

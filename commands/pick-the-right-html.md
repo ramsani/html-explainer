@@ -15,6 +15,7 @@ Use:
 - `docs/INTENT_DISTILLATION.md` to identify the primary intent, obvious secondary intents, base concept, and fastest path to value.
 - `docs/HTML_ADVANTAGE_GATE.md` to prove HTML is better than Markdown for this request.
 - `docs/ARTIFACT_BUDGET.md` to choose compact, standard, or interactive and justify the cost.
+- `docs/CONTEXT_PACKS.md` to avoid reading more context than the decision needs.
 - `docs/pattern-router.md` to map task signals to the right pattern.
 - The selected file in `patterns/` to determine evidence requirements, HTML structure, quality checklist, failure modes, and acceptance criteria.
 - `docs/HTML_UX_STANDARD.md` to decide the first-screen contract, interaction value, mobile requirement, and export need.

@@ -13,17 +13,18 @@ Prevent implementation based on false assumptions, missing files, misunderstood 
 3. Inspect the real repo for those claims.
 4. Inspect adjacent files needed to understand behavior.
 5. Define the intent distillation from `docs/INTENT_DISTILLATION.md`.
-6. Apply `docs/HTML_ADVANTAGE_GATE.md`.
-7. Define the artifact budget from `docs/ARTIFACT_BUDGET.md`.
-8. Define the UX contract from `docs/HTML_UX_STANDARD.md`.
-9. Build a fact sheet.
-10. Separate:
+6. Apply the `/check-the-plan` pack from `docs/CONTEXT_PACKS.md`.
+7. Apply `docs/HTML_ADVANTAGE_GATE.md`.
+8. Define the artifact budget from `docs/ARTIFACT_BUDGET.md`.
+9. Define the UX contract from `docs/HTML_UX_STANDARD.md`.
+10. Build a fact sheet.
+11. Separate:
    - verified facts
    - inferred conclusions
    - unsupported claims
    - unknowns
-11. Apply `docs/NEXT_ACTION_HANDOFF.md` so approve/revise/reject/split becomes selectable.
-12. Generate HTML only after verification.
+12. Apply `docs/NEXT_ACTION_HANDOFF.md` so approve/revise/reject/split becomes selectable.
+13. Generate HTML only after verification.
 
 ## HTML sections
 

@@ -43,6 +43,8 @@ assert_dir "$TMP_HOME/html-explainer/patterns"
 assert_dir "$TMP_HOME/html-explainer/local-examples"
 
 assert_file "$TMP_HOME/html-explainer/docs/ARTIFACT_BUDGET.md"
+assert_file "$TMP_HOME/html-explainer/docs/CONTEXT_PACKS.md"
+assert_file "$TMP_HOME/html-explainer/docs/GOLDEN_OUTPUTS.md"
 assert_file "$TMP_HOME/html-explainer/docs/HTML_ARTIFACT_CHAINS.md"
 assert_file "$TMP_HOME/html-explainer/docs/HTML_ADVANTAGE_GATE.md"
 assert_file "$TMP_HOME/html-explainer/docs/NEXT_ACTION_HANDOFF.md"

@@ -19,15 +19,16 @@ Turn complex triage, configuration, prompt tuning, or option selection into a sm
 1. Identify the decision the editor must support.
 2. Inspect the real inputs: issues, config, prompts, requirements, or data.
 3. Define output format before designing controls.
-4. Define the intent distillation from `docs/INTENT_DISTILLATION.md`.
-5. Apply `docs/HTML_ADVANTAGE_GATE.md`; the concrete output is mandatory.
-6. Define the artifact budget from `docs/ARTIFACT_BUDGET.md`; this should usually be `interactive`.
-7. Define the UX contract from `docs/HTML_UX_STANDARD.md`.
-8. Build a fact sheet.
-9. Generate a self-contained HTML editor.
-10. Include export/copy output.
-11. Apply `docs/NEXT_ACTION_HANDOFF.md` so the exported result has a clear next use.
-12. Mark unsupported or risky states.
+4. Apply the `/build-decision-tool` pack from `docs/CONTEXT_PACKS.md`.
+5. Define the intent distillation from `docs/INTENT_DISTILLATION.md`.
+6. Apply `docs/HTML_ADVANTAGE_GATE.md`; the concrete output is mandatory.
+7. Define the artifact budget from `docs/ARTIFACT_BUDGET.md`; this should usually be `interactive`.
+8. Define the UX contract from `docs/HTML_UX_STANDARD.md`.
+9. Build a fact sheet.
+10. Generate a self-contained HTML editor.
+11. Include export/copy output.
+12. Apply `docs/NEXT_ACTION_HANDOFF.md` so the exported result has a clear next use.
+13. Mark unsupported or risky states.
 
 ## HTML sections / features
 
