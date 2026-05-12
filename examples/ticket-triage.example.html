@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ticket Triage Board — Example</title>
+<style>
+:root{--bg:#f8fafc;--panel:#fff;--ink:#0f172a;--muted:#64748b;--line:#cbd5e1;--green:#15803d;--orange:#b45309;--red:#b91c1c;--blue:#2563eb}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,sans-serif;line-height:1.45}.wrap{max-width:1220px;margin:auto;padding:28px}h1{font-size:34px;margin:.2rem 0}.muted{color:var(--muted)}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.toolbar button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 12px;cursor:pointer;font-weight:700}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.column{background:#eef2f7;border:1px solid var(--line);border-radius:16px;padding:12px}.column h2{font-size:18px;margin:4px 0 12px}.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;margin:10px 0;box-shadow:0 1px 2px rgba(15,23,42,.04)}.score{font-size:28px;font-weight:900}.badge{display:inline-block;border-radius:999px;padding:4px 8px;font-size:12px;font-weight:800;margin:2px}.high{background:#fee2e2;color:#991b1b}.med{background:#fef3c7;color:#92400e}.low{background:#dcfce7;color:#166534}.info{background:#dbeafe;color:#1d4ed8}table{width:100%;border-collapse:collapse}th,td{border-bottom:1px solid #e2e8f0;text-align:left;padding:10px}th{text-transform:uppercase;font-size:12px;color:var(--muted);background:#f1f5f9}textarea{width:100%;min-height:140px;border:1px solid var(--line);border-radius:12px;padding:12px}.wide{grid-column:1/-1}button.copy{border:1px solid var(--blue);background:#eff6ff;color:#1d4ed8;border-radius:10px;padding:10px 12px;font-weight:800;cursor:pointer}@media(max-width:1000px){.grid{grid-template-columns:1fr}}
+</style>
+<script>
+function copyPlan(){navigator.clipboard.writeText(document.getElementById('export').value)}
+function filter(kind){document.querySelectorAll('[data-kind]').forEach(c=>{c.style.display=(kind==='all'||c.dataset.kind===kind)?'block':'none'})}
+</script>
+</head>
+<body><main class="wrap">
+<p class="muted"><strong>Pattern 18 — Ticket Triage Board</strong></p>
+<h1>Agent Work Triage — Example</h1>
+<p class="muted">A model artifact for turning a backlog into a decision surface with scoring, buckets, blockers, and exportable next actions.</p>
+
+<section class="card wide"><h2>Scoring criteria</h2><table><tr><th>Criterion</th><th>Weight</th><th>Meaning</th></tr><tr><td>Value</td><td>35%</td><td>Improves real user/developer workflow.</td></tr><tr><td>Risk reduction</td><td>25%</td><td>Prevents broken installs, bad artifacts, or bad agent decisions.</td></tr><tr><td>Effort</td><td>20%</td><td>Lower effort scores higher.</td></tr><tr><td>Dependency</td><td>20%</td><td>Unblocks later work.</td></tr></table></section>
+
+<div class="toolbar"><button onclick="filter('all')">All</button><button onclick="filter('risk')">Risk reduction</button><button onclick="filter('example')">Examples</button><button onclick="filter('tooling')">Tooling</button></div>
+
+<section class="grid">
+ <div class="column"><h2>Now</h2>
+  <article class="card" data-kind="risk"><span class="badge high">P0</span><span class="badge info">tooling</span><h3>CI + smoke tests</h3><div class="score">92</div><p>Prevents silent regressions in installer and patterns.</p><p class="muted">Status: done. Keep improving checks.</p></article>
+  <article class="card" data-kind="example"><span class="badge high">P0</span><span class="badge info">example</span><h3>Full diff review example</h3><div class="score">88</div><p>High imitation value for models reviewing agent changes.</p></article>
+ </div>
+ <div class="column"><h2>Next</h2>
+  <article class="card" data-kind="example"><span class="badge med">P1</span><span class="badge info">example</span><h3>Architecture example</h3><div class="score">82</div><p>Helps agents show boundaries, failure points, and safe zones.</p></article>
+  <article class="card" data-kind="risk"><span class="badge med">P1</span><span class="badge info">tooling</span><h3>/html-validate-workspace</h3><div class="score">80</div><p>Checks whether evidence paths in generated HTML exist in the repo.</p></article>
+ </div>
+ <div class="column"><h2>Later</h2>
+  <article class="card" data-kind="example"><span class="badge low">P2</span><span class="badge info">example</span><h3>Design token example</h3><div class="score">64</div><p>Useful for UI work, less critical before core engineering workflows.</p></article>
+ </div>
+ <div class="column"><h2>Blocked / Drop</h2>
+  <article class="card" data-kind="tooling"><span class="badge med">Blocked</span><h3>Full visual test runner</h3><div class="score">45</div><p>Too heavy before artifact examples and validation are mature.</p></article>
+ </div>
+</section>
+
+<section class="card wide"><h2>Dependency notes</h2><ul><li><strong>Examples</strong> improve model output quality immediately.</li><li><strong>Validation</strong> should come after examples so it can validate real expected shapes.</li><li><strong>Design/UI patterns</strong> can wait until core repo/agent workflows are stronger.</li></ul></section>
+
+<section class="card wide"><h2>Exportable next plan</h2><textarea id="export"># Next Work Batch
+
+1. Finish full examples for diff review, architecture, project recap, ticket triage, and prompt tuner.
+2. Add /html-validate-workspace to check evidence paths and quality bar conditions.
+3. Expand remaining patterns only after examples prove the shape.
+
+Do not start visual polish work before validation exists.</textarea><br><button class="copy" onclick="copyPlan()">Copy plan</button></section>
+</main></body></html>
