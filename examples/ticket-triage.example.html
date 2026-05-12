@@ -15,6 +15,7 @@ function filter(kind){document.querySelectorAll('[data-kind]').forEach(c=>{c.sty
 <p class="muted"><strong>Pattern 18 — Ticket Triage Board</strong></p>
 <h1>Agent Work Triage — Example</h1>
 <p class="muted">A model artifact for turning a backlog into a decision surface with scoring, buckets, blockers, and exportable next actions.</p>
+<section class="card wide"><h2>Intent distillation</h2><p><strong>Primary intent:</strong> decide what work should happen first.</p><p><strong>Secondary intents covered:</strong> show scoring criteria, expose blockers, and export the next plan.</p><p><strong>Base concept:</strong> compare value, risk reduction, effort, and dependency so priority becomes obvious.</p></section>
 
 <section class="card wide"><h2>Scoring criteria</h2><table><tr><th>Criterion</th><th>Weight</th><th>Meaning</th></tr><tr><td>Value</td><td>35%</td><td>Improves real user/developer workflow.</td></tr><tr><td>Risk reduction</td><td>25%</td><td>Prevents broken installs, bad artifacts, or bad agent decisions.</td></tr><tr><td>Effort</td><td>20%</td><td>Lower effort scores higher.</td></tr><tr><td>Dependency</td><td>20%</td><td>Unblocks later work.</td></tr></table></section>
 

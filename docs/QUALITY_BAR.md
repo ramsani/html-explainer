@@ -10,7 +10,21 @@ The artifact must help the user decide, review, compare, diagnose, prioritize, t
 
 Reject artifacts that only look polished.
 
-### 2. First-screen usefulness
+### 2. Intent fit
+
+The artifact must answer the user's main intent directly.
+
+It must show:
+
+- primary intent;
+- obvious secondary intents covered;
+- base concept;
+- decision supported;
+- fastest path to value.
+
+Secondary intents are allowed only when they strengthen the main intent.
+
+### 3. First-screen usefulness
 
 The first screen must make the artifact's value obvious.
 
@@ -24,7 +38,7 @@ It must show:
 
 If the user must scroll past decoration to understand why the artifact exists, revise it.
 
-### 3. Evidence visibility
+### 4. Evidence visibility
 
 The artifact must show what was inspected:
 
@@ -37,7 +51,7 @@ The artifact must show what was inspected:
 - user input
 - external sources when used
 
-### 4. Fact / inference / unknown separation
+### 5. Fact / inference / unknown separation
 
 The artifact must clearly separate:
 
@@ -46,7 +60,7 @@ The artifact must clearly separate:
 - unknowns
 - unsupported claims
 
-### 5. Correct pattern fit
+### 6. Correct pattern fit
 
 The artifact must use the right form for the work:
 
@@ -57,7 +71,7 @@ The artifact must use the right form for the work:
 - editor for triage/config/prompt tuning
 - annotated review for diffs
 
-### 6. UX and interaction fit
+### 7. UX and interaction fit
 
 The user experience must match the task.
 
@@ -72,13 +86,13 @@ Required:
 
 Interactive controls must have visible state changes and usable output.
 
-### 7. Smallest useful artifact
+### 8. Smallest useful artifact
 
 Do not build dashboards by default.
 
 Use one primary pattern and at most two supporting sections.
 
-### 8. Visual clarity
+### 9. Visual clarity
 
 The visual structure must reduce cognitive load.
 
@@ -90,7 +104,7 @@ Avoid:
 - unclear color meaning
 - hidden controls
 
-### 9. Safety and uncertainty
+### 10. Safety and uncertainty
 
 Risk-bearing claims must be visible and qualified.
 
@@ -103,7 +117,7 @@ Examples:
 - breaking API changes
 - cost/performance claims
 
-### 10. Exportability for editors
+### 11. Exportability for editors
 
 Interactive artifacts must produce usable output:
 
@@ -116,13 +130,13 @@ Interactive artifacts must produce usable output:
 
 If the user cannot copy or export the result, the editor is incomplete.
 
-### 11. Self-contained output
+### 12. Self-contained output
 
 Prefer one self-contained HTML file with inline CSS and JS.
 
 External dependencies require explicit justification.
 
-### 12. Next action
+### 13. Next action
 
 The artifact must end with a concrete next action or recommendation.
 
@@ -131,6 +145,9 @@ The artifact must end with a concrete next action or recommendation.
 Apply this overlay after the base score:
 
 - subtract 10 if the first screen does not answer the decision;
+- subtract 15 if the primary intent is not answered directly;
+- subtract 10 if an obvious secondary intent is missing and affects the decision;
+- subtract 10 if the base concept is vague or hidden;
 - subtract 10 if evidence is present but hard to find;
 - subtract 10 if mobile layout is visibly broken;
 - subtract 15 if an interactive artifact has no exportable output;
@@ -152,6 +169,9 @@ Use this score when auditing an artifact:
 Fail the artifact if it:
 
 - invents inspected files or commands;
+- misses the user's primary intent;
+- handles secondary intents while weakening the main answer;
+- hides the base concept;
 - hides uncertainty;
 - recommends action without evidence;
 - uses HTML only as decoration;

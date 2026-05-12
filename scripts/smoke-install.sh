@@ -44,6 +44,7 @@ assert_dir "$TMP_HOME/html-explainer/local-examples"
 
 assert_file "$TMP_HOME/html-explainer/docs/pattern-router.md"
 assert_file "$TMP_HOME/html-explainer/docs/QUALITY_BAR.md"
+assert_file "$TMP_HOME/html-explainer/docs/INTENT_DISTILLATION.md"
 assert_file "$TMP_HOME/html-explainer/docs/HTML_UX_STANDARD.md"
 assert_file "$TMP_HOME/html-explainer/docs/fact-sheet-protocol.md"
 assert_file "$TMP_HOME/html-explainer/patterns/01-code-approach-comparison.md"

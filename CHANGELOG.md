@@ -4,6 +4,7 @@
 
 ### Added
 
+- `docs/INTENT_DISTILLATION.md` to force primary intent, obvious secondary intents, base concept, fastest path to value, and surprising ease before interface design.
 - `docs/HTML_UX_STANDARD.md` with first-screen, artifact fit, evidence UX, interaction, export, mobile, and hard-fail rules.
 - `scripts/validate-examples.sh` to block example artifacts that miss basic UX and evidence requirements.
 - MIT `LICENSE` so the repo is ready to share publicly.
@@ -11,15 +12,16 @@
 ### Improved
 
 - The main skill and all high-value commands now require a UX contract before generating HTML.
+- The main skill and high-value commands now require intent distillation before pattern selection.
 - `docs/QUALITY_BAR.md` now scores first-screen usefulness, interaction fit, mobile readability, and exportability.
-- CI now validates example artifact quality, not only file existence.
+- Example validation now checks visible primary intent, secondary intent coverage, and base concept.
 - Minimal examples now include responsive viewport, uncertainty/risk, and next-action language.
 - Installer and smoke tests now verify the new UX standard file.
 - Shell scripts are executable so local verification commands work as documented.
 
 ### Why it matters
 
-This makes quality part of the manufacturing process. The agent must select the right artifact shape, inspect evidence, expose uncertainty, keep the first screen useful, and export usable output when interaction is involved.
+This makes quality part of the manufacturing process. The agent must answer the main intent directly, catch obvious adjacent needs, distill the base concept, select the right artifact shape, inspect evidence, expose uncertainty, keep the first screen useful, and export usable output when interaction is involved.
 
 ## Unreleased — full example artifact upgrade
 

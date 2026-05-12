@@ -12,6 +12,7 @@ Do not generate HTML yet.
 
 Use:
 
+- `docs/INTENT_DISTILLATION.md` to identify the primary intent, obvious secondary intents, base concept, and fastest path to value.
 - `docs/pattern-router.md` to map task signals to the right pattern.
 - The selected file in `patterns/` to determine evidence requirements, HTML structure, quality checklist, failure modes, and acceptance criteria.
 - `docs/HTML_UX_STANDARD.md` to decide the first-screen contract, interaction value, mobile requirement, and export need.
@@ -21,13 +22,14 @@ Use:
 
 1. Identify the decision the user needs to make.
 2. Determine whether HTML is justified or Markdown is better.
-3. Use the router to select one primary pattern.
-4. Open/read the matching pattern file.
-5. Define the UX contract.
-6. Optionally select up to two supporting sections.
-7. State what evidence must be inspected before generation.
-8. State the minimum validation required.
-9. State the next command/prompt to run.
+3. Distill primary intent, obvious secondary intents, and base concept.
+4. Use the router to select one primary pattern.
+5. Open/read the matching pattern file.
+6. Define the UX contract.
+7. Optionally select up to two supporting sections.
+8. State what evidence must be inspected before generation.
+9. State the minimum validation required.
+10. State the next command/prompt to run.
 
 ## Output
 
@@ -37,6 +39,8 @@ Return:
 Intent:
 
 HTML justified: yes | no
+
+Intent distillation:
 
 Recommended pattern:
 

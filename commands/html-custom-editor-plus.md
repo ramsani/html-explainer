@@ -19,15 +19,17 @@ Turn complex triage, configuration, prompt tuning, or option selection into a sm
 1. Identify the decision the editor must support.
 2. Inspect the real inputs: issues, config, prompts, requirements, or data.
 3. Define output format before designing controls.
-4. Define the UX contract from `docs/HTML_UX_STANDARD.md`.
-5. Build a fact sheet.
-6. Generate a self-contained HTML editor.
-7. Include export/copy output.
-8. Mark unsupported or risky states.
+4. Define the intent distillation from `docs/INTENT_DISTILLATION.md`.
+5. Define the UX contract from `docs/HTML_UX_STANDARD.md`.
+6. Build a fact sheet.
+7. Generate a self-contained HTML editor.
+8. Include export/copy output.
+9. Mark unsupported or risky states.
 
 ## HTML sections / features
 
 - Intent
+- Intent distillation
 - Evidence inspected
 - UX contract
 - Controls

@@ -9,7 +9,7 @@ body{font-family:system-ui,-apple-system,sans-serif;margin:32px;line-height:1.45
 </head>
 <body><main>
 <h1>Prompt / Agent Behavior Tuner — Minimal Example</h1>
-<section class="card"><h2>Intent</h2><p>Tune an agent instruction while keeping behavior operational and exportable.</p></section>
+<section class="card"><h2>Intent distillation</h2><p><strong>Primary intent:</strong> tune an agent instruction into usable final text.</p><p><strong>Secondary intents covered:</strong> prevent vague behavior, define acceptance criteria, keep export available.</p><p><strong>Base concept:</strong> behavior rules plus failure prevention plus copy-ready prompt.</p></section>
 <section class="card"><h2>Evidence inspected</h2><p>Current instruction text, known failure modes, desired output contract, and acceptance criteria.</p></section>
 <section class="grid"><div class="card"><h2>Behavior dimensions</h2><label><input type="checkbox" checked> Evidence-first</label><br><label><input type="checkbox" checked> Minimal changes</label><br><label><input type="checkbox" checked> Explicit uncertainty</label><br><label><input type="checkbox"> More creative exploration</label></div><div class="card"><h2>Failure modes</h2><ul><li>Vague personality tuning</li><li>No acceptance criteria</li><li>No output contract</li></ul></div></section>
 <section class="card"><h2>Risk and unknowns</h2><p>Risk: the final prompt may still be too broad if scenario tests are missing. Unknown: downstream tool behavior is not verified in this minimal example.</p></section>

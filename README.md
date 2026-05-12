@@ -15,6 +15,9 @@ html-explainer   = disciplined operating layer for using that capability well
 
 An artifact is acceptable only when it makes the user's work easier than Markdown:
 
+- the primary intent is answered directly;
+- obvious secondary intents are handled when they affect the decision;
+- the base concept is distilled before interface choices;
 - the first screen says what decision the artifact supports;
 - evidence is visible;
 - facts, inferences, assumptions, and unknowns are separated;
@@ -73,20 +76,21 @@ HTML lets an agent create a review surface: a navigable artifact that can show s
 Every serious artifact follows this sequence:
 
 ```text
-route -> pattern file -> UX contract -> evidence -> fact sheet -> artifact -> quality bar -> decision
+route -> intent distillation -> pattern file -> UX contract -> evidence -> fact sheet -> artifact -> quality bar -> decision
 ```
 
 That means the agent must:
 
 1. decide whether HTML is justified;
-2. use `docs/pattern-router.md` to select one primary pattern;
-3. open the matching file in `patterns/`;
-4. apply `docs/HTML_UX_STANDARD.md`;
-5. inspect real evidence;
-6. create a fact sheet;
-7. generate the smallest useful HTML artifact;
-8. apply `docs/QUALITY_BAR.md` before finalizing;
-9. expose uncertainty and next action.
+2. apply `docs/INTENT_DISTILLATION.md`;
+3. use `docs/pattern-router.md` to select one primary pattern;
+4. open the matching file in `patterns/`;
+5. apply `docs/HTML_UX_STANDARD.md`;
+6. inspect real evidence;
+7. create a fact sheet;
+8. generate the smallest useful HTML artifact;
+9. apply `docs/QUALITY_BAR.md` before finalizing;
+10. expose uncertainty and next action.
 
 ## How the Thariq ideas are used case by case
 
@@ -197,7 +201,21 @@ Example pattern files:
 
 An artifact must improve decision quality over Markdown, show evidence, expose uncertainty, use the correct visual form, stay small, and end with a concrete next action.
 
-### 8. UX standard
+### 8. Intent distillation
+
+`docs/INTENT_DISTILLATION.md` forces the agent to identify:
+
+- primary intent;
+- obvious secondary intents;
+- base concept;
+- decision the user needs to make;
+- fastest path to value;
+- surprising ease opportunity;
+- what not to build.
+
+This prevents artifacts that look complete but miss the real user need.
+
+### 9. UX standard
 
 `docs/HTML_UX_STANDARD.md` converts the HTML effectiveness approach into concrete UX rules:
 
@@ -208,12 +226,15 @@ An artifact must improve decision quality over Markdown, show evidence, expose u
 - mobile and visual clarity rules;
 - hard fail conditions.
 
-### 9. Audit command
+### 10. Audit command
 
 `/html-audit-artifact` reviews an existing artifact and scores it against:
 
 - pattern fit;
 - decision value;
+- primary intent fit;
+- secondary intent coverage;
+- base concept clarity;
 - evidence visibility;
 - fact/inference/unknown separation;
 - first-screen usefulness;
@@ -225,7 +246,7 @@ An artifact must improve decision quality over Markdown, show evidence, expose u
 - simplicity;
 - next-action clarity.
 
-### 10. CI and smoke tests
+### 11. CI and smoke tests
 
 The repo includes GitHub Actions and scripts to validate:
 
@@ -238,7 +259,7 @@ The repo includes GitHub Actions and scripts to validate:
 - required sections in each pattern.
 - example artifact UX minimums.
 
-### 11. Example artifacts
+### 12. Example artifacts
 
 The repo includes example artifacts so models have concrete shapes to imitate:
 

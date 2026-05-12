@@ -9,7 +9,7 @@ body{font-family:system-ui,-apple-system,sans-serif;margin:32px;line-height:1.45
 </head>
 <body><main>
 <h1>Diff Review — Minimal Example</h1>
-<section class="card"><h2>Intent</h2><p>Decide whether the current diff is safe to accept.</p></section>
+<section class="card"><h2>Intent distillation</h2><p><strong>Primary intent:</strong> decide whether the current diff is safe to accept.</p><p><strong>Secondary intents covered:</strong> identify test gaps and next action.</p><p><strong>Base concept:</strong> what changed, what could break, what to do next.</p></section>
 <section class="card"><h2>Evidence inspected</h2><p><code>git diff --stat</code>, <code>git diff --name-status</code>, changed files and related tests.</p></section>
 <section class="card files"><h2>Changed files</h2><span>src/hooks/useDebouncedValue.ts</span><span>src/components/SearchBox.tsx</span><span>src/components/SearchBox.test.tsx</span></section>
 <section class="card"><h2>Behavior before / after</h2><table><tr><th>Before</th><th>After</th></tr><tr><td>Filter fired on every keypress.</td><td>Filter waits 250ms after typing stops.</td></tr></table></section>

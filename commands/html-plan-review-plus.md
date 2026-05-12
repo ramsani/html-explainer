@@ -12,18 +12,20 @@ Prevent implementation based on false assumptions, missing files, misunderstood 
 2. Identify every claimed file, function, route, component, dependency, API, test, and workflow.
 3. Inspect the real repo for those claims.
 4. Inspect adjacent files needed to understand behavior.
-5. Define the UX contract from `docs/HTML_UX_STANDARD.md`.
-6. Build a fact sheet.
-7. Separate:
+5. Define the intent distillation from `docs/INTENT_DISTILLATION.md`.
+6. Define the UX contract from `docs/HTML_UX_STANDARD.md`.
+7. Build a fact sheet.
+8. Separate:
    - verified facts
    - inferred conclusions
    - unsupported claims
    - unknowns
-8. Generate HTML only after verification.
+9. Generate HTML only after verification.
 
 ## HTML sections
 
 - Intent
+- Intent distillation
 - Plan being reviewed
 - UX contract
 - Evidence inspected

@@ -25,11 +25,16 @@ Within the first screen, the artifact must answer:
 
 - what this is;
 - who it is for;
+- what primary intent it answers;
+- which obvious secondary intents it covers;
+- what base concept makes the issue simple;
 - what decision it supports;
 - what evidence was inspected;
 - what the user should do next.
 
 Do not hide the recommendation below decorative sections.
+
+The first screen should create relief. The user should see the shape of the answer before reading every detail.
 
 ## Artifact fit
 
@@ -47,6 +52,19 @@ Use the form that matches the work:
 - editor -> controls, validation, preview, export.
 
 Do not build a generic dashboard when one precise surface would work.
+
+## Ease and clarity rules
+
+The artifact should reduce the user's mental assembly work.
+
+Required:
+
+- distill the base concept to one sentence or one visible model;
+- make the primary action obvious;
+- show secondary intents as support, not as competing sections;
+- include one "surprising ease" element when useful: export, checklist, side-by-side view, risk map, filter, or copy-ready output.
+
+Do not create delight through decoration. Create it by removing work from the user's head.
 
 ## Evidence UX
 
@@ -145,6 +163,9 @@ The artifact is aligned with the HTML effectiveness approach when:
 Fail the artifact if it:
 
 - does not improve the decision over Markdown;
+- does not answer the primary intent directly;
+- ignores obvious secondary intents that affect the decision;
+- does not distill the base concept;
 - hides evidence or uncertainty;
 - has no visible recommendation or next action;
 - uses interaction with no useful outcome;

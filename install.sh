@@ -161,6 +161,7 @@ if [ "$DRY_RUN" = "0" ]; then
   verify_file "$CLAUDE_HOME/html-explainer/docs/thariq-20-case-library.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/html-artifact-selection-guide.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/fact-sheet-protocol.md"
+  verify_file "$CLAUDE_HOME/html-explainer/docs/INTENT_DISTILLATION.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/pattern-router.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/QUALITY_BAR.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/HTML_UX_STANDARD.md"
