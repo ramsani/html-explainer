@@ -23,8 +23,10 @@ Always follow:
 11. Generate the smallest useful HTML artifact.
 12. Apply `docs/QUALITY_BAR.md` before finalizing.
 13. Mark uncertainty visibly.
-14. Apply `docs/NEXT_ACTION_HANDOFF.md` so the next command is obvious and copy-ready.
-15. Give the user a minimal decision summary.
+14. Apply `docs/HTML_ARTIFACT_CHAINS.md` when the work is better handled as exploration -> plan -> review or similar.
+15. Apply `docs/SHARE_AND_REENTRY.md` when the artifact should be shareable or useful to another agent.
+16. Apply `docs/NEXT_ACTION_HANDOFF.md` so the next command is obvious and copy-ready.
+17. Give the user a minimal decision summary.
 
 ## When to use
 
@@ -40,6 +42,7 @@ Use for:
 - design system inspection
 - visual direction exploration
 - empty-state exploration
+- artifact chains for exploration, planning, review, and handoff
 - interactive prototypes
 - diagrams and flows
 - decks
@@ -72,7 +75,7 @@ The skill includes 20 operational pattern files under `patterns/`:
 2. Visual implementation plan
 3. Annotated PR / diff review
 4. Module map
-5. Design token contact sheet
+5. Design token reference sheet
 6. Component state matrix
 7. Interactive flow prototype
 8. Microinteraction sandbox
@@ -104,6 +107,9 @@ Every serious artifact should include:
 - UX contract: audience, decision, primary action, export when relevant
 - What was inspected
 - Fact sheet
+- Artifact chain position when useful
+- Share-ready summary when useful
+- Agent reentry block when useful
 - Current state
 - Proposed or changed state when applicable
 - Visual structure: diagram, map, comparison, timeline, table, prototype, or editor

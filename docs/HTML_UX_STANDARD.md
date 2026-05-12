@@ -16,6 +16,7 @@ Every generated HTML artifact must help the user do at least one of these faster
 - export a usable result;
 - re-enter a project;
 - decide the next action.
+- keep the user in the loop across exploration, implementation, and review.
 
 If none of those are true, do not generate HTML.
 
@@ -36,6 +37,7 @@ Within the first screen, the artifact must answer:
 - what evidence was inspected;
 - what the user should do next.
 - what mental work the HTML removes.
+- whether this artifact is standalone or part of a chain.
 
 Do not hide the recommendation below decorative sections.
 
@@ -56,6 +58,7 @@ Use the form that matches the work:
 - incident -> timeline, impact, cause, prevention;
 - editor -> controls, validation, preview, export.
 - visual exploration -> 3-4 live rendered alternatives with comparison criteria.
+- design reference -> reusable token and component examples for future artifacts.
 
 Do not build a generic dashboard when one precise surface would work.
 
@@ -72,6 +75,7 @@ Required:
 - show secondary intents as support, not as competing sections;
 - include one "surprising ease" element when useful: export, checklist, side-by-side view, risk map, filter, or copy-ready output.
 - keep the chosen artifact budget visible: compact, standard, or interactive.
+- make participation easy: choose, compare, tune, copy, export, or approve a next step.
 
 Do not create delight through decoration. Create it by removing work from the user's head.
 
@@ -165,6 +169,19 @@ If the artifact is a prototype, it must be clickable enough to test the main fri
 
 If the artifact is a report, it must make the next action obvious.
 
+## Artifact chains
+
+Apply `docs/HTML_ARTIFACT_CHAINS.md` when the work naturally spans exploration, planning, implementation, review, or handoff.
+
+Do not generate a chain automatically. Recommend the next artifact only when it removes real work.
+
+When a chain is useful, show:
+
+- current chain position;
+- decision made by this artifact;
+- what remains undecided;
+- next artifact or direct action.
+
 ## Next action handoff
 
 Every artifact must end with a next action handoff:
@@ -175,6 +192,14 @@ Every artifact must end with a next action handoff:
 - up to three selectable alternatives when the analysis found real branches.
 
 Do not auto-chain commands. Make the next command obvious enough that the user can approve it without rewriting it.
+
+## Share and reentry
+
+Apply `docs/SHARE_AND_REENTRY.md` when the artifact may be read by another person or another agent.
+
+Include a share-ready summary for PRs, plans, reports, recaps, and decision decks.
+
+Include an agent reentry block when the artifact will guide later implementation or verification.
 
 ## Thariq alignment checklist
 

@@ -21,8 +21,10 @@ Create an artifact that helps the user inspect, compare, verify, decide, or re-e
 11. Generate the smallest useful HTML artifact.
 12. Apply `docs/QUALITY_BAR.md` before finalizing.
 13. Include uncertainty visibly.
-14. Apply `docs/NEXT_ACTION_HANDOFF.md` so the artifact ends with a copy-ready next step.
-15. Save the artifact to a reasonable local path when tool access allows it.
+14. Apply `docs/HTML_ARTIFACT_CHAINS.md` when the work naturally needs exploration, planning, review, or handoff across multiple artifacts.
+15. Apply `docs/SHARE_AND_REENTRY.md` when the artifact may be shared or used by another agent later.
+16. Apply `docs/NEXT_ACTION_HANDOFF.md` so the artifact ends with a copy-ready next step.
+17. Save the artifact to a reasonable local path when tool access allows it.
 
 ## Required artifact sections
 
@@ -39,6 +41,8 @@ Create an artifact that helps the user inspect, compare, verify, decide, or re-e
 - Risks
 - Assumptions
 - Unknowns
+- Share-ready summary when useful
+- Agent reentry block when useful
 - Recommendation
 - Success criteria
 - Next action handoff
@@ -78,6 +82,8 @@ Before responding, verify:
 - Did every interaction create useful state or exportable output?
 - Did it stay as small as possible?
 - Did the final section give one recommended next action, one ready-to-run command, and only useful alternatives?
+- If this belongs in a chain, did it state chain position and the next useful artifact?
+- If someone else will read it, did it include a share-ready summary or agent reentry block?
 
 ## Final chat response
 

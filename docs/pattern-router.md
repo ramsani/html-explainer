@@ -12,7 +12,7 @@ The goal is to choose the smallest artifact that makes hidden structure visible 
 | The user has a plan but code has not changed | 02 Visual implementation plan or plan review |
 | There is a git diff, PR, patch, or changed files | 03 Annotated PR / diff review |
 | The user needs to understand part of a repo | 04 Module map |
-| UI consistency, theming, tokens, or styling are involved | 05 Design token contact sheet |
+| UI consistency, theming, tokens, styling, or reusable taste reference are involved | 05 Design token reference sheet |
 | UI variants, states, forms, cards, or components are involved | 06 Component state matrix |
 | The user wants visual design options, empty-state directions, tone exploration, or live UI alternatives | 21 Visual direction explorer |
 | The decision depends on clicks or flow friction | 07 Interactive flow prototype |
@@ -41,6 +41,8 @@ If the user needs to decide *whether something is safe*, prefer plan review, dif
 If the user needs to *feel or manipulate something*, prefer prototype, microinteraction sandbox, config editor, ticket board, or prompt tuner.
 
 If the user needs to choose *visual tone or direction*, prefer visual direction explorer. Use component state matrix only when the question is completeness across states, not choosing between directions.
+
+If the user needs future HTML artifacts to match the product's taste, create a design token reference sheet before visual exploration.
 
 ## Stop rule
 

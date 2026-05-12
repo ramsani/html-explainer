@@ -18,8 +18,10 @@ Help the user understand what the project is, how it works, what changed recentl
 8. Define the artifact budget from `docs/ARTIFACT_BUDGET.md`.
 9. Define the UX contract from `docs/HTML_UX_STANDARD.md`.
 10. Build a fact sheet.
-11. Apply `docs/NEXT_ACTION_HANDOFF.md` so the reentry path is ready to run.
-12. Generate HTML after verification.
+11. Apply `docs/HTML_ARTIFACT_CHAINS.md` to recommend the next artifact only when it removes real work.
+12. Apply `docs/SHARE_AND_REENTRY.md` so another agent can continue from the recap.
+13. Apply `docs/NEXT_ACTION_HANDOFF.md` so the reentry path is ready to run.
+14. Generate HTML after verification.
 
 ## HTML sections
 
@@ -37,6 +39,8 @@ Help the user understand what the project is, how it works, what changed recentl
 - Important decisions or constraints
 - Risks and gotchas
 - Open questions
+- Agent reentry block
+- Suggested artifact chain when useful
 - Next action handoff
 - Reentry checklist
 

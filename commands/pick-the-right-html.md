@@ -19,6 +19,8 @@ Use:
 - The selected file in `patterns/` to determine evidence requirements, HTML structure, quality checklist, failure modes, and acceptance criteria.
 - `docs/HTML_UX_STANDARD.md` to decide the first-screen contract, interaction value, mobile requirement, and export need.
 - `docs/QUALITY_BAR.md` to decide whether HTML is justified at all.
+- `docs/HTML_ARTIFACT_CHAINS.md` to decide whether the right answer is one artifact now plus an obvious next artifact later.
+- `docs/SHARE_AND_REENTRY.md` when the output should be usable by another human or agent.
 - `docs/NEXT_ACTION_HANDOFF.md` to produce a copy-ready next command and selectable alternatives.
 
 ## Process
@@ -36,8 +38,10 @@ Use:
 11. State what evidence must be inspected before generation.
 12. State the minimum validation required.
 13. State the recommended next action.
-14. Provide a copy-ready command or prompt.
-15. Provide up to three selectable alternatives only when real branches exist.
+14. State whether this is standalone or part of an artifact chain.
+15. State whether share/reentry blocks are needed.
+16. Provide a copy-ready command or prompt.
+17. Provide up to three selectable alternatives only when real branches exist.
 
 ## Output
 
@@ -77,6 +81,10 @@ Quality checklist:
 Risks to avoid:
 
 Acceptance criteria:
+
+Artifact chain:
+
+Share/reentry needs:
 
 Next action:
 

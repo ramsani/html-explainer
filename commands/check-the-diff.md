@@ -21,8 +21,9 @@ Make changed code inspectable as a decision surface before accepting, committing
 7. Define the UX contract from `docs/HTML_UX_STANDARD.md`.
 8. Build a fact sheet.
 9. Identify behavioral changes, not only textual changes.
-10. Apply `docs/NEXT_ACTION_HANDOFF.md` to turn findings into selectable next steps.
-11. Generate HTML after verification.
+10. Apply `docs/SHARE_AND_REENTRY.md` so the review can be attached to a PR or handed to another agent.
+11. Apply `docs/NEXT_ACTION_HANDOFF.md` to turn findings into selectable next steps.
+12. Generate HTML after verification.
 
 ## HTML sections
 
@@ -41,6 +42,8 @@ Make changed code inspectable as a decision surface before accepting, committing
 - Test coverage reviewed
 - Missing validation
 - Release / rollback risk
+- Share-ready PR summary
+- Agent reentry block when fixes or verification remain
 - Recommendation: accept, revise, reject, or split
 - Next action handoff: recommended action, ready-to-run command, selectable alternatives
 

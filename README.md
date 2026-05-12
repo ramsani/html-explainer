@@ -93,12 +93,14 @@ That means the agent must:
 8. create a fact sheet;
 9. generate the smallest useful HTML artifact;
 10. apply `docs/QUALITY_BAR.md` before finalizing;
-11. apply `docs/NEXT_ACTION_HANDOFF.md`;
-12. expose uncertainty and next action.
+11. apply `docs/HTML_ARTIFACT_CHAINS.md` when one artifact should lead to another;
+12. apply `docs/SHARE_AND_REENTRY.md` when the artifact should be shareable or reusable by another agent;
+13. apply `docs/NEXT_ACTION_HANDOFF.md`;
+14. expose uncertainty and next action.
 
 ## How the Thariq ideas are used case by case
 
-The Thariq idea is not copied as one generic prompt. It is decomposed into 20 executable patterns.
+The Thariq idea is not copied as one generic prompt. It is decomposed into 21 executable patterns.
 
 Each pattern answers:
 
@@ -117,7 +119,7 @@ Each pattern answers:
 | Visual implementation plan | Plans have sequence, dependencies, validation points, and rollback paths. | Turns plans into staged visual artifacts tied to files, checks, and definition of done. | Makes plans executable and reviewable before coding starts. |
 | Annotated PR / diff review | Diffs are spatial and risk-based, not just line-by-line text. | Uses changed files, behavior before/after, severity-coded findings, test review, and release risk. | Helps decide whether to accept, revise, reject, or split a change. |
 | Module map | Understanding code requires seeing entry points, dependencies, and hot paths. | Produces maps of module responsibilities, data flow, imports, and gotchas. | Reduces blind edits in unfamiliar repo areas. |
-| Design token contact sheet | Design systems are visual; tokens and styles need to be seen. | Guides agents to expose colors, typography, spacing, radii, shadows, and inconsistencies. | Prevents UI changes that ignore the existing design language. |
+| Design token reference sheet | Design systems are visual; tokens and styles need to be seen. | Guides agents to expose colors, typography, spacing, radii, shadows, component examples, and future-artifact guidance. | Prevents UI changes and future HTML artifacts that ignore the existing design language. |
 | Component state matrix | UI quality depends on states, not just static components. | Requires variants, empty/loading/error/disabled states, responsiveness, and accessibility notes. | Makes UI review more realistic before implementation. |
 | Visual direction explorer | Visual design choices need to be seen side by side. | Renders 3-4 live alternatives and compares tone, density, action clarity, state fit, and light/dark resilience. | Lets the user choose direction without imagining it from prose. |
 | Interactive flow prototype | Some UX decisions need to be felt, not described. | Encourages small self-contained clickable prototypes with visible states and implementation notes. | Lets the user validate friction before code is touched. |

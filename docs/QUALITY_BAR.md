@@ -176,6 +176,19 @@ Do not auto-chain commands without user approval.
 Subtract 15 if the user still has to invent the next command.
 Subtract 10 if there are too many next-step options.
 
+### 16. Loop and reentry value
+
+The artifact should keep the user or next agent in the loop.
+
+Add credit when it includes:
+
+- chain position when the work is part of exploration -> plan -> review;
+- share-ready summary for another human;
+- agent reentry block for later implementation or verification;
+- clear statement of what was decided and what remains open.
+
+Subtract 10 if a serious plan, PR review, recap, or report cannot be shared or reused without the original chat.
+
 ## Visual exploration overlay
 
 Apply this when the artifact explores UI directions.
