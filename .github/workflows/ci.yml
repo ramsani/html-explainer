@@ -20,6 +20,7 @@ jobs:
           bash -n install.sh
           bash -n uninstall.sh
           bash -n scripts/validate-patterns.sh
+          bash -n scripts/validate-commands.sh
           bash -n scripts/validate-examples.sh
           bash -n scripts/smoke-install.sh
           bash -n scripts/smoke-uninstall.sh
@@ -29,6 +30,9 @@ jobs:
 
       - name: Validate pattern files
         run: scripts/validate-patterns.sh
+
+      - name: Validate command files
+        run: scripts/validate-commands.sh
 
       - name: Validate example artifacts
         run: scripts/validate-examples.sh
@@ -59,7 +63,13 @@ jobs:
           test -f docs/QUALITY_BAR.md
           test -f docs/fact-sheet-protocol.md
           test -f skills/thariq-html-effectiveness/SKILL.md
-          test -f commands/html-audit-artifact.md
+          test -f commands/pick-the-right-html.md
+          test -f commands/make-the-right-html.md
+          test -f commands/check-the-plan.md
+          test -f commands/check-the-diff.md
+          test -f commands/reenter-project.md
+          test -f commands/build-decision-tool.md
+          test -f commands/audit-html.md
           test -f examples/plan-review-minimal.example.html
           test -f examples/diff-review-minimal.example.html
           test -f examples/prompt-tuner-minimal.example.html
