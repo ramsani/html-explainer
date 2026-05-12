@@ -15,14 +15,16 @@ Make changed code inspectable as a decision surface before accepting, committing
    - `git diff`
 2. Read changed files where needed.
 3. Inspect related tests, docs, configs, routes, schemas, or workflows.
-4. Build a fact sheet.
-5. Identify behavioral changes, not only textual changes.
-6. Generate HTML after verification.
+4. Define the UX contract from `docs/HTML_UX_STANDARD.md`.
+5. Build a fact sheet.
+6. Identify behavioral changes, not only textual changes.
+7. Generate HTML after verification.
 
 ## HTML sections
 
 - Intent
 - Diff summary
+- UX contract
 - Evidence inspected
 - Fact sheet
 - Changed files

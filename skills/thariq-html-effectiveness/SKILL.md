@@ -13,13 +13,14 @@ Always follow:
 1. Decide whether HTML is justified. If Markdown is clearer, do not use HTML.
 2. Use `docs/pattern-router.md` to choose one primary pattern.
 3. Open the matching file in `patterns/` and apply its evidence requirements, HTML structure, quality checklist, failure modes, and acceptance criteria.
-4. Explore sources.
-5. Verify facts.
-6. Build a fact sheet using `docs/fact-sheet-protocol.md`.
-7. Generate the smallest useful HTML artifact.
-8. Apply `docs/QUALITY_BAR.md` before finalizing.
-9. Mark uncertainty visibly.
-10. Give the user a minimal decision summary.
+4. Open `docs/HTML_UX_STANDARD.md` and define the first-screen contract, interaction contract, and export requirement.
+5. Explore sources.
+6. Verify facts.
+7. Build a fact sheet using `docs/fact-sheet-protocol.md`.
+8. Generate the smallest useful HTML artifact.
+9. Apply `docs/QUALITY_BAR.md` before finalizing.
+10. Mark uncertainty visibly.
+11. Give the user a minimal decision summary.
 
 ## When to use
 
@@ -90,6 +91,7 @@ Every serious artifact should include:
 
 - Intent
 - Selected pattern
+- UX contract: audience, decision, primary action, export when relevant
 - What was inspected
 - Fact sheet
 - Current state
@@ -102,12 +104,34 @@ Every serious artifact should include:
 - Success criteria
 - Next action
 
+## UX contract
+
+Before generating HTML, write this contract internally and make the relevant parts visible in the artifact:
+
+```text
+Audience:
+Decision supported:
+First-screen answer:
+Primary action:
+Visual form:
+Interaction, if any:
+Exportable output, if any:
+Mobile requirement:
+States required:
+```
+
+If the contract is weak, do not compensate with styling. Revise the artifact shape.
+
 ## Failure modes to avoid
 
 - Beautiful but unverifiable output
 - Generic dashboards with no decision value
 - Repeating Markdown inside HTML
 - Explaining without evidence
+- Hiding the recommendation below decoration
+- Interactive controls that do not change a meaningful decision
+- Editors without exportable output
+- Mobile layouts that force horizontal reading except for intentional wide tables
 - Inventing files, modules, behavior, tests, routes, or dependencies
 - Hiding uncertainty
 - Using charts or diagrams that do not clarify the decision

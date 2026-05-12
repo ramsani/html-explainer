@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Prompt Tuner Example</title>
 <style>
 body{font-family:system-ui,-apple-system,sans-serif;margin:32px;line-height:1.45;color:#111827}main{max-width:1000px;margin:auto}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.card{border:1px solid #d1d5db;border-radius:12px;padding:16px;margin:14px 0}textarea{width:100%;min-height:150px}button{padding:10px 14px;border-radius:8px;border:1px solid #9ca3af;background:#f9fafb;cursor:pointer}</style>
@@ -9,6 +10,9 @@ body{font-family:system-ui,-apple-system,sans-serif;margin:32px;line-height:1.45
 <body><main>
 <h1>Prompt / Agent Behavior Tuner — Minimal Example</h1>
 <section class="card"><h2>Intent</h2><p>Tune an agent instruction while keeping behavior operational and exportable.</p></section>
+<section class="card"><h2>Evidence inspected</h2><p>Current instruction text, known failure modes, desired output contract, and acceptance criteria.</p></section>
 <section class="grid"><div class="card"><h2>Behavior dimensions</h2><label><input type="checkbox" checked> Evidence-first</label><br><label><input type="checkbox" checked> Minimal changes</label><br><label><input type="checkbox" checked> Explicit uncertainty</label><br><label><input type="checkbox"> More creative exploration</label></div><div class="card"><h2>Failure modes</h2><ul><li>Vague personality tuning</li><li>No acceptance criteria</li><li>No output contract</li></ul></div></section>
+<section class="card"><h2>Risk and unknowns</h2><p>Risk: the final prompt may still be too broad if scenario tests are missing. Unknown: downstream tool behavior is not verified in this minimal example.</p></section>
 <section class="card"><h2>Exportable prompt</h2><textarea id="out">Before generating a solution, inspect the relevant evidence. Separate facts, inferences, and unknowns. Prefer minimal safe changes. Provide acceptance criteria.</textarea><br><button onclick="navigator.clipboard.writeText(document.getElementById('out').value)">Copy prompt</button></section>
+<section class="card"><h2>Next action</h2><p>Run the exported prompt against one good scenario and one failure scenario.</p></section>
 </main></body></html>

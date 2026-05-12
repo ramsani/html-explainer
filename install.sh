@@ -163,6 +163,7 @@ if [ "$DRY_RUN" = "0" ]; then
   verify_file "$CLAUDE_HOME/html-explainer/docs/fact-sheet-protocol.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/pattern-router.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/QUALITY_BAR.md"
+  verify_file "$CLAUDE_HOME/html-explainer/docs/HTML_UX_STANDARD.md"
   verify_file "$CLAUDE_HOME/html-explainer/patterns/01-code-approach-comparison.md"
   verify_file "$CLAUDE_HOME/html-explainer/patterns/20-prompt-agent-behavior-tuner.md"
 fi

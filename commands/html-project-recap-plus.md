@@ -13,12 +13,14 @@ Help the user understand what the project is, how it works, what changed recentl
 3. Inspect recent git activity when available.
 4. Inspect docs, plans, changelog, tests, and configuration where relevant.
 5. Identify architecture, workflows, entry points, and gotchas.
-6. Build a fact sheet.
-7. Generate HTML after verification.
+6. Define the UX contract from `docs/HTML_UX_STANDARD.md`.
+7. Build a fact sheet.
+8. Generate HTML after verification.
 
 ## HTML sections
 
 - Project identity
+- UX contract
 - Evidence inspected
 - Fact sheet
 - Architecture map

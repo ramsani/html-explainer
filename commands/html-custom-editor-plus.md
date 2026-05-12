@@ -19,20 +19,23 @@ Turn complex triage, configuration, prompt tuning, or option selection into a sm
 1. Identify the decision the editor must support.
 2. Inspect the real inputs: issues, config, prompts, requirements, or data.
 3. Define output format before designing controls.
-4. Build a fact sheet.
-5. Generate a self-contained HTML editor.
-6. Include export/copy output.
-7. Mark unsupported or risky states.
+4. Define the UX contract from `docs/HTML_UX_STANDARD.md`.
+5. Build a fact sheet.
+6. Generate a self-contained HTML editor.
+7. Include export/copy output.
+8. Mark unsupported or risky states.
 
 ## HTML sections / features
 
 - Intent
 - Evidence inspected
+- UX contract
 - Controls
 - Preview or resulting state
 - Validation warnings
 - Exportable output
 - Reset/default state
+- Empty, invalid, and success/exported states
 - Assumptions
 - Unknowns
 - Usage instructions
@@ -40,6 +43,8 @@ Turn complex triage, configuration, prompt tuning, or option selection into a sm
 ## Special rule
 
 A custom editor is only successful if it produces usable output: Markdown, JSON, config, issue body, prompt, or checklist.
+
+If controls do not change a meaningful preview, warning, score, or export, remove them.
 
 ## Final response
 

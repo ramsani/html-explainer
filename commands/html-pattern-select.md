@@ -14,6 +14,7 @@ Use:
 
 - `docs/pattern-router.md` to map task signals to the right pattern.
 - The selected file in `patterns/` to determine evidence requirements, HTML structure, quality checklist, failure modes, and acceptance criteria.
+- `docs/HTML_UX_STANDARD.md` to decide the first-screen contract, interaction value, mobile requirement, and export need.
 - `docs/QUALITY_BAR.md` to decide whether HTML is justified at all.
 
 ## Process
@@ -22,10 +23,11 @@ Use:
 2. Determine whether HTML is justified or Markdown is better.
 3. Use the router to select one primary pattern.
 4. Open/read the matching pattern file.
-5. Optionally select up to two supporting sections.
-6. State what evidence must be inspected before generation.
-7. State the minimum validation required.
-8. State the next command/prompt to run.
+5. Define the UX contract.
+6. Optionally select up to two supporting sections.
+7. State what evidence must be inspected before generation.
+8. State the minimum validation required.
+9. State the next command/prompt to run.
 
 ## Output
 
@@ -43,6 +45,8 @@ Pattern file:
 Why this pattern:
 
 Do not use HTML if:
+
+UX contract:
 
 Evidence to inspect first:
 

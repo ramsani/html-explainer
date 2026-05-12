@@ -9,6 +9,23 @@ visual-explainer = HTML artifact capability
 html-explainer   = disciplined operating layer for using that capability well
 ```
 
+## The quality promise
+
+`html-explainer` treats HTML as a decision surface.
+
+An artifact is acceptable only when it makes the user's work easier than Markdown:
+
+- the first screen says what decision the artifact supports;
+- evidence is visible;
+- facts, inferences, assumptions, and unknowns are separated;
+- the visual form matches the job;
+- interaction changes a meaningful state;
+- editor-like artifacts export usable Markdown, JSON, config, prompts, issue bodies, or checklists;
+- mobile layout stays readable;
+- the artifact ends with a concrete next action.
+
+The process is designed so quality is built before the artifact is generated. Validation confirms that the process produced the right thing; it is not a last-minute rescue.
+
 ## Attribution
 
 This project is built as a complementary layer around two important prior contributions:
@@ -56,7 +73,7 @@ HTML lets an agent create a review surface: a navigable artifact that can show s
 Every serious artifact follows this sequence:
 
 ```text
-route -> pattern file -> evidence -> fact sheet -> artifact -> quality bar -> decision
+route -> pattern file -> UX contract -> evidence -> fact sheet -> artifact -> quality bar -> decision
 ```
 
 That means the agent must:
@@ -64,11 +81,12 @@ That means the agent must:
 1. decide whether HTML is justified;
 2. use `docs/pattern-router.md` to select one primary pattern;
 3. open the matching file in `patterns/`;
-4. inspect real evidence;
-5. create a fact sheet;
-6. generate the smallest useful HTML artifact;
-7. apply `docs/QUALITY_BAR.md` before finalizing;
-8. expose uncertainty and next action.
+4. apply `docs/HTML_UX_STANDARD.md`;
+5. inspect real evidence;
+6. create a fact sheet;
+7. generate the smallest useful HTML artifact;
+8. apply `docs/QUALITY_BAR.md` before finalizing;
+9. expose uncertainty and next action.
 
 ## How the Thariq ideas are used case by case
 
@@ -179,7 +197,18 @@ Example pattern files:
 
 An artifact must improve decision quality over Markdown, show evidence, expose uncertainty, use the correct visual form, stay small, and end with a concrete next action.
 
-### 8. Audit command
+### 8. UX standard
+
+`docs/HTML_UX_STANDARD.md` converts the HTML effectiveness approach into concrete UX rules:
+
+- first-screen contract;
+- artifact fit;
+- evidence UX;
+- interaction and export rules;
+- mobile and visual clarity rules;
+- hard fail conditions.
+
+### 9. Audit command
 
 `/html-audit-artifact` reviews an existing artifact and scores it against:
 
@@ -187,6 +216,8 @@ An artifact must improve decision quality over Markdown, show evidence, expose u
 - decision value;
 - evidence visibility;
 - fact/inference/unknown separation;
+- first-screen usefulness;
+- UX fit;
 - visual clarity;
 - interaction usefulness;
 - exportability;
@@ -194,7 +225,7 @@ An artifact must improve decision quality over Markdown, show evidence, expose u
 - simplicity;
 - next-action clarity.
 
-### 9. CI and smoke tests
+### 10. CI and smoke tests
 
 The repo includes GitHub Actions and scripts to validate:
 
@@ -205,14 +236,20 @@ The repo includes GitHub Actions and scripts to validate:
 - uninstaller smoke test with temporary `CLAUDE_HOME`;
 - exactly 20 pattern files;
 - required sections in each pattern.
+- example artifact UX minimums.
 
-### 10. Minimal examples
+### 11. Example artifacts
 
-The repo includes small example artifacts so models have concrete shapes to imitate:
+The repo includes example artifacts so models have concrete shapes to imitate:
 
 - `examples/plan-review-minimal.example.html`
 - `examples/diff-review-minimal.example.html`
 - `examples/prompt-tuner-minimal.example.html`
+- `examples/diff-review-full.example.html`
+- `examples/architecture-diagram.example.html`
+- `examples/project-recap.example.html`
+- `examples/ticket-triage.example.html`
+- `examples/prompt-tuner-full.example.html`
 
 ## Commands
 
@@ -257,6 +294,19 @@ git clone https://github.com/ramsani/html-explainer.git
 cd html-explainer
 DRY_RUN=1 bash install.sh
 bash install.sh
+```
+
+## Verify locally
+
+Before sharing changes, run:
+
+```bash
+bash -n install.sh uninstall.sh scripts/*.sh
+scripts/validate-patterns.sh
+scripts/validate-examples.sh
+DRY_RUN=1 INSTALL_UPSTREAM=0 FETCH_EXAMPLES=0 bash install.sh
+scripts/smoke-install.sh
+scripts/smoke-uninstall.sh
 ```
 
 ## Safe uninstall

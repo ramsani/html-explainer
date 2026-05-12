@@ -1,5 +1,26 @@
 # Changelog
 
+## Unreleased — UX quality gate upgrade
+
+### Added
+
+- `docs/HTML_UX_STANDARD.md` with first-screen, artifact fit, evidence UX, interaction, export, mobile, and hard-fail rules.
+- `scripts/validate-examples.sh` to block example artifacts that miss basic UX and evidence requirements.
+- MIT `LICENSE` so the repo is ready to share publicly.
+
+### Improved
+
+- The main skill and all high-value commands now require a UX contract before generating HTML.
+- `docs/QUALITY_BAR.md` now scores first-screen usefulness, interaction fit, mobile readability, and exportability.
+- CI now validates example artifact quality, not only file existence.
+- Minimal examples now include responsive viewport, uncertainty/risk, and next-action language.
+- Installer and smoke tests now verify the new UX standard file.
+- Shell scripts are executable so local verification commands work as documented.
+
+### Why it matters
+
+This makes quality part of the manufacturing process. The agent must select the right artifact shape, inspect evidence, expose uncertainty, keep the first screen useful, and export usable output when interaction is involved.
+
 ## Unreleased — full example artifact upgrade
 
 ### Added
