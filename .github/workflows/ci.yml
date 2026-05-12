@@ -20,6 +20,7 @@ jobs:
           bash -n install.sh
           bash -n uninstall.sh
           bash -n scripts/validate-patterns.sh
+          bash -n scripts/validate-examples.sh
           bash -n scripts/smoke-install.sh
           bash -n scripts/smoke-uninstall.sh
 
@@ -28,6 +29,9 @@ jobs:
 
       - name: Validate pattern files
         run: scripts/validate-patterns.sh
+
+      - name: Validate example artifacts
+        run: scripts/validate-examples.sh
 
       - name: Dry-run installer
         run: DRY_RUN=1 INSTALL_UPSTREAM=0 FETCH_EXAMPLES=0 bash install.sh
@@ -44,10 +48,13 @@ jobs:
       - name: Verify required repository files
         run: |
           test -f README.md
+          test -f LICENSE
           test -f CREDITS.md
           test -f CHANGELOG.md
           test -f install.sh
           test -f uninstall.sh
+          test -f docs/INTENT_DISTILLATION.md
+          test -f docs/HTML_UX_STANDARD.md
           test -f docs/pattern-router.md
           test -f docs/QUALITY_BAR.md
           test -f docs/fact-sheet-protocol.md
