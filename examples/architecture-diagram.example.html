@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Architecture Diagram — Example</title>
+<style>
+:root{--bg:#f8fafc;--panel:#fff;--ink:#0f172a;--muted:#64748b;--line:#cbd5e1;--blue:#2563eb;--green:#15803d;--orange:#b45309;--red:#b91c1c}body{margin:0;background:var(--bg);font-family:system-ui,-apple-system,sans-serif;color:var(--ink);line-height:1.45}.wrap{max-width:1220px;margin:auto;padding:28px}h1{font-size:34px;margin:.2rem 0}.muted{color:var(--muted)}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;margin:16px 0}.grid{display:grid;gap:16px}.cols-3{grid-template-columns:repeat(3,1fr)}.badge{display:inline-block;border-radius:999px;padding:5px 9px;font-size:12px;font-weight:800}.ok{background:#dcfce7;color:#166534}.warn{background:#fef3c7;color:#92400e}.bad{background:#fee2e2;color:#991b1b}.lane{border:2px dashed var(--line);border-radius:18px;padding:16px;margin:14px 0}.lane h2{margin-top:0}.nodes{display:flex;flex-wrap:wrap;gap:12px}.node{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;min-width:180px;box-shadow:0 1px 2px rgba(15,23,42,.04)}.node strong{display:block}.arrow{font-weight:800;color:var(--blue);align-self:center}table{width:100%;border-collapse:collapse}th,td{border-bottom:1px solid #e2e8f0;text-align:left;padding:10px}th{text-transform:uppercase;font-size:12px;color:var(--muted);background:#f1f5f9}code{background:#f1f5f9;border:1px solid #e2e8f0;padding:2px 5px;border-radius:5px}.legend span{margin-right:10px}.verified{border-left:6px solid var(--green)}.inferred{border-left:6px solid var(--orange)}.risk{border-left:6px solid var(--red)}@media(max-width:900px){.cols-3{grid-template-columns:1fr}.nodes{display:block}.node{margin:10px 0}.arrow{display:block;margin:6px 0}}
+</style>
+</head>
+<body><main class="wrap">
+<p class="muted"><strong>Pattern 09 — Architecture Diagram</strong></p>
+<h1>Nova Web Architecture Map — Example</h1>
+<p class="muted">A fictional but realistic artifact showing how an architecture HTML should expose components, data flow, trust boundaries, evidence, failure points, and safe change zones.</p>
+
+<section class="grid cols-3">
+  <div class="card"><strong>Confidence</strong><p><span class="badge warn">Medium</span></p><p class="muted">Repo files inspected, runtime not executed.</p></div>
+  <div class="card"><strong>Primary risk</strong><p><span class="badge bad">Data mutation boundary</span></p><p class="muted">UI changes should not alter API writes.</p></div>
+  <div class="card"><strong>Next action</strong><p><span class="badge ok">Inspect dashboard flow</span></p><p class="muted">Safe candidate for UX quick win.</p></div>
+</section>
+
+<section class="card legend"><h2>Evidence inspected</h2><span class="badge ok">Verified</span><span class="badge warn">Inferred</span><span class="badge bad">Risk</span><ul><li><code>package.json</code></li><li><code>src/app/dashboard/page.tsx</code></li><li><code>src/components/dashboard/*</code></li><li><code>src/lib/api.ts</code></li><li><code>src/hooks/useActions.ts</code></li><li><code>README.md</code></li></ul></section>
+
+<section class="lane verified"><h2>Client boundary</h2><div class="nodes"><div class="node"><strong>Browser</strong><span class="muted">User interaction</span></div><span class="arrow">→</span><div class="node"><strong>App Router</strong><code>src/app/*</code></div><span class="arrow">→</span><div class="node"><strong>Dashboard UI</strong><code>components/dashboard</code></div></div></section>
+
+<section class="lane verified"><h2>Application data boundary</h2><div class="nodes"><div class="node"><strong>Hooks</strong><code>useActions()</code><span class="muted">read model</span></div><span class="arrow">→</span><div class="node"><strong>API client</strong><code>src/lib/api.ts</code></div><span class="arrow">→</span><div class="node"><strong>Backend endpoint</strong><span class="muted">inferred from API client</span></div></div></section>
+
+<section class="lane inferred"><h2>External / storage boundary</h2><div class="nodes"><div class="node"><strong>Auth/session</strong><span class="muted">not fully inspected</span></div><span class="arrow">→</span><div class="node"><strong>Database</strong><span class="muted">storage layer inferred</span></div><span class="arrow">→</span><div class="node"><strong>n8n workflows</strong><span class="muted">out of repo scope</span></div></div></section>
+
+<section class="card"><h2>Data flow</h2><table><tr><th>Flow</th><th>Verified?</th><th>Risk</th><th>Note</th></tr><tr><td>User opens dashboard → hooks fetch actions → cards render summaries</td><td><span class="badge ok">Yes</span></td><td>Low</td><td>Safe for read-only UI additions.</td></tr><tr><td>User completes action → API mutation → data refresh</td><td><span class="badge warn">Partial</span></td><td>Medium</td><td>Mutation path must be inspected before changing write behavior.</td></tr><tr><td>n8n sends reminders based on actions</td><td><span class="badge warn">Inferred</span></td><td>High</td><td>Do not alter due-date semantics without workflow review.</td></tr></table></section>
+
+<section class="card"><h2>Failure points</h2><table><tr><th>Point</th><th>Symptom</th><th>Mitigation</th></tr><tr><td>Dashboard hook returns empty/null</td><td>Blank or broken card</td><td>Add empty state and guard clauses</td></tr><tr><td>Action sorting mislabels priority</td><td>User sees wrong “important” action</td><td>Use precise copy: “next action” unless priority exists</td></tr><tr><td>Write mutation changed accidentally</td><td>Data loss or duplicate actions</td><td>Keep quick wins read-only unless explicitly reviewed</td></tr></table></section>
+
+<section class="grid cols-3"><div class="card verified"><h2>Safe zones</h2><ul><li>Read-only dashboard cards</li><li>Empty states</li><li>Client-side sorting labels</li></ul></div><div class="card inferred"><h2>Unknown zones</h2><ul><li>Exact backend storage schema</li><li>n8n dependency on action fields</li><li>Auth/session edge cases</li></ul></div><div class="card risk"><h2>Do not touch</h2><ul><li>DB schema</li><li>API mutation semantics</li><li>Reminder workflows</li></ul></div></section>
+</main></body></html>
