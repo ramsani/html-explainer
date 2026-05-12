@@ -56,3 +56,8 @@ jobs:
           test -f examples/plan-review-minimal.example.html
           test -f examples/diff-review-minimal.example.html
           test -f examples/prompt-tuner-minimal.example.html
+          test -f examples/diff-review-full.example.html
+          test -f examples/architecture-diagram.example.html
+          test -f examples/project-recap.example.html
+          test -f examples/ticket-triage.example.html
+          test -f examples/prompt-tuner-full.example.html
