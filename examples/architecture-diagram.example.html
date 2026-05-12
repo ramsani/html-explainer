@@ -18,6 +18,7 @@
   <div class="card"><strong>Primary risk</strong><p><span class="badge bad">Data mutation boundary</span></p><p class="muted">UI changes should not alter API writes.</p></div>
   <div class="card"><strong>Next action</strong><p><span class="badge ok">Inspect dashboard flow</span></p><p class="muted">Safe candidate for UX quick win.</p></div>
 </section>
+<section class="card"><h2>Artifact budget</h2><p><strong>Budget:</strong> standard.</p><p><strong>HTML benefit:</strong> makes boundaries and failure risk visible instead of forcing the user to reconstruct them from file paths.</p><p><strong>Mental work removed:</strong> mapping who talks to whom and where not to touch.</p></section>
 
 <section class="card legend"><h2>Evidence inspected</h2><span class="badge ok">Verified</span><span class="badge warn">Inferred</span><span class="badge bad">Risk</span><ul><li><code>package.json</code></li><li><code>src/app/dashboard/page.tsx</code></li><li><code>src/components/dashboard/*</code></li><li><code>src/lib/api.ts</code></li><li><code>src/hooks/useActions.ts</code></li><li><code>README.md</code></li></ul></section>
 

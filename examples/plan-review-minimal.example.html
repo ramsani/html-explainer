@@ -10,6 +10,7 @@ body{font-family:system-ui,-apple-system,sans-serif;margin:32px;line-height:1.45
 <body><main>
 <h1>Plan Review — Minimal Example</h1>
 <section class="card"><h2>Intent distillation</h2><p><strong>Primary intent:</strong> decide whether the plan is safe to implement.</p><p><strong>Secondary intents covered:</strong> verify repo claims, find missing checks, define next action.</p><p><strong>Base concept:</strong> does the plan match reality, and what must be verified first.</p></section>
+<section class="card"><h2>Artifact budget</h2><p><strong>Budget:</strong> compact.</p><p><strong>HTML benefit:</strong> turns plan claims into a visible fit/risk check.</p><p><strong>Mental work removed:</strong> holding repo facts, plan claims, and missing validation in memory.</p></section>
 <section class="grid">
 <div class="card"><h2>Evidence inspected</h2><ul><li><code>src/components/SearchBox.tsx</code></li><li><code>src/hooks/useTasks.ts</code></li><li><code>package.json</code></li></ul></div>
 <div class="card"><h2>Fact sheet</h2><ul><li>Search input already owns local state.</li><li>No debounce helper exists.</li><li>Task filtering happens client-side.</li></ul></div>

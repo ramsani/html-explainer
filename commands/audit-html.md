@@ -11,11 +11,12 @@ Decide whether an HTML artifact is useful, safe, evidence-backed, and decision-r
 1. Identify the artifact's primary pattern.
 2. Compare it against the matching pattern file in `patterns/`.
 3. Apply `docs/INTENT_DISTILLATION.md`.
-4. Apply `docs/HTML_UX_STANDARD.md`.
-5. Apply `docs/QUALITY_BAR.md`.
-6. Check whether the artifact improves decision quality over Markdown.
-7. Separate defects by severity.
-8. Recommend accept, revise, reject, or simplify to Markdown.
+4. Apply `docs/ARTIFACT_BUDGET.md`.
+5. Apply `docs/HTML_UX_STANDARD.md`.
+6. Apply `docs/QUALITY_BAR.md`.
+7. Check whether the artifact improves decision quality over Markdown.
+8. Separate defects by severity.
+9. Recommend accept, revise, reject, or simplify to Markdown.
 
 ## Audit criteria
 
@@ -23,6 +24,8 @@ Score 0-100 across:
 
 - pattern fit;
 - decision value;
+- artifact budget fit;
+- HTML cost justification;
 - primary intent fit;
 - secondary intent coverage;
 - base concept clarity;
@@ -48,6 +51,7 @@ Recommendation: accept | revise | reject | simplify to Markdown
 Critical issues:
 High-value fixes:
 Intent gaps:
+Budget gaps:
 Evidence gaps:
 UX gaps:
 Overengineering or decoration:
@@ -59,6 +63,8 @@ Next action:
 Fail the artifact if it:
 
 - invents inspected evidence;
+- does not justify why HTML beats Markdown;
+- uses interactive or standard format when compact would be enough;
 - misses the primary intent;
 - ignores obvious secondary intents that affect the decision;
 - hides the base concept;

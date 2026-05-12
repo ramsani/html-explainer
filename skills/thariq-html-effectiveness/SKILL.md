@@ -12,16 +12,17 @@ Always follow:
 
 1. Decide whether HTML is justified. If Markdown is clearer, do not use HTML.
 2. Open `docs/INTENT_DISTILLATION.md` and identify primary intent, obvious secondary intents, base concept, and fastest path to value.
-3. Use `docs/pattern-router.md` to choose one primary pattern.
-4. Open the matching file in `patterns/` and apply its evidence requirements, HTML structure, quality checklist, failure modes, and acceptance criteria.
-5. Open `docs/HTML_UX_STANDARD.md` and define the first-screen contract, interaction contract, and export requirement.
-6. Explore sources.
-7. Verify facts.
-8. Build a fact sheet using `docs/fact-sheet-protocol.md`.
-9. Generate the smallest useful HTML artifact.
-10. Apply `docs/QUALITY_BAR.md` before finalizing.
-11. Mark uncertainty visibly.
-12. Give the user a minimal decision summary.
+3. Open `docs/ARTIFACT_BUDGET.md` and choose compact, standard, or interactive. Default to compact.
+4. Use `docs/pattern-router.md` to choose one primary pattern.
+5. Open the matching file in `patterns/` and apply its evidence requirements, HTML structure, quality checklist, failure modes, and acceptance criteria.
+6. Open `docs/HTML_UX_STANDARD.md` and define the first-screen contract, interaction contract, and export requirement.
+7. Explore sources.
+8. Verify facts.
+9. Build a fact sheet using `docs/fact-sheet-protocol.md`.
+10. Generate the smallest useful HTML artifact.
+11. Apply `docs/QUALITY_BAR.md` before finalizing.
+12. Mark uncertainty visibly.
+13. Give the user a minimal decision summary.
 
 ## When to use
 
@@ -92,6 +93,7 @@ Every serious artifact should include:
 
 - Intent
 - Intent distillation: primary intent, obvious secondary intents, base concept
+- Artifact budget: compact, standard, or interactive
 - Selected pattern
 - UX contract: audience, decision, primary action, export when relevant
 - What was inspected
@@ -134,6 +136,8 @@ Obvious secondary intents covered:
 Base concept distilled:
 Fastest path to value visible:
 Surprising ease opportunity:
+Wall of text replaced:
+Mental work removed:
 Not doing:
 ```
 
@@ -141,10 +145,28 @@ The primary intent must dominate the first screen. Secondary intents support it;
 
 The base concept should be simple enough to explain in one sentence. If it takes a paragraph, distill again.
 
+## Budget discipline
+
+Before generating HTML, the artifact must pass this check:
+
+```text
+Artifact budget:
+Why this budget:
+Markdown cost:
+HTML benefit:
+Mental work removed:
+Token/complexity guard:
+```
+
+Default to `compact`. Upgrade to `standard` only when evidence, risk, or structure need it. Upgrade to `interactive` only when controls change a decision or produce exportable output.
+
 ## Failure modes to avoid
 
 - Beautiful but unverifiable output
 - Generic dashboards with no decision value
+- Spending more tokens and attention than the artifact saves
+- Choosing interactive when compact would answer the intent
+- Choosing standard when compact would answer the intent
 - Answering adjacent needs while missing the user's main intent
 - Treating secondary intents as feature creep instead of decision support
 - Hiding the base concept under many sections
@@ -166,6 +188,7 @@ After generating an HTML artifact, respond briefly:
 
 - artifact path
 - primary pattern used
+- artifact budget used
 - what decision it supports
 - quality-bar result
 - major uncertainty if any

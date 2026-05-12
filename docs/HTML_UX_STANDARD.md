@@ -19,6 +19,8 @@ Every generated HTML artifact must help the user do at least one of these faster
 
 If none of those are true, do not generate HTML.
 
+The artifact must make the browser earn its keep. If the same value fits in a short Markdown answer, use Markdown.
+
 ## First-screen contract
 
 Within the first screen, the artifact must answer:
@@ -31,6 +33,7 @@ Within the first screen, the artifact must answer:
 - what decision it supports;
 - what evidence was inspected;
 - what the user should do next.
+- what mental work the HTML removes.
 
 Do not hide the recommendation below decorative sections.
 
@@ -63,6 +66,7 @@ Required:
 - make the primary action obvious;
 - show secondary intents as support, not as competing sections;
 - include one "surprising ease" element when useful: export, checklist, side-by-side view, risk map, filter, or copy-ready output.
+- keep the chosen artifact budget visible: compact, standard, or interactive.
 
 Do not create delight through decoration. Create it by removing work from the user's head.
 
@@ -163,6 +167,7 @@ The artifact is aligned with the HTML effectiveness approach when:
 Fail the artifact if it:
 
 - does not improve the decision over Markdown;
+- costs more attention than it saves;
 - does not answer the primary intent directly;
 - ignores obvious secondary intents that affect the decision;
 - does not distill the base concept;

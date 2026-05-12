@@ -10,21 +10,23 @@ Create an artifact that helps the user inspect, compare, verify, decide, or re-e
 
 1. Decide whether HTML is justified. If Markdown is clearer, say so and do not generate HTML.
 2. Open `docs/INTENT_DISTILLATION.md` and define primary intent, obvious secondary intents, base concept, and fastest path to value.
-3. Use `docs/pattern-router.md` to select one primary pattern.
-4. Open the matching file in `patterns/` and apply its evidence requirements, prompt template, HTML structure, quality checklist, failure modes, and acceptance criteria.
-5. Open `docs/HTML_UX_STANDARD.md` and define the artifact's UX contract.
-6. Inspect real sources before generation.
-7. Build a fact sheet using `docs/fact-sheet-protocol.md`.
-8. Separate facts, inferences, unsupported claims, and unknowns.
-9. Generate the smallest useful HTML artifact.
-10. Apply `docs/QUALITY_BAR.md` before finalizing.
-11. Include uncertainty visibly.
-12. Save the artifact to a reasonable local path when tool access allows it.
+3. Open `docs/ARTIFACT_BUDGET.md` and choose compact, standard, or interactive.
+4. Use `docs/pattern-router.md` to select one primary pattern.
+5. Open the matching file in `patterns/` and apply its evidence requirements, prompt template, HTML structure, quality checklist, failure modes, and acceptance criteria.
+6. Open `docs/HTML_UX_STANDARD.md` and define the artifact's UX contract.
+7. Inspect real sources before generation.
+8. Build a fact sheet using `docs/fact-sheet-protocol.md`.
+9. Separate facts, inferences, unsupported claims, and unknowns.
+10. Generate the smallest useful HTML artifact.
+11. Apply `docs/QUALITY_BAR.md` before finalizing.
+12. Include uncertainty visibly.
+13. Save the artifact to a reasonable local path when tool access allows it.
 
 ## Required artifact sections
 
 - Intent
 - Intent distillation
+- Artifact budget and cost justification
 - Selected pattern
 - UX contract
 - Evidence inspected
@@ -45,6 +47,7 @@ Create an artifact that helps the user inspect, compare, verify, decide, or re-e
 - Clear navigation.
 - First screen shows decision, evidence, recommendation, risk, and next action.
 - First screen answers the primary intent directly.
+- First screen states the artifact budget and the mental work removed.
 - Obvious secondary intents are covered only when they support the primary intent.
 - Use the visual form required by the selected pattern.
 - Tables, diagrams, cards, timelines, or controls only when they clarify.
@@ -61,6 +64,8 @@ Before responding, verify:
 - Did it answer the primary intent directly?
 - Did it cover obvious secondary intents without bloating the artifact?
 - Did it distill the base concept into a simple visible model?
+- Did it choose the smallest sufficient artifact budget?
+- Did it justify why HTML beats Markdown?
 - Did the first screen make the supported decision obvious?
 - Did it inspect evidence?
 - Did it separate facts from inference?
@@ -76,6 +81,7 @@ Keep it short:
 ```text
 Created: <path>
 Pattern used: <pattern>
+Budget used: <compact / standard / interactive>
 Decision supported: <decision>
 Quality-bar result: <pass / needs revision>
 Main uncertainty: <uncertainty or none>

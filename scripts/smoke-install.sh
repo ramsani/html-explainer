@@ -42,6 +42,7 @@ assert_dir "$TMP_HOME/html-explainer/docs"
 assert_dir "$TMP_HOME/html-explainer/patterns"
 assert_dir "$TMP_HOME/html-explainer/local-examples"
 
+assert_file "$TMP_HOME/html-explainer/docs/ARTIFACT_BUDGET.md"
 assert_file "$TMP_HOME/html-explainer/docs/pattern-router.md"
 assert_file "$TMP_HOME/html-explainer/docs/QUALITY_BAR.md"
 assert_file "$TMP_HOME/html-explainer/docs/INTENT_DISTILLATION.md"

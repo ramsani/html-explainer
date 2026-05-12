@@ -16,6 +16,8 @@ Base concept:
 Decision the user needs to make:
 Fastest path to value:
 Surprising ease opportunity:
+Wall of text replaced:
+Mental work removed:
 What not to build:
 ```
 
@@ -86,6 +88,25 @@ Examples:
 
 Do not force surprise through animation or visual tricks. It must come from clarity.
 
+## Cognitive relief
+
+The artifact must remove a specific burden from the user.
+
+Good:
+
+- "The user no longer has to compare three options across separate paragraphs."
+- "The user can see the risky boundary instead of reconstructing it from file names."
+- "The user can copy the final prompt instead of rewriting the recommendations."
+- "The user can scan one timeline instead of reading logs linearly."
+
+Bad:
+
+- "The artifact is more visual."
+- "The artifact looks nicer."
+- "The artifact is interactive."
+
+Visual output is justified only when it reduces reconstruction, comparison, memory load, simulation, or copy/edit friction.
+
 ## Output rules
 
 The final artifact must include visible traces of the distillation:
@@ -95,6 +116,8 @@ The final artifact must include visible traces of the distillation:
 - base concept;
 - decision supported;
 - fastest next action.
+- wall of text replaced;
+- mental work removed.
 
 For small artifacts, this can be compact.
 

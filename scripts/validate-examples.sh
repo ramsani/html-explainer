@@ -22,6 +22,8 @@ for file in "$EXAMPLES_DIR"/*.html; do
   grep -Eqi 'primary intent|intent' "$file" || fail "$rel must expose the primary intent"
   grep -Eqi 'secondary intent|secondary|also needs|covered' "$file" || fail "$rel must expose obvious secondary intent coverage"
   grep -Eqi 'base concept|simple model|core idea|model' "$file" || fail "$rel must expose the base concept or simple model"
+  grep -Eqi 'artifact budget|budget|compact|standard|interactive' "$file" || fail "$rel must expose artifact budget"
+  grep -Eqi 'mental work|work removed|wall of text|markdown cost|html benefit' "$file" || fail "$rel must expose the mental work HTML removes"
   grep -Eqi 'evidence|inspected|sources' "$file" || fail "$rel must expose inspected evidence or sources"
   grep -Eqi 'decision|recommendation|next action|next safest action' "$file" || fail "$rel must expose a decision, recommendation, or next action"
   grep -Eqi 'risk|unknown|uncertainty|assumption|not verified' "$file" || fail "$rel must expose risk, uncertainty, assumptions, or unverified claims"

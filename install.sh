@@ -180,6 +180,7 @@ if [ "$DRY_RUN" = "0" ]; then
   done
   verify_file "$CLAUDE_HOME/html-explainer/docs/thariq-20-case-library.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/html-artifact-selection-guide.md"
+  verify_file "$CLAUDE_HOME/html-explainer/docs/ARTIFACT_BUDGET.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/fact-sheet-protocol.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/INTENT_DISTILLATION.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/pattern-router.md"

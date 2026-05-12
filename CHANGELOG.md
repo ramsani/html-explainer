@@ -1,5 +1,24 @@
 # Changelog
 
+## Unreleased — artifact budget and cognitive relief
+
+### Added
+
+- `docs/ARTIFACT_BUDGET.md` with compact, standard, and interactive budgets.
+- Required cost justification before generating HTML.
+- Cognitive relief fields: wall of text replaced and mental work removed.
+
+### Improved
+
+- The skill and commands now default to the smallest sufficient artifact.
+- Quality bar now fails artifacts that should have been Markdown.
+- Examples now show artifact budget and mental work removed.
+- Installer, smoke tests, and CI verify the artifact budget guide.
+
+### Why it matters
+
+This protects the core Thariq idea: HTML must earn its keep. The browser is used when it removes reconstruction, comparison, simulation, or export friction. It is not used just because it looks impressive.
+
 ## Unreleased — intent-first command names
 
 ### Changed

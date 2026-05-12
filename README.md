@@ -18,6 +18,8 @@ An artifact is acceptable only when it makes the user's work easier than Markdow
 - the primary intent is answered directly;
 - obvious secondary intents are handled when they affect the decision;
 - the base concept is distilled before interface choices;
+- the artifact budget is explicit: compact, standard, or interactive;
+- HTML beats Markdown by removing a named mental burden;
 - the first screen says what decision the artifact supports;
 - evidence is visible;
 - facts, inferences, assumptions, and unknowns are separated;
@@ -76,21 +78,22 @@ HTML lets an agent create a review surface: a navigable artifact that can show s
 Every serious artifact follows this sequence:
 
 ```text
-route -> intent distillation -> pattern file -> UX contract -> evidence -> fact sheet -> artifact -> quality bar -> decision
+route -> intent distillation -> artifact budget -> pattern file -> UX contract -> evidence -> fact sheet -> artifact -> quality bar -> decision
 ```
 
 That means the agent must:
 
 1. decide whether HTML is justified;
 2. apply `docs/INTENT_DISTILLATION.md`;
-3. use `docs/pattern-router.md` to select one primary pattern;
-4. open the matching file in `patterns/`;
-5. apply `docs/HTML_UX_STANDARD.md`;
-6. inspect real evidence;
-7. create a fact sheet;
-8. generate the smallest useful HTML artifact;
-9. apply `docs/QUALITY_BAR.md` before finalizing;
-10. expose uncertainty and next action.
+3. apply `docs/ARTIFACT_BUDGET.md`;
+4. use `docs/pattern-router.md` to select one primary pattern;
+5. open the matching file in `patterns/`;
+6. apply `docs/HTML_UX_STANDARD.md`;
+7. inspect real evidence;
+8. create a fact sheet;
+9. generate the smallest useful HTML artifact;
+10. apply `docs/QUALITY_BAR.md` before finalizing;
+11. expose uncertainty and next action.
 
 ## How the Thariq ideas are used case by case
 
@@ -226,7 +229,19 @@ This prevents artifacts that look complete but miss the real user need.
 - mobile and visual clarity rules;
 - hard fail conditions.
 
-### 10. Audit command
+### 10. Artifact budget
+
+`docs/ARTIFACT_BUDGET.md` prevents the visualizer from costing more than the problem.
+
+It forces a choice:
+
+- `compact` for quick orientation or small reviews;
+- `standard` for evidence, structure, risks, and decisions;
+- `interactive` only when controls change the decision or export usable output.
+
+Each artifact must state why HTML beats Markdown and what mental work it removes.
+
+### 11. Audit command
 
 `/audit-html` reviews an existing artifact and scores it against:
 
@@ -246,7 +261,7 @@ This prevents artifacts that look complete but miss the real user need.
 - simplicity;
 - next-action clarity.
 
-### 11. CI and smoke tests
+### 12. CI and smoke tests
 
 The repo includes GitHub Actions and scripts to validate:
 
@@ -259,7 +274,7 @@ The repo includes GitHub Actions and scripts to validate:
 - required sections in each pattern.
 - example artifact UX minimums.
 
-### 12. Example artifacts
+### 13. Example artifacts
 
 The repo includes example artifacts so models have concrete shapes to imitate:
 
