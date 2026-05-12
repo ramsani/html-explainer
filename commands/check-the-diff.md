@@ -1,4 +1,4 @@
-# /html-diff-review-plus
+# /check-the-diff
 
 Review the current diff or PR and produce a self-contained HTML review artifact.
 

@@ -1,4 +1,4 @@
-# /html-effectiveness
+# /make-the-right-html
 
 Generate a self-contained HTML artifact using the HTML effectiveness operating model.
 

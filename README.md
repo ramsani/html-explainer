@@ -160,7 +160,7 @@ It supports:
 
 ### 3. Claude Code skill
 
-The skill `thariq-html-effectiveness` teaches Claude Code to use router + pattern file + fact sheet + quality bar before generating HTML.
+The skill `thariq-make-the-right-html` teaches Claude Code to use router + pattern file + fact sheet + quality bar before generating HTML.
 
 ### 4. Pattern router
 
@@ -228,7 +228,7 @@ This prevents artifacts that look complete but miss the real user need.
 
 ### 10. Audit command
 
-`/html-audit-artifact` reviews an existing artifact and scores it against:
+`/audit-html` reviews an existing artifact and scores it against:
 
 - pattern fit;
 - decision value;
@@ -275,24 +275,24 @@ The repo includes example artifacts so models have concrete shapes to imitate:
 ## Commands
 
 ```text
-/html-pattern-select
-/html-effectiveness
-/html-plan-review-plus
-/html-diff-review-plus
-/html-project-recap-plus
-/html-custom-editor-plus
-/html-audit-artifact
+/pick-the-right-html
+/make-the-right-html
+/check-the-plan
+/check-the-diff
+/reenter-project
+/build-decision-tool
+/audit-html
 ```
 
 | Command | Intent | Main value |
 |---|---|---|
-| `/html-pattern-select` | Choose the correct artifact pattern | Prevents unnecessary or wrong HTML |
-| `/html-effectiveness` | Generate the right verified HTML artifact | General-purpose visual reasoning |
-| `/html-plan-review-plus` | Review a plan before implementation | Prevents coding on false assumptions |
-| `/html-diff-review-plus` | Review code changes before accepting them | Makes diffs easier to audit |
-| `/html-project-recap-plus` | Re-enter a repo/project quickly | Restores context and identifies next action |
-| `/html-custom-editor-plus` | Build a temporary decision editor | Turns triage/config/prompt tuning into an interactive tool |
-| `/html-audit-artifact` | Audit an existing HTML artifact | Prevents pretty but weak artifacts from being trusted |
+| `/pick-the-right-html` | Choose the correct artifact pattern | Prevents unnecessary or wrong HTML |
+| `/make-the-right-html` | Generate the right verified HTML artifact | General-purpose visual reasoning |
+| `/check-the-plan` | Review a plan before implementation | Prevents coding on false assumptions |
+| `/check-the-diff` | Review code changes before accepting them | Makes diffs easier to audit |
+| `/reenter-project` | Re-enter a repo/project quickly | Restores context and identifies next action |
+| `/build-decision-tool` | Build a temporary decision editor | Turns triage/config/prompt tuning into an interactive tool |
+| `/audit-html` | Audit an existing HTML artifact | Prevents pretty but weak artifacts from being trusted |
 
 ## Safe install
 
@@ -324,6 +324,7 @@ Before sharing changes, run:
 ```bash
 bash -n install.sh uninstall.sh scripts/*.sh
 scripts/validate-patterns.sh
+scripts/validate-commands.sh
 scripts/validate-examples.sh
 DRY_RUN=1 INSTALL_UPSTREAM=0 FETCH_EXAMPLES=0 bash install.sh
 scripts/smoke-install.sh
@@ -380,23 +381,23 @@ The installer backs up replaced files under:
 Start with pattern selection:
 
 ```text
-/html-pattern-select revisa esta tarea y dime qué patrón HTML conviene usar. No generes todavía el HTML.
+/pick-the-right-html revisa esta tarea y dime qué patrón HTML conviene usar. No generes todavía el HTML.
 ```
 
 Then generate:
 
 ```text
-/html-effectiveness genera el artefacto HTML correcto usando router, pattern file, fact sheet, quality bar, evidencia, riesgos, incertidumbre y criterio de éxito.
+/make-the-right-html genera el artefacto HTML correcto usando router, pattern file, fact sheet, quality bar, evidencia, riesgos, incertidumbre y criterio de éxito.
 ```
 
 For repo workflows:
 
 ```text
-/html-plan-review-plus revisa este plan contra el repo real antes de implementar.
-/html-diff-review-plus revisa el diff actual antes de aceptar el cambio.
-/html-project-recap-plus crea un recap visual del repo para reentrar contexto.
-/html-custom-editor-plus diseña un editor HTML temporal con exportación para esta decisión.
-/html-audit-artifact revisa este HTML y dime si realmente cumple el approach.
+/check-the-plan revisa este plan contra el repo real antes de implementar.
+/check-the-diff revisa el diff actual antes de aceptar el cambio.
+/reenter-project crea un recap visual del repo para reentrar contexto.
+/build-decision-tool diseña un editor HTML temporal con exportación para esta decisión.
+/audit-html revisa este HTML y dime si realmente cumple el approach.
 ```
 
 ## Design principles

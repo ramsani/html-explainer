@@ -1,4 +1,4 @@
-# /html-plan-review-plus
+# /check-the-plan
 
 Review a plan against the real repo before implementation and produce a self-contained HTML review artifact.
 

@@ -1,5 +1,28 @@
 # Changelog
 
+## Unreleased — intent-first command names
+
+### Changed
+
+- Renamed command files and slash command names around user intent:
+  - `/pick-the-right-html`
+  - `/make-the-right-html`
+  - `/check-the-plan`
+  - `/check-the-diff`
+  - `/reenter-project`
+  - `/build-decision-tool`
+  - `/audit-html`
+- Removed the old technical command names from the installed command set.
+
+### Improved
+
+- Installer removes legacy command files during installation so users see only the intent-first names.
+- README, examples, selection guide, smoke tests, and workflow checks now use the new names.
+
+### Why it matters
+
+The commands now match what the user is trying to do, not the internal implementation name. This reduces the memory burden and makes the tool easier to try.
+
 ## Unreleased — UX quality gate upgrade
 
 ### Added
@@ -52,7 +75,7 @@ This version turns the Thariq HTML effectiveness ideas from general documentatio
 - `patterns/` with 20 separate executable pattern files.
 - `docs/pattern-router.md` for selecting the right artifact type.
 - `docs/QUALITY_BAR.md` for auditing artifact quality.
-- `/html-audit-artifact` command.
+- `/audit-html` command.
 - Minimal HTML examples:
   - `examples/plan-review-minimal.example.html`
   - `examples/diff-review-minimal.example.html`
@@ -60,8 +83,8 @@ This version turns the Thariq HTML effectiveness ideas from general documentatio
 
 ### Improved
 
-- `/html-effectiveness` now requires the router, matching pattern file, fact sheet protocol, and quality bar.
-- `/html-pattern-select` now requires reading the selected pattern file before recommending a path.
+- `/make-the-right-html` now requires the router, matching pattern file, fact sheet protocol, and quality bar.
+- `/pick-the-right-html` now requires reading the selected pattern file before recommending a path.
 - `SKILL.md` now instructs Claude to use router + pattern file + fact sheet + quality bar, not only the general 20-case list.
 - `install.sh` now installs patterns, examples, and the audit command.
 

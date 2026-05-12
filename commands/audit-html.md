@@ -1,4 +1,4 @@
-# /html-audit-artifact
+# /audit-html
 
 Audit an existing HTML artifact or proposed HTML artifact against the html-explainer quality bar.
 

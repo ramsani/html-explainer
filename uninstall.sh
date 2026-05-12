@@ -6,6 +6,24 @@ KEEP_BACKUPS="${KEEP_BACKUPS:-1}"
 RESTORE_BACKUP="${RESTORE_BACKUP:-1}"
 DRY_RUN="${DRY_RUN:-0}"
 BACKUPS_DIR="$CLAUDE_HOME/html-explainer/backups"
+COMMANDS=(
+  pick-the-right-html
+  make-the-right-html
+  check-the-plan
+  check-the-diff
+  reenter-project
+  build-decision-tool
+  audit-html
+)
+LEGACY_COMMANDS=(
+  html-effectiveness
+  html-pattern-select
+  html-plan-review-plus
+  html-diff-review-plus
+  html-project-recap-plus
+  html-custom-editor-plus
+  html-audit-artifact
+)
 
 say() { printf '\n[html-explainer uninstall] %s\n' "$1"; }
 run() {
@@ -55,8 +73,11 @@ if [ "$RESTORE_BACKUP" = "1" ] && [ -n "${BACKUP:-}" ]; then
   restore_path "$BACKUP" "patterns" "$CLAUDE_HOME/html-explainer/patterns"
   restore_path "$BACKUP" "local-examples" "$CLAUDE_HOME/html-explainer/local-examples"
 
-  for cmd in html-effectiveness html-pattern-select html-plan-review-plus html-diff-review-plus html-project-recap-plus html-custom-editor-plus html-audit-artifact; do
+  for cmd in "${COMMANDS[@]}"; do
     restore_path "$BACKUP" "commands/$cmd.md" "$CLAUDE_HOME/commands/$cmd.md"
+  done
+  for cmd in "${LEGACY_COMMANDS[@]}"; do
+    restore_path "$BACKUP" "commands/legacy/$cmd.md" "$CLAUDE_HOME/commands/$cmd.md"
   done
 else
   if [ "$RESTORE_BACKUP" = "1" ]; then
@@ -70,7 +91,7 @@ else
   remove_path "$CLAUDE_HOME/html-explainer/patterns"
   remove_path "$CLAUDE_HOME/html-explainer/local-examples"
 
-  for cmd in html-effectiveness html-pattern-select html-plan-review-plus html-diff-review-plus html-project-recap-plus html-custom-editor-plus html-audit-artifact; do
+  for cmd in "${COMMANDS[@]}" "${LEGACY_COMMANDS[@]}"; do
     remove_path "$CLAUDE_HOME/commands/$cmd.md"
   done
 fi

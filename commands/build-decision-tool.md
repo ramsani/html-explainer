@@ -1,4 +1,4 @@
-# /html-custom-editor-plus
+# /build-decision-tool
 
 Create a temporary self-contained HTML editor for decisions that are easier to make by manipulating state than by reading a report.
 

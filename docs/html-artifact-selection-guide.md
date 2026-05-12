@@ -12,17 +12,17 @@ If there is no decision, no comparison, no review burden, no spatial structure, 
 
 | User need | Best artifact | Command |
 |---|---|---|
-| Choose between implementation options | Code approach comparison | `/html-effectiveness` |
-| Validate a plan before coding | Plan review | `/html-plan-review-plus` |
-| Review code after changes | Diff review | `/html-diff-review-plus` |
-| Understand a repo/module | Project recap or module map | `/html-project-recap-plus` |
-| Understand service/workflow behavior | Architecture/process diagram | `/html-effectiveness` |
-| Evaluate UI consistency | Design token/contact sheet | `/html-effectiveness` |
-| Test a UX idea before coding | Interactive prototype | `/html-effectiveness` |
-| Communicate a technical decision | HTML deck | `/html-effectiveness` |
-| Diagnose failure | Incident/postmortem report | `/html-effectiveness` |
-| Prioritize many tasks/issues | Custom triage editor | `/html-custom-editor-plus` |
-| Tune prompts/agents | Prompt tuner editor | `/html-custom-editor-plus` |
+| Choose between implementation options | Code approach comparison | `/make-the-right-html` |
+| Validate a plan before coding | Plan review | `/check-the-plan` |
+| Review code after changes | Diff review | `/check-the-diff` |
+| Understand a repo/module | Project recap or module map | `/reenter-project` |
+| Understand service/workflow behavior | Architecture/process diagram | `/make-the-right-html` |
+| Evaluate UI consistency | Design token/contact sheet | `/make-the-right-html` |
+| Test a UX idea before coding | Interactive prototype | `/make-the-right-html` |
+| Communicate a technical decision | HTML deck | `/make-the-right-html` |
+| Diagnose failure | Incident/postmortem report | `/make-the-right-html` |
+| Prioritize many tasks/issues | Custom triage editor | `/build-decision-tool` |
+| Tune prompts/agents | Prompt tuner editor | `/build-decision-tool` |
 
 ## Complexity rule
 

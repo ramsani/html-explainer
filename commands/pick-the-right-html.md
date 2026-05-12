@@ -1,4 +1,4 @@
-# /html-pattern-select
+# /pick-the-right-html
 
 Select the correct HTML artifact pattern before generating anything.
 

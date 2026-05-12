@@ -1,4 +1,4 @@
-# /html-project-recap-plus
+# /reenter-project
 
 Create a self-contained HTML project recap for re-entering context.
 

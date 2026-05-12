@@ -10,6 +10,24 @@ DRY_RUN="${DRY_RUN:-0}"
 TMP_DIR="$(mktemp -d)"
 STAMP="$(date +%Y%m%d-%H%M%S)"
 BACKUP_DIR="$CLAUDE_HOME/html-explainer/backups/$STAMP"
+COMMANDS=(
+  pick-the-right-html
+  make-the-right-html
+  check-the-plan
+  check-the-diff
+  reenter-project
+  build-decision-tool
+  audit-html
+)
+LEGACY_COMMANDS=(
+  html-effectiveness
+  html-pattern-select
+  html-plan-review-plus
+  html-diff-review-plus
+  html-project-recap-plus
+  html-custom-editor-plus
+  html-audit-artifact
+)
 
 cleanup() {
   rm -rf "$TMP_DIR"
@@ -94,8 +112,11 @@ else
 fi
 
 backup_path "$CLAUDE_HOME/skills/thariq-html-effectiveness" "skills/thariq-html-effectiveness"
-for cmd in html-effectiveness html-pattern-select html-plan-review-plus html-diff-review-plus html-project-recap-plus html-custom-editor-plus html-audit-artifact; do
+for cmd in "${COMMANDS[@]}"; do
   backup_path "$CLAUDE_HOME/commands/$cmd.md" "commands/$cmd.md"
+done
+for cmd in "${LEGACY_COMMANDS[@]}"; do
+  backup_path "$CLAUDE_HOME/commands/$cmd.md" "commands/legacy/$cmd.md"
 done
 backup_path "$CLAUDE_HOME/html-explainer/docs" "docs"
 backup_path "$CLAUDE_HOME/html-explainer/patterns" "patterns"
@@ -120,6 +141,9 @@ fi
 
 say "Installing Thariq HTML effectiveness skill"
 copy_dir_clean "$PACKAGE_DIR/skills/thariq-html-effectiveness" "$CLAUDE_HOME/skills/thariq-html-effectiveness"
+for cmd in "${LEGACY_COMMANDS[@]}"; do
+  run rm -f "$CLAUDE_HOME/commands/$cmd.md"
+done
 copy_files "$PACKAGE_DIR/commands" "$CLAUDE_HOME/commands"
 copy_dir_clean "$PACKAGE_DIR/docs" "$CLAUDE_HOME/html-explainer/docs"
 copy_dir_clean "$PACKAGE_DIR/patterns" "$CLAUDE_HOME/html-explainer/patterns"
@@ -151,13 +175,9 @@ fi
 if [ "$DRY_RUN" = "0" ]; then
   say "Verifying installation"
   verify_file "$CLAUDE_HOME/skills/thariq-html-effectiveness/SKILL.md"
-  verify_file "$CLAUDE_HOME/commands/html-effectiveness.md"
-  verify_file "$CLAUDE_HOME/commands/html-pattern-select.md"
-  verify_file "$CLAUDE_HOME/commands/html-plan-review-plus.md"
-  verify_file "$CLAUDE_HOME/commands/html-diff-review-plus.md"
-  verify_file "$CLAUDE_HOME/commands/html-project-recap-plus.md"
-  verify_file "$CLAUDE_HOME/commands/html-custom-editor-plus.md"
-  verify_file "$CLAUDE_HOME/commands/html-audit-artifact.md"
+  for cmd in "${COMMANDS[@]}"; do
+    verify_file "$CLAUDE_HOME/commands/$cmd.md"
+  done
   verify_file "$CLAUDE_HOME/html-explainer/docs/thariq-20-case-library.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/html-artifact-selection-guide.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/fact-sheet-protocol.md"
@@ -171,11 +191,7 @@ fi
 
 say "Installed safely. Restart Claude Code if it was already open."
 printf '\nAvailable commands:\n'
-printf '  /html-effectiveness\n'
-printf '  /html-pattern-select\n'
-printf '  /html-plan-review-plus\n'
-printf '  /html-diff-review-plus\n'
-printf '  /html-project-recap-plus\n'
-printf '  /html-custom-editor-plus\n'
-printf '  /html-audit-artifact\n'
+for cmd in "${COMMANDS[@]}"; do
+  printf '  /%s\n' "$cmd"
+done
 printf '\nBackup directory, if anything was replaced:\n  %s\n' "$BACKUP_DIR"
