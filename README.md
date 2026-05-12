@@ -123,11 +123,24 @@ It includes:
 - optional example download;
 - installation into `~/.claude` by default.
 
-### 2. Claude Code skill
+### 2. Safe uninstaller
+
+`uninstall.sh` lets users remove the installed layer or restore the latest backup.
+
+It supports:
+
+- restoring from the latest backup;
+- removing managed files when no backup exists;
+- `DRY_RUN=1` preview mode;
+- `RESTORE_BACKUP=0` removal-only mode;
+- `KEEP_BACKUPS=0` cleanup mode;
+- temporary `CLAUDE_HOME` for testing.
+
+### 3. Claude Code skill
 
 The skill `thariq-html-effectiveness` teaches Claude Code to use router + pattern file + fact sheet + quality bar before generating HTML.
 
-### 3. Pattern router
+### 4. Pattern router
 
 `docs/pattern-router.md` maps task signals to the correct pattern.
 
@@ -138,7 +151,7 @@ Example:
 - workflow with retries/failures -> process flowchart;
 - prompt tuning -> prompt / agent behavior tuner.
 
-### 4. Twenty executable pattern files
+### 5. Twenty executable pattern files
 
 Each file in `patterns/` is a compact recipe for one artifact type.
 
@@ -150,7 +163,7 @@ Example pattern files:
 - `patterns/17-project-recap.md`
 - `patterns/20-prompt-agent-behavior-tuner.md`
 
-### 5. Fact-sheet protocol
+### 6. Fact-sheet protocol
 
 `docs/fact-sheet-protocol.md` prevents attractive but false HTML by separating:
 
@@ -160,13 +173,13 @@ Example pattern files:
 - risk-bearing claims;
 - minimum validation.
 
-### 6. Quality bar
+### 7. Quality bar
 
 `docs/QUALITY_BAR.md` defines what makes an HTML artifact acceptable.
 
 An artifact must improve decision quality over Markdown, show evidence, expose uncertainty, use the correct visual form, stay small, and end with a concrete next action.
 
-### 7. Audit command
+### 8. Audit command
 
 `/html-audit-artifact` reviews an existing artifact and scores it against:
 
@@ -181,7 +194,19 @@ An artifact must improve decision quality over Markdown, show evidence, expose u
 - simplicity;
 - next-action clarity.
 
-### 8. Minimal examples
+### 9. CI and smoke tests
+
+The repo includes GitHub Actions and scripts to validate:
+
+- Bash syntax;
+- installer dry-run;
+- installer smoke test with temporary `CLAUDE_HOME`;
+- uninstaller dry-run;
+- uninstaller smoke test with temporary `CLAUDE_HOME`;
+- exactly 20 pattern files;
+- required sections in each pattern.
+
+### 10. Minimal examples
 
 The repo includes small example artifacts so models have concrete shapes to imitate:
 
@@ -232,6 +257,32 @@ git clone https://github.com/ramsani/html-explainer.git
 cd html-explainer
 DRY_RUN=1 bash install.sh
 bash install.sh
+```
+
+## Safe uninstall
+
+Preview uninstall:
+
+```bash
+DRY_RUN=1 bash uninstall.sh
+```
+
+Restore the latest backup or remove managed files if no backup exists:
+
+```bash
+bash uninstall.sh
+```
+
+Remove without restoring backup:
+
+```bash
+RESTORE_BACKUP=0 bash uninstall.sh
+```
+
+Remove and delete backups:
+
+```bash
+KEEP_BACKUPS=0 bash uninstall.sh
 ```
 
 ## Installer flags
