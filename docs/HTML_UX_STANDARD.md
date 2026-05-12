@@ -55,8 +55,11 @@ Use the form that matches the work:
 - research -> criteria matrix with source quality;
 - incident -> timeline, impact, cause, prevention;
 - editor -> controls, validation, preview, export.
+- visual exploration -> 3-4 live rendered alternatives with comparison criteria.
 
 Do not build a generic dashboard when one precise surface would work.
+
+For visual exploration, render alternatives live. Do not only describe them.
 
 ## Ease and clarity rules
 

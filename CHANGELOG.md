@@ -1,5 +1,23 @@
 # Changelog
 
+## Unreleased — visual direction explorer
+
+### Added
+
+- Pattern 21: Visual Direction Explorer.
+- Example artifact for live visual direction comparison.
+- Router support for visual design options, empty-state directions, and UI tone exploration.
+
+### Improved
+
+- Quality bar now includes a visual exploration overlay.
+- HTML advantage gate now includes a visual exploration special rule.
+- Pattern validation now expects 21 patterns.
+
+### Why it matters
+
+This captures a key Thariq use case: HTML is valuable when the user needs to compare live visual alternatives, not imagine them from prose.
+
 ## Unreleased — artifact budget and cognitive relief
 
 ### Added

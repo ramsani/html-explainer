@@ -93,6 +93,7 @@ The artifact must use the right form for the work:
 - map for architecture
 - timeline for incidents
 - matrix for design states
+- live alternatives for visual direction
 - editor for triage/config/prompt tuning
 - annotated review for diffs
 
@@ -164,6 +165,21 @@ External dependencies require explicit justification.
 ### 15. Next action
 
 The artifact must end with a concrete next action or recommendation.
+
+## Visual exploration overlay
+
+Apply this when the artifact explores UI directions.
+
+Required:
+
+- 3-4 live rendered alternatives;
+- tone comparison;
+- density comparison;
+- primary action clarity comparison;
+- light/dark or surface resilience when relevant;
+- recommendation by product context.
+
+Subtract 15 if alternatives are only decorative style swaps.
 
 ## UX scoring overlay
 

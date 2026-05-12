@@ -3,7 +3,7 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 PATTERN_DIR="$ROOT_DIR/patterns"
-EXPECTED_COUNT=20
+EXPECTED_COUNT=21
 
 required_sections=(
   "Intent"
@@ -26,7 +26,7 @@ fail() {
 count="$(find "$PATTERN_DIR" -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
 [ "$count" = "$EXPECTED_COUNT" ] || fail "expected $EXPECTED_COUNT pattern files, found $count"
 
-for n in $(seq -w 1 20); do
+for n in $(seq -w 1 21); do
   matches=("$PATTERN_DIR/$n-"*.md)
   [ -f "${matches[0]}" ] || fail "missing pattern file for number $n"
   [ "${#matches[@]}" -eq 1 ] || fail "expected exactly one pattern file for number $n, found ${#matches[@]}"

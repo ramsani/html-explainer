@@ -118,6 +118,7 @@ Each pattern answers:
 | Module map | Understanding code requires seeing entry points, dependencies, and hot paths. | Produces maps of module responsibilities, data flow, imports, and gotchas. | Reduces blind edits in unfamiliar repo areas. |
 | Design token contact sheet | Design systems are visual; tokens and styles need to be seen. | Guides agents to expose colors, typography, spacing, radii, shadows, and inconsistencies. | Prevents UI changes that ignore the existing design language. |
 | Component state matrix | UI quality depends on states, not just static components. | Requires variants, empty/loading/error/disabled states, responsiveness, and accessibility notes. | Makes UI review more realistic before implementation. |
+| Visual direction explorer | Visual design choices need to be seen side by side. | Renders 3-4 live alternatives and compares tone, density, action clarity, state fit, and light/dark resilience. | Lets the user choose direction without imagining it from prose. |
 | Interactive flow prototype | Some UX decisions need to be felt, not described. | Encourages small self-contained clickable prototypes with visible states and implementation notes. | Lets the user validate friction before code is touched. |
 | Microinteraction sandbox | Motion and feedback need timing, controls, and reduced-motion awareness. | Defines animation sandboxes with before/after comparison and control over state or speed. | Prevents decorative animation that hurts usability. |
 | Architecture diagram | Systems are relationships between components, boundaries, and failure points. | Requires components, data flow, trust boundaries, external dependencies, and operational risks. | Turns architecture into an inspectable risk map. |
@@ -286,6 +287,7 @@ The repo includes example artifacts so models have concrete shapes to imitate:
 - `examples/project-recap.example.html`
 - `examples/ticket-triage.example.html`
 - `examples/prompt-tuner-full.example.html`
+- `examples/visual-direction-explorer.example.html`
 
 ## Commands
 

@@ -189,6 +189,7 @@ if [ "$DRY_RUN" = "0" ]; then
   verify_file "$CLAUDE_HOME/html-explainer/docs/HTML_UX_STANDARD.md"
   verify_file "$CLAUDE_HOME/html-explainer/patterns/01-code-approach-comparison.md"
   verify_file "$CLAUDE_HOME/html-explainer/patterns/20-prompt-agent-behavior-tuner.md"
+  verify_file "$CLAUDE_HOME/html-explainer/patterns/21-visual-direction-explorer.md"
 fi
 
 say "Installed safely. Restart Claude Code if it was already open."

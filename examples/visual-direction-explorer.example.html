@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visual Direction Explorer — Example</title>
+<style>
+:root{--bg:#f8fafc;--panel:#fff;--ink:#111827;--muted:#64748b;--line:#cbd5e1;--green:#15803d;--orange:#b45309;--blue:#2563eb;--red:#b91c1c}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,sans-serif;line-height:1.45}.wrap{max-width:1240px;margin:auto;padding:28px}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;margin:14px 0}.option{min-height:260px;display:flex;flex-direction:column;justify-content:space-between}.badge{display:inline-block;border-radius:999px;padding:5px 9px;font-size:12px;font-weight:800;background:#e0f2fe;color:#075985}.cta{border:0;border-radius:10px;padding:10px 12px;font-weight:800;background:#111827;color:#fff}.illustration{height:72px;border-radius:18px;background:linear-gradient(135deg,#dbeafe,#dcfce7);display:grid;place-items:center;font-weight:900}.plate{height:72px;border:1px dashed #94a3b8;border-radius:18px;display:grid;place-items:center;animation:float 3s ease-in-out infinite}.steps li{margin:8px 0}@keyframes float{50%{transform:translateY(-4px)}}table{width:100%;border-collapse:collapse}th,td{border-bottom:1px solid #e2e8f0;text-align:left;padding:10px;vertical-align:top}th{text-transform:uppercase;font-size:12px;color:var(--muted);background:#f1f5f9}@media(prefers-color-scheme:dark){:root{--bg:#0f172a;--panel:#172033;--ink:#e5e7eb;--muted:#94a3b8;--line:#334155}.cta{background:#e5e7eb;color:#111827}.illustration{background:linear-gradient(135deg,#1d4ed8,#166534)}}@media(prefers-reduced-motion:reduce){.plate{animation:none}}@media(max-width:1000px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body><main class="wrap">
+<p class="muted"><strong>Pattern 21 — Visual Direction Explorer</strong></p>
+<h1>Empty State Direction Explorer — Example</h1>
+<p class="muted">Compare live alternatives for a no-tasks state before choosing UI tone.</p>
+
+<section class="card"><h2>Intent distillation</h2><p><strong>Primary intent:</strong> choose the best visual direction for an empty state.</p><p><strong>Secondary intents covered:</strong> compare tone, density, primary action clarity, state fit, and surface resilience.</p><p><strong>Base concept:</strong> show real alternatives so the user chooses by seeing, not imagining.</p></section>
+
+<section class="card"><h2>Artifact budget</h2><p><strong>HTML advantage:</strong> live rendered alternatives beat prose descriptions.</p><p><strong>Budget:</strong> standard.</p><p><strong>HTML benefit:</strong> shows tone, density, and action clarity side by side.</p><p><strong>Mental work removed:</strong> imagining how each direction would feel in the product.</p></section>
+
+<section class="card"><h2>Evidence inspected</h2><p>Product context, empty-state goal, primary action, state requirements, and light/dark surface needs.</p></section>
+
+<section class="grid" aria-label="Visual alternatives">
+  <article class="card option"><div><span class="badge">A — Minimal</span><h2>No tasks yet</h2><p>When you create a task it will show up here.</p></div><button class="cta">New task</button><p class="muted">Calm, low density, best when surrounding UI already has personality.</p></article>
+  <article class="card option"><div><span class="badge">B — Illustrated</span><div class="illustration">List → Tasks</div><h2>Start your first list</h2><p>Group related work and watch progress roll up automatically.</p></div><button class="cta">Create a task</button><p class="muted">Explains the object model without a long onboarding paragraph.</p></article>
+  <article class="card option"><div><span class="badge">C — Playful</span><div class="plate">Nothing here</div><h2>Nothing on your plate</h2><p>Enjoy the quiet, or add something to get moving.</p></div><button class="cta">Add task</button><p class="muted">Adds warmth. Use only if product tone can support gentle motion.</p></article>
+  <article class="card option"><div><span class="badge">D — Instructional</span><h2>Set up this project</h2><ol class="steps"><li>Create your first task.</li><li>Add a due date.</li><li>Invite a teammate.</li></ol></div><button class="cta">Start setup</button><p class="muted">Highest density. Best for first-run onboarding, not repeat empty views.</p></article>
+</section>
+
+<section class="card"><h2>Comparison</h2><table><tr><th>Direction</th><th>Tone</th><th>Density</th><th>Primary action clarity</th><th>Risk</th></tr><tr><td>A Minimal</td><td>Quiet</td><td>Low</td><td>High</td><td>May feel generic.</td></tr><tr><td>B Illustrated</td><td>Helpful</td><td>Medium</td><td>High</td><td>Illustration must match product style.</td></tr><tr><td>C Playful</td><td>Warm</td><td>Low</td><td>Medium</td><td>Motion can distract.</td></tr><tr><td>D Instructional</td><td>Guided</td><td>High</td><td>High</td><td>Too heavy for returning users.</td></tr></table></section>
+
+<section class="card"><h2>Recommendation</h2><p>Choose <strong>B — Illustrated</strong> for a new product surface because it explains the list/task model while keeping the action clear. Use <strong>A — Minimal</strong> once users already understand the product.</p><p><strong>Next action:</strong> test B and A in the real surrounding layout before implementing illustration polish.</p></section>
+</main></body></html>

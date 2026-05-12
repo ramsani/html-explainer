@@ -51,11 +51,12 @@ assert_file "$TMP_HOME/html-explainer/docs/HTML_UX_STANDARD.md"
 assert_file "$TMP_HOME/html-explainer/docs/fact-sheet-protocol.md"
 assert_file "$TMP_HOME/html-explainer/patterns/01-code-approach-comparison.md"
 assert_file "$TMP_HOME/html-explainer/patterns/20-prompt-agent-behavior-tuner.md"
+assert_file "$TMP_HOME/html-explainer/patterns/21-visual-direction-explorer.md"
 assert_file "$TMP_HOME/html-explainer/local-examples/plan-review-minimal.example.html"
 assert_file "$TMP_HOME/html-explainer/local-examples/diff-review-minimal.example.html"
 assert_file "$TMP_HOME/html-explainer/local-examples/prompt-tuner-minimal.example.html"
 
 pattern_count="$(find "$TMP_HOME/html-explainer/patterns" -maxdepth 1 -type f -name '*.md' | wc -l | tr -d ' ')"
-[ "$pattern_count" = "20" ] || fail "expected 20 installed pattern files, found $pattern_count"
+[ "$pattern_count" = "21" ] || fail "expected 21 installed pattern files, found $pattern_count"
 
 echo "[smoke-install] OK: installer smoke test passed"

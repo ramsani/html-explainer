@@ -18,6 +18,7 @@ If there is no decision, no comparison, no review burden, no spatial structure, 
 | Understand a repo/module | Project recap or module map | `/reenter-project` |
 | Understand service/workflow behavior | Architecture/process diagram | `/make-the-right-html` |
 | Evaluate UI consistency | Design token/contact sheet | `/make-the-right-html` |
+| Explore visual directions or empty states | Visual direction explorer | `/make-the-right-html` |
 | Test a UX idea before coding | Interactive prototype | `/make-the-right-html` |
 | Communicate a technical decision | HTML deck | `/make-the-right-html` |
 | Diagnose failure | Incident/postmortem report | `/make-the-right-html` |

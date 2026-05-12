@@ -103,6 +103,24 @@ A strong recap should provide at least one of these:
 
 If the recap only reorganizes README content, use compact HTML or Markdown.
 
+## Visual exploration special rule
+
+A visual exploration must be more than "four pretty cards."
+
+It must compare live directions by:
+
+- tone;
+- density;
+- primary action clarity;
+- state fit;
+- light/dark resilience when relevant;
+- accessibility risk;
+- best-use context.
+
+The HTML advantage is that the user can compare real rendered alternatives instead of imagining them from prose.
+
+If the alternatives are only color/style swaps, revise or use Markdown.
+
 ## Hard fail conditions
 
 Fail or shrink the artifact if:

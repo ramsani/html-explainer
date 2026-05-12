@@ -37,6 +37,8 @@ Use for:
 - repo recap
 - module exploration
 - design system inspection
+- visual direction exploration
+- empty-state exploration
 - interactive prototypes
 - diagrams and flows
 - decks
@@ -85,6 +87,7 @@ The skill includes 20 operational pattern files under `patterns/`:
 18. Ticket triage board
 19. Feature flag / config editor
 20. Prompt / agent behavior tuner
+21. Visual direction explorer
 
 Do not rely only on the general list. Select and apply the specific pattern file.
 

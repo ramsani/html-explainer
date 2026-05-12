@@ -14,6 +14,7 @@ The goal is to choose the smallest artifact that makes hidden structure visible 
 | The user needs to understand part of a repo | 04 Module map |
 | UI consistency, theming, tokens, or styling are involved | 05 Design token contact sheet |
 | UI variants, states, forms, cards, or components are involved | 06 Component state matrix |
+| The user wants visual design options, empty-state directions, tone exploration, or live UI alternatives | 21 Visual direction explorer |
 | The decision depends on clicks or flow friction | 07 Interactive flow prototype |
 | The decision depends on motion, feedback, or timing | 08 Microinteraction sandbox |
 | Services, APIs, agents, queues, auth, data flow, or boundaries are involved | 09 Architecture diagram |
@@ -38,6 +39,8 @@ If the user needs to decide *what to do*, prefer comparison, plan, recap, audit,
 If the user needs to decide *whether something is safe*, prefer plan review, diff review, architecture diagram, workflow flowchart, or incident report.
 
 If the user needs to *feel or manipulate something*, prefer prototype, microinteraction sandbox, config editor, ticket board, or prompt tuner.
+
+If the user needs to choose *visual tone or direction*, prefer visual direction explorer. Use component state matrix only when the question is completeness across states, not choosing between directions.
 
 ## Stop rule
 
