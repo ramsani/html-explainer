@@ -12,17 +12,18 @@ Always follow:
 
 1. Decide whether HTML is justified. If Markdown is clearer, do not use HTML.
 2. Open `docs/INTENT_DISTILLATION.md` and identify primary intent, obvious secondary intents, base concept, and fastest path to value.
-3. Open `docs/ARTIFACT_BUDGET.md` and choose compact, standard, or interactive. Default to compact.
-4. Use `docs/pattern-router.md` to choose one primary pattern.
-5. Open the matching file in `patterns/` and apply its evidence requirements, HTML structure, quality checklist, failure modes, and acceptance criteria.
-6. Open `docs/HTML_UX_STANDARD.md` and define the first-screen contract, interaction contract, and export requirement.
-7. Explore sources.
-8. Verify facts.
-9. Build a fact sheet using `docs/fact-sheet-protocol.md`.
-10. Generate the smallest useful HTML artifact.
-11. Apply `docs/QUALITY_BAR.md` before finalizing.
-12. Mark uncertainty visibly.
-13. Give the user a minimal decision summary.
+3. Open `docs/HTML_ADVANTAGE_GATE.md` and identify why HTML beats Markdown point by point.
+4. Open `docs/ARTIFACT_BUDGET.md` and choose compact, standard, or interactive. Default to compact.
+5. Use `docs/pattern-router.md` to choose one primary pattern.
+6. Open the matching file in `patterns/` and apply its evidence requirements, HTML structure, quality checklist, failure modes, and acceptance criteria.
+7. Open `docs/HTML_UX_STANDARD.md` and define the first-screen contract, interaction contract, and export requirement.
+8. Explore sources.
+9. Verify facts.
+10. Build a fact sheet using `docs/fact-sheet-protocol.md`.
+11. Generate the smallest useful HTML artifact.
+12. Apply `docs/QUALITY_BAR.md` before finalizing.
+13. Mark uncertainty visibly.
+14. Give the user a minimal decision summary.
 
 ## When to use
 
@@ -93,6 +94,7 @@ Every serious artifact should include:
 
 - Intent
 - Intent distillation: primary intent, obvious secondary intents, base concept
+- HTML advantage: why browser output beats Markdown
 - Artifact budget: compact, standard, or interactive
 - Selected pattern
 - UX contract: audience, decision, primary action, export when relevant
@@ -150,6 +152,7 @@ The base concept should be simple enough to explain in one sentence. If it takes
 Before generating HTML, the artifact must pass this check:
 
 ```text
+HTML advantage:
 Artifact budget:
 Why this budget:
 Markdown cost:
@@ -160,11 +163,25 @@ Token/complexity guard:
 
 Default to `compact`. Upgrade to `standard` only when evidence, risk, or structure need it. Upgrade to `interactive` only when controls change a decision or produce exportable output.
 
+## HTML advantage discipline
+
+HTML must beat Markdown in at least one of four ways:
+
+```text
+Interaction removes manual work:
+Structure becomes visible:
+Concrete output produced:
+First screen decides in 5 seconds:
+```
+
+If all four are weak, do not generate HTML.
+
 ## Failure modes to avoid
 
 - Beautiful but unverifiable output
 - Generic dashboards with no decision value
 - Spending more tokens and attention than the artifact saves
+- Failing to name why HTML is better than Markdown
 - Choosing interactive when compact would answer the intent
 - Choosing standard when compact would answer the intent
 - Answering adjacent needs while missing the user's main intent

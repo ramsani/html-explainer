@@ -10,22 +10,24 @@ Create an artifact that helps the user inspect, compare, verify, decide, or re-e
 
 1. Decide whether HTML is justified. If Markdown is clearer, say so and do not generate HTML.
 2. Open `docs/INTENT_DISTILLATION.md` and define primary intent, obvious secondary intents, base concept, and fastest path to value.
-3. Open `docs/ARTIFACT_BUDGET.md` and choose compact, standard, or interactive.
-4. Use `docs/pattern-router.md` to select one primary pattern.
-5. Open the matching file in `patterns/` and apply its evidence requirements, prompt template, HTML structure, quality checklist, failure modes, and acceptance criteria.
-6. Open `docs/HTML_UX_STANDARD.md` and define the artifact's UX contract.
-7. Inspect real sources before generation.
-8. Build a fact sheet using `docs/fact-sheet-protocol.md`.
-9. Separate facts, inferences, unsupported claims, and unknowns.
-10. Generate the smallest useful HTML artifact.
-11. Apply `docs/QUALITY_BAR.md` before finalizing.
-12. Include uncertainty visibly.
-13. Save the artifact to a reasonable local path when tool access allows it.
+3. Open `docs/HTML_ADVANTAGE_GATE.md` and prove HTML beats Markdown for this task.
+4. Open `docs/ARTIFACT_BUDGET.md` and choose compact, standard, or interactive.
+5. Use `docs/pattern-router.md` to select one primary pattern.
+6. Open the matching file in `patterns/` and apply its evidence requirements, prompt template, HTML structure, quality checklist, failure modes, and acceptance criteria.
+7. Open `docs/HTML_UX_STANDARD.md` and define the artifact's UX contract.
+8. Inspect real sources before generation.
+9. Build a fact sheet using `docs/fact-sheet-protocol.md`.
+10. Separate facts, inferences, unsupported claims, and unknowns.
+11. Generate the smallest useful HTML artifact.
+12. Apply `docs/QUALITY_BAR.md` before finalizing.
+13. Include uncertainty visibly.
+14. Save the artifact to a reasonable local path when tool access allows it.
 
 ## Required artifact sections
 
 - Intent
 - Intent distillation
+- HTML advantage
 - Artifact budget and cost justification
 - Selected pattern
 - UX contract
@@ -66,6 +68,7 @@ Before responding, verify:
 - Did it distill the base concept into a simple visible model?
 - Did it choose the smallest sufficient artifact budget?
 - Did it justify why HTML beats Markdown?
+- Did it create at least one real browser advantage: interaction, visible structure, concrete output, or 5-second decision?
 - Did the first screen make the supported decision obvious?
 - Did it inspect evidence?
 - Did it separate facts from inference?

@@ -20,17 +20,19 @@ Turn complex triage, configuration, prompt tuning, or option selection into a sm
 2. Inspect the real inputs: issues, config, prompts, requirements, or data.
 3. Define output format before designing controls.
 4. Define the intent distillation from `docs/INTENT_DISTILLATION.md`.
-5. Define the artifact budget from `docs/ARTIFACT_BUDGET.md`; this should usually be `interactive`.
-6. Define the UX contract from `docs/HTML_UX_STANDARD.md`.
-7. Build a fact sheet.
-8. Generate a self-contained HTML editor.
-9. Include export/copy output.
-10. Mark unsupported or risky states.
+5. Apply `docs/HTML_ADVANTAGE_GATE.md`; the concrete output is mandatory.
+6. Define the artifact budget from `docs/ARTIFACT_BUDGET.md`; this should usually be `interactive`.
+7. Define the UX contract from `docs/HTML_UX_STANDARD.md`.
+8. Build a fact sheet.
+9. Generate a self-contained HTML editor.
+10. Include export/copy output.
+11. Mark unsupported or risky states.
 
 ## HTML sections / features
 
 - Intent
 - Intent distillation
+- HTML advantage
 - Artifact budget
 - Evidence inspected
 - UX contract

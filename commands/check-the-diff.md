@@ -16,16 +16,18 @@ Make changed code inspectable as a decision surface before accepting, committing
 2. Read changed files where needed.
 3. Inspect related tests, docs, configs, routes, schemas, or workflows.
 4. Define the intent distillation from `docs/INTENT_DISTILLATION.md`.
-5. Define the artifact budget from `docs/ARTIFACT_BUDGET.md`.
-6. Define the UX contract from `docs/HTML_UX_STANDARD.md`.
-7. Build a fact sheet.
-8. Identify behavioral changes, not only textual changes.
-9. Generate HTML after verification.
+5. Apply `docs/HTML_ADVANTAGE_GATE.md`.
+6. Define the artifact budget from `docs/ARTIFACT_BUDGET.md`.
+7. Define the UX contract from `docs/HTML_UX_STANDARD.md`.
+8. Build a fact sheet.
+9. Identify behavioral changes, not only textual changes.
+10. Generate HTML after verification.
 
 ## HTML sections
 
 - Intent
 - Intent distillation
+- HTML advantage
 - Artifact budget
 - Diff summary
 - UX contract

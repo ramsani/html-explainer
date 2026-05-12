@@ -13,20 +13,22 @@ Prevent implementation based on false assumptions, missing files, misunderstood 
 3. Inspect the real repo for those claims.
 4. Inspect adjacent files needed to understand behavior.
 5. Define the intent distillation from `docs/INTENT_DISTILLATION.md`.
-6. Define the artifact budget from `docs/ARTIFACT_BUDGET.md`.
-7. Define the UX contract from `docs/HTML_UX_STANDARD.md`.
-8. Build a fact sheet.
-9. Separate:
+6. Apply `docs/HTML_ADVANTAGE_GATE.md`.
+7. Define the artifact budget from `docs/ARTIFACT_BUDGET.md`.
+8. Define the UX contract from `docs/HTML_UX_STANDARD.md`.
+9. Build a fact sheet.
+10. Separate:
    - verified facts
    - inferred conclusions
    - unsupported claims
    - unknowns
-10. Generate HTML only after verification.
+11. Generate HTML only after verification.
 
 ## HTML sections
 
 - Intent
 - Intent distillation
+- HTML advantage
 - Artifact budget
 - Plan being reviewed
 - UX contract

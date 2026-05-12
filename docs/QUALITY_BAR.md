@@ -17,13 +17,25 @@ The artifact must justify its cost.
 It must declare:
 
 - artifact budget: compact, standard, or interactive;
+- HTML advantage: interaction, visible structure, concrete output, or 5-second decision;
 - why HTML beats Markdown here;
 - what wall of text or mental reconstruction it replaces;
 - what complexity guard keeps it small enough.
 
 If the HTML costs more attention than the problem itself, use Markdown or shrink the artifact.
 
-### 3. Intent fit
+### 3. HTML advantage
+
+The artifact must pass at least one advantage test:
+
+- interaction removes manual work;
+- structure becomes visible;
+- a concrete output is produced;
+- the first screen decides in 5 seconds.
+
+If none of these are true, the artifact should be Markdown.
+
+### 4. Intent fit
 
 The artifact must answer the user's main intent directly.
 
@@ -37,7 +49,7 @@ It must show:
 
 Secondary intents are allowed only when they strengthen the main intent.
 
-### 4. First-screen usefulness
+### 5. First-screen usefulness
 
 The first screen must make the artifact's value obvious.
 
@@ -51,7 +63,7 @@ It must show:
 
 If the user must scroll past decoration to understand why the artifact exists, revise it.
 
-### 5. Evidence visibility
+### 6. Evidence visibility
 
 The artifact must show what was inspected:
 
@@ -64,7 +76,7 @@ The artifact must show what was inspected:
 - user input
 - external sources when used
 
-### 6. Fact / inference / unknown separation
+### 7. Fact / inference / unknown separation
 
 The artifact must clearly separate:
 
@@ -73,7 +85,7 @@ The artifact must clearly separate:
 - unknowns
 - unsupported claims
 
-### 7. Correct pattern fit
+### 8. Correct pattern fit
 
 The artifact must use the right form for the work:
 
@@ -84,7 +96,7 @@ The artifact must use the right form for the work:
 - editor for triage/config/prompt tuning
 - annotated review for diffs
 
-### 8. UX and interaction fit
+### 9. UX and interaction fit
 
 The user experience must match the task.
 
@@ -99,13 +111,13 @@ Required:
 
 Interactive controls must have visible state changes and usable output.
 
-### 9. Smallest useful artifact
+### 10. Smallest useful artifact
 
 Do not build dashboards by default.
 
 Use one primary pattern and at most two supporting sections.
 
-### 10. Visual clarity
+### 11. Visual clarity
 
 The visual structure must reduce cognitive load.
 
@@ -117,7 +129,7 @@ Avoid:
 - unclear color meaning
 - hidden controls
 
-### 11. Safety and uncertainty
+### 12. Safety and uncertainty
 
 Risk-bearing claims must be visible and qualified.
 
@@ -130,7 +142,7 @@ Examples:
 - breaking API changes
 - cost/performance claims
 
-### 12. Exportability for editors
+### 13. Exportability for editors
 
 Interactive artifacts must produce usable output:
 
@@ -143,13 +155,13 @@ Interactive artifacts must produce usable output:
 
 If the user cannot copy or export the result, the editor is incomplete.
 
-### 13. Self-contained output
+### 14. Self-contained output
 
 Prefer one self-contained HTML file with inline CSS and JS.
 
 External dependencies require explicit justification.
 
-### 14. Next action
+### 15. Next action
 
 The artifact must end with a concrete next action or recommendation.
 
@@ -159,6 +171,7 @@ Apply this overlay after the base score:
 
 - subtract 10 if the first screen does not answer the decision;
 - subtract 15 if no artifact budget is declared;
+- subtract 20 if no HTML advantage is declared;
 - subtract 15 if HTML does not clearly beat Markdown;
 - subtract 15 if the primary intent is not answered directly;
 - subtract 10 if an obvious secondary intent is missing and affects the decision;
@@ -185,6 +198,7 @@ Fail the artifact if it:
 
 - invents inspected files or commands;
 - does not justify the cost of HTML;
+- does not pass any HTML advantage test;
 - should have been Markdown;
 - misses the user's primary intent;
 - handles secondary intents while weakening the main answer;

@@ -21,6 +21,8 @@ If none of those are true, do not generate HTML.
 
 The artifact must make the browser earn its keep. If the same value fits in a short Markdown answer, use Markdown.
 
+Apply `docs/HTML_ADVANTAGE_GATE.md` before layout decisions.
+
 ## First-screen contract
 
 Within the first screen, the artifact must answer:
@@ -111,6 +113,16 @@ Every interactive editor must include an exportable result:
 
 No export means the editor is incomplete.
 
+For non-editor reports, interaction is optional. If added, it must still remove work:
+
+- search commands;
+- filter risks;
+- expand/collapse details;
+- toggle views;
+- copy a checklist.
+
+Do not add controls because the browser supports them.
+
 ## Visual quality rules
 
 Use visual hierarchy to make decisions easier.
@@ -167,6 +179,7 @@ The artifact is aligned with the HTML effectiveness approach when:
 Fail the artifact if it:
 
 - does not improve the decision over Markdown;
+- does not pass the HTML advantage gate;
 - costs more attention than it saves;
 - does not answer the primary intent directly;
 - ignores obvious secondary intents that affect the decision;

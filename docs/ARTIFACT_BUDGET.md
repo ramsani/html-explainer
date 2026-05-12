@@ -14,6 +14,8 @@ standard
 interactive
 ```
 
+Choose the budget only after applying `docs/HTML_ADVANTAGE_GATE.md`.
+
 ## Compact
 
 Use `compact` when the user needs orientation, a quick choice, or a lightweight review.
@@ -90,6 +92,7 @@ Markdown cost:
 HTML benefit:
 Mental work removed:
 Token/complexity guard:
+HTML advantage:
 ```
 
 Examples:
@@ -98,6 +101,7 @@ Examples:
 - "HTML benefit: side-by-side matrix makes trade-offs visible at once."
 - "Mental work removed: reconstructing sequence, dependencies, and risk."
 - "Token/complexity guard: compact artifact, no custom JS."
+- "HTML advantage: searchable commands and exportable reentry checklist."
 
 ## Thariq value test
 
@@ -119,6 +123,7 @@ Fail or shrink the artifact if:
 
 - a compact artifact would answer the need;
 - interaction does not change a decision;
+- interaction does not create exportable output when the artifact is a tool;
 - the artifact has more sections than decisions;
 - visual polish consumes attention without reducing confusion;
 - generating the artifact costs more work than reading the answer.
