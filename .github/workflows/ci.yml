@@ -60,6 +60,7 @@ jobs:
           test -f docs/INTENT_DISTILLATION.md
           test -f docs/ARTIFACT_BUDGET.md
           test -f docs/HTML_ADVANTAGE_GATE.md
+          test -f docs/NEXT_ACTION_HANDOFF.md
           test -f docs/HTML_UX_STANDARD.md
           test -f docs/pattern-router.md
           test -f docs/QUALITY_BAR.md

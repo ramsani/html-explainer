@@ -15,9 +15,10 @@ Decide whether an HTML artifact is useful, safe, evidence-backed, and decision-r
 5. Apply `docs/ARTIFACT_BUDGET.md`.
 6. Apply `docs/HTML_UX_STANDARD.md`.
 7. Apply `docs/QUALITY_BAR.md`.
-8. Check whether the artifact improves decision quality over Markdown.
-9. Separate defects by severity.
-10. Recommend accept, revise, reject, or simplify to Markdown.
+8. Apply `docs/NEXT_ACTION_HANDOFF.md`.
+9. Check whether the artifact improves decision quality over Markdown.
+10. Separate defects by severity.
+11. Recommend accept, revise, reject, or simplify to Markdown.
 
 ## Audit criteria
 
@@ -58,7 +59,7 @@ Budget gaps:
 Evidence gaps:
 UX gaps:
 Overengineering or decoration:
-Next action:
+Next action handoff:
 ```
 
 ## Hard fail conditions
@@ -78,3 +79,4 @@ Fail the artifact if it:
 - creates an interactive tool without exportable output.
 - hides the main recommendation below decoration;
 - is unreadable or incoherent on mobile.
+- leaves the user to invent the next command or fix prompt.

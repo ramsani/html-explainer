@@ -21,7 +21,8 @@ Create an artifact that helps the user inspect, compare, verify, decide, or re-e
 11. Generate the smallest useful HTML artifact.
 12. Apply `docs/QUALITY_BAR.md` before finalizing.
 13. Include uncertainty visibly.
-14. Save the artifact to a reasonable local path when tool access allows it.
+14. Apply `docs/NEXT_ACTION_HANDOFF.md` so the artifact ends with a copy-ready next step.
+15. Save the artifact to a reasonable local path when tool access allows it.
 
 ## Required artifact sections
 
@@ -40,7 +41,7 @@ Create an artifact that helps the user inspect, compare, verify, decide, or re-e
 - Unknowns
 - Recommendation
 - Success criteria
-- Next action
+- Next action handoff
 
 ## HTML requirements
 
@@ -76,6 +77,7 @@ Before responding, verify:
 - Did it improve decision quality over Markdown?
 - Did every interaction create useful state or exportable output?
 - Did it stay as small as possible?
+- Did the final section give one recommended next action, one ready-to-run command, and only useful alternatives?
 
 ## Final chat response
 
@@ -88,6 +90,7 @@ Budget used: <compact / standard / interactive>
 Decision supported: <decision>
 Quality-bar result: <pass / needs revision>
 Main uncertainty: <uncertainty or none>
+Next command: <copy-ready command or prompt>
 ```
 
 Do not paste the full HTML into chat unless requested.

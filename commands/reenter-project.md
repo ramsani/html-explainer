@@ -18,7 +18,8 @@ Help the user understand what the project is, how it works, what changed recentl
 8. Define the artifact budget from `docs/ARTIFACT_BUDGET.md`.
 9. Define the UX contract from `docs/HTML_UX_STANDARD.md`.
 10. Build a fact sheet.
-11. Generate HTML after verification.
+11. Apply `docs/NEXT_ACTION_HANDOFF.md` so the reentry path is ready to run.
+12. Generate HTML after verification.
 
 ## HTML sections
 
@@ -36,7 +37,7 @@ Help the user understand what the project is, how it works, what changed recentl
 - Important decisions or constraints
 - Risks and gotchas
 - Open questions
-- Recommended next action
+- Next action handoff
 - Reentry checklist
 
 ## Recap-specific requirements
@@ -57,4 +58,4 @@ Do not summarize only the README. The purpose is operational reentry, not a mark
 
 ## Final response
 
-Report artifact path, project status in one sentence, and the recommended next action.
+Report artifact path, project status in one sentence, and the ready-to-run next command.

@@ -23,7 +23,8 @@ Always follow:
 11. Generate the smallest useful HTML artifact.
 12. Apply `docs/QUALITY_BAR.md` before finalizing.
 13. Mark uncertainty visibly.
-14. Give the user a minimal decision summary.
+14. Apply `docs/NEXT_ACTION_HANDOFF.md` so the next command is obvious and copy-ready.
+15. Give the user a minimal decision summary.
 
 ## When to use
 
@@ -111,7 +112,7 @@ Every serious artifact should include:
 - Unknowns
 - Decision or recommendation
 - Success criteria
-- Next action
+- Next action handoff
 
 ## UX contract
 
@@ -127,6 +128,7 @@ Interaction, if any:
 Exportable output, if any:
 Mobile requirement:
 States required:
+Next action handoff:
 ```
 
 If the contract is weak, do not compensate with styling. Revise the artifact shape.

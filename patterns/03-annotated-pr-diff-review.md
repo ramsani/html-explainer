@@ -43,7 +43,7 @@ Before generating HTML:
 4. Separate facts, inferences, and unknowns.
 5. Do not claim tests passed unless they were actually run or verified.
 
-The HTML must include changed files, severity-coded findings, behavior before/after, test coverage, blast radius, missing validation, recommendation, and next action.
+The HTML must include changed files, severity-coded findings, behavior before/after, test coverage, blast radius, missing validation, recommendation, and a next action handoff.
 ```
 
 ## Minimum HTML structure
@@ -73,7 +73,13 @@ Use a navigable layout with these sections:
   Runtime impact, user impact, API/data/config impact
 
 <section id="decision">
-  Accept | revise | reject | split, with next safest action
+  Accept | revise | reject | split, with next action handoff
+
+<section id="next-action">
+  Recommended action
+  Why this action
+  Ready-to-run command or prompt
+  Selectable alternatives for accept, revise, split, test, or implement when relevant
 ```
 
 Good visual forms:
@@ -93,7 +99,7 @@ Good visual forms:
 - Missing tests are visible.
 - No test/build claim is made without evidence.
 - Recommendation is one of: accept, revise, reject, split.
-- The user can see what to do next.
+- The user can see what to do next and has a ready-to-run command.
 
 ## Bad artifact examples
 
@@ -137,9 +143,12 @@ Why bad: frontend changes can still break auth, routing, API assumptions, access
 - Treating generated code as safe by default.
 - Ignoring changed config or dependency files.
 - Omitting rollback or release risk.
+- Ending with vague advice instead of selectable next steps.
 
 ## Acceptance criteria
 
 The user can decide whether to accept, revise, reject, or split the change without reading the full raw diff first.
 
 A strong artifact makes the change's behavior, risks, missing validation, and next action visible within 60 seconds.
+
+The final section gives one recommended action and up to three alternatives, each phrased so the user can approve it without rewriting the prompt.

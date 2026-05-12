@@ -27,7 +27,7 @@ An artifact is acceptable only when it makes the user's work easier than Markdow
 - interaction changes a meaningful state;
 - editor-like artifacts export usable Markdown, JSON, config, prompts, issue bodies, or checklists;
 - mobile layout stays readable;
-- the artifact ends with a concrete next action.
+- the artifact ends with a next action handoff: recommended action, reason, ready-to-run command, and only useful alternatives.
 
 The process is designed so quality is built before the artifact is generated. Validation confirms that the process produced the right thing; it is not a last-minute rescue.
 
@@ -78,7 +78,7 @@ HTML lets an agent create a review surface: a navigable artifact that can show s
 Every serious artifact follows this sequence:
 
 ```text
-route -> intent distillation -> artifact budget -> pattern file -> UX contract -> evidence -> fact sheet -> artifact -> quality bar -> decision
+route -> intent distillation -> artifact budget -> pattern file -> UX contract -> evidence -> fact sheet -> artifact -> quality bar -> next action handoff -> decision
 ```
 
 That means the agent must:
@@ -93,7 +93,8 @@ That means the agent must:
 8. create a fact sheet;
 9. generate the smallest useful HTML artifact;
 10. apply `docs/QUALITY_BAR.md` before finalizing;
-11. expose uncertainty and next action.
+11. apply `docs/NEXT_ACTION_HANDOFF.md`;
+12. expose uncertainty and next action.
 
 ## How the Thariq ideas are used case by case
 

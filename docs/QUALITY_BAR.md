@@ -162,9 +162,19 @@ Prefer one self-contained HTML file with inline CSS and JS.
 
 External dependencies require explicit justification.
 
-### 15. Next action
+### 15. Next action handoff
 
-The artifact must end with a concrete next action or recommendation.
+The artifact must end with a concrete next action handoff:
+
+- one recommended action;
+- one short reason;
+- one ready-to-run command or prompt;
+- up to three selectable alternatives when real branches exist.
+
+Do not auto-chain commands without user approval.
+
+Subtract 15 if the user still has to invent the next command.
+Subtract 10 if there are too many next-step options.
 
 ## Visual exploration overlay
 

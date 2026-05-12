@@ -165,6 +165,17 @@ If the artifact is a prototype, it must be clickable enough to test the main fri
 
 If the artifact is a report, it must make the next action obvious.
 
+## Next action handoff
+
+Every artifact must end with a next action handoff:
+
+- recommended action;
+- short reason;
+- ready-to-run command or prompt;
+- up to three selectable alternatives when the analysis found real branches.
+
+Do not auto-chain commands. Make the next command obvious enough that the user can approve it without rewriting it.
+
 ## Thariq alignment checklist
 
 The artifact is aligned with the HTML effectiveness approach when:

@@ -26,7 +26,8 @@ Turn complex triage, configuration, prompt tuning, or option selection into a sm
 8. Build a fact sheet.
 9. Generate a self-contained HTML editor.
 10. Include export/copy output.
-11. Mark unsupported or risky states.
+11. Apply `docs/NEXT_ACTION_HANDOFF.md` so the exported result has a clear next use.
+12. Mark unsupported or risky states.
 
 ## HTML sections / features
 
@@ -44,6 +45,7 @@ Turn complex triage, configuration, prompt tuning, or option selection into a sm
 - Empty, invalid, and success/exported states
 - Assumptions
 - Unknowns
+- Next action handoff
 - Usage instructions
 
 ## Special rule
@@ -54,4 +56,4 @@ If controls do not change a meaningful preview, warning, score, or export, remov
 
 ## Final response
 
-Report artifact path, what it edits, and what output it exports.
+Report artifact path, what it edits, what output it exports, and the ready-to-run next command.

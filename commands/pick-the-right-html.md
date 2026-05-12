@@ -19,6 +19,7 @@ Use:
 - The selected file in `patterns/` to determine evidence requirements, HTML structure, quality checklist, failure modes, and acceptance criteria.
 - `docs/HTML_UX_STANDARD.md` to decide the first-screen contract, interaction value, mobile requirement, and export need.
 - `docs/QUALITY_BAR.md` to decide whether HTML is justified at all.
+- `docs/NEXT_ACTION_HANDOFF.md` to produce a copy-ready next command and selectable alternatives.
 
 ## Process
 
@@ -34,7 +35,9 @@ Use:
 10. Optionally select up to two supporting sections.
 11. State what evidence must be inspected before generation.
 12. State the minimum validation required.
-13. State the next command/prompt to run.
+13. State the recommended next action.
+14. Provide a copy-ready command or prompt.
+15. Provide up to three selectable alternatives only when real branches exist.
 
 ## Output
 
@@ -75,7 +78,15 @@ Risks to avoid:
 
 Acceptance criteria:
 
-Next prompt to run:
+Next action:
+
+Recommended:
+
+Why:
+
+Ready-to-run command:
+
+Selectable alternatives:
 ```
 
 ## Rules
@@ -89,3 +100,5 @@ Next prompt to run:
 - Do not create dashboards by default.
 - Do not generate HTML before verification.
 - Do not select a pattern without checking the pattern file.
+- Do not leave the user to invent the next command.
+- Do not auto-chain commands without user approval.

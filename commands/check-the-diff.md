@@ -21,7 +21,8 @@ Make changed code inspectable as a decision surface before accepting, committing
 7. Define the UX contract from `docs/HTML_UX_STANDARD.md`.
 8. Build a fact sheet.
 9. Identify behavioral changes, not only textual changes.
-10. Generate HTML after verification.
+10. Apply `docs/NEXT_ACTION_HANDOFF.md` to turn findings into selectable next steps.
+11. Generate HTML after verification.
 
 ## HTML sections
 
@@ -41,7 +42,7 @@ Make changed code inspectable as a decision surface before accepting, committing
 - Missing validation
 - Release / rollback risk
 - Recommendation: accept, revise, reject, or split
-- Next safest action
+- Next action handoff: recommended action, ready-to-run command, selectable alternatives
 
 ## Special rule
 
@@ -49,4 +50,4 @@ Do not claim tests passed unless they were run or inspected with evidence.
 
 ## Final response
 
-Report artifact path, recommendation, and whether additional verification is required.
+Report artifact path, recommendation, whether additional verification is required, and the ready-to-run next command.

@@ -22,7 +22,8 @@ Prevent implementation based on false assumptions, missing files, misunderstood 
    - inferred conclusions
    - unsupported claims
    - unknowns
-11. Generate HTML only after verification.
+11. Apply `docs/NEXT_ACTION_HANDOFF.md` so approve/revise/reject/split becomes selectable.
+12. Generate HTML only after verification.
 
 ## HTML sections
 
@@ -42,7 +43,7 @@ Prevent implementation based on false assumptions, missing files, misunderstood 
 - Missing information
 - Do-not-touch boundaries
 - Recommendation: approve, revise, reject, or split
-- Minimum safe next step
+- Next action handoff: recommended action, ready-to-run command, selectable alternatives
 - Success criteria
 
 ## Special rule
@@ -51,4 +52,4 @@ Do not implement anything. This command is review-only.
 
 ## Final response
 
-Report artifact path, recommendation, and the highest-risk uncertainty.
+Report artifact path, recommendation, highest-risk uncertainty, and the ready-to-run next command.
