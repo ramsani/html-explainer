@@ -1,5 +1,25 @@
 # Changelog
 
+## Unreleased — full example artifact upgrade
+
+### Added
+
+- Full example artifacts for the five most important workflow patterns:
+  - `examples/diff-review-full.example.html`
+  - `examples/architecture-diagram.example.html`
+  - `examples/project-recap.example.html`
+  - `examples/ticket-triage.example.html`
+  - `examples/prompt-tuner-full.example.html`
+
+### Improved
+
+- CI now verifies that the full example artifacts exist.
+- The repo now gives models concrete artifact shapes to imitate, not only written instructions.
+
+### Why it matters
+
+The five full examples make the Thariq integration more practical. They show what a useful HTML artifact should look like for review, architecture, project reentry, prioritization, and prompt/agent tuning.
+
 ## v0.2 — Thariq integration upgrade
 
 This version turns the Thariq HTML effectiveness ideas from general documentation into operational agent behavior.
