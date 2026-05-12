@@ -18,11 +18,13 @@ jobs:
       - name: Validate bash syntax
         run: |
           bash -n install.sh
+          bash -n uninstall.sh
           bash -n scripts/validate-patterns.sh
           bash -n scripts/smoke-install.sh
+          bash -n scripts/smoke-uninstall.sh
 
       - name: Make scripts executable
-        run: chmod +x scripts/*.sh install.sh
+        run: chmod +x scripts/*.sh install.sh uninstall.sh
 
       - name: Validate pattern files
         run: scripts/validate-patterns.sh
@@ -30,14 +32,22 @@ jobs:
       - name: Dry-run installer
         run: DRY_RUN=1 INSTALL_UPSTREAM=0 FETCH_EXAMPLES=0 bash install.sh
 
+      - name: Dry-run uninstaller
+        run: DRY_RUN=1 RESTORE_BACKUP=0 bash uninstall.sh
+
       - name: Smoke test installer with temporary CLAUDE_HOME
         run: scripts/smoke-install.sh
+
+      - name: Smoke test uninstaller with temporary CLAUDE_HOME
+        run: scripts/smoke-uninstall.sh
 
       - name: Verify required repository files
         run: |
           test -f README.md
           test -f CREDITS.md
           test -f CHANGELOG.md
+          test -f install.sh
+          test -f uninstall.sh
           test -f docs/pattern-router.md
           test -f docs/QUALITY_BAR.md
           test -f docs/fact-sheet-protocol.md
