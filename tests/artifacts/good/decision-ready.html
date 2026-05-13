@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decision Ready Fixture</title>
+<style>
+body{font-family:system-ui,sans-serif;margin:24px;line-height:1.45}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.card{border:1px solid #d1d5db;padding:14px;border-radius:8px}@media(prefers-color-scheme:dark){body{background:#111827;color:#e5e7eb}.card{border-color:#374151}}
+</style>
+</head>
+<body>
+<main>
+<section class="card">
+<h1>Decision Review</h1>
+<p><strong>What you need:</strong> decide whether to approve the onboarding plan.</p>
+<p><strong>Also handled:</strong> risk, proof gaps, next action, and reusable memory.</p>
+<p><strong>Simple idea:</strong> compare the plan against checked facts before acting.</p>
+<p><strong>Why this helps:</strong> the browser view keeps evidence, risk, and decision together. <strong>Size:</strong> compact. <strong>Work this saves:</strong> reconstructing the plan from scattered notes.</p>
+</section>
+<section class="grid">
+<article class="card"><h2>What I checked</h2><p>README, current plan, installer notes, and prior validation output.</p></article>
+<article class="card"><h2>What we know</h2><p>The installer has backup and dry-run behavior.</p><h2>What this suggests</h2><p>The plan is safe if validation remains in scope.</p><h2>What I am assuming</h2><p>No production data is touched.</p><h2>What is still unclear</h2><p>Whether the plan covers edge cases.</p></article>
+</section>
+<section class="card">
+<h2>What could go wrong</h2><p>The plan could skip validation and ship an incomplete artifact.</p>
+<h2>Best next move</h2><p>Revise the plan before implementing.</p>
+<p>Other useful options: Compare approaches · Think this through · Save for later</p>
+</section>
+<section class="card">
+<h2>Continue from here</h2>
+<textarea>/check-the-plan revise this onboarding plan using the checked evidence, risks, next action, and memory decision.</textarea>
+<button>Copy prompt</button>
+</section>
+<section class="card">
+<h2>Save this?</h2>
+<p><strong>Save decision:</strong> save as replaceable project knowledge.</p>
+<p><strong>Saved for later:</strong> Project decisions.</p>
+<p><strong>Find it fast:</strong> ask for "show the onboarding plan review".</p>
+<p><strong>Memory label:</strong> replaceable. <strong>When to review:</strong> after implementation changes.</p>
+</section>
+<table><tr><th>Choice</th><th>Risk</th></tr><tr><td>Revise</td><td>Low</td></tr></table>
+</main>
+</body>
+</html>

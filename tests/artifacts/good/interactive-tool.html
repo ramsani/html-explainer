@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interactive Tool Fixture</title>
+<style>
+body{font-family:system-ui,sans-serif;margin:24px}.card{border:1px solid #d1d5db;padding:14px;border-radius:8px;margin:10px 0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}@media(prefers-color-scheme:dark){body{background:#0f172a;color:#e5e7eb}.card{border-color:#334155}}
+</style>
+</head>
+<body>
+<main>
+<section class="card"><h1>Task Prioritizer</h1><p><strong>What you need:</strong> choose the next task.</p><p><strong>Also handled:</strong> compare value, risk, effort, next prompt, and memory.</p><p><strong>Simple idea:</strong> sort options by useful impact.</p><p><strong>Why this helps:</strong> interactive controls let the user compare and export the decision. <strong>Size:</strong> interactive. <strong>Work this saves:</strong> manually ranking options.</p></section>
+<section class="grid"><article class="card"><h2>What I checked</h2><p>Task list, current blockers, and user priority.</p></article><article class="card"><h2>What we know</h2><p>Validation reduces future risk.</p></article><article class="card"><h2>What is still unclear</h2><p>Exact effort may change after implementation.</p></article></section>
+<section class="card"><h2>What could go wrong</h2><p>The chosen task may look urgent but not reduce risk.</p><h2>Best next move</h2><p>Use the highest value/risk task first.</p><p>Other useful options: Compare · Revise · Think this through · Save for later</p></section>
+<section class="card"><button>Compare</button> <button>Export</button><textarea>Selected task: add artifact audit gate.</textarea></section>
+<section class="card"><h2>Continue from here</h2><textarea>/build-decision-tool continue from this prioritization and export the selected next task.</textarea></section>
+<section class="card"><h2>Save this?</h2><p><strong>Save decision:</strong> save until priorities change.</p><p><strong>Saved for later:</strong> Task decisions.</p><p><strong>Find it fast:</strong> ask for "show the last task prioritizer".</p><p><strong>Memory label:</strong> temporal. <strong>When to review:</strong> after completing the selected task.</p></section>
+<table><tr><th>Task</th><th>Value</th></tr><tr><td>Audit gate</td><td>High</td></tr></table>
+</main>
+</body>
+</html>

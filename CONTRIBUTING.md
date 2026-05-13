@@ -27,6 +27,7 @@ bash -n install.sh uninstall.sh scripts/*.sh
 scripts/validate-patterns.sh
 scripts/validate-commands.sh
 scripts/validate-examples.sh
+scripts/validate-golden-artifacts.sh
 scripts/validate-scenarios.sh
 DRY_RUN=1 INSTALL_UPSTREAM=0 FETCH_EXAMPLES=0 bash install.sh
 scripts/smoke-install.sh
@@ -64,6 +65,8 @@ Examples must include:
 - risk or uncertainty;
 - next prompt or exportable output;
 - archive recommendation when the artifact may be reused;
+- quiet memory access receipt;
+- invisible quality gate pass;
 - user-language output unless a different audience is requested;
 - system light/dark support.
 

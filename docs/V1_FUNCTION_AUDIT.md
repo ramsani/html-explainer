@@ -39,6 +39,7 @@ The repo now treats quality as manufactured by process:
 | Project re-entry | Help a user regain context and choose the next action. | Recap becomes a generic README summary. | `/reenter-project`, pattern 17, required repo evidence and next prompt. |
 | Decision tool building | Build temporary editors, tuners, triage boards, or config tools. | Tool has controls but no exportable output. | `/build-decision-tool`, interactive budget rule, copy/export requirement. |
 | Artifact audit | Decide whether an existing artifact is worth trusting. | Audit becomes taste feedback instead of decision-quality review. | `/audit-html`, Quality Bar scoring, hard fail conditions. |
+| Invisible quality gate | Confirm artifacts contain required parts before they are trusted. | Quality becomes a manual opinion instead of a manufacturing control. | `scripts/audit-artifact.py`, good/bad fixtures, golden artifact validation. |
 | Thinking surface | Turn unclear thinking into conclusion and action. | Becomes theory-heavy brainstorming with no decision. | `/think-with-me-about`, Insight Surface Loop, stress-test panel, archive recommendation. |
 | Artifact memory | Preserve useful outputs without polluting the repo. | Stale or private artifacts become trusted public knowledge. | lifespan classes, freshness rules, privacy class, do-not-reuse class. |
 | Memory access | Show the user how to find saved work again without showing archive mechanics. | Saved work feels invisible or memory guidance becomes bulky. | Memory Access guide, example receipts, command validation. |
@@ -60,6 +61,7 @@ The repo now treats quality as manufactured by process:
 | Saved work did not clearly tell the user how to find it later. | Knowledge base value would be hidden or intrusive. | Added `MEMORY_ACCESS.md`, tiny saved/not-saved receipts, and validation. |
 | Pattern files did not all declare user agency. | Some artifacts could recommend action without preserving user freedom. | Added `HUMAN_INTERFACE.md`, required a Human Interface Contract in all 22 patterns, and added command validation. |
 | README under-presented the human value. | A visitor could see mechanics before feeling the product promise. | Added "What It Feels Like", control/freedom benefits, and quiet invitation language. |
+| Quality Bar had no executable artifact gate. | A weak HTML could look valid because only strings and files were checked. | Added `scripts/audit-artifact.py`, good/bad fixtures, and `scripts/validate-golden-artifacts.sh`. |
 
 ## Function-By-Function V1 Verdict
 
@@ -72,6 +74,7 @@ The repo now treats quality as manufactured by process:
 | Project re-entry | Green | Uses real repo sources and ends with next high-value action. |
 | Decision tools | Green | Interactive budget is allowed only when controls change state or export useful output. |
 | Artifact audit | Green | Audits artifacts against decision value, evidence, interface, memory, and hard fails. |
+| Invisible quality gate | Green | Local fixtures prove the gate accepts complete artifacts and rejects weak ones. |
 | Thinking surface | Green | Invited only when the user is still forming the question or needs deeper reasoning. |
 | Artifact memory | Green | Defines lifespan, freshness, privacy, supersession, and do-not-reuse rules. |
 | Memory access | Green | Shows a tiny receipt without making the user learn archive mechanics. |
@@ -111,6 +114,7 @@ bash -n install.sh uninstall.sh scripts/*.sh
 scripts/validate-patterns.sh
 scripts/validate-commands.sh
 scripts/validate-examples.sh
+scripts/validate-golden-artifacts.sh
 scripts/validate-scenarios.sh
 DRY_RUN=1 INSTALL_UPSTREAM=0 FETCH_EXAMPLES=0 bash install.sh
 scripts/smoke-install.sh

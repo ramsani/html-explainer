@@ -10,8 +10,9 @@ The active path is intentionally small:
 6. `CHAIN.md`
 7. `DELIVERY.md`
 8. `HUMAN_INTERFACE.md`
-9. `ARTIFACT_MEMORY.md` when the result may be reused later
-10. `MEMORY_ACCESS.md` when the user needs to find saved work again
+9. `INVISIBLE_QUALITY.md`
+10. `ARTIFACT_MEMORY.md` when the result may be reused later
+11. `MEMORY_ACCESS.md` when the user needs to find saved work again
 
 Files with older names in this directory are compatibility stubs for existing installs, links, and CI checks.
 
@@ -27,6 +28,7 @@ Read these to understand the current V1 product shape:
 - `LANGUAGE_POLICY.md` defines English repo docs and language-matched user output.
 - `USER_FACING_COPY.md` keeps visible artifact text simple and helpful.
 - `HUMAN_INTERFACE.md` keeps invitations respectful, optional, and powerful.
+- `INVISIBLE_QUALITY.md` defines the quiet manufacturing gate before delivery.
 - `MEMORY_ACCESS.md` makes saved work easy to find again without exposing archive mechanics.
 - `QUALITY_CLAIMS.md` states what the repo is engineered to prevent and what it does not yet statistically guarantee.
 - `V1_FUNCTION_AUDIT.md` maps each function to its user promise, likely failure, and guardrail.

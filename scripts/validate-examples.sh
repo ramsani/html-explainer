@@ -3,6 +3,7 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 EXAMPLES_DIR="$ROOT_DIR/examples"
+AUDIT="$ROOT_DIR/scripts/audit-artifact.py"
 
 fail() {
   echo "[validate-examples] ERROR: $*" >&2
@@ -10,6 +11,7 @@ fail() {
 }
 
 [ -d "$EXAMPLES_DIR" ] || fail "examples directory not found: $EXAMPLES_DIR"
+[ -x "$AUDIT" ] || fail "missing executable auditor: scripts/audit-artifact.py"
 
 example_count="$(find "$EXAMPLES_DIR" -maxdepth 1 -type f -name '*.html' | wc -l | tr -d ' ')"
 [ "$example_count" -ge 3 ] || fail "expected at least 3 HTML examples, found $example_count"
@@ -55,6 +57,8 @@ for file in "$EXAMPLES_DIR"/*.html; do
   if grep -Eqi '<h[1-6][^>]*>(Primary intent|Secondary intents|Base concept|Artifact budget|HTML advantage|Evidence inspected|Fact sheet|Quality gate|Output contract|Failure mode|Scenario tests|Behavior dimensions|Intent distillation)</h[1-6]>' "$file"; then
     fail "$rel exposes internal process labels in visible headings"
   fi
+
+  "$AUDIT" "$file" --min-score 75 >/dev/null || fail "$rel failed invisible quality manufacturing gate"
 done
 
 echo "[validate-examples] OK: $example_count HTML examples validated"

@@ -54,6 +54,8 @@ It also protects the human side of the interaction:
 
 The V1 closeout audit checks every repo function against this promise. See [`docs/V1_FUNCTION_AUDIT.md`](docs/V1_FUNCTION_AUDIT.md).
 
+V1.1 adds invisible quality control: local scripts confirm artifacts contain the required parts before they are trusted. The user sees the clean result, not the machinery.
+
 ## What The User Gets
 
 `html-explainer` turns agent output into a browser-readable decision surface.
@@ -71,6 +73,7 @@ The user gets:
 - less noise because HTML is rejected when Markdown is enough;
 - lower onboarding friction because commands are named by user intent, not internal implementation;
 - trust through validation because examples, commands, patterns, routing scenarios, install, and uninstall are checked locally.
+- quieter quality because local audit scripts block artifacts that are missing critical parts before they reach the user.
 
 The user should not need to understand the operating philosophy. They should feel the result as clarity, speed, safer choices, and less repeated explanation.
 
@@ -447,6 +450,7 @@ bash -n install.sh uninstall.sh scripts/*.sh
 scripts/validate-patterns.sh
 scripts/validate-commands.sh
 scripts/validate-examples.sh
+scripts/validate-golden-artifacts.sh
 scripts/validate-scenarios.sh
 DRY_RUN=1 INSTALL_UPSTREAM=0 FETCH_EXAMPLES=0 bash install.sh
 scripts/smoke-install.sh
