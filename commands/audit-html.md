@@ -39,8 +39,9 @@ Use:
 13. Check archive recommendation when the artifact may be reused.
 14. Check whether memory access is visible but quiet.
 15. Check whether the artifact already contains the required user-facing parts.
-16. Score with `docs/QUALITY_BAR.md`.
-17. Recommend accept, revise, reject, or simplify to Markdown.
+16. Run `~/.claude/html-explainer/scripts/audit-artifact.py <artifact.html> --json` when a local file is available.
+17. Score with `docs/QUALITY_BAR.md`.
+18. Recommend accept, revise, reject, or simplify to Markdown.
 
 ## Output
 

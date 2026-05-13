@@ -129,6 +129,7 @@ Prefer these installed commands:
 Do not use HTML for simple answers, one commands, tiny facts, or low-consequence notes. Every artifact must preserve the user's primary intent, cover obvious secondary intents when they affect the decision, show evidence, separate facts/inferences/unknowns, use the smallest useful budget, use the user's language, end with a copy/edit next prompt, and recommend whether to save, refresh, keep private, supersede, or discard the artifact when it may become future context.
 
 Reference docs live in `~/.claude/html-explainer/docs/`.
+Runtime scripts live in `~/.claude/html-explainer/scripts/`. Generated HTML should pass `deliver-artifact.py` before final delivery.
 <!-- html-explainer:end -->
 EOF
 }
@@ -202,6 +203,7 @@ for cmd in "${LEGACY_COMMANDS[@]}"; do
 done
 backup_path "$CLAUDE_HOME/html-explainer/docs" "docs"
 backup_path "$CLAUDE_HOME/html-explainer/patterns" "patterns"
+backup_path "$CLAUDE_HOME/html-explainer/scripts" "scripts"
 backup_path "$CLAUDE_HOME/html-explainer/local-examples" "local-examples"
 
 if [ "$INSTALL_UPSTREAM" = "1" ]; then
@@ -229,6 +231,7 @@ done
 copy_files "$PACKAGE_DIR/commands" "$CLAUDE_HOME/commands"
 copy_dir_clean "$PACKAGE_DIR/docs" "$CLAUDE_HOME/html-explainer/docs"
 copy_dir_clean "$PACKAGE_DIR/patterns" "$CLAUDE_HOME/html-explainer/patterns"
+copy_dir_clean "$PACKAGE_DIR/scripts" "$CLAUDE_HOME/html-explainer/scripts"
 if [ -d "$PACKAGE_DIR/examples" ]; then
   copy_dir_clean "$PACKAGE_DIR/examples" "$CLAUDE_HOME/html-explainer/local-examples"
 fi
@@ -277,6 +280,9 @@ if [ "$DRY_RUN" = "0" ]; then
   verify_file "$CLAUDE_HOME/html-explainer/docs/QUALITY_CLAIMS.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/INSIGHT_SURFACE_LOOP.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/V1_FUNCTION_AUDIT.md"
+  verify_file "$CLAUDE_HOME/html-explainer/scripts/audit-artifact.py"
+  verify_file "$CLAUDE_HOME/html-explainer/scripts/deliver-artifact.py"
+  verify_file "$CLAUDE_HOME/html-explainer/scripts/save-artifact.py"
   verify_file "$CLAUDE_HOME/html-explainer/docs/reference/INTENT_DISTILLATION.md"
   verify_file "$CLAUDE_HOME/html-explainer/patterns/01-code-approach-comparison.md"
   verify_file "$CLAUDE_HOME/html-explainer/patterns/20-prompt-agent-behavior-tuner.md"

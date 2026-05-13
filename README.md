@@ -54,7 +54,7 @@ It also protects the human side of the interaction:
 
 The V1 closeout audit checks every repo function against this promise. See [`docs/V1_FUNCTION_AUDIT.md`](docs/V1_FUNCTION_AUDIT.md).
 
-V1.1 adds invisible quality control: local scripts confirm artifacts contain the required parts before they are trusted. The user sees the clean result, not the machinery.
+V1.1 adds invisible quality control: local scripts confirm artifacts contain the required parts before they are trusted. `/make-the-right-html` now uses a delivery command before the final response. The user sees the clean result, not the machinery.
 
 Every artifact is shaped around intent, evidence, visual clarity, decision support, next action, and reusable memory before delivery.
 
@@ -71,7 +71,7 @@ The user gets:
 - safer decisions because claims are tied to inspected evidence;
 - clearer reviews because plans, diffs, workflows, and architectures show risk before action;
 - useful next prompts because every serious artifact carries the context needed for the next agent step;
-- reusable memory because valuable artifacts include an archive decision, freshness risk, and re-entry path;
+- reusable memory because valuable artifacts can be saved locally with metadata, freshness risk, and a re-entry path;
 - less noise because HTML is rejected when Markdown is enough;
 - lower onboarding friction because commands are named by user intent, not internal implementation;
 - trust through validation because examples, commands, patterns, routing scenarios, install, and uninstall are checked locally.
@@ -258,7 +258,7 @@ Generated artifacts should be saved in a practical local path, opened in the bro
 
 ## Local Artifact Memory
 
-`html-explainer` can generate artifacts that remain useful after the current chat. The repo now defines a local-first artifact memory model for saving generated HTML outputs outside the repository.
+`html-explainer` can generate artifacts that remain useful after the current chat. The repo now includes a local-first artifact memory path for saving generated HTML outputs outside the repository.
 
 The core boundary is:
 
@@ -273,13 +273,14 @@ Recommended local output root:
 ~/.claude/html-explainer/outputs/
 ```
 
-The artifact memory system defines:
+The artifact memory system implements a local file path and defines:
 
 - lifespan classes: `temporal`, `replaceable`, `evergreen`, `superseded`, `private`, and `do-not-reuse`;
 - metadata and index schemas;
 - freshness, privacy, re-entry, and supersession rules;
 - an actionable knowledge base model for search, relations, quick-reference cards, and next actions;
-- a static explorer template that follows the same decision-ready HTML principles as the rest of the project.
+- a static explorer template that follows the same decision-ready HTML principles as the rest of the project;
+- local scripts to audit, save, and index artifacts without a server or database.
 
 User-facing artifacts should expose this value as a tiny receipt, not a technical report:
 

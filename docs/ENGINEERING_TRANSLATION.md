@@ -13,9 +13,9 @@ Agents should follow the concrete files, commands, and checks. They should not n
 | Preserve the user's freedom. | Artifacts invite action without pressure and include useful alternatives. | `docs/HUMAN_INTERFACE.md`, patterns, commands | command validation, pattern validation |
 | End with a next move. | Every serious output includes a copy-ready next prompt or exportable output. | `docs/CHAIN.md`, `docs/DELIVERY.md`, commands | command validation, example validation |
 | Preserve useful memory quietly. | Reusable work gets archive guidance and a small find-it-fast receipt. | `docs/ARTIFACT_MEMORY.md`, `docs/MEMORY_ACCESS.md`, commands | command validation, example validation |
-| Keep internal checks invisible. | Visible copy avoids internal labels and shows user value instead of checklists. | `docs/USER_FACING_COPY.md`, `docs/HUMAN_INTERFACE.md`, `docs/INVISIBLE_QUALITY.md` | `scripts/audit-artifact.py`, `scripts/validate-examples.sh` |
+| Keep internal checks invisible. | Visible copy avoids internal labels and shows user value instead of checklists. | `docs/USER_FACING_COPY.md`, `docs/HUMAN_INTERFACE.md`, `docs/INVISIBLE_QUALITY.md` | `scripts/audit-artifact.py`, `scripts/deliver-artifact.py`, `scripts/validate-examples.sh` |
 | Prefer small, fast, local checks. | Validation stays local, scriptable, and dependency-light. | `scripts/*.sh`, `scripts/audit-artifact.py`, installer smoke tests | CI/local validation scripts |
-| Do not let docs outrun behavior. | New promises must map to commands, patterns, examples, or checks. | `CONTRIBUTING.md`, `docs/V1_FUNCTION_AUDIT.md` | contribution checklist, V1 audit |
+| Do not let docs outrun behavior. | New promises must map to commands, patterns, examples, runtime scripts, or checks. | `CONTRIBUTING.md`, `docs/V1_FUNCTION_AUDIT.md` | contribution checklist, V1 audit, runtime validation |
 
 ## Current Translation Status
 
@@ -27,5 +27,11 @@ All active user-facing commands point to the concrete behavior files:
 - `docs/HUMAN_INTERFACE.md`
 - `docs/INVISIBLE_QUALITY.md`
 - `docs/MEMORY_ACCESS.md`
+
+The runtime path is also concrete:
+
+```text
+generate HTML -> deliver-artifact.py -> revise if blocked -> optional save-artifact.py -> final response
+```
 
 The repo keeps the principle layer auditable here, while commands stay operational and direct.

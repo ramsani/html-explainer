@@ -8,7 +8,7 @@ Artifact memory is the storage and lifecycle layer. The actionable knowledge bas
 
 Create a local-first artifact memory system for generated HTML outputs.
 
-The repo provides the system: conventions, schemas, templates, explorer UI, and guidance.
+The repo provides the system: conventions, schemas, templates, explorer UI, guidance, and a local save script.
 
 The user's local output folder stores the actual generated artifacts.
 
@@ -16,6 +16,29 @@ The user's local output folder stores the actual generated artifacts.
 The repo is the system.
 The local output folder is the user's artifact memory.
 ```
+
+## Implemented Local Save Path
+
+Use `scripts/save-artifact.py` directly, or use `scripts/deliver-artifact.py --save` to audit first and then save.
+
+Default command:
+
+```bash
+python3 ~/.claude/html-explainer/scripts/deliver-artifact.py artifact.html \
+  --min-score 90 \
+  --save \
+  --title "Artifact title" \
+  --intent "User need this artifact answers" \
+  --pattern "17-project-recap" \
+  --validity "replaceable" \
+  --find-it-fast "show the last repo recap"
+```
+
+This creates:
+
+- `~/.claude/html-explainer/outputs/index.json`
+- `~/.claude/html-explainer/outputs/artifacts/<validity>/<id>.html`
+- `~/.claude/html-explainer/outputs/metadata/<validity>/<id>.json`
 
 ## Why This Exists
 
@@ -201,7 +224,7 @@ Archive recommendation:
 - reason
 ```
 
-The agent should not save automatically unless the user explicitly asks.
+The agent should not save automatically unless the user explicitly asks or the command context clearly asks for reusable memory.
 
 ## Re-Entry Workflow
 

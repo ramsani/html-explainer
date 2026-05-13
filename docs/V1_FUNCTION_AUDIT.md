@@ -40,9 +40,9 @@ The repo now treats quality as required artifact behavior:
 | Project re-entry | Help a user regain context and choose the next action. | Recap becomes a generic README summary. | `/reenter-project`, pattern 17, required repo evidence and next prompt. |
 | Decision tool building | Build temporary editors, tuners, triage boards, or config tools. | Tool has controls but no exportable output. | `/build-decision-tool`, interactive budget rule, copy/export requirement. |
 | Artifact audit | Decide whether an existing artifact is worth trusting. | Audit becomes taste feedback instead of decision-quality review. | `/audit-html`, Quality Bar scoring, hard fail conditions. |
-| Invisible quality gate | Confirm artifacts contain required parts before they are trusted. | Quality becomes a manual opinion instead of repeatable behavior. | `scripts/audit-artifact.py`, good/bad fixtures, golden artifact validation. |
+| Invisible quality gate | Confirm artifacts contain required parts before they are trusted. | Quality becomes a manual opinion instead of repeatable behavior. | `scripts/audit-artifact.py`, `scripts/deliver-artifact.py`, good/bad fixtures, runtime validation. |
 | Thinking surface | Turn unclear thinking into conclusion and action. | Becomes theory-heavy brainstorming with no decision. | `/think-with-me-about`, Insight Surface Loop, stress-test panel, archive recommendation. |
-| Artifact memory | Preserve useful outputs without polluting the repo. | Stale or private artifacts become trusted public knowledge. | lifespan classes, freshness rules, privacy class, do-not-reuse class. |
+| Artifact memory | Preserve useful outputs without polluting the repo. | Stale or private artifacts become trusted public knowledge, or memory remains only a promise. | `scripts/save-artifact.py`, local index, metadata, lifespan classes, freshness rules, privacy class, do-not-reuse class. |
 | Memory access | Show the user how to find saved work again without showing archive mechanics. | Saved work feels invisible or memory guidance becomes bulky. | Memory Access guide, example receipts, command validation. |
 | Pattern package system | Let the repo grow without turning into prompt sprawl. | New docs and patterns accumulate without a quality floor. | Pattern Package Protocol, Artifact Modes, Artifact Directions, Anti-Slop rules. |
 | Installer | Install commands/docs/patterns safely. | Installer overwrites user memory or omits new commands. | dry-run, backup, managed block, smoke install, smoke uninstall. |
@@ -63,6 +63,8 @@ The repo now treats quality as required artifact behavior:
 | Pattern files did not all declare user agency. | Some artifacts could recommend action without preserving user freedom. | Added `HUMAN_INTERFACE.md`, required a Human Interface Contract in all 22 patterns, and added command validation. |
 | README under-presented the human value. | A visitor could see mechanics before feeling the product promise. | Added "What It Feels Like", control/freedom benefits, and quiet invitation language. |
 | Quality Bar had no executable artifact gate. | A weak HTML could look valid because only strings and files were checked. | Added `scripts/audit-artifact.py`, good/bad fixtures, and `scripts/validate-golden-artifacts.sh`. |
+| Artifact delivery was not tied to the audit script. | A generated artifact could skip the quality gate. | Added `scripts/deliver-artifact.py` and made `/make-the-right-html` run it before final delivery. |
+| Artifact memory was documented but not implemented. | Users could expect saved knowledge without a real local index. | Added `scripts/save-artifact.py`, local metadata, and runtime validation. |
 
 ## Function-By-Function V1 Verdict
 
@@ -75,9 +77,9 @@ The repo now treats quality as required artifact behavior:
 | Project re-entry | Green | Uses real repo sources and ends with next high-value action. |
 | Decision tools | Green | Interactive budget is allowed only when controls change state or export useful output. |
 | Artifact audit | Green | Audits artifacts against decision value, evidence, interface, memory, and hard fails. |
-| Invisible quality gate | Green | Local fixtures prove the gate accepts complete artifacts and rejects weak ones. |
+| Invisible quality gate | Green | Local fixtures and delivery validation prove the gate accepts complete artifacts and rejects weak or keyword-stuffed ones. |
 | Thinking surface | Green | Invited only when the user is still forming the question or needs deeper reasoning. |
-| Artifact memory | Green | Defines lifespan, freshness, privacy, supersession, and do-not-reuse rules. |
+| Artifact memory | Green | Saves local artifacts with metadata and index while preserving lifespan, freshness, privacy, supersession, and do-not-reuse rules. |
 | Memory access | Green | Shows a tiny receipt without making the user learn archive mechanics. |
 | Language policy | Green | Repo stays English; user-facing output matches the user or intended audience. |
 | Human interface | Green | All patterns must preserve optionality and useful control. |

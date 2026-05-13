@@ -32,6 +32,31 @@ def has_any(text: str, patterns: list[str]) -> bool:
     return any(re.search(pattern, text, re.IGNORECASE) for pattern in patterns)
 
 
+def word_count(text: str) -> int:
+    return len(re.findall(r"[a-z0-9]+", text, re.IGNORECASE))
+
+
+def has_thin_keyword_stuffing(html: str, text: str) -> bool:
+    if word_count(text) >= 170:
+        return False
+    matched = 0
+    for check in CHECKS:
+        source = html.lower() if check.get("html") else text
+        if has_any(source, check["patterns"]):
+            matched += 1
+    return matched >= 9
+
+
+def has_generic_next_action(html: str, text: str) -> bool:
+    return bool(
+        re.search(
+            r"\b(best next move|next action|recommendation)\s*:\s*(decide|continue|approve it|do it|proceed|next prompt)\b",
+            text,
+            re.IGNORECASE,
+        )
+    )
+
+
 CHECKS = [
     {
         "id": "intent",
@@ -145,6 +170,16 @@ HARD_FAILS = [
         "pushy_language",
         "Uses pushy next-step language",
         lambda html, text: bool(re.search(r"\byou must\b|\brequired next step\b|\bclick here to proceed\b", text)),
+    ),
+    (
+        "thin_keyword_stuffing",
+        "Contains quality keywords without enough useful substance",
+        has_thin_keyword_stuffing,
+    ),
+    (
+        "generic_next_action",
+        "Next action is too generic to be useful",
+        has_generic_next_action,
     ),
 ]
 

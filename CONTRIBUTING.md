@@ -29,6 +29,7 @@ scripts/validate-commands.sh
 scripts/validate-examples.sh
 scripts/validate-golden-artifacts.sh
 scripts/validate-scenarios.sh
+scripts/validate-runtime.sh
 DRY_RUN=1 INSTALL_UPSTREAM=0 FETCH_EXAMPLES=0 bash install.sh
 scripts/smoke-install.sh
 scripts/smoke-uninstall.sh
@@ -36,7 +37,7 @@ scripts/smoke-uninstall.sh
 
 These checks confirm required behavior. New artifacts and patterns should include the required user-facing parts before validation runs.
 
-When adding a new principle or product promise, update `docs/ENGINEERING_TRANSLATION.md` with the concrete behavior, affected files, and confirmation check.
+When adding a new principle or product promise, update `docs/ENGINEERING_TRANSLATION.md` with the concrete behavior, affected files, and confirmation check. If the promise affects generated HTML, add or update runtime validation.
 
 ## Adding Or Changing A Pattern
 

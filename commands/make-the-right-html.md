@@ -18,7 +18,10 @@ Generate a self-contained HTML artifact using the html-explainer operating model
 12. Confirm the required user-facing parts in `docs/INVISIBLE_QUALITY.md`.
 13. Apply `docs/MEMORY_ACCESS.md` when the artifact may be reused.
 14. Apply `docs/CHAIN.md` when follow-up work is likely.
-15. Apply `docs/DELIVERY.md`.
+15. Save the artifact to a local HTML file.
+16. Run `~/.claude/html-explainer/scripts/deliver-artifact.py <artifact.html> --min-score 90`.
+17. If delivery is blocked, revise the artifact and run the delivery command again.
+18. Apply `docs/DELIVERY.md`.
 
 Use `docs/reference/` only when a serious case needs deeper guidance.
 
@@ -31,6 +34,7 @@ Use `docs/reference/` only when a serious case needs deeper guidance.
 - First screen shows intent, evidence basis, recommendation, risk, and next action.
 - Facts, inferences, assumptions, and unknowns are separated.
 - Interactive artifacts include copy/export output.
+- Delivery uses `deliver-artifact.py` before the final chat response.
 - Final response includes a clickable absolute path.
 
 ## Required Artifact Sections
@@ -65,6 +69,7 @@ Before responding:
 - Did it show a tiny "Saved for later" or "Not saved" receipt without becoming bulky?
 - Did visible copy help the user without exposing internal process labels?
 - Did the artifact already include the required user-facing parts?
+- Did `deliver-artifact.py` approve the artifact at 90+ before final delivery?
 
 ## Final Chat Response
 
