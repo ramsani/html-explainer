@@ -6,6 +6,9 @@ KEEP_BACKUPS="${KEEP_BACKUPS:-1}"
 RESTORE_BACKUP="${RESTORE_BACKUP:-1}"
 DRY_RUN="${DRY_RUN:-0}"
 BACKUPS_DIR="$CLAUDE_HOME/html-explainer/backups"
+CLAUDE_MD_FILE="$CLAUDE_HOME/CLAUDE.md"
+HTML_EXPLAINER_BLOCK_START="<!-- html-explainer:start -->"
+HTML_EXPLAINER_BLOCK_END="<!-- html-explainer:end -->"
 COMMANDS=(
   pick-the-right-html
   make-the-right-html
@@ -61,6 +64,41 @@ remove_path() {
   fi
 }
 
+remove_claude_md_guide() {
+  local tmp_file
+  tmp_file="$(mktemp)"
+
+  if [ ! -f "$CLAUDE_MD_FILE" ]; then
+    rm -f "$tmp_file"
+    return
+  fi
+
+  if ! grep -qF "$HTML_EXPLAINER_BLOCK_START" "$CLAUDE_MD_FILE"; then
+    rm -f "$tmp_file"
+    return
+  fi
+
+  if ! grep -qF "$HTML_EXPLAINER_BLOCK_END" "$CLAUDE_MD_FILE"; then
+    rm -f "$tmp_file"
+    say "Skipping CLAUDE.md guide removal: start marker exists but end marker is missing."
+    return
+  fi
+
+  say "Removing managed html-explainer guide from $CLAUDE_MD_FILE"
+  if [ "$DRY_RUN" = "1" ]; then
+    printf '[dry-run] remove managed html-explainer block from %s\n' "$CLAUDE_MD_FILE"
+    rm -f "$tmp_file"
+    return
+  fi
+
+  awk -v start="$HTML_EXPLAINER_BLOCK_START" -v end="$HTML_EXPLAINER_BLOCK_END" '
+    index($0, start) { in_block = 1; next }
+    index($0, end) { in_block = 0; next }
+    !in_block { print }
+  ' "$CLAUDE_MD_FILE" > "$tmp_file"
+  mv "$tmp_file" "$CLAUDE_MD_FILE"
+}
+
 say "Using CLAUDE_HOME=$CLAUDE_HOME"
 
 BACKUP="$(latest_backup || true)"
@@ -101,6 +139,8 @@ if [ "$KEEP_BACKUPS" = "0" ]; then
 else
   say "Keeping backups under $BACKUPS_DIR"
 fi
+
+remove_claude_md_guide
 
 # Remove empty html-explainer directory if possible, but keep if backups or examples remain.
 if [ "$DRY_RUN" = "0" ] && [ -d "$CLAUDE_HOME/html-explainer" ]; then

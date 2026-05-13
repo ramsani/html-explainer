@@ -1,5 +1,17 @@
 # Changelog
 
+## Unreleased — CLAUDE.md operating guide
+
+### Added
+
+- Installer now adds a short managed `CLAUDE.md` guide explaining when to use HTML, when not to use it, and the core operating path.
+- Uninstaller removes only the managed guide block without rewriting the rest of `CLAUDE.md`.
+- Smoke tests now verify that the guide is installed and removed safely.
+
+### Why it matters
+
+The agent now receives the tool and the operating rule together. This keeps the HTML workflow discoverable without adding a new runtime or forcing the user to remember the process.
+
 ## Unreleased — coherence guard
 
 ### Added

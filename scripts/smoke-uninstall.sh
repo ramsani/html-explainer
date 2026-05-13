@@ -26,6 +26,7 @@ CLAUDE_HOME="$TMP_HOME" INSTALL_UPSTREAM=0 FETCH_EXAMPLES=0 bash install.sh >/de
 
 [ -f "$TMP_HOME/skills/thariq-html-effectiveness/SKILL.md" ] || fail "install did not create skill"
 [ -f "$TMP_HOME/commands/make-the-right-html.md" ] || fail "install did not create command"
+[ -f "$TMP_HOME/CLAUDE.md" ] || fail "install did not create CLAUDE.md guide"
 
 # No previous backup exists on first install, so uninstall should remove managed files.
 echo "[smoke-uninstall] Removing installed files"
@@ -38,5 +39,8 @@ assert_absent "$TMP_HOME/commands/audit-html.md"
 assert_absent "$TMP_HOME/html-explainer/docs"
 assert_absent "$TMP_HOME/html-explainer/patterns"
 assert_absent "$TMP_HOME/html-explainer/local-examples"
+if grep -qF "<!-- html-explainer:start -->" "$TMP_HOME/CLAUDE.md" 2>/dev/null; then
+  fail "CLAUDE.md guide block should have been removed"
+fi
 
 echo "[smoke-uninstall] OK: uninstall smoke test passed"

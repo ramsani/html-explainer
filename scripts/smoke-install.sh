@@ -24,6 +24,12 @@ assert_dir() {
   [ -d "$path" ] || fail "missing directory: $path"
 }
 
+assert_contains() {
+  local path="$1"
+  local text="$2"
+  grep -qF "$text" "$path" || fail "missing expected text in $path: $text"
+}
+
 cd "$ROOT_DIR"
 
 echo "[smoke-install] Using temporary CLAUDE_HOME=$TMP_HOME"
@@ -37,6 +43,9 @@ assert_file "$TMP_HOME/commands/check-the-diff.md"
 assert_file "$TMP_HOME/commands/reenter-project.md"
 assert_file "$TMP_HOME/commands/build-decision-tool.md"
 assert_file "$TMP_HOME/commands/audit-html.md"
+assert_file "$TMP_HOME/CLAUDE.md"
+assert_contains "$TMP_HOME/CLAUDE.md" "<!-- html-explainer:start -->"
+assert_contains "$TMP_HOME/CLAUDE.md" "intent -> evidence -> visual understanding -> decision -> expert next prompt"
 
 assert_dir "$TMP_HOME/html-explainer/docs"
 assert_dir "$TMP_HOME/html-explainer/patterns"

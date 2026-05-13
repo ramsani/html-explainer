@@ -10,6 +10,9 @@ DRY_RUN="${DRY_RUN:-0}"
 TMP_DIR="$(mktemp -d)"
 STAMP="$(date +%Y%m%d-%H%M%S)"
 BACKUP_DIR="$CLAUDE_HOME/html-explainer/backups/$STAMP"
+CLAUDE_MD_FILE="$CLAUDE_HOME/CLAUDE.md"
+HTML_EXPLAINER_BLOCK_START="<!-- html-explainer:start -->"
+HTML_EXPLAINER_BLOCK_END="<!-- html-explainer:end -->"
 COMMANDS=(
   pick-the-right-html
   make-the-right-html
@@ -95,6 +98,81 @@ verify_file() {
   fi
 }
 
+write_claude_md_block() {
+  local file="$1"
+  cat > "$file" <<'EOF'
+<!-- html-explainer:start -->
+## html-explainer
+
+Use html-explainer when the user asks for an HTML artifact, or when a complex plan, diff, PR, architecture, repo recap, workflow, design exploration, report, triage board, config editor, or prompt-tuning task would be easier to understand in a browser than in Markdown.
+
+Core operating path:
+
+```text
+intent -> evidence -> visual understanding -> decision -> expert next prompt
+```
+
+Prefer these installed commands:
+
+- `/pick-the-right-html` to decide whether HTML is justified and which artifact fits.
+- `/make-the-right-html` to generate the smallest useful verified HTML artifact.
+- `/check-the-plan` for implementation plans.
+- `/check-the-diff` for diffs or PR review.
+- `/reenter-project` for repo recaps and project reentry.
+- `/build-decision-tool` for interactive editors, triage boards, or prompt/config tuners.
+- `/audit-html` to score and improve an artifact.
+
+Do not use HTML for simple answers, one commands, tiny facts, or low-consequence notes. Every artifact must preserve the user's primary intent, cover obvious secondary intents when they affect the decision, show evidence, separate facts/inferences/unknowns, use the smallest useful budget, and end with a copy/edit next prompt that carries intent, evidence, acceptance criteria, out-of-scope items, and block conditions when useful.
+
+Reference docs live in `~/.claude/html-explainer/docs/`.
+<!-- html-explainer:end -->
+EOF
+}
+
+install_claude_md_guide() {
+  local block_file="$TMP_DIR/claude-md-html-explainer-block.md"
+  local tmp_file="$TMP_DIR/CLAUDE.md"
+
+  say "Installing short CLAUDE.md guide"
+  write_claude_md_block "$block_file"
+  backup_path "$CLAUDE_MD_FILE" "CLAUDE.md"
+
+  if [ "$DRY_RUN" = "1" ]; then
+    printf '[dry-run] update managed html-explainer block in %s\n' "$CLAUDE_MD_FILE"
+    return
+  fi
+
+  mkdir -p "$CLAUDE_HOME"
+  if [ -f "$CLAUDE_MD_FILE" ] && grep -qF "$HTML_EXPLAINER_BLOCK_START" "$CLAUDE_MD_FILE"; then
+    if ! grep -qF "$HTML_EXPLAINER_BLOCK_END" "$CLAUDE_MD_FILE"; then
+      echo "Found html-explainer start marker in $CLAUDE_MD_FILE, but missing end marker. Refusing to edit it." >&2
+      exit 1
+    fi
+    awk -v start="$HTML_EXPLAINER_BLOCK_START" -v end="$HTML_EXPLAINER_BLOCK_END" -v block="$block_file" '
+      BEGIN { in_block = 0 }
+      index($0, start) {
+        while ((getline line < block) > 0) print line
+        close(block)
+        in_block = 1
+        next
+      }
+      index($0, end) {
+        in_block = 0
+        next
+      }
+      !in_block { print }
+    ' "$CLAUDE_MD_FILE" > "$tmp_file"
+    mv "$tmp_file" "$CLAUDE_MD_FILE"
+  elif [ -f "$CLAUDE_MD_FILE" ]; then
+    {
+      printf '\n\n'
+      cat "$block_file"
+    } >> "$CLAUDE_MD_FILE"
+  else
+    cp "$block_file" "$CLAUDE_MD_FILE"
+  fi
+}
+
 say "Installing into $CLAUDE_HOME"
 require_cmd git
 run mkdir -p "$CLAUDE_HOME/skills" "$CLAUDE_HOME/commands" "$CLAUDE_HOME/html-explainer"
@@ -150,6 +228,7 @@ copy_dir_clean "$PACKAGE_DIR/patterns" "$CLAUDE_HOME/html-explainer/patterns"
 if [ -d "$PACKAGE_DIR/examples" ]; then
   copy_dir_clean "$PACKAGE_DIR/examples" "$CLAUDE_HOME/html-explainer/local-examples"
 fi
+install_claude_md_guide
 
 if [ "$FETCH_EXAMPLES" = "1" ]; then
   say "Optionally fetching Thariq HTML examples for local reference"
@@ -208,6 +287,10 @@ if [ "$DRY_RUN" = "0" ]; then
   verify_file "$CLAUDE_HOME/html-explainer/patterns/01-code-approach-comparison.md"
   verify_file "$CLAUDE_HOME/html-explainer/patterns/20-prompt-agent-behavior-tuner.md"
   verify_file "$CLAUDE_HOME/html-explainer/patterns/21-visual-direction-explorer.md"
+  grep -qF "$HTML_EXPLAINER_BLOCK_START" "$CLAUDE_MD_FILE" || {
+    echo "Verification failed. Missing html-explainer guide in $CLAUDE_MD_FILE" >&2
+    exit 1
+  }
 fi
 
 say "Installed safely. Restart Claude Code if it was already open."

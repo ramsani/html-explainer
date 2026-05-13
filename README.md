@@ -109,11 +109,25 @@ You should then see these commands:
 /audit-html
 ```
 
+The installer also adds a short managed guide to:
+
+```text
+~/.claude/CLAUDE.md
+```
+
+That guide tells the agent when to use HTML, when not to use it, and how to move through the core path:
+
+```text
+intent -> evidence -> visual understanding -> decision -> expert next prompt
+```
+
+The block is marked with `<!-- html-explainer:start -->` and `<!-- html-explainer:end -->`, so future installs update only that section. Your existing `CLAUDE.md` content is not overwritten.
+
 ## Update an existing install
 
 You can safely install over an older `html-explainer` version.
 
-The installer backs up the previous skill, command files, docs, patterns, and local examples before replacing them. It also removes older command names from previous versions.
+The installer backs up the previous skill, command files, docs, patterns, local examples, and `CLAUDE.md` before replacing managed content. It also removes older command names from previous versions.
 
 If you already cloned the repo:
 
@@ -343,6 +357,7 @@ It includes:
 - dry-run mode;
 - optional upstream installation;
 - optional example download;
+- a short, idempotent `CLAUDE.md` guide so agents understand when and how to use the HTML workflow;
 - installation into `~/.claude` by default.
 
 ### 2. Safe uninstaller
@@ -353,6 +368,7 @@ It supports:
 
 - restoring from the latest backup;
 - removing managed files when no backup exists;
+- removing only the managed `CLAUDE.md` guide block, without rewriting the rest of your memory file;
 - `DRY_RUN=1` preview mode;
 - `RESTORE_BACKUP=0` removal-only mode;
 - `KEEP_BACKUPS=0` cleanup mode;
