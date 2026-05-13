@@ -1,0 +1,120 @@
+# /think-with-me-about
+
+Create a decision-ready HTML thinking surface using the Insight Surface Loop.
+
+Use when the user wants to think through a topic, idea, decision, strategy, problem, opportunity, or unclear question.
+
+Do not use for simple facts, single commands, tiny edits, or low-consequence notes where Markdown is enough.
+
+## Mandatory Process
+
+1. Apply `docs/DECISION_GATE.md`.
+2. Use HTML only if the topic benefits from a visual thinking surface.
+3. Apply `docs/INSIGHT_SURFACE_LOOP.md`.
+4. Apply `docs/FACT_SHEET.md`.
+5. Separate facts, inferences, assumptions, hypotheses, and unknowns.
+6. Select the smallest useful artifact budget.
+7. Generate one self-contained HTML file.
+8. Apply `docs/STYLE.md`.
+9. Apply `docs/QUALITY_BAR.md`.
+10. Apply `docs/CHAIN.md` for the next prompt.
+11. Apply `docs/DELIVERY.md`.
+
+When artifact memory docs are present, recommend whether to preserve the artifact using `docs/ARTIFACT_MEMORY.md`.
+
+## Required Loop
+
+```text
+Frame -> Expand -> Ground -> Stress -> Synthesize -> Decide -> Preserve -> Re-enter
+```
+
+## Required Artifact Sections
+
+- North Star.
+- Evidence Board.
+- Perspective Map.
+- Tension Map.
+- Inversion Panel.
+- Insight Card.
+- Action Queue.
+- Preserve / Re-enter.
+
+## P0 Gates
+
+Do not deliver a serious artifact unless it passes these gates:
+
+- Topic and real question are clear.
+- HTML advantage is explicit.
+- Facts, inferences, assumptions, hypotheses, and unknowns are separated.
+- At least one critical tension or risk is visible.
+- Inversion or stress testing is included.
+- There is a provisional conclusion, or a clear reason one is not justified.
+- There is a concrete next action.
+- There is a copy-ready next prompt.
+- There is an archive recommendation.
+- No fake certainty, fake metrics, or unsupported claims are present.
+
+## HTML Requirements
+
+- Single self-contained HTML file.
+- No external network dependency unless explicitly requested.
+- System light/dark mode.
+- Responsive layout.
+- First screen shows topic, real question, provisional conclusion, confidence, risk, and next action.
+- Facts, inferences, assumptions, hypotheses, and unknowns are separated.
+- Interaction is minimal and only included when it reduces cognitive load.
+- Include copy/export for the next prompt when interaction is present.
+- Final response includes a clickable absolute path.
+
+## Archive Recommendation
+
+End the artifact with:
+
+```text
+Archive recommendation:
+Save / do not save:
+Suggested validity:
+Freshness risk:
+Suggested title:
+Suggested tags:
+Reason:
+```
+
+Suggested validity values:
+
+```text
+temporal
+replaceable
+evergreen
+private
+do-not-reuse
+```
+
+## Final Self-Check
+
+Before responding:
+
+- Did it help the user think better, not merely read more?
+- Did it avoid unsupported claims?
+- Did it include inversion?
+- Did it make the next action obvious?
+- Did it include a next prompt that preserves context?
+- Did it use the smallest useful HTML surface?
+- Did it avoid academic theory overload?
+- Did it explain whether to preserve the artifact?
+
+## Final Chat Response
+
+```text
+Created:
+Open:
+Method: Insight Surface Loop
+Budget:
+Primary insight:
+Confidence:
+Next action:
+Archive recommendation:
+Next command:
+```
+
+Do not paste the full HTML into chat unless requested.
