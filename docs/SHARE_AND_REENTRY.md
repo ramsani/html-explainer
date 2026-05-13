@@ -1,1 +1,5 @@
-reference/SHARE_AND_REENTRY.md
+# SHARE_AND_REENTRY
+
+Compatibility stub. The active path is the lean core in `docs/DECISION_GATE.md`, `docs/PATTERN_GUIDE.md`, `docs/QUALITY_BAR.md`, `docs/STYLE.md`, `docs/FACT_SHEET.md`, `docs/CHAIN.md`, and `docs/DELIVERY.md`.
+
+Full historical reference: [`docs/reference/SHARE_AND_REENTRY.md`](reference/SHARE_AND_REENTRY.md).
