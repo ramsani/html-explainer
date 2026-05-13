@@ -30,6 +30,19 @@ intent -> evidence -> visual understanding -> decision -> expert next prompt
 
 `html-explainer` adds the operating discipline: when to use HTML, what evidence to inspect, how to keep the user in the loop, and how to end with the next useful prompt.
 
+## 60-Second Demo
+
+Open [`examples/before-after-decision.example.html`](examples/before-after-decision.example.html).
+
+It shows the same request two ways:
+
+- a skimmable answer that looks organized but leaves the user to do the hard thinking;
+- an intent-led HTML artifact that exposes evidence, risk, recommendation, and a copy-ready next prompt.
+
+The point is simple: HTML is worth the extra tokens only when it removes mental work.
+
+See [`docs/DEMO.md`](docs/DEMO.md) for the demo explanation.
+
 ## Install
 
 First run a preview:

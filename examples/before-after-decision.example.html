@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Before / After Decision Demo</title>
+<style>
+:root{--bg:#f8fafc;--panel:#fff;--ink:#111827;--muted:#64748b;--line:#cbd5e1;--good:#15803d;--warn:#b45309;--bad:#b91c1c;--blue:#2563eb}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,sans-serif;line-height:1.45}.wrap{max-width:1180px;margin:auto;padding:28px}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;margin:14px 0}.weak{border-top:5px solid var(--bad)}.strong{border-top:5px solid var(--good)}.badge{display:inline-block;border-radius:999px;padding:5px 9px;font-size:12px;font-weight:800}.bad{background:#fee2e2;color:#991b1b}.ok{background:#dcfce7;color:#166534}.info{background:#dbeafe;color:#1d4ed8}.warn{background:#fef3c7;color:#92400e}.score{font-size:42px;font-weight:900}.ladder{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.step{border:1px solid var(--line);border-radius:10px;padding:12px;background:#f8fafc}.step strong{display:block}.table{width:100%;border-collapse:collapse}th,td{border-bottom:1px solid #e2e8f0;text-align:left;padding:10px;vertical-align:top}th{text-transform:uppercase;font-size:12px;color:var(--muted);background:#f1f5f9}code,textarea{background:#f1f5f9;border:1px solid #e2e8f0;border-radius:8px}code{padding:2px 5px}textarea{width:100%;min-height:92px;padding:12px;color:var(--ink);font:14px ui-monospace,SFMono-Regular,Menlo,monospace}.copy{border:0;border-radius:10px;padding:10px 12px;font-weight:800;background:#111827;color:#fff}.metric{display:flex;align-items:center;justify-content:space-between;gap:12px}.bar{height:10px;background:#e5e7eb;border-radius:999px;overflow:hidden;flex:1}.bar span{display:block;height:100%;background:var(--blue)}@media(prefers-color-scheme:dark){:root{--bg:#0f172a;--panel:#111827;--ink:#e5e7eb;--muted:#94a3b8;--line:#334155}.step,code,textarea,th{background:#1f2937;color:#e5e7eb}.copy{background:#e5e7eb;color:#111827}.bar{background:#334155}}@media(max-width:900px){.grid,.ladder{grid-template-columns:1fr}.score{font-size:34px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="card">
+  <p><span class="badge info">Demo</span> <span class="badge warn">Artifact budget: compact</span></p>
+  <h1>Before / After: From Skimmable Output To Decision Surface</h1>
+  <p class="muted">Same user request. Two outputs. The point is not decoration; the point is less mental work for the user.</p>
+</header>
+
+<section class="card">
+  <h2>User request</h2>
+  <p><code>Review this repo and tell me what HTML artifact would help me understand the biggest opportunity. Do not generate the final artifact yet.</code></p>
+</section>
+
+<section class="grid">
+  <article class="card weak">
+    <p><span class="badge bad">Before</span></p>
+    <h2>Markdown-style answer</h2>
+    <p>Recommended artifact: Project Recap.</p>
+    <p>This repo has install scripts, commands, patterns, docs, and examples. A Project Recap would summarize the repo and show next steps.</p>
+    <p>Next: generate the recap.</p>
+    <h3>What the user still has to do</h3>
+    <ul>
+      <li>Trust claims without seeing evidence.</li>
+      <li>Infer why HTML is justified.</li>
+      <li>Guess which risk matters most.</li>
+      <li>Write the next prompt from scratch.</li>
+    </ul>
+  </article>
+
+  <article class="card strong">
+    <p><span class="badge ok">After</span></p>
+    <h2>Intent-led explainer</h2>
+    <p><strong>Primary intent:</strong> choose the best artifact before spending tokens generating it.</p>
+    <p><strong>Secondary intents covered:</strong> understand repo identity, risks, evidence, artifact budget, and next step.</p>
+    <p><strong>Base concept:</strong> the user is not asking for a summary; they are asking for a decision aid.</p>
+    <p><strong>HTML advantage:</strong> side-by-side comparison, risk badges, evidence table, and copy-ready continuation prompt.</p>
+  </article>
+</section>
+
+<section class="card">
+  <h2>Evidence and confidence</h2>
+  <table class="table">
+    <tr><th>Claim</th><th>Type</th><th>Evidence</th><th>Confidence</th></tr>
+    <tr><td>Project Recap fits the request.</td><td><span class="badge ok">Inference</span></td><td>Request asks to understand repo and choose next useful artifact.</td><td>High</td></tr>
+    <tr><td>HTML is justified.</td><td><span class="badge ok">Inference</span></td><td>User needs comparison, risk visibility, and next action, not a plain README summary.</td><td>High</td></tr>
+    <tr><td>Repo quality is sufficient.</td><td><span class="badge warn">Unknown</span></td><td>Requires actual inspection of scripts, commands, examples, and CI before final artifact.</td><td>Not yet verified</td></tr>
+  </table>
+</section>
+
+<section class="card">
+  <h2>Mental work removed</h2>
+  <div class="metric"><strong>Evidence visibility</strong><div class="bar"><span style="width:92%"></span></div><span>High</span></div>
+  <div class="metric"><strong>Decision clarity</strong><div class="bar"><span style="width:88%"></span></div><span>High</span></div>
+  <div class="metric"><strong>Next-step friction</strong><div class="bar"><span style="width:18%"></span></div><span>Low</span></div>
+</section>
+
+<section class="card">
+  <h2>Decision ladder</h2>
+  <div class="ladder">
+    <div class="step"><strong>1. Intent</strong>Choose artifact, not generate yet.</div>
+    <div class="step"><strong>2. Evidence</strong>Inspect repo before claims.</div>
+    <div class="step"><strong>3. Fit</strong>Project Recap beats generic audit.</div>
+    <div class="step"><strong>4. Risk</strong>Avoid pretty summary without operational value.</div>
+    <div class="step"><strong>5. Continue</strong>Run a scoped generation prompt.</div>
+  </div>
+</section>
+
+<section class="card strong">
+  <h2>Recommendation</h2>
+  <p><span class="badge ok">Use Project Recap</span></p>
+  <p>Generate a compact Project Recap only after inspecting README, install scripts, commands, patterns, examples, CI, and recent changes. The artifact should answer: what this repo is, why it matters, what is risky, and what to do next.</p>
+</section>
+
+<section class="card">
+  <h2>Next prompt</h2>
+  <textarea id="next">/make-the-right-html generate a compact Project Recap for this repo. Preserve the primary intent: help me understand the repo and choose the next highest-value action. Inspect README.md, install.sh, uninstall.sh, commands/, skills/, patterns/, examples/, scripts/, and .github/workflows/ before making claims. Separate facts, inferences, and unknowns. Show why HTML is better than Markdown for this case. End with three copy-ready next prompts: fix, verify, or publish.</textarea>
+  <p><button class="copy" onclick="navigator.clipboard.writeText(document.getElementById('next').value)">Copy next prompt</button></p>
+</section>
+
+<section class="card">
+  <h2>Acceptance criteria</h2>
+  <ul>
+    <li>The user can see the recommendation without scrolling deeply.</li>
+    <li>Facts, inferences, and unknowns are separated.</li>
+    <li>The artifact explains why HTML is justified.</li>
+    <li>The next action is copy-ready and preserves intent.</li>
+  </ul>
+</section>
+</main>
+</body>
+</html>

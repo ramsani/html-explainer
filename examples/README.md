@@ -6,6 +6,7 @@ They are not decorative samples. They define the expected shape for common artif
 
 | Example | Pattern | Demonstrates |
 |---|---|---|
+| `before-after-decision.example.html` | Demo / quality gate | Why intent-led HTML is better than a skimmable answer. |
 | `plan-review-minimal.example.html` | 02 Visual implementation plan | Compact plan review with risk and next action. |
 | `diff-review-minimal.example.html` | 03 Annotated PR / diff review | Compact diff review. |
 | `diff-review-full.example.html` | 03 Annotated PR / diff review | Full review with evidence, findings, tests, decision. |
