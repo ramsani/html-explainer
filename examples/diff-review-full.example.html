@@ -13,13 +13,13 @@
 <main class="shell">
 <header>
   <div>
-    <div class="eyebrow">Pattern 03 — Annotated PR / Diff Review</div>
+    <div class="eyebrow">Example type — diff review</div>
     <h1>NextActionCard Diff Review</h1>
     <p class="summary">Review of a small dashboard UX change before accepting it. This example shows how a diff review should expose evidence, risk, behavior, validation gaps, and the next safest action.</p>
-    <p class="summary"><strong>Primary intent:</strong> decide whether this diff is safe to accept. <strong>Secondary intents covered:</strong> behavior change, test gaps, release risk. <strong>Base concept:</strong> what changed, what could break, and what should happen next.</p><p class="summary"><strong>Artifact budget:</strong> standard. <strong>HTML benefit:</strong> replaces a wall of markdown diff notes with a scan path for files, behavior, findings, and validation gaps. <strong>Mental work removed:</strong> reconstructing what changed and what still needs proof.</p>
+    <p class="summary"><strong>What you need:</strong> decide whether this diff is safe to accept. <strong>Also handled:</strong> behavior change, test gaps, release risk. <strong>Simple idea:</strong> what changed, what could break, and what should happen next.</p><p class="summary"><strong>Size:</strong> standard. <strong>Why this helps:</strong> replaces a wall of markdown diff notes with a scan path for files, behavior, findings, and validation gaps. <strong>Work this saves:</strong> reconstructing what changed and what still needs proof.</p>
   </div>
   <div class="card"><div class="eyebrow">Recommendation</div><p><span class="badge revise">Revise before accepting</span></p><p class="muted">Quality score: 82/100</p></div>
-<p><strong>Artifact language:</strong> English for this repository example. In real use, match the user language unless the artifact audience requires another language.</p>
+<p><strong>Language:</strong> English for this repository example. In real use, match the user language unless the artifact audience requires another language.</p>
 </header>
 
 <nav class="nav">
@@ -33,7 +33,7 @@
 </section>
 
 <section id="evidence" class="card">
-  <h2>Evidence inspected</h2>
+  <h2>What I checked</h2>
   <table><thead><tr><th>Evidence</th><th>Result</th><th>Confidence</th></tr></thead><tbody>
     <tr><td><code>git status --short</code></td><td>Three modified files, no untracked config/migration files.</td><td>High</td></tr>
     <tr><td><code>git diff --stat</code></td><td>+118 / -9 lines.</td><td>High</td></tr>
@@ -91,8 +91,8 @@
 </section>
 
 <p class="footer">Example artifact. Data is fictional but shaped to model a strong evidence-first HTML diff review.</p>
-<section class="card"><h2>Next prompt</h2><p><code>/make-the-right-html continue from this artifact with the same intent, evidence, risks, acceptance criteria, and out-of-scope boundaries.</code></p></section>
-<section class="card"><h2>Archive recommendation</h2><p><strong>Memory decision:</strong> do not save this demo as user knowledge. It is a reference example for the repo, not a live project artifact.</p><p><strong>Suggested validity:</strong> <code>do-not-reuse</code> for user memory; keep only as a repo example.</p><p><strong>Freshness risk:</strong> low for the teaching model, medium if the matching pattern changes.</p></section>
+<section class="card"><h2>Continue from here</h2><p><code>/make-the-right-html continue from this artifact with the same intent, evidence, risks, what good looks like, and out-of-scope boundaries.</code></p></section>
+<section class="card"><h2>Save this?</h2><p><strong>Save decision:</strong> do not save this demo as user knowledge. It is a reference example for the repo, not a live project artifact.</p><p><strong>Memory label:</strong> <code>do-not-reuse</code> for user memory; keep only as a repo example.</p><p><strong>When to review:</strong> low for the teaching model, medium if the matching pattern changes.</p></section>
 </main>
 </body>
 </html>

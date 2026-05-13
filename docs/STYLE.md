@@ -36,6 +36,14 @@ The first screen must show:
 - the main risk or uncertainty;
 - the next action.
 
+## Visible Copy
+
+Apply `docs/USER_FACING_COPY.md`.
+
+The user should see plain labels such as "What you need", "What I checked", "What could go wrong", "Best next move", "Continue from here", and "Save this?".
+
+Avoid exposing internal labels such as "Primary intent", "Artifact budget", "HTML advantage", "Pattern routing", "Quality gate", or "Fact sheet" in the visible artifact unless the user specifically asks for implementation detail.
+
 ## Lean Rendering
 
 Keep the HTML small:

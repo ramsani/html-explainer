@@ -9,20 +9,20 @@
 </style>
 </head>
 <body><main class="wrap">
-<p class="muted"><strong>Pattern 09 — Architecture Diagram</strong></p>
+<p class="muted"><strong>Example type 09 — Architecture Diagram</strong></p>
 <h1>Nova Web Architecture Map — Example</h1>
-<p><strong>Artifact language:</strong> English for this repository example. In real use, match the user language unless the artifact audience requires another language.</p>
+<p><strong>Language:</strong> English for this repository example. In real use, match the user language unless the artifact audience requires another language.</p>
 <p class="muted">A fictional but realistic artifact showing how an architecture HTML should expose components, data flow, trust boundaries, evidence, failure points, and safe change zones.</p>
-<section class="card"><h2>Intent distillation</h2><p><strong>Primary intent:</strong> understand the system map before changing it.</p><p><strong>Secondary intents covered:</strong> identify safe zones, risky boundaries, and unknowns.</p><p><strong>Base concept:</strong> who talks to whom, through what boundary, with what failure risk.</p></section>
+<section class="card"><h2>What this is for</h2><p><strong>What you need:</strong> understand the system map before changing it.</p><p><strong>Also handled:</strong> identify safe zones, risky boundaries, and unknowns.</p><p><strong>Simple idea:</strong> who talks to whom, through what boundary, with what failure risk.</p></section>
 
 <section class="grid cols-3">
   <div class="card"><strong>Confidence</strong><p><span class="badge warn">Medium</span></p><p class="muted">Repo files inspected, runtime not executed.</p></div>
   <div class="card"><strong>Primary risk</strong><p><span class="badge bad">Data mutation boundary</span></p><p class="muted">UI changes should not alter API writes.</p></div>
   <div class="card"><strong>Next action</strong><p><span class="badge ok">Inspect dashboard flow</span></p><p class="muted">Safe candidate for UX quick win.</p></div>
 </section>
-<section class="card"><h2>Artifact budget</h2><p><strong>HTML advantage:</strong> visible structure and faster decision.</p><p><strong>Budget:</strong> standard.</p><p><strong>HTML benefit:</strong> makes boundaries and failure risk visible instead of forcing the user to reconstruct them from file paths.</p><p><strong>Mental work removed:</strong> mapping who talks to whom and where not to touch.</p></section>
+<section class="card"><h2>Why this is worth it</h2><p><strong>Why this helps:</strong> visible structure and faster decision.</p><p><strong>Size:</strong> standard.</p><p><strong>Why this helps:</strong> makes boundaries and failure risk visible instead of forcing the user to reconstruct them from file paths.</p><p><strong>Work this saves:</strong> mapping who talks to whom and where not to touch.</p></section>
 
-<section class="card legend"><h2>Evidence inspected</h2><span class="badge ok">Verified</span><span class="badge warn">Inferred</span><span class="badge bad">Risk</span><ul><li><code>package.json</code></li><li><code>src/app/dashboard/page.tsx</code></li><li><code>src/components/dashboard/*</code></li><li><code>src/lib/api.ts</code></li><li><code>src/hooks/useActions.ts</code></li><li><code>README.md</code></li></ul></section>
+<section class="card legend"><h2>What I checked</h2><span class="badge ok">Verified</span><span class="badge warn">Inferred</span><span class="badge bad">Risk</span><ul><li><code>package.json</code></li><li><code>src/app/dashboard/page.tsx</code></li><li><code>src/components/dashboard/*</code></li><li><code>src/lib/api.ts</code></li><li><code>src/hooks/useActions.ts</code></li><li><code>README.md</code></li></ul></section>
 
 <section class="lane verified"><h2>Client boundary</h2><div class="nodes"><div class="node"><strong>Browser</strong><span class="muted">User interaction</span></div><span class="arrow">→</span><div class="node"><strong>App Router</strong><code>src/app/*</code></div><span class="arrow">→</span><div class="node"><strong>Dashboard UI</strong><code>components/dashboard</code></div></div></section>
 
@@ -35,6 +35,6 @@
 <section class="card"><h2>Failure points</h2><table><tr><th>Point</th><th>Symptom</th><th>Mitigation</th></tr><tr><td>Dashboard hook returns empty/null</td><td>Blank or broken card</td><td>Add empty state and guard clauses</td></tr><tr><td>Action sorting mislabels priority</td><td>User sees wrong “important” action</td><td>Use precise copy: “next action” unless priority exists</td></tr><tr><td>Write mutation changed accidentally</td><td>Data loss or duplicate actions</td><td>Keep quick wins read-only unless explicitly reviewed</td></tr></table></section>
 
 <section class="grid cols-3"><div class="card verified"><h2>Safe zones</h2><ul><li>Read-only dashboard cards</li><li>Empty states</li><li>Client-side sorting labels</li></ul></div><div class="card inferred"><h2>Unknown zones</h2><ul><li>Exact backend storage schema</li><li>n8n dependency on action fields</li><li>Auth/session edge cases</li></ul></div><div class="card risk"><h2>Do not touch</h2><ul><li>DB schema</li><li>API mutation semantics</li><li>Reminder workflows</li></ul></div></section>
-<section class="card"><h2>Next prompt</h2><p><code>/make-the-right-html continue from this artifact with the same intent, evidence, risks, acceptance criteria, and out-of-scope boundaries.</code></p></section>
-<section class="card"><h2>Archive recommendation</h2><p><strong>Memory decision:</strong> do not save this demo as user knowledge. It is a reference example for the repo, not a live project artifact.</p><p><strong>Suggested validity:</strong> <code>do-not-reuse</code> for user memory; keep only as a repo example.</p><p><strong>Freshness risk:</strong> low for the teaching model, medium if the matching pattern changes.</p></section>
+<section class="card"><h2>Continue from here</h2><p><code>/make-the-right-html continue from this artifact with the same intent, evidence, risks, what good looks like, and out-of-scope boundaries.</code></p></section>
+<section class="card"><h2>Save this?</h2><p><strong>Save decision:</strong> do not save this demo as user knowledge. It is a reference example for the repo, not a live project artifact.</p><p><strong>Memory label:</strong> <code>do-not-reuse</code> for user memory; keep only as a repo example.</p><p><strong>When to review:</strong> low for the teaching model, medium if the matching pattern changes.</p></section>
 </main></body></html>

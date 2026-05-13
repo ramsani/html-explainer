@@ -9,12 +9,12 @@
 </style>
 </head>
 <body><main class="wrap">
-<p class="muted"><strong>Pattern 17 — Project Recap</strong></p>
+<p class="muted"><strong>Example type 17 — Project Recap</strong></p>
 <h1>html-explainer Project Recap — Example</h1>
-<p><strong>Artifact language:</strong> English for this repository example. In real use, match the user language unless the artifact audience requires another language.</p>
+<p><strong>Language:</strong> English for this repository example. In real use, match the user language unless the artifact audience requires another language.</p>
 <p class="muted">A model artifact for re-entering a repo with operational context: identity, architecture, entry points, recent work, risks, and next action.</p>
-<section class="card"><h2>Intent distillation</h2><p><strong>Primary intent:</strong> re-enter the project without rereading everything.</p><p><strong>Secondary intents covered:</strong> locate entry points, current risks, recent activity, and next safe step.</p><p><strong>Base concept:</strong> what this repo is, how work flows through it, and where to act next.</p></section>
-<section class="card"><h2>Artifact budget</h2><p><strong>HTML advantage:</strong> visible structure and faster decision.</p><p><strong>Budget:</strong> standard.</p><p><strong>HTML benefit:</strong> replaces rereading the repo with a navigable project map.</p><p><strong>Mental work removed:</strong> reconstructing identity, entry points, risks, and next action.</p></section>
+<section class="card"><h2>What this is for</h2><p><strong>What you need:</strong> re-enter the project without rereading everything.</p><p><strong>Also handled:</strong> locate entry points, current risks, recent activity, and next safe step.</p><p><strong>Simple idea:</strong> what this repo is, how work flows through it, and where to act next.</p></section>
+<section class="card"><h2>Why this is worth it</h2><p><strong>Why this helps:</strong> visible structure and faster decision.</p><p><strong>Size:</strong> standard.</p><p><strong>Why this helps:</strong> replaces rereading the repo with a navigable project map.</p><p><strong>Work this saves:</strong> reconstructing identity, entry points, risks, and next action.</p></section>
 
 <section class="grid cols-4">
  <div class="card"><strong>Project type</strong><p><span class="badge info">Claude Code skill</span></p></div>
@@ -23,7 +23,7 @@
  <div class="card"><strong>Next action</strong><p><span class="badge ok">Harden examples</span></p></div>
 </section>
 
-<section class="card"><h2>Evidence inspected</h2><ul><li><code>README.md</code></li><li><code>install.sh</code> and <code>uninstall.sh</code></li><li><code>skills/thariq-make-the-right-html/SKILL.md</code></li><li><code>commands/*.md</code></li><li><code>patterns/*.md</code></li><li><code>.github/workflows/ci.yml</code></li><li><code>scripts/*.sh</code></li></ul></section>
+<section class="card"><h2>What I checked</h2><ul><li><code>README.md</code></li><li><code>install.sh</code> and <code>uninstall.sh</code></li><li><code>skills/thariq-make-the-right-html/SKILL.md</code></li><li><code>commands/*.md</code></li><li><code>patterns/*.md</code></li><li><code>.github/workflows/ci.yml</code></li><li><code>scripts/*.sh</code></li></ul></section>
 
 <section class="card"><h2>Project identity</h2><p><strong>html-explainer</strong> is a Claude Code skill layer that makes Visual Explainer safer and more useful by applying an evidence-first workflow inspired by Thariq's HTML effectiveness approach.</p><p>Its working model is: route → intent distillation → pattern file → UX contract → evidence → fact sheet → artifact → quality bar → decision.</p></section>
 
@@ -36,6 +36,6 @@
 <section class="grid cols-2"><div class="card risk"><h2>Risks and constraints</h2><ul><li>Models may still generate decorative HTML unless quality bar is enforced.</li><li>Examples strongly influence output quality.</li><li>Installer touches user Claude configuration, so safe rollback matters.</li></ul></div><div class="card next"><h2>Recommended next action</h2><p>Expand the most-used patterns and keep CI enforcing structure. Next best improvement: add <code>/html-validate-workspace</code> for evidence/path validation.</p></div></section>
 
 <section class="card"><h2>Reentry checklist</h2><ul><li>Run <code>scripts/validate-patterns.sh</code>.</li><li>Run <code>scripts/smoke-install.sh</code>.</li><li>Inspect <code>CHANGELOG.md</code>.</li><li>Open latest full examples before modifying pattern instructions.</li></ul></section>
-<section class="card"><h2>Next prompt</h2><p><code>/make-the-right-html continue from this artifact with the same intent, evidence, risks, acceptance criteria, and out-of-scope boundaries.</code></p></section>
-<section class="card"><h2>Archive recommendation</h2><p><strong>Memory decision:</strong> do not save this demo as user knowledge. It is a reference example for the repo, not a live project artifact.</p><p><strong>Suggested validity:</strong> <code>do-not-reuse</code> for user memory; keep only as a repo example.</p><p><strong>Freshness risk:</strong> low for the teaching model, medium if the matching pattern changes.</p></section>
+<section class="card"><h2>Continue from here</h2><p><code>/make-the-right-html continue from this artifact with the same intent, evidence, risks, what good looks like, and out-of-scope boundaries.</code></p></section>
+<section class="card"><h2>Save this?</h2><p><strong>Save decision:</strong> do not save this demo as user knowledge. It is a reference example for the repo, not a live project artifact.</p><p><strong>Memory label:</strong> <code>do-not-reuse</code> for user memory; keep only as a repo example.</p><p><strong>When to review:</strong> low for the teaching model, medium if the matching pattern changes.</p></section>
 </main></body></html>

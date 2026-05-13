@@ -14,21 +14,21 @@
   <p><span class="badge blue">Example</span> <span class="badge purple">Insight Surface Loop</span> <span class="badge warn">Replaceable knowledge</span></p>
   <h1>Think With Me About: How html-explainer can help users reach better conclusions faster</h1>
   <p class="muted">This example shows how a vague topic becomes a visual thinking surface with evidence, assumptions, tension, stress testing, synthesis, action, and a next prompt.</p>
-  <p><strong>Primary intent:</strong> decide whether a vague idea deserves a structured thinking artifact.</p>
-  <p><strong>Secondary intents covered:</strong> expose assumptions, stress-test the idea, choose a next action, and decide whether the insight should enter artifact memory.</p>
-  <p><strong>Base concept:</strong> unclear idea -> evidence and assumptions -> tension and stress test -> provisional conclusion -> next action.</p>
-  <p><strong>HTML advantage:</strong> the thinking layers stay visible together instead of being buried in a long Markdown thread.</p>
-  <p><strong>Artifact budget:</strong> standard. <strong>Mental work removed:</strong> holding the frame, risks, evidence, conclusion, archive choice, and re-entry prompt in memory at the same time.</p>
+  <p><strong>What you need:</strong> decide whether a vague idea deserves a structured thinking artifact.</p>
+  <p><strong>Also handled:</strong> expose assumptions, stress-test the idea, choose a next action, and decide whether the insight should enter artifact memory.</p>
+  <p><strong>Simple idea:</strong> unclear idea -> evidence and assumptions -> tension and stress test -> provisional conclusion -> next action.</p>
+  <p><strong>Why this helps:</strong> the thinking layers stay visible together instead of being buried in a long Markdown thread.</p>
+  <p><strong>Size:</strong> standard. <strong>Work this saves:</strong> holding the frame, risks, evidence, conclusion, archive choice, and re-entry prompt in memory at the same time.</p>
   <div class="decision">
     <strong>Provisional conclusion:</strong> The strongest version is not “HTML for thinking.” It is a low-friction thinking loop that turns unclear ideas into reusable local knowledge through evidence, stress testing, action, and re-entry.
   </div>
-<p><strong>Artifact language:</strong> English for this repository example. In real use, match the user language unless the artifact audience requires another language.</p>
+<p><strong>Language:</strong> English for this repository example. In real use, match the user language unless the artifact audience requires another language.</p>
 </header>
 
 <section class="grid">
   <article class="card"><div class="metric">Medium</div><div class="muted">Confidence</div><p>Based on current repo direction, not yet validated by user testing.</p></article>
   <article class="card"><div class="metric">1</div><div class="muted">Next action</div><p>Create the first KISS command and one example artifact before adding automation.</p></article>
-  <article class="card"><div class="metric">Save</div><div class="muted">Archive recommendation</div><p>Classify as <code>replaceable</code>; it should be improved after real use.</p></article>
+  <article class="card"><div class="metric">Save</div><div class="muted">Save this?</div><p>Classify as <code>replaceable</code>; it should be improved after real use.</p></article>
 </section>
 
 <section class="card" id="north-star">
@@ -45,13 +45,13 @@
 <section class="two">
   <article class="card" id="evidence-board">
     <div class="section-title"><h2>Evidence Board</h2><span class="badge good">Ground</span></div>
-    <h3>Facts</h3>
+    <h3>What we know</h3>
     <ul class="list"><li>The repo already uses decision gates, pattern routing, fact sheets, quality bars, delivery rules, and next prompts.</li><li>The artifact memory direction gives a place to preserve useful conclusions.</li></ul>
-    <h3>Inferences</h3>
+    <h3>What this suggests</h3>
     <ul class="list"><li>A thinking surface can compose existing repo capabilities instead of adding a disconnected feature.</li><li>HTML is useful when multiple thinking layers must stay visible at once.</li></ul>
-    <h3>Assumptions</h3>
+    <h3>What I am assuming</h3>
     <ul class="list"><li>Users will value guided thinking if it feels lightweight.</li><li>A command name like `/think-with-me-about` lowers adoption friction.</li></ul>
-    <h3>Unknowns</h3>
+    <h3>What is still unclear</h3>
     <ul class="list"><li>Whether users will prefer this over normal chat for simple topics.</li><li>Which sections should be hidden or collapsed in future versions.</li></ul>
   </article>
 
@@ -94,9 +94,9 @@
 
 <section class="card" id="preserve-reenter">
   <div class="section-title"><h2>Preserve / Re-enter</h2><span class="badge purple">Next cycle</span></div>
-  <p><strong>Archive recommendation:</strong> Save as <code>replaceable</code>.</p>
-  <p><strong>Freshness risk:</strong> Medium. It should be refreshed after the first real user test.</p>
-  <p><strong>Suggested tags:</strong> <code>think-with-me-about</code>, <code>insight-surface-loop</code>, <code>decision-html</code>, <code>artifact-memory</code></p>
+  <p><strong>Save decision:</strong> Save as <code>replaceable</code>.</p>
+  <p><strong>When to review:</strong> Medium. It should be refreshed after the first real user test.</p>
+  <p><strong>Useful tags:</strong> <code>think-with-me-about</code>, <code>insight-surface-loop</code>, <code>decision-html</code>, <code>artifact-memory</code></p>
   <textarea id="next">/think-with-me-about whether the first implementation of /think-with-me-about is actually simpler and more useful than a normal chat answer. Use the current example artifact as context. Stress-test friction, evidence quality, first-screen clarity, and whether the output produces a stronger conclusion and next action.</textarea>
   <p><button class="btn" onclick="navigator.clipboard.writeText(document.getElementById('next').value)">Copy next prompt</button></p>
 </section>

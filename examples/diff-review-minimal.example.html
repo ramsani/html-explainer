@@ -10,15 +10,15 @@ body{font-family:system-ui,-apple-system,sans-serif;margin:32px;line-height:1.45
 </head>
 <body><main>
 <h1>Diff Review — Minimal Example</h1>
-<p><strong>Artifact language:</strong> English for this repository example. In real use, match the user language unless the artifact audience requires another language.</p>
-<section class="card"><h2>Intent distillation</h2><p><strong>Primary intent:</strong> decide whether the current diff is safe to accept.</p><p><strong>Secondary intents covered:</strong> identify test gaps and next action.</p><p><strong>Base concept:</strong> what changed, what could break, what to do next.</p></section>
-<section class="card"><h2>Artifact budget</h2><p><strong>HTML advantage:</strong> visible structure and faster decision.</p><p><strong>Budget:</strong> compact.</p><p><strong>HTML benefit:</strong> one small review surface beats scattered markdown bullets.</p><p><strong>Mental work removed:</strong> comparing changed files, behavior, and missing validation.</p></section>
-<section class="card"><h2>Evidence inspected</h2><p><code>git diff --stat</code>, <code>git diff --name-status</code>, changed files and related tests.</p></section>
+<p><strong>Language:</strong> English for this repository example. In real use, match the user language unless the artifact audience requires another language.</p>
+<section class="card"><h2>What this is for</h2><p><strong>What you need:</strong> decide whether the current diff is safe to accept.</p><p><strong>Also handled:</strong> identify test gaps and next action.</p><p><strong>Simple idea:</strong> what changed, what could break, what to do next.</p></section>
+<section class="card"><h2>Why this is worth it</h2><p><strong>Why this helps:</strong> visible structure and faster decision.</p><p><strong>Size:</strong> compact.</p><p><strong>Why this helps:</strong> one small review surface beats scattered markdown bullets.</p><p><strong>Work this saves:</strong> comparing changed files, behavior, and missing validation.</p></section>
+<section class="card"><h2>What I checked</h2><p><code>git diff --stat</code>, <code>git diff --name-status</code>, changed files and related tests.</p></section>
 <section class="card files"><h2>Changed files</h2><span>src/hooks/useDebouncedValue.ts</span><span>src/components/SearchBox.tsx</span><span>src/components/SearchBox.test.tsx</span></section>
 <section class="card"><h2>Behavior before / after</h2><table><tr><th>Before</th><th>After</th></tr><tr><td>Filter fired on every keypress.</td><td>Filter waits 250ms after typing stops.</td></tr></table></section>
 <section class="card medium"><h2>Finding</h2><p>Test coverage includes typing delay but does not verify clearing input immediately resets visible results.</p></section>
-<section class="card"><h2>Unknowns</h2><p>Build output and browser behavior are not verified in this example.</p></section>
-<section class="card good"><h2>Recommendation</h2><p>Revise before accepting: add one clear-input test. Next action: run the project check command and one browser check.</p></section>
-<section class="card"><h2>Next prompt</h2><p><code>/make-the-right-html continue from this artifact with the same intent, evidence, risks, acceptance criteria, and out-of-scope boundaries.</code></p></section>
-<section class="card"><h2>Archive recommendation</h2><p><strong>Memory decision:</strong> do not save this demo as user knowledge. It is a reference example for the repo, not a live project artifact.</p><p><strong>Suggested validity:</strong> <code>do-not-reuse</code> for user memory; keep only as a repo example.</p><p><strong>Freshness risk:</strong> low for the teaching model, medium if the matching pattern changes.</p></section>
+<section class="card"><h2>What is still unclear</h2><p>Build output and browser behavior are not verified in this example.</p></section>
+<section class="card good"><h2>Best next move</h2><p>Revise before accepting: add one clear-input test. Next action: run the project check command and one browser check.</p></section>
+<section class="card"><h2>Continue from here</h2><p><code>/make-the-right-html continue from this artifact with the same intent, evidence, risks, what good looks like, and out-of-scope boundaries.</code></p></section>
+<section class="card"><h2>Save this?</h2><p><strong>Save decision:</strong> do not save this demo as user knowledge. It is a reference example for the repo, not a live project artifact.</p><p><strong>Memory label:</strong> <code>do-not-reuse</code> for user memory; keep only as a repo example.</p><p><strong>When to review:</strong> low for the teaching model, medium if the matching pattern changes.</p></section>
 </main></body></html>

@@ -11,10 +11,10 @@
 <body>
 <main class="wrap">
 <header class="card">
-  <p><span class="badge info">Demo</span> <span class="badge warn">Artifact budget: compact</span></p>
+  <p><span class="badge info">Demo</span> <span class="badge warn">Size: compact</span></p>
   <h1>Before / After: From Skimmable Output To Decision Surface</h1>
   <p class="muted">Same user request. Two outputs. The point is not decoration; the point is less mental work for the user.</p>
-<p><strong>Artifact language:</strong> English for this repository example. In real use, match the user language unless the artifact audience requires another language.</p>
+<p><strong>Language:</strong> English for this repository example. In real use, match the user language unless the artifact audience requires another language.</p>
 </header>
 
 <section class="card">
@@ -41,10 +41,10 @@
   <article class="card strong">
     <p><span class="badge ok">After</span></p>
     <h2>Intent-led explainer</h2>
-    <p><strong>Primary intent:</strong> choose the best artifact before spending tokens generating it.</p>
-    <p><strong>Secondary intents covered:</strong> understand repo identity, risks, evidence, artifact budget, and next step.</p>
-    <p><strong>Base concept:</strong> the user is not asking for a summary; they are asking for a decision aid.</p>
-    <p><strong>HTML advantage:</strong> side-by-side comparison, risk badges, evidence table, and copy-ready continuation prompt.</p>
+    <p><strong>What you need:</strong> choose the best artifact before spending tokens generating it.</p>
+    <p><strong>Also handled:</strong> understand repo identity, risks, evidence, artifact budget, and next step.</p>
+    <p><strong>Simple idea:</strong> the user is not asking for a summary; they are asking for a decision aid.</p>
+    <p><strong>Why this helps:</strong> side-by-side comparison, risk badges, evidence table, and copy-ready continuation prompt.</p>
   </article>
 </section>
 
@@ -59,7 +59,7 @@
 </section>
 
 <section class="card">
-  <h2>Mental work removed</h2>
+  <h2>Work this saves</h2>
   <div class="metric"><strong>Evidence visibility</strong><div class="bar"><span style="width:92%"></span></div><span>High</span></div>
   <div class="metric"><strong>Decision clarity</strong><div class="bar"><span style="width:88%"></span></div><span>High</span></div>
   <div class="metric"><strong>Next-step friction</strong><div class="bar"><span style="width:18%"></span></div><span>Low</span></div>
@@ -77,19 +77,19 @@
 </section>
 
 <section class="card strong">
-  <h2>Recommendation</h2>
+  <h2>Best next move</h2>
   <p><span class="badge ok">Use Project Recap</span></p>
   <p>Generate a compact Project Recap only after inspecting README, install scripts, commands, patterns, examples, CI, and recent changes. The artifact should answer: what this repo is, why it matters, what is risky, and what to do next.</p>
 </section>
 
 <section class="card">
-  <h2>Next prompt</h2>
-  <textarea id="next">/make-the-right-html generate a compact Project Recap for this repo. Preserve the primary intent: help me understand the repo and choose the next highest-value action. Inspect README.md, install.sh, uninstall.sh, commands/, skills/, patterns/, examples/, scripts/, and .github/workflows/ before making claims. Separate facts, inferences, and unknowns. Show why HTML is better than Markdown for this case. End with three copy-ready next prompts: fix, verify, or publish.</textarea>
+  <h2>Continue from here</h2>
+  <textarea id="next">/make-the-right-html generate a compact Project Recap for this repo. Preserve the primary intent: help me understand the repo and choose the next highest-value action. Inspect README.md, install.sh, uninstall.sh, commands/, skills/, patterns/, examples/, scripts/, and .github/workflows/ before making claims. Separate what is known, what this suggests, and what is still unclear. Show why HTML is better than Markdown for this case. End with three copy-ready next prompts: fix, verify, or publish.</textarea>
   <p><button class="copy" onclick="navigator.clipboard.writeText(document.getElementById('next').value)">Copy next prompt</button></p>
 </section>
 
 <section class="card">
-  <h2>Acceptance criteria</h2>
+  <h2>What good looks like</h2>
   <ul>
     <li>The user can see the recommendation without scrolling deeply.</li>
     <li>Facts, inferences, and unknowns are separated.</li>
@@ -97,7 +97,7 @@
     <li>The next action is copy-ready and preserves intent.</li>
   </ul>
 </section>
-<section class="card"><h2>Archive recommendation</h2><p><strong>Memory decision:</strong> do not save this demo as user knowledge. It is a reference example for the repo, not a live project artifact.</p><p><strong>Suggested validity:</strong> <code>do-not-reuse</code> for user memory; keep only as a repo example.</p><p><strong>Freshness risk:</strong> low for the teaching model, medium if the matching pattern changes.</p></section>
+<section class="card"><h2>Save this?</h2><p><strong>Save decision:</strong> do not save this demo as user knowledge. It is a reference example for the repo, not a live project artifact.</p><p><strong>Memory label:</strong> <code>do-not-reuse</code> for user memory; keep only as a repo example.</p><p><strong>When to review:</strong> low for the teaching model, medium if the matching pattern changes.</p></section>
 </main>
 </body>
 </html>

@@ -44,6 +44,7 @@ Fail immediately if it:
 - puts the recommendation below decoration;
 - leaves the user to invent the next command;
 - saves or recommends saving low-value scratch work as reusable knowledge;
+- exposes internal process labels when simple user-facing language would be clearer;
 - is incoherent on mobile.
 
 ## Required Ending

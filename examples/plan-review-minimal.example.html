@@ -10,17 +10,17 @@ body{font-family:system-ui,-apple-system,sans-serif;margin:32px;line-height:1.45
 </head>
 <body><main>
 <h1>Plan Review — Minimal Example</h1>
-<p><strong>Artifact language:</strong> English for this repository example. In real use, match the user language unless the artifact audience requires another language.</p>
-<section class="card"><h2>Intent distillation</h2><p><strong>Primary intent:</strong> decide whether the plan is safe to implement.</p><p><strong>Secondary intents covered:</strong> verify repo claims, find missing checks, define next action.</p><p><strong>Base concept:</strong> does the plan match reality, and what must be verified first.</p></section>
-<section class="card"><h2>Artifact budget</h2><p><strong>HTML advantage:</strong> visible structure and faster decision.</p><p><strong>Budget:</strong> compact.</p><p><strong>HTML benefit:</strong> turns plan claims into a visible fit/risk check.</p><p><strong>Mental work removed:</strong> holding repo facts, plan claims, and missing validation in memory.</p></section>
+<p><strong>Language:</strong> English for this repository example. In real use, match the user language unless the artifact audience requires another language.</p>
+<section class="card"><h2>What this is for</h2><p><strong>What you need:</strong> decide whether the plan is safe to implement.</p><p><strong>Also handled:</strong> verify repo claims, find missing checks, define next action.</p><p><strong>Simple idea:</strong> does the plan match reality, and what must be verified first.</p></section>
+<section class="card"><h2>Why this is worth it</h2><p><strong>Why this helps:</strong> visible structure and faster decision.</p><p><strong>Size:</strong> compact.</p><p><strong>Why this helps:</strong> turns plan claims into a visible fit/risk check.</p><p><strong>Work this saves:</strong> holding repo facts, plan claims, and missing validation in memory.</p></section>
 <section class="grid">
-<div class="card"><h2>Evidence inspected</h2><ul><li><code>src/components/SearchBox.tsx</code></li><li><code>src/hooks/useTasks.ts</code></li><li><code>package.json</code></li></ul></div>
-<div class="card"><h2>Fact sheet</h2><ul><li>Search input already owns local state.</li><li>No debounce helper exists.</li><li>Task filtering happens client-side.</li></ul></div>
+<div class="card"><h2>What I checked</h2><ul><li><code>src/components/SearchBox.tsx</code></li><li><code>src/hooks/useTasks.ts</code></li><li><code>package.json</code></li></ul></div>
+<div class="card"><h2>What I checked</h2><ul><li>Search input already owns local state.</li><li>No debounce helper exists.</li><li>Task filtering happens client-side.</li></ul></div>
 </section>
 <section class="card"><h2>Plan fit</h2><table><tr><th>Claim</th><th>Status</th><th>Evidence</th></tr><tr><td>Add debounce hook</td><td>Reasonable</td><td>No existing helper found</td></tr><tr><td>No API change</td><td>Likely</td><td>Filtering is client-side</td></tr></table></section>
 <section class="card risk-med"><h2>Main risk</h2><p>The plan does not mention tests for rapid typing and clear/reset behavior.</p></section>
-<section class="card"><h2>Unknowns</h2><p>No browser evidence is included in this example, so visual behavior remains unverified.</p></section>
-<section class="card ok"><h2>Recommendation</h2><p>Approve with revision: add validation for rapid typing, clearing input, and preserving current filter semantics. Next action: add the missing checks before implementation.</p></section>
-<section class="card"><h2>Next prompt</h2><p><code>/make-the-right-html continue from this artifact with the same intent, evidence, risks, acceptance criteria, and out-of-scope boundaries.</code></p></section>
-<section class="card"><h2>Archive recommendation</h2><p><strong>Memory decision:</strong> do not save this demo as user knowledge. It is a reference example for the repo, not a live project artifact.</p><p><strong>Suggested validity:</strong> <code>do-not-reuse</code> for user memory; keep only as a repo example.</p><p><strong>Freshness risk:</strong> low for the teaching model, medium if the matching pattern changes.</p></section>
+<section class="card"><h2>What is still unclear</h2><p>No browser evidence is included in this example, so visual behavior remains unverified.</p></section>
+<section class="card ok"><h2>Best next move</h2><p>Approve with revision: add validation for rapid typing, clearing input, and preserving current filter semantics. Next action: add the missing checks before implementation.</p></section>
+<section class="card"><h2>Continue from here</h2><p><code>/make-the-right-html continue from this artifact with the same intent, evidence, risks, what good looks like, and out-of-scope boundaries.</code></p></section>
+<section class="card"><h2>Save this?</h2><p><strong>Save decision:</strong> do not save this demo as user knowledge. It is a reference example for the repo, not a live project artifact.</p><p><strong>Memory label:</strong> <code>do-not-reuse</code> for user memory; keep only as a repo example.</p><p><strong>When to review:</strong> low for the teaching model, medium if the matching pattern changes.</p></section>
 </main></body></html>

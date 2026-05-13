@@ -12,11 +12,11 @@ function build(){
   const evidence=document.getElementById('evidence').checked;
   const uncertainty=document.getElementById('uncertainty').checked;
   const next=document.getElementById('nextAction').checked;
-  const lines=['You are tuning an agent behavior contract.'];
-  if(evidence)lines.push('- Inspect named evidence before making claims.');
-  if(uncertainty)lines.push('- Separate facts, inferences, assumptions, and unknowns.');
-  lines.push('- State concrete failure modes and scenario tests.');
-  lines.push('- Produce exportable final instructions, not advice fragments.');
+  const lines=['You are improving an agent instruction.'];
+  if(evidence)lines.push('- Check the named sources before making claims.');
+  if(uncertainty)lines.push('- Separate what is known, what this suggests, what I am assuming, and what is still unclear.');
+  lines.push('- Name what could go wrong and try the instruction on real cases.');
+  lines.push('- Produce final instructions the user can copy, not advice fragments.');
   if(next)lines.push('- End with one copy-ready next prompt that preserves intent and checks.');
   document.getElementById('out').value=lines.join('\n');
 }
@@ -28,41 +28,41 @@ window.addEventListener('DOMContentLoaded',build);
 <header class="card">
   <p><span class="badge blue">Example data</span> <span class="badge warn">Prompt tuner</span></p>
   <h1>Before / After: Agent Behavior Tuner</h1>
-  <p><strong>Primary intent:</strong> turn a vague agent-behavior request into testable operating instructions.</p>
-  <p><strong>Secondary intents covered:</strong> behavior dimensions, failure modes, scenario tests, output contract, acceptance criteria, and copy-ready next prompt.</p>
-  <p><strong>Base concept:</strong> force the behavior that prevents known failures, then export the instruction.</p>
-  <p><strong>Artifact budget:</strong> interactive. <strong>HTML advantage:</strong> controls, tests, failures, and final instruction remain visible together. <strong>Mental work removed:</strong> translating vague advice into enforceable behavior.</p>
-<p><strong>Artifact language:</strong> English for this repository example. In real use, match the user language unless the artifact audience requires another language.</p>
+  <p><strong>What you need:</strong> turn a vague agent-behavior request into testable operating instructions.</p>
+  <p><strong>Also handled:</strong> what to tune, what can go wrong, real cases, what good looks like, and copy-ready next prompt.</p>
+  <p><strong>Simple idea:</strong> force the behavior that prevents known failures, then export the instruction.</p>
+  <p><strong>Size:</strong> interactive. <strong>Why this helps:</strong> controls, tests, failures, and final instruction remain visible together. <strong>Work this saves:</strong> translating vague advice into enforceable behavior.</p>
+<p><strong>Language:</strong> English for this repository example. In real use, match the user language unless the artifact audience requires another language.</p>
 </header>
 
 <section class="grid">
   <article class="card badline">
     <h2>Before: weak prompt improvement</h2>
     <p>Be careful, verify your work, explain risks, and be concise.</p>
-    <p class="muted">This sounds reasonable but does not define evidence, failure modes, scenarios, or output contract.</p>
+    <p class="muted">This sounds reasonable but does not say what to check, what can go wrong, which cases to try, or what the final answer must include.</p>
   </article>
   <article class="card goodline">
     <h2>After: operational tuner</h2>
-    <p><strong>Recommendation:</strong> require evidence-first claims, explicit uncertainty, scenario tests, and a copy-ready handoff prompt.</p>
+    <p><strong>Best next move:</strong> require evidence-first claims, explicit uncertainty, real-case checks, and a copy-ready handoff prompt.</p>
     <p><span class="badge ok">Ready to export</span></p>
   </article>
 </section>
 
 <section class="tri">
-  <article class="card"><h2>Evidence</h2><p>Inputs inspected: current instruction, known failure modes, expected output format, and validation needs.</p></article>
-  <article class="card"><h2>Risk / unknown</h2><p>The tuned instruction can still fail if future agents ignore scenario tests or invent evidence.</p></article>
-  <article class="card"><h2>Recommendation</h2><p>Make the instruction short, enforceable, and tied to acceptance criteria.</p></article>
+  <article class="card"><h2>What I checked</h2><p>Current instruction, weak spots, final text needed, and what good looks like.</p></article>
+  <article class="card"><h2>What is still unclear</h2><p>The tuned instruction can still fail if future agents skip real cases or invent proof.</p></article>
+  <article class="card"><h2>Best next move</h2><p>Make the instruction short, enforceable, and tied to what good looks like.</p></article>
 </section>
 
 <section class="grid">
   <article class="card">
-    <h2>Behavior dimensions</h2>
-    <label><input id="evidence" type="checkbox" checked onchange="build()"> Evidence-first claims</label>
-    <label><input id="uncertainty" type="checkbox" checked onchange="build()"> Facts vs inferences vs assumptions vs unknowns</label>
+    <h2>What you can tune</h2>
+    <label><input id="evidence" type="checkbox" checked onchange="build()"> Check before claiming</label>
+    <label><input id="uncertainty" type="checkbox" checked onchange="build()"> Say what is known and unclear</label>
     <label><input id="nextAction" type="checkbox" checked onchange="build()"> Copy-ready next prompt</label>
   </article>
   <article class="card warnline">
-    <h2>Failure modes</h2>
+    <h2>What could go wrong</h2>
     <ul>
       <li><strong>Confident but unsupported:</strong> claims tests pass without command output.</li>
       <li><strong>Scope creep:</strong> changes adjacent files without need.</li>
@@ -72,9 +72,9 @@ window.addEventListener('DOMContentLoaded',build);
 </section>
 
 <section class="card">
-  <h2>Scenario tests</h2>
+  <h2>Try it on these cases</h2>
   <table>
-    <tr><th>Scenario</th><th>Expected behavior</th><th>Acceptance criteria</th></tr>
+    <tr><th>Case</th><th>Expected behavior</th><th>What good looks like</th></tr>
     <tr><td>Diff review</td><td>Inspect diff, name evidence, decide accept/request/block.</td><td>No claim of passing tests without proof.</td></tr>
     <tr><td>Simple command question</td><td>Answer directly without HTML.</td><td>No unnecessary artifact.</td></tr>
     <tr><td>Vague strategy question</td><td>Use a thinking surface only if layers must stay visible.</td><td>Conclusion and next action are visible.</td></tr>
@@ -82,24 +82,24 @@ window.addEventListener('DOMContentLoaded',build);
 </section>
 
 <section class="card">
-  <h2>Output contract</h2>
+  <h2>What the result must include</h2>
   <ul>
-    <li>State primary intent.</li>
-    <li>Name inspected evidence.</li>
-    <li>Separate fact, inference, assumption, and unknown.</li>
+    <li>Answer the user’s real need.</li>
+    <li>Say what was checked.</li>
+    <li>Separate what is known, suggested, assumed, and unclear.</li>
     <li>Name risk and next action.</li>
-    <li>Export final instruction and next prompt.</li>
+    <li>Provide final instruction and next prompt.</li>
   </ul>
   <textarea id="out"></textarea>
   <p><button class="btn" onclick="navigator.clipboard.writeText(document.getElementById('out').value)">Copy final instruction</button></p>
 </section>
 
 <section class="card">
-  <h2>Next prompt</h2>
-  <textarea id="next">/make-the-right-html create a prompt tuner artifact for this agent behavior. Preserve the primary intent: turn vague behavior into testable operating instructions. Include evidence, risk, unknowns, scenario tests, acceptance criteria, exportable final instructions, and a copy-ready next prompt.</textarea>
+  <h2>Continue from here</h2>
+  <textarea id="next">/make-the-right-html create a prompt tuner artifact for this agent behavior. Preserve the primary intent: turn vague behavior into testable operating instructions. Include what was checked, what could go wrong, unclear points, real cases, what good looks like, final instructions, and a copy-ready next prompt.</textarea>
   <p><button class="btn" onclick="navigator.clipboard.writeText(document.getElementById('next').value)">Copy next prompt</button></p>
 </section>
-<section class="card"><h2>Archive recommendation</h2><p><strong>Memory decision:</strong> do not save this demo as user knowledge. It is a reference example for the repo, not a live project artifact.</p><p><strong>Suggested validity:</strong> <code>do-not-reuse</code> for user memory; keep only as a repo example.</p><p><strong>Freshness risk:</strong> low for the teaching model, medium if the matching pattern changes.</p></section>
+<section class="card"><h2>Save this?</h2><p><strong>Save decision:</strong> do not save this demo as user knowledge. It is a reference example for the repo, not a live project artifact.</p><p><strong>Memory label:</strong> <code>do-not-reuse</code> for user memory; keep only as a repo example.</p><p><strong>When to review:</strong> low for the teaching model, medium if the matching pattern changes.</p></section>
 </main>
 </body>
 </html>

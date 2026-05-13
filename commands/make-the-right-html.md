@@ -12,9 +12,10 @@ Generate a self-contained HTML artifact using the html-explainer operating model
 6. Build a fact sheet with `docs/FACT_SHEET.md`.
 7. Generate the smallest useful HTML artifact.
 8. Apply `docs/STYLE.md`.
-9. Apply `docs/QUALITY_BAR.md`.
-10. Apply `docs/CHAIN.md` when follow-up work is likely.
-11. Apply `docs/DELIVERY.md`.
+9. Apply `docs/USER_FACING_COPY.md`.
+10. Apply `docs/QUALITY_BAR.md`.
+11. Apply `docs/CHAIN.md` when follow-up work is likely.
+12. Apply `docs/DELIVERY.md`.
 
 Use `docs/reference/` only when a serious case needs deeper guidance.
 
@@ -58,6 +59,7 @@ Before responding:
 - Did the next prompt preserve intent, evidence, acceptance criteria, boundaries, and uncertainty?
 - Did the artifact language match the user or intended audience?
 - Did the artifact explain whether it should be saved, refreshed, kept private, superseded, or discarded?
+- Did visible copy help the user without exposing internal process labels?
 
 ## Final Chat Response
 
