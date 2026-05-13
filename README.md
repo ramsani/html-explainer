@@ -117,6 +117,38 @@ For common repo work:
 
 Generated artifacts should be saved in a practical local path, opened in the browser when the environment allows it, and returned with a clickable absolute path.
 
+## Local Artifact Memory
+
+`html-explainer` can generate artifacts that remain useful after the current chat. The repo now defines a local-first artifact memory model for saving generated HTML outputs outside the repository.
+
+The core boundary is:
+
+```text
+The repo is the system.
+The local output folder is the user's artifact memory.
+```
+
+Recommended local output root:
+
+```text
+~/.claude/html-explainer/outputs/
+```
+
+The artifact memory system defines:
+
+- lifespan classes: `temporal`, `replaceable`, `evergreen`, `superseded`, `private`, and `do-not-reuse`;
+- metadata and index schemas;
+- freshness, privacy, re-entry, and supersession rules;
+- a static explorer template that follows the same decision-ready HTML principles as the rest of the project.
+
+Start here:
+
+- [`docs/ARTIFACT_MEMORY.md`](docs/ARTIFACT_MEMORY.md)
+- [`docs/ARTIFACT_METADATA_SCHEMA.md`](docs/ARTIFACT_METADATA_SCHEMA.md)
+- [`templates/artifact-explorer.html`](templates/artifact-explorer.html)
+- [`examples/artifact-index.example.json`](examples/artifact-index.example.json)
+- [`examples/artifact-metadata.example.json`](examples/artifact-metadata.example.json)
+
 ## When HTML Is Worth It
 
 Use HTML when the output replaces something people would skim or misunderstand:
