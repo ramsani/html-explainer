@@ -29,6 +29,9 @@ required = {
     "should_generate_html",
     "required_evidence",
     "reason",
+    "what_can_go_wrong",
+    "guardrail",
+    "user_value",
 }
 
 if not isinstance(scenarios, list):
@@ -67,7 +70,7 @@ for index, scenario in enumerate(scenarios, start=1):
         negative_count += 1
     if scenario["acceptable_alternates"]:
         ambiguous_count += 1
-    for text_field in ("prompt", "reason", "expected_pattern", "expected_budget"):
+    for text_field in ("prompt", "reason", "expected_pattern", "expected_budget", "what_can_go_wrong", "guardrail", "user_value"):
         if not str(scenario[text_field]).strip():
             raise SystemExit(f"{sid} has empty {text_field}")
 

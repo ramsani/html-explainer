@@ -18,7 +18,7 @@ They are not decorative samples. They define the expected shape for common artif
 | `prompt-tuner-minimal.example.html` | 20 Prompt / agent behavior tuner | Minimal prompt tuning with copy output. |
 | `prompt-tuner-full.example.html` | 20 Prompt / agent behavior tuner | Interactive behavior controls with export. |
 | `visual-direction-explorer.example.html` | 21 Visual direction explorer | Side-by-side visual options. |
-| `think-with-me-about.example.html` | 22 Insight Surface Loop | Thinking surface with evidence, inversion, action, and re-entry. |
+| `think-with-me-about.example.html` | 22 Insight Surface Loop | Thinking surface with evidence, stress testing, action, and re-entry. |
 
 ## Required Signals
 

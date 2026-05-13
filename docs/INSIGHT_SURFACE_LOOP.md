@@ -9,7 +9,7 @@ The method should feel simple to the user and rigorous underneath.
 ## Core Promise
 
 ```text
-unclear idea -> visual thinking surface -> evidence and assumptions -> tension and inversion -> provisional insight -> action -> next prompt -> reusable local knowledge
+unclear idea -> visual thinking surface -> evidence and assumptions -> tension and stress testing -> provisional insight -> action -> next prompt -> reusable local knowledge
 ```
 
 The goal is not to create a beautiful reflection page.
@@ -109,7 +109,7 @@ Attack the idea before trusting it.
 
 Required moves:
 
-- inversion: how could this fail?
+- stress test: how could this fail?
 - pre-mortem: what would make this look foolish later?
 - contradiction check;
 - weakest assumption;
@@ -181,7 +181,7 @@ The user should not have to choose a model manually.
 Use models quietly when they help:
 
 - Socratic questioning;
-- inversion;
+- stress test;
 - pre-mortem;
 - first principles;
 - second-order thinking;
@@ -235,7 +235,7 @@ A strong artifact includes these zones.
 - weakest assumptions;
 - what could change the conclusion.
 
-### Inversion Panel
+### Stress Test
 
 - how this fails;
 - what to avoid;
@@ -274,7 +274,7 @@ Do not deliver a serious Insight Surface artifact unless it passes these gates:
 - There is a provisional conclusion or a clear reason why one is not justified.
 - Facts, inferences, assumptions, hypotheses, and unknowns are separated.
 - At least one critical tension or risk is visible.
-- Inversion or stress testing is included.
+- Stress testing is included.
 - There is a concrete next action.
 - There is a copy-ready next prompt.
 - There is an archive recommendation.
@@ -289,7 +289,7 @@ The artifact must not:
 - invent facts, sources, metrics, or confidence;
 - produce generic insight like "consider the pros and cons";
 - hide assumptions;
-- skip inversion;
+- skip the stress test;
 - end without action;
 - end without a next prompt;
 - show complex visuals that do not change the thinking;

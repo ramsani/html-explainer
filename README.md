@@ -127,7 +127,7 @@ bash install.sh
 | `/reenter-project` | Understand a repo quickly and see the next action. |
 | `/build-decision-tool` | Build a temporary editor, triage board, tuner, or config tool. |
 | `/audit-html` | Check whether an existing artifact is actually useful. |
-| `/think-with-me-about` | Turn a vague topic into a visual thinking surface with evidence, inversion, action, and re-entry. |
+| `/think-with-me-about` | Turn a vague topic into a visual thinking surface with evidence, stress testing, action, and re-entry. |
 
 ## Quick Usage
 

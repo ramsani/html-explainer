@@ -34,7 +34,7 @@ Frame -> Expand -> Ground -> Stress -> Synthesize -> Decide -> Preserve -> Re-en
 - Evidence Board.
 - Perspective Map.
 - Tension Map.
-- Inversion Panel.
+- Stress Test.
 - Insight Card.
 - Action Queue.
 - Preserve / Re-enter.
@@ -47,7 +47,7 @@ Do not deliver a serious artifact unless it passes these gates:
 - HTML advantage is explicit.
 - Facts, inferences, assumptions, hypotheses, and unknowns are separated.
 - At least one critical tension or risk is visible.
-- Inversion or stress testing is included.
+- Stress testing is included.
 - There is a provisional conclusion, or a clear reason one is not justified.
 - There is a concrete next action.
 - There is a copy-ready next prompt.
@@ -96,7 +96,7 @@ Before responding:
 
 - Did it help the user think better, not merely read more?
 - Did it avoid unsupported claims?
-- Did it include inversion?
+- Did it test how the idea could fail?
 - Did it make the next action obvious?
 - Did it include a next prompt that preserves context?
 - Did it use the smallest useful HTML surface?

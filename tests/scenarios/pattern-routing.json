@@ -4,11 +4,21 @@
     "category": "remember",
     "prompt": "Help me understand this repo and choose the next highest-value action.",
     "expected_pattern": "17-project-recap",
-    "acceptable_alternates": ["16-audit-report"],
+    "acceptable_alternates": [
+      "16-audit-report"
+    ],
     "expected_budget": "standard",
     "should_generate_html": true,
-    "required_evidence": ["README", "entry points", "scripts", "CI"],
-    "reason": "The user needs repo re-entry and next action selection."
+    "required_evidence": [
+      "README",
+      "entry points",
+      "scripts",
+      "CI"
+    ],
+    "reason": "The user needs repo re-entry and next action selection.",
+    "what_can_go_wrong": "Recap becomes a generic README summary.",
+    "guardrail": "Require README, entry points, scripts, CI, current state, risk, next action, and memory decision.",
+    "user_value": "Turns repo re-entry into reusable operational context instead of one-time orientation."
   },
   {
     "id": "diff-review",
@@ -18,19 +28,37 @@
     "acceptable_alternates": [],
     "expected_budget": "standard",
     "should_generate_html": true,
-    "required_evidence": ["diff", "changed files", "tests", "risk"],
-    "reason": "A diff review needs file risk, findings, missing checks, and a decision."
+    "required_evidence": [
+      "diff",
+      "changed files",
+      "tests",
+      "risk"
+    ],
+    "reason": "A diff review needs file risk, findings, missing checks, and a decision.",
+    "what_can_go_wrong": "Review sounds confident without proof or misses release risk.",
+    "guardrail": "Require changed files, tests, risk, findings, missing checks, and accept/revise/block decision.",
+    "user_value": "Converts code review from prose opinion into a decision surface."
   },
   {
     "id": "plan-review",
     "category": "review",
     "prompt": "Check this implementation plan before coding.",
     "expected_pattern": "02-visual-implementation-plan",
-    "acceptable_alternates": ["16-audit-report"],
+    "acceptable_alternates": [
+      "16-audit-report"
+    ],
     "expected_budget": "compact",
     "should_generate_html": true,
-    "required_evidence": ["plan", "repo facts", "dependencies", "validation"],
-    "reason": "The user needs fit, risk, and missing proof before implementation."
+    "required_evidence": [
+      "plan",
+      "repo facts",
+      "dependencies",
+      "validation"
+    ],
+    "reason": "The user needs fit, risk, and missing proof before implementation.",
+    "what_can_go_wrong": "Agent approves a plan that does not fit the real repo.",
+    "guardrail": "Require plan, repo facts, dependencies, validation gaps, and explicit approve/revise/reject decision.",
+    "user_value": "Blocks weak implementation before code exists."
   },
   {
     "id": "prompt-tuner",
@@ -40,19 +68,36 @@
     "acceptable_alternates": [],
     "expected_budget": "interactive",
     "should_generate_html": true,
-    "required_evidence": ["current instruction", "failure modes", "scenario tests"],
-    "reason": "Behavior tuning needs visible dimensions, failure modes, tests, and exportable instructions."
+    "required_evidence": [
+      "current instruction",
+      "failure modes",
+      "scenario tests"
+    ],
+    "reason": "Behavior tuning needs visible dimensions, failure modes, tests, and exportable instructions.",
+    "what_can_go_wrong": "Tuning becomes vague personality advice.",
+    "guardrail": "Require failure modes, scenario tests, output contract, exportable instructions, and next prompt.",
+    "user_value": "Turns behavior design into a reusable operating contract."
   },
   {
     "id": "architecture-map",
     "category": "map",
     "prompt": "Map this module architecture and show where changes are risky.",
     "expected_pattern": "09-architecture-diagram",
-    "acceptable_alternates": ["04-module-map"],
+    "acceptable_alternates": [
+      "04-module-map"
+    ],
     "expected_budget": "standard",
     "should_generate_html": true,
-    "required_evidence": ["entry points", "callers", "data flow", "boundaries"],
-    "reason": "Architecture relationships and risk zones are spatial."
+    "required_evidence": [
+      "entry points",
+      "callers",
+      "data flow",
+      "boundaries"
+    ],
+    "reason": "Architecture relationships and risk zones are spatial.",
+    "what_can_go_wrong": "Architecture diagram becomes decorative boxes without risk boundaries.",
+    "guardrail": "Require entry points, callers, data flow, boundaries, safe zones, and unknowns.",
+    "user_value": "Makes hidden coupling visible before changes are made."
   },
   {
     "id": "workflow-flowchart",
@@ -62,8 +107,16 @@
     "acceptable_alternates": [],
     "expected_budget": "standard",
     "should_generate_html": true,
-    "required_evidence": ["workflow steps", "branches", "failure paths", "owners"],
-    "reason": "A workflow needs sequence, branching, and failure path visibility."
+    "required_evidence": [
+      "workflow steps",
+      "branches",
+      "failure paths",
+      "owners"
+    ],
+    "reason": "A workflow needs sequence, branching, and failure path visibility.",
+    "what_can_go_wrong": "Workflow hides branch failures and handoff points.",
+    "guardrail": "Require steps, branches, failure paths, owners, and next action.",
+    "user_value": "Turns process confusion into inspectable operational flow."
   },
   {
     "id": "ticket-triage",
@@ -73,19 +126,37 @@
     "acceptable_alternates": [],
     "expected_budget": "interactive",
     "should_generate_html": true,
-    "required_evidence": ["ticket list", "priority signals", "risk", "dependencies"],
-    "reason": "Triage benefits from grouping, filtering, and visible next actions."
+    "required_evidence": [
+      "ticket list",
+      "priority signals",
+      "risk",
+      "dependencies"
+    ],
+    "reason": "Triage benefits from grouping, filtering, and visible next actions.",
+    "what_can_go_wrong": "Triage sorts by preference instead of value, risk, and dependency.",
+    "guardrail": "Require ticket list, priority signals, risk, dependencies, export, and next action.",
+    "user_value": "Creates a temporary decision board instead of a static task list."
   },
   {
     "id": "visual-direction",
     "category": "decide",
     "prompt": "Explore three visual directions for this app and recommend one.",
     "expected_pattern": "21-visual-direction-explorer",
-    "acceptable_alternates": ["11-technical-decision-deck"],
+    "acceptable_alternates": [
+      "11-technical-decision-deck"
+    ],
     "expected_budget": "interactive",
     "should_generate_html": true,
-    "required_evidence": ["audience", "brand constraints", "screens", "trade-offs"],
-    "reason": "Visual direction work needs comparison and decision support."
+    "required_evidence": [
+      "audience",
+      "brand constraints",
+      "screens",
+      "trade-offs"
+    ],
+    "reason": "Visual direction work needs comparison and decision support.",
+    "what_can_go_wrong": "Visual exploration becomes taste theater.",
+    "guardrail": "Require audience, constraints, options, trade-offs, recommendation, and next prompt.",
+    "user_value": "Converts aesthetic choice into a decision with criteria."
   },
   {
     "id": "simple-command",
@@ -96,17 +167,31 @@
     "expected_budget": "none",
     "should_generate_html": false,
     "required_evidence": [],
-    "reason": "A tiny factual answer does not justify HTML."
+    "reason": "A tiny factual answer does not justify HTML.",
+    "what_can_go_wrong": "System overuses HTML and wastes attention.",
+    "guardrail": "Negative scenario forces Markdown/plain answer when HTML adds no value.",
+    "user_value": "Protects trust by refusing unnecessary artifact generation."
   },
   {
     "id": "thinking-surface",
     "category": "think",
     "prompt": "Think with me about whether this repo should become a local knowledge system.",
     "expected_pattern": "22-insight-surface-loop",
-    "acceptable_alternates": ["11-technical-decision-deck"],
+    "acceptable_alternates": [
+      "11-technical-decision-deck"
+    ],
     "expected_budget": "standard",
     "should_generate_html": true,
-    "required_evidence": ["topic", "facts", "assumptions", "inversion", "next action"],
-    "reason": "The user needs to move from vague idea to provisional conclusion and re-entry."
+    "required_evidence": [
+      "topic",
+      "facts",
+      "assumptions",
+      "stress test",
+      "next action"
+    ],
+    "reason": "The user needs to move from vague idea to provisional conclusion and re-entry.",
+    "what_can_go_wrong": "Thinking surface becomes theory-heavy brainstorming.",
+    "guardrail": "Require facts, assumptions, stress test, provisional conclusion, action, archive recommendation, and re-entry.",
+    "user_value": "Turns vague thinking into reusable decision memory."
   }
 ]

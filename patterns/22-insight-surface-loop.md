@@ -42,7 +42,7 @@ Before generating HTML:
 2. Decide whether HTML is justified over Markdown.
 3. Separate facts, evidence, inferences, assumptions, hypotheses, unknowns, and constraints.
 4. Expand the thinking space with useful perspectives and alternatives.
-5. Stress-test the idea with inversion and pre-mortem thinking.
+5. Stress-test the idea with stress testing and pre-mortem thinking.
 6. Synthesize a provisional insight or explain why one is not justified.
 7. Recommend the smallest useful next action.
 8. Produce a copy-ready prompt for the next thinking cycle.
@@ -71,7 +71,7 @@ Use a thinking-surface layout:
 <section id="tension-map">
   Contradictions, trade-offs, weakest assumptions, risks
 
-<section id="inversion-panel">
+<section id="stress-test-panel">
   How this fails, what to avoid, what would make the conclusion wrong
 
 <section id="insight-card">
@@ -90,7 +90,7 @@ Good visual forms:
 - evidence/assumption split board;
 - perspective cards;
 - tension/risk matrix;
-- inversion panel;
+- stress-test panel;
 - insight card;
 - action queue;
 - copyable next prompt;
@@ -102,7 +102,7 @@ Good visual forms:
 - HTML is justified by visible multi-layer thinking.
 - Facts, inferences, assumptions, hypotheses, and unknowns are separated.
 - At least one serious tension or risk is surfaced.
-- Inversion or pre-mortem is present.
+- Stress testing or pre-mortem is present.
 - The provisional conclusion is explicit, or the artifact clearly explains why it is not justified.
 - The next action is concrete.
 - The next prompt is copy-ready and preserves context.
@@ -117,7 +117,7 @@ Bad example 1:
 Here are pros and cons of your idea.
 ```
 
-Why bad: generic; no evidence discipline, no inversion, no provisional conclusion, no next cycle.
+Why bad: generic; no evidence discipline, no stress test, no provisional conclusion, no next cycle.
 
 Bad example 2:
 
@@ -164,4 +164,4 @@ A strong Insight Surface makes the user's next better thought obvious.
 
 ## Visual explainer contract
 
-Apply `docs/PATTERN_GUIDE.md` and `docs/INSIGHT_SURFACE_LOOP.md`. The artifact must include a decisive first screen, evidence separation, inversion, synthesis, action, and re-entry prompt. It must explain why HTML is substantially better than Markdown for this thinking task.
+Apply `docs/PATTERN_GUIDE.md` and `docs/INSIGHT_SURFACE_LOOP.md`. The artifact must include a decisive first screen, evidence separation, stress testing, synthesis, action, and re-entry prompt. It must explain why HTML is substantially better than Markdown for this thinking task.

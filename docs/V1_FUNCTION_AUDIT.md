@@ -13,7 +13,7 @@ If a function does not strengthen that chain, it should be removed, simplified, 
 
 ## Function Map
 
-| Function | User promise | Failure under inversion | V1 defense |
+| Function | User promise | What can go wrong | V1 guardrail |
 |---|---|---|---|
 | Pattern selection | Choose whether HTML is worth it and which artifact fits. | HTML becomes decoration or the wrong pattern is selected. | Decision Gate, Pattern Guide, scenario tests, no-HTML negative case. |
 | Artifact generation | Produce the smallest useful HTML artifact. | Artifact looks polished but hides evidence, risk, or next action. | Quality Bar, semantic example validation, required evidence and next prompt. |
@@ -22,7 +22,7 @@ If a function does not strengthen that chain, it should be removed, simplified, 
 | Project re-entry | Help a user regain context and choose the next action. | Recap becomes a generic README summary. | `/reenter-project`, pattern 17, required repo evidence and next prompt. |
 | Decision tool building | Build temporary editors, tuners, triage boards, or config tools. | Tool has controls but no exportable output. | `/build-decision-tool`, interactive budget rule, copy/export requirement. |
 | Artifact audit | Decide whether an existing artifact is worth trusting. | Audit becomes taste feedback instead of decision-quality review. | `/audit-html`, Quality Bar scoring, hard fail conditions. |
-| Thinking surface | Turn unclear thinking into conclusion and action. | Becomes theory-heavy brainstorming with no decision. | `/think-with-me-about`, Insight Surface Loop, inversion panel, archive recommendation. |
+| Thinking surface | Turn unclear thinking into conclusion and action. | Becomes theory-heavy brainstorming with no decision. | `/think-with-me-about`, Insight Surface Loop, stress-test panel, archive recommendation. |
 | Artifact memory | Preserve useful outputs without polluting the repo. | Stale or private artifacts become trusted public knowledge. | lifespan classes, freshness rules, privacy class, do-not-reuse class. |
 | Pattern package system | Let the repo grow without turning into prompt sprawl. | New docs and patterns accumulate without a quality floor. | Pattern Package Protocol, Artifact Modes, Artifact Directions, Anti-Slop rules. |
 | Installer | Install commands/docs/patterns safely. | Installer overwrites user memory or omits new commands. | dry-run, backup, managed block, smoke install, smoke uninstall. |
