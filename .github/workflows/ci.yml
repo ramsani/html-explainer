@@ -75,6 +75,7 @@ jobs:
           test -f docs/HTML_UX_STANDARD.md
           test -f docs/pattern-router.md
           test -f docs/QUALITY_BAR.md
+          test -f docs/LEAN_HTML_RENDERING.md
           test -f docs/fact-sheet-protocol.md
           test -f skills/thariq-html-effectiveness/SKILL.md
           test -f commands/pick-the-right-html.md

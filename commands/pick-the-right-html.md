@@ -21,6 +21,7 @@ Use:
 - `docs/THARIQ_SITE_LEARNINGS.md` to apply the site-level lessons.
 - `docs/USER_IN_THE_LOOP.md` to decide how the artifact keeps the user involved.
 - `docs/VISUAL_STYLE_STANDARD.md` to require system light/dark and minimal, flat, professional styling.
+- `docs/LEAN_HTML_RENDERING.md` to keep CSS, JS, copy, and sections as small as the decision allows.
 - `docs/pattern-router.md` to map task signals to the right pattern.
 - The selected file in `patterns/` to determine evidence requirements, HTML structure, quality checklist, failure modes, and acceptance criteria.
 - `docs/HTML_UX_STANDARD.md` to decide the first-screen contract, interaction value, mobile requirement, and export need.
@@ -38,20 +39,21 @@ Use:
 5. Choose the primary visual model from the visual explainer playbook.
 6. State the user-in-the-loop value.
 7. State the visual style contract.
-8. Apply the HTML advantage gate.
-9. Choose the artifact budget: compact, standard, or interactive.
-10. State what wall of text or mental reconstruction the HTML replaces.
-11. Use the router to select one primary pattern.
-12. Open/read the matching pattern file.
-13. Define the UX contract.
-14. Optionally select up to two supporting sections.
-15. State what evidence must be inspected before generation.
-16. State the minimum validation required.
-17. State the recommended next action.
-18. State whether this is standalone or part of an artifact chain.
-19. State whether share/reentry blocks are needed.
-20. Provide a copy-ready command or prompt.
-21. Provide up to three selectable alternatives only when real branches exist.
+8. State the lean rendering guard.
+9. Apply the HTML advantage gate.
+10. Choose the artifact budget: compact, standard, or interactive.
+11. State what wall of text or mental reconstruction the HTML replaces.
+12. Use the router to select one primary pattern.
+13. Open/read the matching pattern file.
+14. Define the UX contract.
+15. Optionally select up to two supporting sections.
+16. State what evidence must be inspected before generation.
+17. State the minimum validation required.
+18. State the recommended next action.
+19. State whether this is standalone or part of an artifact chain.
+20. State whether share/reentry blocks are needed.
+21. Provide a copy-ready command or prompt.
+22. Provide up to three selectable alternatives only when real branches exist.
 
 ## Output
 
@@ -71,6 +73,8 @@ Primary visual model:
 User-in-the-loop value:
 
 Visual style:
+
+Lean rendering guard:
 
 HTML advantage:
 

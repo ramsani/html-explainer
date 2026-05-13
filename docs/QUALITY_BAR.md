@@ -21,6 +21,7 @@ It must declare:
 - why HTML beats Markdown here;
 - what wall of text or mental reconstruction it replaces;
 - what complexity guard keeps it small enough.
+- what lean rendering guard prevents CSS/JS bloat.
 
 If the HTML costs more attention than the problem itself, use Markdown or shrink the artifact.
 
@@ -117,6 +118,11 @@ Interactive controls must have visible state changes and usable output.
 Do not build dashboards by default.
 
 Use one primary pattern and at most two supporting sections.
+
+Apply `docs/LEAN_HTML_RENDERING.md`.
+
+Subtract 15 if CSS/JS feels larger than the decision deserves.
+Subtract 10 if repeated styling or repeated prose could be collapsed into reusable primitives.
 
 ### 11. Visual clarity
 

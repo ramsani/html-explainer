@@ -33,6 +33,8 @@ Every serious artifact should support system light/dark mode:
 
 Use the product's real design tokens when available. Otherwise use restrained neutrals plus one accent.
 
+Apply `docs/LEAN_HTML_RENDERING.md` before writing CSS. Prefer a small shared token set and reusable primitives.
+
 ## Visual tone
 
 Prefer:
@@ -56,6 +58,7 @@ Avoid:
 - excessive shadows;
 - neon palettes;
 - decorative cards of prose;
+- repeated custom CSS for similar sections;
 - oversized marketing hero sections;
 - one-color purple/blue themes.
 

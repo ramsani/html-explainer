@@ -16,6 +16,8 @@ interactive
 
 Choose the budget only after applying `docs/HTML_ADVANTAGE_GATE.md`.
 
+After choosing the budget, apply `docs/LEAN_HTML_RENDERING.md` to keep the artifact small and fast.
+
 ## Compact
 
 Use `compact` when the user needs orientation, a quick choice, or a lightweight review.
@@ -27,6 +29,8 @@ Shape:
 - no custom controls unless copy/export is essential;
 - one visible recommendation;
 - one next action.
+- tiny shared CSS;
+- one primary visual.
 
 Best for:
 
@@ -49,6 +53,8 @@ Shape:
 - risk/unknowns;
 - recommendation;
 - next action.
+- small shared CSS;
+- minimal JS only for toggles, filters, or copy/export.
 
 Best for:
 
@@ -70,6 +76,7 @@ Shape:
 - preview of resulting decision/config/prompt/plan;
 - copy/export output;
 - reset/default state.
+- JavaScript only for real tool behavior.
 
 Best for:
 
@@ -92,6 +99,7 @@ Markdown cost:
 HTML benefit:
 Mental work removed:
 Token/complexity guard:
+Lean rendering guard:
 HTML advantage:
 ```
 
@@ -101,6 +109,7 @@ Examples:
 - "HTML benefit: side-by-side matrix makes trade-offs visible at once."
 - "Mental work removed: reconstructing sequence, dependencies, and risk."
 - "Token/complexity guard: compact artifact, no custom JS."
+- "Lean rendering guard: one visual model, shared CSS tokens, optional details for depth."
 - "HTML advantage: searchable commands and exportable reentry checklist."
 
 ## Thariq value test
@@ -127,6 +136,7 @@ Fail or shrink the artifact if:
 - the artifact has more sections than decisions;
 - visual polish consumes attention without reducing confusion;
 - generating the artifact costs more work than reading the answer.
+- CSS/JS complexity exceeds the artifact's value.
 
 ## Default
 

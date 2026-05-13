@@ -167,20 +167,21 @@ That means the agent must:
 6. apply `docs/THARIQ_SITE_LEARNINGS.md`;
 7. apply `docs/USER_IN_THE_LOOP.md`;
 8. apply `docs/VISUAL_STYLE_STANDARD.md`;
-9. apply `docs/ARTIFACT_BUDGET.md`;
-10. use `docs/pattern-router.md` to select one primary pattern;
-11. open the matching file in `patterns/`;
-12. apply `docs/HTML_UX_STANDARD.md`;
-13. inspect real evidence;
-14. create a fact sheet;
-15. generate the smallest useful HTML artifact;
-16. apply `docs/QUALITY_BAR.md` before finalizing;
-17. compare against `docs/GOLDEN_OUTPUTS.md` when a reference case applies;
-18. apply `docs/HTML_ARTIFACT_CHAINS.md` when one artifact should lead to another;
-19. apply `docs/SHARE_AND_REENTRY.md` when the artifact should be shareable or reusable by another agent;
-20. apply `docs/NEXT_ACTION_HANDOFF.md`;
-21. apply `docs/HTML_DELIVERY.md`;
-22. expose uncertainty and next action.
+9. apply `docs/LEAN_HTML_RENDERING.md`;
+10. apply `docs/ARTIFACT_BUDGET.md`;
+11. use `docs/pattern-router.md` to select one primary pattern;
+12. open the matching file in `patterns/`;
+13. apply `docs/HTML_UX_STANDARD.md`;
+14. inspect real evidence;
+15. create a fact sheet;
+16. generate the smallest useful HTML artifact;
+17. apply `docs/QUALITY_BAR.md` before finalizing;
+18. compare against `docs/GOLDEN_OUTPUTS.md` when a reference case applies;
+19. apply `docs/HTML_ARTIFACT_CHAINS.md` when one artifact should lead to another;
+20. apply `docs/SHARE_AND_REENTRY.md` when the artifact should be shareable or reusable by another agent;
+21. apply `docs/NEXT_ACTION_HANDOFF.md`;
+22. apply `docs/HTML_DELIVERY.md`;
+23. expose uncertainty and next action.
 
 ## Autodiscovery and delivery
 

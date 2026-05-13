@@ -16,6 +16,7 @@ Every serious artifact uses:
 - `docs/THARIQ_SITE_LEARNINGS.md`
 - `docs/USER_IN_THE_LOOP.md`
 - `docs/VISUAL_STYLE_STANDARD.md`
+- `docs/LEAN_HTML_RENDERING.md`
 - `docs/ARTIFACT_BUDGET.md`
 - `docs/pattern-router.md`
 - selected `patterns/NN-*.md`
