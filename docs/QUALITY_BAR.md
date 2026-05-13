@@ -220,6 +220,22 @@ Subtract 20 if the artifact could be pasted into Markdown with little loss.
 Subtract 15 if it uses cards/tables only when a stronger visual model was available.
 Subtract 15 if interaction is decorative.
 
+### 19. Visual style quality
+
+Apply `docs/VISUAL_STYLE_STANDARD.md`.
+
+Add credit when:
+
+- the artifact supports system light/dark mode;
+- the design is minimal, flat, elegant, and professional;
+- color is restrained and meaningful;
+- layout resembles a readable document or small tool, not a generic dashboard;
+- inline SVG/HTML/CSS carries the explanation without external assets.
+
+Subtract 20 if the artifact is dark-only without reason.
+Subtract 15 if it uses generic dashboard styling.
+Subtract 15 if it relies on decorative gradients, glow, or visual noise.
+
 ## Visual exploration overlay
 
 Apply this when the artifact explores UI directions.

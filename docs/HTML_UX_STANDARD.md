@@ -49,6 +49,8 @@ Apply `docs/EXPLAINER_CLARITY.md` before layout decisions. A correct artifact th
 
 Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` before choosing components. The artifact needs a primary visual model, not just styled sections.
 
+Apply `docs/VISUAL_STYLE_STANDARD.md` before writing CSS. Serious artifacts should support system light/dark mode and use minimal, flat, professional styling.
+
 ## Artifact fit
 
 Use the form that matches the work:
@@ -144,6 +146,7 @@ Use visual hierarchy to make decisions easier.
 Required:
 
 - readable contrast;
+- system light/dark support with `prefers-color-scheme` unless project tokens override it;
 - clear section order;
 - useful navigation when there are four or more sections;
 - responsive layout for mobile;
@@ -159,6 +162,7 @@ Avoid:
 - repeated prose in cards;
 - dense panels with no scan path;
 - generic dark dashboards;
+- fixed dark-only themes;
 - one-color themes;
 - tiny diagrams without zoom or details;
 - animations that do not support comprehension.

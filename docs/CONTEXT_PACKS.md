@@ -12,6 +12,8 @@ Every serious artifact uses:
 - `docs/HTML_ADVANTAGE_GATE.md`
 - `docs/EXPLAINER_CLARITY.md`
 - `docs/VISUAL_EXPLAINER_PLAYBOOK.md`
+- `docs/THARIQ_SITE_LEARNINGS.md`
+- `docs/VISUAL_STYLE_STANDARD.md`
 - `docs/ARTIFACT_BUDGET.md`
 - `docs/pattern-router.md`
 - selected `patterns/NN-*.md`

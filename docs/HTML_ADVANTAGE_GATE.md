@@ -94,6 +94,8 @@ If the artifact is only a prettier inventory, revise it.
 
 The selected primary visual model should come from `docs/VISUAL_EXPLAINER_PLAYBOOK.md`.
 
+The artifact style should follow `docs/VISUAL_STYLE_STANDARD.md`: system light/dark, minimal, flat, professional, and explanation-first.
+
 `Decision` must be one of:
 
 ```text
