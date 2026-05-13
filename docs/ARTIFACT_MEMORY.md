@@ -2,6 +2,8 @@
 
 `html-explainer` can generate HTML artifacts that are useful beyond the current chat. This document defines how those artifacts should be saved, classified, explored, refreshed, superseded, and reused without committing user-generated outputs into this repository.
 
+Artifact memory is the storage and lifecycle layer. The actionable knowledge base is the retrieval, relationship, and action layer built on top of it. See [`ACTIONABLE_KNOWLEDGE_BASE.md`](ACTIONABLE_KNOWLEDGE_BASE.md) for the knowledge model.
+
 ## Intent
 
 Create a local-first artifact memory system for generated HTML outputs.
@@ -305,6 +307,7 @@ The first implementation should provide:
 
 - this architecture document;
 - a metadata schema document;
+- an actionable knowledge base model;
 - sample `index.json`;
 - sample artifact metadata;
 - a static explorer template.
