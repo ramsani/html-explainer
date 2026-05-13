@@ -28,6 +28,9 @@ Selectable alternatives:
 
 - Recommend one best next action.
 - Keep the command copy-ready.
+- The recommended action must advance the primary intent.
+- Secondary actions may appear only as alternatives.
+- Do not let the easiest cleanup item replace the user's real goal.
 - Do not chain commands automatically without user approval.
 - Do not offer more than three alternatives.
 - Use alternatives only when the analysis found real branches.
@@ -35,6 +38,34 @@ Selectable alternatives:
 - If the artifact found blocking issues, the recommended action must fix or verify those blockers first.
 - If the artifact is a review, options should map to obvious decisions: accept, revise, split, test, or implement.
 - If the artifact is interactive, include an export or copy action when useful.
+
+## Report as next-step input
+
+The final block should make the artifact reusable by the next agent.
+
+When follow-up work is likely, include one copy-ready prompt that carries forward:
+
+- the primary intent;
+- the recommended next action;
+- the evidence already inspected;
+- the unresolved question or risk;
+- the acceptance criteria for the next step.
+
+Good:
+
+```text
+Ready-to-run command:
+/make-the-right-html use the findings in this artifact to generate a focused implementation plan for improving project recap outputs. Keep the primary intent: help a non-technical user understand repo opportunities and choose the next best action. Reuse the inspected evidence; do not restart from README-only summary.
+```
+
+Bad:
+
+```text
+Ready-to-run command:
+Clean up repo files.
+```
+
+Why bad: it loses the user's goal and throws away the report as context.
 
 ## Good example
 

@@ -54,6 +54,12 @@ It must show:
 
 Secondary intents are allowed only when they strengthen the main intent.
 
+Every major finding, risk, recommendation, and next action must be aligned to the primary intent.
+
+Subtract 20 if the artifact is accurate but optimizes for a secondary issue.
+Subtract 20 if the final recommendation does not move the user toward the stated goal.
+Subtract 10 if the artifact fails to preserve useful context for the next command when follow-up work is likely.
+
 ### 5. First-screen usefulness
 
 The first screen must make the artifact's value obvious.
