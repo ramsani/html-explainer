@@ -6,6 +6,8 @@ Use this before trusting or delivering an HTML artifact.
 
 An artifact passes only when it is better than Markdown for the user's real intent.
 
+The Quality Bar confirms required parts before delivery. It is not a substitute for clear intent, evidence, visual structure, decision support, next action, and reusable memory.
+
 ## Score
 
 Score 0-100:

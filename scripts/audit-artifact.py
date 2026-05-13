@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Score an HTML artifact against the invisible quality manufacturing gate."""
+"""Score an HTML artifact against the invisible quality gate."""
 
 from __future__ import annotations
 

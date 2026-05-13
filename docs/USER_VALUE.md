@@ -43,7 +43,7 @@ Every serious artifact should make the user's next move easier.
 
 ## What The User Should Not Feel
 
-- They should not feel forced to learn the repo philosophy.
+- They should not feel forced to learn the repo's internal rules.
 - They should not see heavy internal vocabulary.
 - They should not have to decide which pattern fits if a command can guide them.
 - They should not receive HTML when a direct answer is better.

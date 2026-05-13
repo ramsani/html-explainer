@@ -2,7 +2,7 @@
 
 This repo borrows protocols, not product shape.
 
-The useful lesson is that strong visual artifacts need a production process. They do not become valuable because they are rendered in HTML. They become valuable because the process forces discovery, evidence, constraints, quality gates, export, and re-entry before the artifact is trusted.
+The useful lesson is that strong visual artifacts need required parts. They do not become valuable because they are rendered in HTML. They become valuable because the artifact includes discovery, evidence, constraints, quality checks, export, and re-entry before it is trusted.
 
 ## What Transfers
 
@@ -32,4 +32,4 @@ For `html-explainer`, the extracted protocol is:
 discovery -> direction -> pattern package -> evidence -> artifact -> quality gate -> archive decision -> re-entry prompt
 ```
 
-This is the manufacturing line. Validation confirms that line produced a useful artifact. It does not replace the line.
+This is the required behavior chain. Validation confirms the artifact includes it.

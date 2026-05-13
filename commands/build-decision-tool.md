@@ -13,9 +13,10 @@ Build a temporary HTML editor, triage board, tuner, or config tool.
 7. Apply `docs/STYLE.md`.
 8. Apply `docs/HUMAN_INTERFACE.md`.
 9. Apply `docs/QUALITY_BAR.md`.
-10. Apply `docs/CHAIN.md` so exported output has a clear next use.
-11. Apply `docs/MEMORY_ACCESS.md` when the exported result may be reused.
-12. Apply `docs/DELIVERY.md`.
+10. Confirm the required user-facing parts in `docs/INVISIBLE_QUALITY.md`.
+11. Apply `docs/CHAIN.md` so exported output has a clear next use.
+12. Apply `docs/MEMORY_ACCESS.md` when the exported result may be reused.
+13. Apply `docs/DELIVERY.md`.
 
 ## Must Include
 

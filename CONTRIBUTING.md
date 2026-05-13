@@ -34,6 +34,10 @@ scripts/smoke-install.sh
 scripts/smoke-uninstall.sh
 ```
 
+These checks confirm required behavior. New artifacts and patterns should include the required user-facing parts before validation runs.
+
+When adding a new principle or product promise, update `docs/ENGINEERING_TRANSLATION.md` with the concrete behavior, affected files, and confirmation check.
+
 ## Adding Or Changing A Pattern
 
 Each pattern must include:

@@ -56,6 +56,8 @@ The V1 closeout audit checks every repo function against this promise. See [`doc
 
 V1.1 adds invisible quality control: local scripts confirm artifacts contain the required parts before they are trusted. The user sees the clean result, not the machinery.
 
+Every artifact is shaped around intent, evidence, visual clarity, decision support, next action, and reusable memory before delivery.
+
 ## What The User Gets
 
 `html-explainer` turns agent output into a browser-readable decision surface.
@@ -75,7 +77,7 @@ The user gets:
 - trust through validation because examples, commands, patterns, routing scenarios, install, and uninstall are checked locally.
 - quieter quality because local audit scripts block artifacts that are missing critical parts before they reach the user.
 
-The user should not need to understand the operating philosophy. They should feel the result as clarity, speed, safer choices, and less repeated explanation.
+The user should not need to understand internal rules. They should feel the result as clarity, speed, safer choices, and less repeated explanation.
 
 ## What It Feels Like
 

@@ -13,9 +13,10 @@ Review a diff, PR, patch, or changed files before accepting them.
 7. Apply `docs/STYLE.md`.
 8. Apply `docs/HUMAN_INTERFACE.md`.
 9. Apply `docs/QUALITY_BAR.md`.
-10. Apply `docs/CHAIN.md` so accept, fix, verify, split, revert, or share becomes selectable.
-11. Apply `docs/MEMORY_ACCESS.md` when the review may be reused.
-12. Apply `docs/DELIVERY.md`.
+10. Confirm the required user-facing parts in `docs/INVISIBLE_QUALITY.md`.
+11. Apply `docs/CHAIN.md` so accept, fix, verify, split, revert, or share becomes selectable.
+12. Apply `docs/MEMORY_ACCESS.md` when the review may be reused.
+13. Apply `docs/DELIVERY.md`.
 
 ## Must Answer
 

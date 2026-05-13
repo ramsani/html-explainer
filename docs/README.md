@@ -20,15 +20,26 @@ The full older material lives in `docs/reference/`.
 
 Use `docs/reference/` only when the lean core is not enough.
 
+## Quality Model
+
+Quality is expressed as required artifact parts, then confirmed before delivery.
+
+The active docs should be read as one line:
+
+```text
+intent -> evidence -> visual understanding -> decision -> next action -> reusable memory -> quiet completion check
+```
+
 ## Product Docs
 
 Read these to understand the current V1 product shape:
 
 - `USER_VALUE.md` explains every benefit delivered to the user.
+- `ENGINEERING_TRANSLATION.md` maps internal principles to concrete behavior and checks.
 - `LANGUAGE_POLICY.md` defines English repo docs and language-matched user output.
 - `USER_FACING_COPY.md` keeps visible artifact text simple and helpful.
 - `HUMAN_INTERFACE.md` keeps invitations respectful, optional, and powerful.
-- `INVISIBLE_QUALITY.md` defines the quiet manufacturing gate before delivery.
+- `INVISIBLE_QUALITY.md` defines the quiet completion check before delivery.
 - `MEMORY_ACCESS.md` makes saved work easy to find again without exposing archive mechanics.
 - `QUALITY_CLAIMS.md` states what the repo is engineered to prevent and what it does not yet statistically guarantee.
 - `V1_FUNCTION_AUDIT.md` maps each function to its user promise, likely failure, and guardrail.

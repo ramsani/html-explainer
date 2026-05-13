@@ -40,6 +40,12 @@ Open the HTML in the browser when the environment allows it.
 
 Always return a clickable absolute path.
 
+## Completion Before Delivery
+
+Confirm `docs/INVISIBLE_QUALITY.md` before final delivery.
+
+The artifact should already contain the required user-facing parts before the user sees it. Delivery confirms completeness; it does not ask the user to discover missing pieces.
+
 ## Final Chat Response
 
 Keep it short:

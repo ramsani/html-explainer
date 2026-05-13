@@ -15,7 +15,7 @@ If a function does not strengthen that chain, it should be removed, simplified, 
 
 V1 is not judged by whether the idea sounds strong. It is judged by whether each user-facing function has been stress-tested against predictable failure and redesigned so the protection becomes part of the product.
 
-The repo now treats quality as manufactured by process:
+The repo now treats quality as required artifact behavior:
 
 - route before generating;
 - inspect evidence before claiming;
@@ -24,6 +24,7 @@ The repo now treats quality as manufactured by process:
 - recommend a next action;
 - preserve useful work without creating stale noise;
 - keep the interface human, optional, and minimal.
+- confirm required parts before delivery without exposing internal checks.
 
 ## Function Map
 
@@ -39,7 +40,7 @@ The repo now treats quality as manufactured by process:
 | Project re-entry | Help a user regain context and choose the next action. | Recap becomes a generic README summary. | `/reenter-project`, pattern 17, required repo evidence and next prompt. |
 | Decision tool building | Build temporary editors, tuners, triage boards, or config tools. | Tool has controls but no exportable output. | `/build-decision-tool`, interactive budget rule, copy/export requirement. |
 | Artifact audit | Decide whether an existing artifact is worth trusting. | Audit becomes taste feedback instead of decision-quality review. | `/audit-html`, Quality Bar scoring, hard fail conditions. |
-| Invisible quality gate | Confirm artifacts contain required parts before they are trusted. | Quality becomes a manual opinion instead of a manufacturing control. | `scripts/audit-artifact.py`, good/bad fixtures, golden artifact validation. |
+| Invisible quality gate | Confirm artifacts contain required parts before they are trusted. | Quality becomes a manual opinion instead of repeatable behavior. | `scripts/audit-artifact.py`, good/bad fixtures, golden artifact validation. |
 | Thinking surface | Turn unclear thinking into conclusion and action. | Becomes theory-heavy brainstorming with no decision. | `/think-with-me-about`, Insight Surface Loop, stress-test panel, archive recommendation. |
 | Artifact memory | Preserve useful outputs without polluting the repo. | Stale or private artifacts become trusted public knowledge. | lifespan classes, freshness rules, privacy class, do-not-reuse class. |
 | Memory access | Show the user how to find saved work again without showing archive mechanics. | Saved work feels invisible or memory guidance becomes bulky. | Memory Access guide, example receipts, command validation. |

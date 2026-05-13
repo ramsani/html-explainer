@@ -18,6 +18,7 @@ Use:
 - `docs/STYLE.md`
 - `docs/HUMAN_INTERFACE.md`
 - `docs/QUALITY_BAR.md`
+- `docs/INVISIBLE_QUALITY.md`
 - `docs/CHAIN.md`
 - `docs/MEMORY_ACCESS.md`
 
@@ -37,8 +38,9 @@ Use:
 12. Check the next action and copy-ready prompt.
 13. Check archive recommendation when the artifact may be reused.
 14. Check whether memory access is visible but quiet.
-15. Score with `docs/QUALITY_BAR.md`.
-16. Recommend accept, revise, reject, or simplify to Markdown.
+15. Check whether the artifact already contains the required user-facing parts.
+16. Score with `docs/QUALITY_BAR.md`.
+17. Recommend accept, revise, reject, or simplify to Markdown.
 
 ## Output
 
@@ -61,6 +63,7 @@ Language gaps:
 Human-interface gaps:
 Memory gaps:
 Memory access:
+Completeness gaps:
 
 Best next prompt:
 ```
@@ -81,3 +84,4 @@ Fail the artifact if it:
 - omits archive guidance when the artifact may become future context.
 - hides how reusable work can be found later.
 - pushes one path without giving the user a graceful choice.
+- omits required user-facing parts.

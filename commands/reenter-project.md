@@ -13,9 +13,10 @@ Create a repo/project recap that helps the user re-enter context quickly.
 7. Apply `docs/STYLE.md`.
 8. Apply `docs/HUMAN_INTERFACE.md`.
 9. Apply `docs/QUALITY_BAR.md`.
-10. Apply `docs/CHAIN.md` so the next repo action is obvious.
-11. Apply `docs/MEMORY_ACCESS.md` because project recaps are often reused.
-12. Apply `docs/DELIVERY.md`.
+10. Confirm the required user-facing parts in `docs/INVISIBLE_QUALITY.md`.
+11. Apply `docs/CHAIN.md` so the next repo action is obvious.
+12. Apply `docs/MEMORY_ACCESS.md` because project recaps are often reused.
+13. Apply `docs/DELIVERY.md`.
 
 ## Must Answer
 

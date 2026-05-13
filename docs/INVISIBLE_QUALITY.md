@@ -1,16 +1,16 @@
 # Invisible Quality
 
-Use this to enforce artifact quality without exposing the machinery to the user.
+Use this to keep final artifacts complete without exposing internal checks to the user.
 
-The goal is not to test whether the artifact got lucky. The goal is to confirm that the artifact was manufactured with the required parts.
+The artifact is not ready until the required user-facing parts are already present.
 
 ## Rule
 
-Build with required parts first. Confirm before delivery.
+Include the required parts in the artifact before final delivery.
 
-The user should see clarity, not inspection.
+The user should see a clear result, not the review checklist.
 
-## Manufacturing Checks
+## Required Parts
 
 A serious artifact must include:
 
@@ -25,7 +25,7 @@ A serious artifact must include:
 - quiet memory access receipt;
 - visible user agency.
 
-## Internal Gate
+## Confirmation
 
 Use `scripts/audit-artifact.py` on generated or curated artifacts.
 

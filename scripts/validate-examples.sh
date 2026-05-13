@@ -58,7 +58,7 @@ for file in "$EXAMPLES_DIR"/*.html; do
     fail "$rel exposes internal process labels in visible headings"
   fi
 
-  "$AUDIT" "$file" --min-score 75 >/dev/null || fail "$rel failed invisible quality manufacturing gate"
+  "$AUDIT" "$file" --min-score 75 >/dev/null || fail "$rel failed invisible quality gate"
 done
 
 echo "[validate-examples] OK: $example_count HTML examples validated"

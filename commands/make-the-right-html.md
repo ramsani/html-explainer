@@ -15,9 +15,10 @@ Generate a self-contained HTML artifact using the html-explainer operating model
 9. Apply `docs/USER_FACING_COPY.md`.
 10. Apply `docs/HUMAN_INTERFACE.md`.
 11. Apply `docs/QUALITY_BAR.md`.
-12. Apply `docs/MEMORY_ACCESS.md` when the artifact may be reused.
-13. Apply `docs/CHAIN.md` when follow-up work is likely.
-14. Apply `docs/DELIVERY.md`.
+12. Confirm the required user-facing parts in `docs/INVISIBLE_QUALITY.md`.
+13. Apply `docs/MEMORY_ACCESS.md` when the artifact may be reused.
+14. Apply `docs/CHAIN.md` when follow-up work is likely.
+15. Apply `docs/DELIVERY.md`.
 
 Use `docs/reference/` only when a serious case needs deeper guidance.
 
@@ -63,6 +64,7 @@ Before responding:
 - Did the artifact explain whether it should be saved, refreshed, kept private, superseded, or discarded?
 - Did it show a tiny "Saved for later" or "Not saved" receipt without becoming bulky?
 - Did visible copy help the user without exposing internal process labels?
+- Did the artifact already include the required user-facing parts?
 
 ## Final Chat Response
 
