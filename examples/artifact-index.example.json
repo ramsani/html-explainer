@@ -1,0 +1,82 @@
+{
+  "schema_version": "0.1.0",
+  "generated_at": "2026-05-13T00:00:00-07:00",
+  "output_root": "~/.claude/html-explainer/outputs",
+  "artifacts": [
+    {
+      "id": "repo-recap-html-explainer-2026-05-13-a1bc24a",
+      "title": "html-explainer repo recap",
+      "created_at": "2026-05-13T00:00:00-07:00",
+      "artifact_path": "artifacts/replaceable/repo-recap-html-explainer-2026-05-13-a1bc24a.html",
+      "metadata_path": "metadata/replaceable/repo-recap-html-explainer-2026-05-13-a1bc24a.json",
+      "artifact_type": "project-recap",
+      "pattern": "17-project-recap",
+      "validity": "replaceable",
+      "freshness_risk": "medium",
+      "privacy": "local",
+      "project": "html-explainer",
+      "summary": "Repo recap with evidence, risks, and next action.",
+      "tags": ["repo-recap", "claude-code", "decision-surface"]
+    },
+    {
+      "id": "decision-surface-principles-2026-05-13",
+      "title": "Decision surface principles",
+      "created_at": "2026-05-13T00:00:00-07:00",
+      "artifact_path": "artifacts/evergreen/decision-surface-principles-2026-05-13.html",
+      "metadata_path": "metadata/evergreen/decision-surface-principles-2026-05-13.json",
+      "artifact_type": "concept-explainer",
+      "pattern": "13-concept-explainer",
+      "validity": "evergreen",
+      "freshness_risk": "low",
+      "privacy": "shareable",
+      "project": "html-explainer",
+      "summary": "Evergreen explanation of when HTML becomes useful for decisions rather than decoration.",
+      "tags": ["principles", "html", "quality-bar"]
+    },
+    {
+      "id": "tool-pricing-comparison-2026-05-13",
+      "title": "Tool pricing comparison",
+      "created_at": "2026-05-13T00:00:00-07:00",
+      "artifact_path": "artifacts/temporal/tool-pricing-comparison-2026-05-13.html",
+      "metadata_path": "metadata/temporal/tool-pricing-comparison-2026-05-13.json",
+      "artifact_type": "research-comparison-map",
+      "pattern": "14-research-comparison-map",
+      "validity": "temporal",
+      "freshness_risk": "high",
+      "privacy": "local",
+      "project": "tool-evaluation",
+      "summary": "Time-sensitive comparison that should be refreshed when pricing or product plans change.",
+      "tags": ["pricing", "research", "temporal"]
+    },
+    {
+      "id": "old-repo-map-2026-05-01",
+      "title": "Old repo map",
+      "created_at": "2026-05-01T00:00:00-07:00",
+      "artifact_path": "artifacts/superseded/old-repo-map-2026-05-01.html",
+      "metadata_path": "metadata/superseded/old-repo-map-2026-05-01.json",
+      "artifact_type": "module-map",
+      "pattern": "04-module-map",
+      "validity": "superseded",
+      "freshness_risk": "high",
+      "privacy": "local",
+      "project": "html-explainer",
+      "summary": "Older map kept for history after a newer repo recap replaced it.",
+      "tags": ["repo-map", "superseded"]
+    },
+    {
+      "id": "client-workflow-review-2026-05-13",
+      "title": "Client workflow review",
+      "created_at": "2026-05-13T00:00:00-07:00",
+      "artifact_path": "artifacts/private/client-workflow-review-2026-05-13.html",
+      "metadata_path": "metadata/private/client-workflow-review-2026-05-13.json",
+      "artifact_type": "workflow-flowchart",
+      "pattern": "10-process-workflow-flowchart",
+      "validity": "private",
+      "freshness_risk": "medium",
+      "privacy": "private",
+      "project": "private-client-work",
+      "summary": "Private local workflow review. Do not share without user review.",
+      "tags": ["private", "workflow"]
+    }
+  ]
+}
