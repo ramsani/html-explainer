@@ -32,6 +32,7 @@ Use:
 - `docs/PROCESS_CAPSULE.md` when the artifact should become input to the next step.
 - `docs/SENIOR_CHAINED_PROMPTS.md` when next prompts need to act like durable engineering briefs.
 - `docs/EXPERT_PROMPT_GATES.md` when next prompts need technical stage gates.
+- `docs/COHERENCE_GUARD.md` when the artifact risks becoming process bloat.
 - `docs/NEXT_ACTION_HANDOFF.md` to produce a copy-ready next command and selectable alternatives.
 
 ## Process

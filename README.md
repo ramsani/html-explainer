@@ -2,9 +2,9 @@
 
 `html-explainer` is a Claude Code skill layer and installer that extends `visual-explainer` with an evidence-first operating model inspired by Thariq S. Bate's "The unreasonable effectiveness of HTML" approach.
 
-It trades a document you would skim for one you would actually read: a self-contained HTML artifact you can open directly in a browser.
+It helps agents create browser-readable decision artifacts that preserve intent, evidence, and the next expert prompt.
 
-Its purpose is not to make agent output prettier. Its purpose is to help coding agents produce HTML artifacts that improve technical judgment: review, comparison, diagnosis, planning, triage, reentry, and decision-making.
+Its purpose is not to make agent output prettier. Its purpose is to keep the user inside the work: able to understand, decide, correct direction, and continue with a strong next prompt.
 
 Think of it as an intent-led process browser:
 
@@ -13,6 +13,14 @@ user intent -> evidence -> visual understanding -> decision -> next action -> ne
 ```
 
 Each HTML artifact should be a useful stop in the user's path, not a dead-end report.
+
+The system has one center:
+
+```text
+intent -> evidence -> visual understanding -> decision -> expert next prompt
+```
+
+If a rule, pattern, gate, or prompt does not serve that path, it does not belong.
 
 ```text
 visual-explainer = HTML artifact capability
@@ -43,6 +51,26 @@ An artifact is acceptable only when it makes the user's work easier than Markdow
 - the artifact ends with a next action handoff: recommended action, reason, ready-to-run command, and only useful alternatives.
 
 The process is designed so quality is built before the artifact is generated. Validation confirms that the process produced the right thing; it is not a last-minute rescue.
+
+## Coherence guard
+
+`html-explainer` deliberately avoids becoming a pile of unrelated process ideas.
+
+Every concept must pass a simple rent test:
+
+- Which user intent does it improve?
+- What work does it remove?
+- What failure does it prevent?
+- Where does it belong in the process?
+- Can it be a small rule instead of a new subsystem?
+
+The repo keeps ideas from Visual Explainer, Thariq, Matt Pocock, and staged expert workflows only when they strengthen the same path:
+
+```text
+intent -> evidence -> visual understanding -> decision -> expert next prompt
+```
+
+See [`docs/COHERENCE_GUARD.md`](docs/COHERENCE_GUARD.md).
 
 ## Attribution
 
@@ -217,9 +245,10 @@ That means the agent must:
 22. apply `docs/PROCESS_CAPSULE.md` when follow-up work is likely;
 23. apply `docs/SENIOR_CHAINED_PROMPTS.md` when next prompts need durable engineering-brief quality;
 24. apply `docs/EXPERT_PROMPT_GATES.md` when next prompts need technical stage gates;
-25. apply `docs/NEXT_ACTION_HANDOFF.md`;
-26. apply `docs/HTML_DELIVERY.md`;
-27. expose uncertainty and next action.
+25. apply `docs/COHERENCE_GUARD.md` to keep the artifact and next prompt from becoming process bloat;
+26. apply `docs/NEXT_ACTION_HANDOFF.md`;
+27. apply `docs/HTML_DELIVERY.md`;
+28. expose uncertainty and next action.
 
 ## Intent-led process browser
 
@@ -548,7 +577,27 @@ It requires the next prompt to name:
 
 It includes compact gates for intake, product, architecture, plan, implementation, automation, verification, and QA.
 
-### 21. Audit command
+### 21. Coherence guard
+
+`docs/COHERENCE_GUARD.md` prevents the repo from becoming a Frankenstein of good-sounding ideas.
+
+It requires every rule, gate, artifact section, and chained prompt to pay rent:
+
+- improve decision quality;
+- reduce ambiguity;
+- preserve intent;
+- prevent unsupported claims;
+- make the next prompt more executable;
+- reduce reading or reconstruction cost;
+- prevent unsafe action.
+
+If a concept does not fit the product sentence, it belongs elsewhere:
+
+```text
+html-explainer helps agents create browser-readable decision artifacts that preserve intent, evidence, and the next expert prompt.
+```
+
+### 22. Audit command
 
 `/audit-html` reviews an existing artifact and scores it against:
 
@@ -568,7 +617,7 @@ It includes compact gates for intake, product, architecture, plan, implementatio
 - simplicity;
 - next-action clarity.
 
-### 22. CI and smoke tests
+### 23. CI and smoke tests
 
 The repo includes GitHub Actions and scripts to validate:
 
@@ -581,7 +630,7 @@ The repo includes GitHub Actions and scripts to validate:
 - required sections in each pattern;
 - example artifact UX minimums.
 
-### 23. Example artifacts
+### 24. Example artifacts
 
 The repo includes example artifacts so models have concrete shapes to imitate:
 

@@ -10,6 +10,10 @@ The artifact must help the user decide, review, compare, diagnose, prioritize, t
 
 Reject artifacts that only look polished.
 
+Apply `docs/COHERENCE_GUARD.md` when the artifact introduces extra process, gates, sections, or chained prompts.
+
+Subtract 20 if the artifact feels like process bloat instead of a clearer path from intent to decision.
+
 ### 2. Cost effectiveness
 
 The artifact must justify its cost.
@@ -140,6 +144,7 @@ Apply `docs/LEAN_HTML_RENDERING.md`.
 
 Subtract 15 if CSS/JS feels larger than the decision deserves.
 Subtract 10 if repeated styling or repeated prose could be collapsed into reusable primitives.
+Subtract 15 if the artifact includes rules, gates, or handoff blocks that do not pay rent for this intent.
 
 ### 11. Visual clarity
 

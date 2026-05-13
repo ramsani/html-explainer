@@ -28,6 +28,7 @@ Every serious artifact uses:
 - `docs/PROCESS_CAPSULE.md` when follow-up work is likely
 - `docs/SENIOR_CHAINED_PROMPTS.md` when next prompts need durable engineering-brief quality
 - `docs/EXPERT_PROMPT_GATES.md` when next prompts need technical stage gates
+- `docs/COHERENCE_GUARD.md` when extra process might bloat the artifact
 - `docs/HTML_DELIVERY.md`
 
 Use these conditionally:

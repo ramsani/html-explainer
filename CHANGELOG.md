@@ -1,5 +1,23 @@
 # Changelog
 
+## Unreleased — coherence guard
+
+### Added
+
+- `docs/COHERENCE_GUARD.md` to prevent the repo from becoming a disconnected collection of good ideas.
+- README section explaining the single product center: `intent -> evidence -> visual understanding -> decision -> expert next prompt`.
+- Installer, smoke test, and CI checks for the coherence guard.
+
+### Improved
+
+- Quality bar now penalizes process bloat that does not serve the user's intent.
+- Main generation command now applies the coherence guard before final handoff.
+- README now explains the repo through one product sentence, not just a list of inspirations.
+
+### Why it matters
+
+The project now has a built-in test against becoming a Frankenstein. New rules, gates, or prompts must pay rent by improving intent alignment, evidence, decision quality, next-step execution, or safety.
+
 ## Unreleased — expert prompt gates
 
 ### Added

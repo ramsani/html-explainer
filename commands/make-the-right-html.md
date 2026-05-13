@@ -37,9 +37,10 @@ Create an artifact that helps the user inspect, compare, verify, decide, or re-e
 26. Apply `docs/PROCESS_CAPSULE.md` when follow-up work is likely.
 27. Apply `docs/SENIOR_CHAINED_PROMPTS.md` so next prompts read like durable engineering briefs.
 28. Apply `docs/EXPERT_PROMPT_GATES.md` when next prompts need technical stage gates.
-29. Apply `docs/NEXT_ACTION_HANDOFF.md` so the artifact ends with a copy-ready next step.
-30. Apply `docs/HTML_DELIVERY.md` so the final response includes a clickable absolute path and opens the artifact when tool access allows it.
-31. Save the artifact to a reasonable local path when tool access allows it.
+29. Apply `docs/COHERENCE_GUARD.md` so added process pays rent and supports the intent spine.
+30. Apply `docs/NEXT_ACTION_HANDOFF.md` so the artifact ends with a copy-ready next step.
+31. Apply `docs/HTML_DELIVERY.md` so the final response includes a clickable absolute path and opens the artifact when tool access allows it.
+32. Save the artifact to a reasonable local path when tool access allows it.
 
 ## Required artifact sections
 
@@ -98,6 +99,7 @@ Before responding, verify:
 - Did it cover obvious secondary intents without bloating the artifact?
 - Did every major finding and next action advance the primary intent?
 - Did any secondary issue hijack the recommendation?
+- Did every extra gate, section, or prompt field pay rent for this artifact?
 - Did it make the reader feel understood in the first screen?
 - Did it distill the base concept into a simple visible model?
 - Did it choose the smallest sufficient artifact budget?

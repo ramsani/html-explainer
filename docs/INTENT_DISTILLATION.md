@@ -25,6 +25,8 @@ What not to build:
 
 The primary intent is the spine of the artifact.
 
+Apply `docs/COHERENCE_GUARD.md` when the artifact or next prompt risks becoming a collection of good ideas instead of one coherent path.
+
 Every section, comment, risk, recommendation, control, and next action must answer one question:
 
 ```text

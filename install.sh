@@ -198,6 +198,7 @@ if [ "$DRY_RUN" = "0" ]; then
   verify_file "$CLAUDE_HOME/html-explainer/docs/PROCESS_CAPSULE.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/SENIOR_CHAINED_PROMPTS.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/EXPERT_PROMPT_GATES.md"
+  verify_file "$CLAUDE_HOME/html-explainer/docs/COHERENCE_GUARD.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/fact-sheet-protocol.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/INTENT_DISTILLATION.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/pattern-router.md"
