@@ -1,5 +1,17 @@
 # Changelog
 
+## Unreleased — user-facing documentation trim
+
+### Improved
+
+- README was reduced from a long internal explanation to a shorter user-facing guide.
+- Kept install, update, commands, usage, value, uninstall, verification, and credits.
+- Removed the public-facing internal methodology dump from the README.
+
+### Why it matters
+
+Users can now understand the repo faster. The internal docs still power the agent, but the front door no longer asks users to read the whole operating system.
+
 ## Unreleased — CLAUDE.md operating guide
 
 ### Added
