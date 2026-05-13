@@ -2,6 +2,8 @@
 
 `html-explainer` is a Claude Code skill layer and installer that extends `visual-explainer` with an evidence-first operating model inspired by Thariq S. Bate's "The unreasonable effectiveness of HTML" approach.
 
+It trades a document you would skim for one you would actually read: a self-contained HTML artifact you can open directly in a browser.
+
 Its purpose is not to make agent output prettier. Its purpose is to help coding agents produce HTML artifacts that improve technical judgment: review, comparison, diagnosis, planning, triage, reentry, and decision-making.
 
 ```text
@@ -27,6 +29,9 @@ An artifact is acceptable only when it makes the user's work easier than Markdow
 - interaction changes a meaningful state;
 - editor-like artifacts export usable Markdown, JSON, config, prompts, issue bodies, or checklists;
 - mobile layout stays readable;
+- system light/dark mode is respected;
+- the rendering is lean, minimal, flat, and professional;
+- the user is invited back into the decision instead of leaving the agent to choose alone;
 - the artifact ends with a next action handoff: recommended action, reason, ready-to-run command, and only useful alternatives.
 
 The process is designed so quality is built before the artifact is generated. Validation confirms that the process produced the right thing; it is not a last-minute rescue.
@@ -136,6 +141,26 @@ Agents often produce long Markdown responses for work that is not naturally line
 Markdown can describe these things, but it flattens them. The user must mentally reconstruct relationships, risk, sequence, and scope.
 
 HTML lets an agent create a review surface: a navigable artifact that can show structure, comparison, evidence, uncertainty, interaction, and next action in one place.
+
+## Work this replaces
+
+The point is not "HTML for everything." Markdown is still better for short answers, single commands, and low-consequence notes.
+
+Use `html-explainer` when the output replaces work that humans often skim, misunderstand, or avoid reading:
+
+| Work type | Replaces | Better HTML artifact |
+|---|---|---|
+| Exploration & Planning | Long option lists, vague plan-mode text, hidden trade-offs | Side-by-side approaches, staged plans, dependency maps, validation paths |
+| Code Review | Raw diffs, PR comments, scattered risk notes | Annotated diff review, file-risk map, decision ladder, share-ready PR writeup |
+| Design | Described UI directions, token lists, imagined states | Live visual directions, design token reference sheets, component state matrices |
+| Prototyping | Text descriptions of flows, animation timing, or interaction feel | Clickable flows, microinteraction sandboxes, tuning controls with export |
+| Diagrams | ASCII diagrams, prose architecture, hard-to-follow workflows | SVG/HTML maps, flowcharts, system boundaries, failure paths |
+| Decks | Long status notes, stakeholder summaries, decision memos | Technical decision decks and project progress decks |
+| Research | Tool lists, long comparisons, source notes | Criteria maps, source confidence, recommendation by use case |
+| Reports | Incident notes, audit summaries, repo recaps, leadership updates | Timelines, scorecards, risk maps, reentry checklists |
+| Custom Editors | Painful text prompts for sorting, tagging, config, prompts, values | Throwaway editors with validation, preview, and copy/export |
+
+Every generated HTML file should be easy to open locally, easy to skim in the first screen, and useful enough that the user or teammate is more likely to actually read it.
 
 ## How this complements visual-explainer
 
@@ -290,6 +315,7 @@ Example pattern files:
 - `patterns/09-architecture-diagram.md`
 - `patterns/17-project-recap.md`
 - `patterns/20-prompt-agent-behavior-tuner.md`
+- `patterns/21-visual-direction-explorer.md`
 
 ### 6. Fact-sheet protocol
 
@@ -305,7 +331,7 @@ Example pattern files:
 
 `docs/QUALITY_BAR.md` defines what makes an HTML artifact acceptable.
 
-An artifact must improve decision quality over Markdown, show evidence, expose uncertainty, use the correct visual form, stay small, and end with a concrete next action.
+An artifact must improve decision quality over Markdown, show evidence, expose uncertainty, use the correct visual form, stay small, keep the user in the loop, and end with a concrete next action.
 
 ### 8. Intent distillation
 
@@ -344,7 +370,97 @@ It forces a choice:
 
 Each artifact must state why HTML beats Markdown and what mental work it removes.
 
-### 11. Audit command
+### 11. Visual explainer playbook
+
+`docs/VISUAL_EXPLAINER_PLAYBOOK.md` forces every pattern to use HTML as a visual thinking surface.
+
+Each pattern declares:
+
+- primary visual model;
+- useful interaction;
+- first-screen answer;
+- why it is substantially better than Markdown.
+
+This prevents styled Markdown disguised as HTML.
+
+### 12. Explainer clarity
+
+`docs/EXPLAINER_CLARITY.md` makes artifacts explain for real humans, not just list technical inventory.
+
+It requires:
+
+- reader contract;
+- what the user came to do;
+- what they fear or are unsure about;
+- the decision they can make in 30 seconds;
+- the safest next action.
+
+### 13. Thariq learnings and visual style
+
+`docs/THARIQ_SITE_LEARNINGS.md` and `docs/VISUAL_STYLE_STANDARD.md` turn Thariq's examples into practical rules:
+
+- HTML as canvas;
+- comparison made spatial;
+- minimal flat design;
+- system light/dark mode;
+- restrained color;
+- inline SVG/HTML/CSS over decorative assets;
+- readable document/tool layouts instead of generic dashboards.
+
+### 14. User in the loop
+
+`docs/USER_IN_THE_LOOP.md` captures the key workflow value: HTML should make the user more likely to read, inspect, challenge, adjust, approve, or export.
+
+The goal is to stop the common failure mode where the user stops reading long Markdown and leaves the agent to make every choice alone.
+
+### 15. Decision cost gate
+
+`docs/DECISION_COST_GATE.md` keeps HTML honest.
+
+HTML is most justified at decision crossroads:
+
+- implementation options;
+- architecture;
+- auth/data/deploy/payment foundations;
+- plan mode before coding;
+- PR review before merge;
+- visual direction before implementation.
+
+Markdown stays preferred for simple, low-consequence answers.
+
+### 16. Lean HTML rendering
+
+`docs/LEAN_HTML_RENDERING.md` keeps generation faster and less token-heavy.
+
+It keeps:
+
+- primary visual model;
+- evidence;
+- recommendation;
+- uncertainty;
+- next action;
+- export when the user edits.
+
+It cuts:
+
+- repeated CSS;
+- decorative cards;
+- verbose labels;
+- duplicate summaries;
+- unnecessary JavaScript.
+
+### 17. Autodiscovery and delivery
+
+`docs/AUTODISCOVERY.md` lets agents consider HTML automatically for high-value cases without creating HTML by reflex.
+
+`docs/HTML_DELIVERY.md` removes friction after generation:
+
+- save the file;
+- open it when the environment allows;
+- return a clickable absolute path;
+- keep the chat response short.
+
+### 18. Audit command
 
 `/audit-html` reviews an existing artifact and scores it against:
 
@@ -364,7 +480,7 @@ Each artifact must state why HTML beats Markdown and what mental work it removes
 - simplicity;
 - next-action clarity.
 
-### 12. CI and smoke tests
+### 19. CI and smoke tests
 
 The repo includes GitHub Actions and scripts to validate:
 
@@ -374,10 +490,10 @@ The repo includes GitHub Actions and scripts to validate:
 - uninstaller dry-run;
 - uninstaller smoke test with temporary `CLAUDE_HOME`;
 - exactly 21 pattern files;
-- required sections in each pattern.
+- required sections in each pattern;
 - example artifact UX minimums.
 
-### 13. Example artifacts
+### 20. Example artifacts
 
 The repo includes example artifacts so models have concrete shapes to imitate:
 
