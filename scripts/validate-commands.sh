@@ -40,7 +40,9 @@ for cmd in "${expected[@]}"; do
   [ -f "$file" ] || fail "missing command file: commands/$cmd.md"
   grep -q "^# /$cmd$" "$file" || fail "command heading mismatch in commands/$cmd.md"
   grep -q "docs/DECISION_GATE.md" "$file" || fail "command must use consolidated decision gate: commands/$cmd.md"
+  grep -q "docs/LANGUAGE_POLICY.md" "$file" || fail "command must use language policy: commands/$cmd.md"
   grep -q "docs/QUALITY_BAR.md" "$file" || fail "command must use quality bar: commands/$cmd.md"
+  grep -Eqi "archive recommendation|save, refresh|saved, refreshed|memory" "$file" || fail "command must include archive or memory guidance: commands/$cmd.md"
 done
 
 for cmd in "${legacy[@]}"; do

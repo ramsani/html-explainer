@@ -23,6 +23,7 @@ Read these to understand the current V1 product shape:
 
 - `USER_VALUE.md` explains every benefit delivered to the user.
 - `LANGUAGE_POLICY.md` defines English repo docs and language-matched user output.
+- `QUALITY_CLAIMS.md` states what the repo is engineered to prevent and what it does not yet statistically guarantee.
 - `V1_FUNCTION_AUDIT.md` maps each function to its user promise, likely failure, and guardrail.
 - `ARTIFACT_MEMORY.md` defines how useful outputs become reusable local memory.
 - `ACTIONABLE_KNOWLEDGE_BASE.md` explains how artifact memory becomes searchable, actionable knowledge.

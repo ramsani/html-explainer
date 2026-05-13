@@ -49,6 +49,7 @@ Next action:
 Ready-to-run command:
 Useful alternatives:
 Archive value:
+Archive recommendation:
 ```
 
 ## Rules
@@ -58,3 +59,4 @@ Archive value:
 - Do not generate HTML.
 - Do not leave the user to invent the next command.
 - Do not auto-chain commands without user approval.
+- If the artifact may become future context, state whether to save, refresh later, keep private, supersede, or discard it.

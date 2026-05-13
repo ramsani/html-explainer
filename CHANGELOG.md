@@ -6,7 +6,9 @@
 
 - `docs/USER_VALUE.md` to list every user-facing benefit and delivered result.
 - `docs/LANGUAGE_POLICY.md` to define English repository documentation with user-language output.
+- `docs/QUALITY_CLAIMS.md` to state the design promise without making unsupported statistical guarantees.
 - README sections for "What The User Gets" and "Results By Use Case".
+- README "Design Promise" section covering the three common agent failures the repo is built to prevent.
 
 ### Improved
 

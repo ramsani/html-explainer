@@ -11,6 +11,7 @@ Decide whether the artifact is useful, evidence-backed, readable, and decision-r
 Use:
 
 - `docs/DECISION_GATE.md`
+- `docs/LANGUAGE_POLICY.md`
 - `docs/PATTERN_GUIDE.md`
 - matching `patterns/NN-*.md` file when the pattern is identifiable
 - `docs/FACT_SHEET.md`
@@ -29,9 +30,11 @@ Use:
 7. Check first-screen usefulness.
 8. Check visual clarity and mobile readability.
 9. Check interaction and export if present.
-10. Check the next action and copy-ready prompt.
-11. Score with `docs/QUALITY_BAR.md`.
-12. Recommend accept, revise, reject, or simplify to Markdown.
+10. Check artifact language against the user or intended audience.
+11. Check the next action and copy-ready prompt.
+12. Check archive recommendation when the artifact may be reused.
+13. Score with `docs/QUALITY_BAR.md`.
+14. Recommend accept, revise, reject, or simplify to Markdown.
 
 ## Output
 
@@ -50,6 +53,8 @@ Budget gaps:
 UX and visual gaps:
 Interaction/export gaps:
 Next-action gaps:
+Language gaps:
+Memory gaps:
 
 Best next prompt:
 ```
@@ -67,3 +72,4 @@ Fail the artifact if it:
 - claims tests passed without proof;
 - recommends risky production/security/data changes without evidence;
 - leaves the user to invent the next command.
+- omits archive guidance when the artifact may become future context.

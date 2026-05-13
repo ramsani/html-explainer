@@ -32,6 +32,16 @@ intent -> evidence -> visual understanding -> decision -> next action -> reusabl
 
 `html-explainer` adds the operating discipline: when to use HTML, what evidence to inspect, how to keep the user in the loop, and how to end with the next useful prompt.
 
+## Design Promise
+
+`html-explainer` exists to prevent three common agent failures:
+
+1. sounding clear without inspected evidence;
+2. creating visual output that does not improve the decision;
+3. ending without a useful next step.
+
+The repo is designed so serious HTML artifacts must expose intent, evidence, uncertainty, risk, recommendation, next action, and reusable memory.
+
 ## What The User Gets
 
 `html-explainer` turns agent output into a browser-readable decision surface.
