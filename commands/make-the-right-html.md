@@ -64,7 +64,7 @@ Create an artifact that helps the user inspect, compare, verify, decide, or re-e
 - Agent reentry block when useful
 - Recommendation
 - Success criteria
-- Next action handoff
+- Next action handoff with one recommended prompt and three logical copy/edit options when useful
 - Delivery: clickable path, and browser opened when available
 
 ## HTML requirements
@@ -109,7 +109,7 @@ Before responding, verify:
 - Did it improve decision quality over Markdown?
 - Did every interaction create useful state or exportable output?
 - Did it stay as small as possible?
-- Did the final section give one recommended next action, one ready-to-run command, and only useful alternatives?
+- Did the final section give one recommended next action, one copy-ready prompt, and three logical copy/edit options when follow-up work is likely?
 - Can the generated artifact act as useful input for the next command or next agent?
 - If this belongs in a chain, did it state chain position and the next useful artifact?
 - If this belongs in an intent-led process, did the next step carry forward the original intent and evidence?

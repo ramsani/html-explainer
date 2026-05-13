@@ -19,6 +19,7 @@ It must:
 - answer the current intent;
 - preserve context for the next step;
 - make the next useful action selectable;
+- offer copy/edit prompts for the three most logical next paths when follow-up work is likely;
 - avoid turning the chain into ceremony.
 
 The chain is successful when the user feels guided through the work without having to reconstruct the process in their head.
@@ -96,6 +97,7 @@ research comparison map
 - Do not generate a chain automatically.
 - Each artifact must stand alone.
 - Each artifact must include a next action handoff.
+- The next action handoff should include one recommended prompt and up to three distinct selectable prompts.
 - Stop the chain when the next step is obvious enough to do directly.
 
 ## Handoff requirements
@@ -108,6 +110,7 @@ When an artifact is part of a chain, include:
 - next artifact or direct action;
 - ready-to-run command or prompt.
 - what context should carry forward.
+- three logical copy/edit prompts when there are real branches.
 
 ## Good example
 

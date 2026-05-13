@@ -191,13 +191,16 @@ The artifact must end with a concrete next action handoff:
 
 - one recommended action;
 - one short reason;
-- one ready-to-run command or prompt;
-- up to three selectable alternatives when real branches exist.
+- one copy-ready prompt the user can paste and edit;
+- three logical selectable options when follow-up work is likely;
+- each option states when to choose it, why it helps, and a copy/edit prompt.
 
 Do not auto-chain commands without user approval.
 
 Subtract 15 if the user still has to invent the next command.
 Subtract 10 if there are too many next-step options.
+Subtract 10 if the options are wording variants instead of real paths.
+Subtract 10 if the prompts do not preserve the primary intent and useful evidence.
 
 ### 15b. Delivery friction
 
