@@ -19,6 +19,10 @@ Failure modes: inventing a design system, proposing new style before reading exi
 
 Acceptance criteria: the user and a future agent can see the existing visual system and avoid inconsistent UI changes.
 
+## Tie-breakers
+
+Use design token reference when future artifacts or UI work must match existing taste. Use visual direction explorer when the user is choosing a new direction.
+
 ## Visual explainer contract
 
-Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.
+Apply `docs/PATTERN_GUIDE.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.

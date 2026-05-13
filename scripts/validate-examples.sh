@@ -28,6 +28,11 @@ for file in "$EXAMPLES_DIR"/*.html; do
   grep -Eqi 'evidence|inspected|sources' "$file" || fail "$rel must expose inspected evidence or sources"
   grep -Eqi 'decision|recommendation|next action|next safest action' "$file" || fail "$rel must expose a decision, recommendation, or next action"
   grep -Eqi 'risk|unknown|uncertainty|assumption|not verified' "$file" || fail "$rel must expose risk, uncertainty, assumptions, or unverified claims"
+  grep -Eqi 'next prompt|ready-to-run|copy prompt|copy-ready|exportable prompt|next command' "$file" || fail "$rel must expose a next prompt or copy-ready next command"
+
+  if ! grep -Eqi 'prefers-color-scheme' "$file"; then
+    fail "$rel must support system light/dark mode"
+  fi
 
   if grep -Eqi 'tuner|editor|triage|feature flag|copy|export' "$file"; then
     grep -Eqi 'copy|export|textarea|download' "$file" || fail "$rel is editor-like and must include copy/export output"

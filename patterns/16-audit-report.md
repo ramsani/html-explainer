@@ -13,12 +13,16 @@ Generate a self-contained HTML audit report. Define the rubric first. Inspect ev
 
 HTML structure: intent, rubric, evidence inspected, scores/severity, findings, risks, prioritized fixes, do-not-change list, next actions.
 
-Quality checklist: rubric is explicit, findings cite evidence, recommendations are prioritized.
+Quality checklist: rubric is explicit, findings cite evidence, recommendations are prioritized, severity is justified, and fixes are scoped.
 
-Failure modes: superficial structure review, unweighted laundry list, no evidence, touching things only to polish.
+Failure modes: superficial structure review, unweighted laundry list, no evidence, touching things only to polish, recommendations not tied to user intent.
 
 Acceptance criteria: the user can distinguish high-impact fixes from noise.
 
+## Tie-breakers
+
+Use audit report when the user asks for standards-based review. Use project recap when the user mainly needs orientation and next action.
+
 ## Visual explainer contract
 
-Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.
+Apply `docs/PATTERN_GUIDE.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.

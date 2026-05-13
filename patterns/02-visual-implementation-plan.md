@@ -34,6 +34,7 @@ Quality checklist:
 - plan maps to real files;
 - sequence is logical;
 - validation is explicit;
+- rollback or recovery is named;
 - scope boundaries are visible.
 
 Failure modes:
@@ -45,6 +46,10 @@ Failure modes:
 Acceptance criteria:
 A coding agent can execute the plan with low ambiguity and the user can approve or reject it safely.
 
+## Tie-breakers
+
+Use implementation plan when the direction is already chosen. Use code approach comparison when the user still needs to choose between paths.
+
 ## Visual explainer contract
 
-Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.
+Apply `docs/PATTERN_GUIDE.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.

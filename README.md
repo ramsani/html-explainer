@@ -36,7 +36,7 @@ The installer adds:
 
 - the `thariq-html-effectiveness` skill;
 - intent-first slash commands;
-- local pattern and quality docs under `~/.claude/html-explainer/`;
+- 7 short core docs, advanced reference docs, patterns, and bundled examples under `~/.claude/html-explainer/`;
 - a short managed guide in `~/.claude/CLAUDE.md`;
 - backups under `~/.claude/html-explainer/backups/<timestamp>/`.
 
@@ -151,6 +151,16 @@ Every artifact should:
 
 If interaction is included, it must change something meaningful and export usable output: Markdown, JSON, config, issue body, checklist, or prompt.
 
+## Internal Shape
+
+The default agent path is intentionally small:
+
+```text
+DECISION_GATE -> PATTERN_GUIDE -> pattern file -> FACT_SHEET -> STYLE -> QUALITY_BAR -> CHAIN -> DELIVERY
+```
+
+Detailed older docs live in `docs/reference/`. They are available when needed, but they are not the default path.
+
 ## What It Adds Over visual-explainer
 
 `visual-explainer` is excellent at generating rich HTML artifacts.
@@ -204,8 +214,8 @@ The uninstaller removes only the managed `CLAUDE.md` block. It does not rewrite 
 # Skip upstream visual-explainer
 INSTALL_UPSTREAM=0 bash install.sh
 
-# Skip downloading local reference examples
-FETCH_EXAMPLES=0 bash install.sh
+# Optionally download external Thariq reference pages
+FETCH_EXAMPLES=1 bash install.sh
 
 # Install into another Claude home
 CLAUDE_HOME="$HOME/.claude" bash install.sh

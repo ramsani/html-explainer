@@ -13,12 +13,16 @@ Generate a self-contained HTML microinteraction sandbox. Show before/after, timi
 
 HTML structure: intent, evidence, before/after demo, controls, reduced-motion notes, implementation notes, recommendation.
 
-Quality checklist: motion has purpose, timing is inspectable, accessibility is considered.
+Quality checklist: motion has purpose, timing is inspectable, accessibility is considered, reduced-motion behavior exists, and selected parameters can be copied or described.
 
-Failure modes: decorative animation, slow interactions, no reduced-motion path.
+Failure modes: decorative animation, slow interactions, no reduced-motion path, hidden timing choices, animation that distracts from the primary action.
 
 Acceptance criteria: the user can decide whether the interaction improves usability.
 
+## Tie-breakers
+
+Use this pattern when timing or feedback changes the decision. Use visual direction explorer when layout/tone is the main decision.
+
 ## Visual explainer contract
 
-Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.
+Apply `docs/PATTERN_GUIDE.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.

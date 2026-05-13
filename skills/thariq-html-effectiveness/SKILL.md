@@ -1,259 +1,110 @@
 # Thariq HTML Effectiveness
 
-Use this skill when a task would be easier to inspect, compare, verify, decide, or re-enter as an HTML artifact instead of a Markdown answer.
+Use this skill when HTML would help the user inspect, compare, verify, decide, tune, share, or re-enter work better than Markdown.
 
-This skill extends visual-explainer with a pattern library based on the 20 HTML effectiveness cases. The intent is not decoration. The intent is cognition: make structure visible.
+This skill extends visual-explainer with an evidence-first operating model. The intent is not decoration. The intent is cognition.
 
-## Mandatory operating model
+```text
+intent -> evidence -> visual understanding -> decision -> expert next prompt
+```
 
-Never generate the HTML first.
+## Operating Model
 
-Always follow:
+Before generating HTML:
 
-1. Decide whether HTML is justified. If Markdown is clearer, do not use HTML.
-2. Open `docs/INTENT_DISTILLATION.md` and identify primary intent, obvious secondary intents, base concept, and fastest path to value.
-3. Open `docs/CONTEXT_PACKS.md` and select the smallest context pack that can support the decision.
-4. Open `docs/EXPLAINER_CLARITY.md` and define the reader contract in plain language.
-5. Open `docs/VISUAL_EXPLAINER_PLAYBOOK.md` and select the primary visual model for the chosen pattern.
-6. Open `docs/THARIQ_SITE_LEARNINGS.md` and apply the distilled lessons.
-7. Open `docs/USER_IN_THE_LOOP.md` and define how the artifact invites inspection, choice, challenge, editing, or export.
-8. Open `docs/VISUAL_STYLE_STANDARD.md` and use system light/dark with minimal, flat, professional styling.
-9. Open `docs/LEAN_HTML_RENDERING.md` and define the lean rendering guard.
-10. Open `docs/DECISION_COST_GATE.md` when the task is a plan, architecture choice, PR review, design direction, or implementation approach.
-11. Open `docs/HTML_ADVANTAGE_GATE.md` and identify why HTML beats Markdown point by point.
-12. Open `docs/ARTIFACT_BUDGET.md` and choose compact, standard, or interactive. Default to compact.
-13. Use `docs/pattern-router.md` to choose one primary pattern.
-14. Open the matching file in `patterns/` and apply its evidence requirements, HTML structure, visual explainer contract, quality checklist, failure modes, and acceptance criteria.
-15. Open `docs/HTML_UX_STANDARD.md` and define the first-screen contract, interaction contract, and export requirement.
-16. Explore sources.
-17. Verify facts.
-18. Build a fact sheet using `docs/fact-sheet-protocol.md`.
-19. Generate the smallest useful HTML artifact.
-20. Apply `docs/QUALITY_BAR.md` before finalizing.
-21. Compare against `docs/GOLDEN_OUTPUTS.md` when the artifact matches a golden case.
-22. Mark uncertainty visibly.
-23. Apply `docs/HTML_ARTIFACT_CHAINS.md` when the work is better handled as exploration -> plan -> review or similar.
-24. Apply `docs/SHARE_AND_REENTRY.md` when the artifact should be shareable or useful to another agent.
-25. Apply `docs/NEXT_ACTION_HANDOFF.md` so the next command is obvious and copy-ready.
-26. Apply `docs/HTML_DELIVERY.md` so generated artifacts are easy to open.
-27. Give the user a minimal decision summary.
+1. Apply `docs/DECISION_GATE.md`.
+2. Apply `docs/PATTERN_GUIDE.md`.
+3. Open the selected file in `patterns/`.
+4. Apply `docs/FACT_SHEET.md`.
+5. Apply `docs/STYLE.md`.
+6. Apply `docs/QUALITY_BAR.md`.
+7. Apply `docs/CHAIN.md` when follow-up work is likely.
+8. Apply `docs/DELIVERY.md`.
 
-## When to use
+Use the old detailed docs only when needed from `docs/reference/`. They are reference material, not the default path.
+
+## When To Use HTML
 
 Use for:
 
-- architecture maps
-- implementation plans
-- plan review
-- diff review
-- pull request review
-- repo recap
-- module exploration
-- design system inspection
-- visual direction exploration
-- empty-state exploration
-- artifact chains for exploration, planning, review, and handoff
-- interactive prototypes
-- diagrams and flows
-- decks
-- research explainers
-- incident reports
-- status reports
-- ticket triage
-- custom editors
-- prompt tuning interfaces
+- architecture maps;
+- implementation plans;
+- plan review;
+- diff or PR review;
+- repo recap;
+- module exploration;
+- design system inspection;
+- visual direction exploration;
+- interactive prototypes;
+- diagrams and workflows;
+- decks;
+- research explainers;
+- incident reports;
+- status reports;
+- ticket triage;
+- custom editors;
+- prompt tuning.
 
 Do not use for:
 
-- simple answers
-- tiny bug fixes
-- one-command replies
-- questions that fit clearly in 10 lines
-- cases where HTML would only make the response look more impressive
+- simple answers;
+- tiny bug fixes;
+- one-command replies;
+- questions that fit clearly in a short response;
+- anything where HTML would only make the answer look more impressive.
 
-## Autodiscovery
+## Pattern Files
 
-Apply `docs/AUTODISCOVERY.md` when the user does not call a slash command but the task has strong HTML signals.
+There are 21 operational pattern files under `patterns/`.
 
-Do not generate HTML by reflex. Use HTML only when it beats a direct answer.
+Do not rely on the general list. Select and apply one primary pattern file.
 
-## Core rule
+## Required Artifact Qualities
 
-HTML is a review surface, not a substitute for analysis.
+Every serious artifact must show:
 
-If a statement in the HTML is not supported by read source, command output, repo evidence, user-provided content, or explicit inference, label it as uncertain.
+- primary intent;
+- useful secondary intents;
+- selected pattern;
+- why HTML beats Markdown;
+- artifact budget;
+- evidence inspected;
+- facts, inferences, assumptions, and unknowns;
+- visual model;
+- risks;
+- recommendation;
+- success criteria;
+- next action handoff.
 
-## Pattern files
+Interactive artifacts must export something usable.
 
-The skill includes 21 operational pattern files under `patterns/`:
+## Failure Modes To Avoid
 
-1. Code approach comparison
-2. Visual implementation plan
-3. Annotated PR / diff review
-4. Module map
-5. Design token reference sheet
-6. Component state matrix
-7. Interactive flow prototype
-8. Microinteraction sandbox
-9. Architecture diagram
-10. Process / workflow flowchart
-11. Technical decision deck
-12. Project progress deck
-13. Concept explainer
-14. Research comparison map
-15. Incident / postmortem report
-16. Audit report
-17. Project recap
-18. Ticket triage board
-19. Feature flag / config editor
-20. Prompt / agent behavior tuner
-21. Visual direction explorer
+- Beautiful but unverifiable output.
+- Generic dashboards with no decision value.
+- Spending more attention than the artifact saves.
+- Missing why HTML is better than Markdown.
+- Choosing interactive when compact is enough.
+- Answering adjacent needs while missing the main intent.
+- Hiding uncertainty.
+- Inventing files, behavior, tests, routes, or dependencies.
+- Creating controls that do not affect a decision.
+- Creating editors without exportable output.
+- Leaving the user to invent the next command.
 
-Do not rely only on the general list. Select and apply the specific pattern file.
+## Final Response After HTML
 
-## Required HTML sections
-
-Every serious artifact should include:
-
-- Intent
-- Intent distillation: primary intent, obvious secondary intents, base concept
-- HTML advantage: why browser output beats Markdown
-- Artifact budget: compact, standard, or interactive
-- Selected pattern
-- UX contract: audience, decision, primary action, export when relevant
-- What was inspected
-- Fact sheet
-- Reader contract
-- Primary visual model
-- User-in-the-loop value
-- Visual style: system light/dark, minimal, flat, professional
-- Lean rendering guard
-- Decision cost
-- Artifact chain position when useful
-- Share-ready summary when useful
-- Agent reentry block when useful
-- Current state
-- Proposed or changed state when applicable
-- Visual structure: diagram, map, comparison, timeline, table, prototype, or editor
-- Risks
-- Assumptions
-- Unknowns
-- Decision or recommendation
-- Success criteria
-- Next action handoff
-
-## UX contract
-
-Before generating HTML, write this contract internally and make the relevant parts visible in the artifact:
+Keep the chat short:
 
 ```text
-Audience:
+Created:
+Open:
+Pattern:
+Budget:
 Decision supported:
-First-screen answer:
-Primary action:
-Visual form:
-Interaction, if any:
-Exportable output, if any:
-Mobile requirement:
-States required:
-Next action handoff:
+Quality result:
+Main uncertainty:
+Next command:
 ```
 
-If the contract is weak, do not compensate with styling. Revise the artifact shape.
-
-## Intent discipline
-
-Before generating HTML, the artifact must pass this check:
-
-```text
-Primary intent answered directly:
-Obvious secondary intents covered:
-Base concept distilled:
-Fastest path to value visible:
-Surprising ease opportunity:
-Wall of text replaced:
-Mental work removed:
-Not doing:
-```
-
-The primary intent must dominate the first screen. Secondary intents support it; they do not compete with it.
-
-## Explanation discipline
-
-Every artifact must feel like an explanation, not an inventory.
-
-Apply `docs/EXPLAINER_CLARITY.md`:
-
-- define who is reading;
-- state what they came to do;
-- make the first 30 seconds decisive;
-- use plain action language;
-- include a visual model that explains the core concept;
-- offer the next options the user is most likely to need.
-
-The base concept should be simple enough to explain in one sentence. If it takes a paragraph, distill again.
-
-## Budget discipline
-
-Before generating HTML, the artifact must pass this check:
-
-```text
-HTML advantage:
-Artifact budget:
-Why this budget:
-Markdown cost:
-HTML benefit:
-Mental work removed:
-Token/complexity guard:
-```
-
-Default to `compact`. Upgrade to `standard` only when evidence, risk, or structure need it. Upgrade to `interactive` only when controls change a decision or produce exportable output.
-
-## HTML advantage discipline
-
-HTML must beat Markdown in at least one of four ways:
-
-```text
-Interaction removes manual work:
-Structure becomes visible:
-Concrete output produced:
-First screen decides in 5 seconds:
-```
-
-If all four are weak, do not generate HTML.
-
-## Failure modes to avoid
-
-- Beautiful but unverifiable output
-- Generic dashboards with no decision value
-- Spending more tokens and attention than the artifact saves
-- Failing to name why HTML is better than Markdown
-- Choosing interactive when compact would answer the intent
-- Choosing standard when compact would answer the intent
-- Answering adjacent needs while missing the user's main intent
-- Treating secondary intents as feature creep instead of decision support
-- Hiding the base concept under many sections
-- Repeating Markdown inside HTML
-- Explaining without evidence
-- Hiding the recommendation below decoration
-- Interactive controls that do not change a meaningful decision
-- Editors without exportable output
-- Mobile layouts that force horizontal reading except for intentional wide tables
-- Inventing files, modules, behavior, tests, routes, or dependencies
-- Hiding uncertainty
-- Using charts or diagrams that do not clarify the decision
-- Creating an interactive editor without exportable output
-- Combining too many patterns into a bloated artifact
-
-## Minimal response after generating HTML
-
-After generating an HTML artifact, respond briefly:
-
-- artifact path
-- primary pattern used
-- artifact budget used
-- what decision it supports
-- quality-bar result
-- major uncertainty if any
-
-Do not rewrite the entire artifact in chat.
+Do not rewrite the artifact in chat.

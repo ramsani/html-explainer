@@ -13,12 +13,16 @@ Generate a self-contained HTML incident/postmortem report. Separate confirmed fa
 
 HTML structure: intent, evidence, timeline, impact, confirmed facts, hypotheses, root cause, mitigation, prevention, owners/next actions.
 
-Quality checklist: timeline is explicit, uncertainty is visible, prevention actions map to causes.
+Quality checklist: timeline is explicit, uncertainty is visible, impact is clear, prevention actions map to causes, and owners or follow-ups are named.
 
-Failure modes: blame, false certainty, no timeline, vague prevention.
+Failure modes: blame, false certainty, no timeline, vague prevention, confusing symptoms with root cause.
 
 Acceptance criteria: the user can understand what failed, why it likely failed, and what prevents recurrence.
 
+## Tie-breakers
+
+Use incident report after something failed. Use audit report when the user wants a standards-based review without a specific incident.
+
 ## Visual explainer contract
 
-Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.
+Apply `docs/PATTERN_GUIDE.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.

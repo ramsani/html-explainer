@@ -5,7 +5,7 @@ REPO_URL="https://github.com/ramsani/html-explainer.git"
 VISUAL_EXPLAINER_URL="https://github.com/nicobailon/visual-explainer.git"
 CLAUDE_HOME="${CLAUDE_HOME:-$HOME/.claude}"
 INSTALL_UPSTREAM="${INSTALL_UPSTREAM:-1}"
-FETCH_EXAMPLES="${FETCH_EXAMPLES:-1}"
+FETCH_EXAMPLES="${FETCH_EXAMPLES:-0}"
 DRY_RUN="${DRY_RUN:-0}"
 TMP_DIR="$(mktemp -d)"
 STAMP="$(date +%Y%m%d-%H%M%S)"
@@ -231,7 +231,7 @@ fi
 install_claude_md_guide
 
 if [ "$FETCH_EXAMPLES" = "1" ]; then
-  say "Optionally fetching Thariq HTML examples for local reference"
+  say "Fetching Thariq HTML examples for optional local reference"
   if command -v curl >/dev/null 2>&1; then
     EXAMPLES_DIR="$CLAUDE_HOME/html-explainer/examples"
     run mkdir -p "$EXAMPLES_DIR"
@@ -248,7 +248,7 @@ if [ "$FETCH_EXAMPLES" = "1" ]; then
     say "Skipping examples: curl not found"
   fi
 else
-  say "Skipping examples because FETCH_EXAMPLES=0"
+  say "Skipping external examples because FETCH_EXAMPLES=0"
 fi
 
 if [ "$DRY_RUN" = "0" ]; then
@@ -257,33 +257,14 @@ if [ "$DRY_RUN" = "0" ]; then
   for cmd in "${COMMANDS[@]}"; do
     verify_file "$CLAUDE_HOME/commands/$cmd.md"
   done
-  verify_file "$CLAUDE_HOME/html-explainer/docs/thariq-20-case-library.md"
-  verify_file "$CLAUDE_HOME/html-explainer/docs/html-artifact-selection-guide.md"
-  verify_file "$CLAUDE_HOME/html-explainer/docs/ARTIFACT_BUDGET.md"
-  verify_file "$CLAUDE_HOME/html-explainer/docs/AUTODISCOVERY.md"
-  verify_file "$CLAUDE_HOME/html-explainer/docs/CONTEXT_PACKS.md"
-  verify_file "$CLAUDE_HOME/html-explainer/docs/DECISION_COST_GATE.md"
-  verify_file "$CLAUDE_HOME/html-explainer/docs/EXPLAINER_CLARITY.md"
-  verify_file "$CLAUDE_HOME/html-explainer/docs/GOLDEN_OUTPUTS.md"
-  verify_file "$CLAUDE_HOME/html-explainer/docs/HTML_ARTIFACT_CHAINS.md"
-  verify_file "$CLAUDE_HOME/html-explainer/docs/HTML_ADVANTAGE_GATE.md"
-  verify_file "$CLAUDE_HOME/html-explainer/docs/HTML_DELIVERY.md"
-  verify_file "$CLAUDE_HOME/html-explainer/docs/THARIQ_SITE_LEARNINGS.md"
-  verify_file "$CLAUDE_HOME/html-explainer/docs/USER_IN_THE_LOOP.md"
-  verify_file "$CLAUDE_HOME/html-explainer/docs/VISUAL_EXPLAINER_PLAYBOOK.md"
-  verify_file "$CLAUDE_HOME/html-explainer/docs/VISUAL_STYLE_STANDARD.md"
-  verify_file "$CLAUDE_HOME/html-explainer/docs/NEXT_ACTION_HANDOFF.md"
-  verify_file "$CLAUDE_HOME/html-explainer/docs/SHARE_AND_REENTRY.md"
-  verify_file "$CLAUDE_HOME/html-explainer/docs/PROCESS_CAPSULE.md"
-  verify_file "$CLAUDE_HOME/html-explainer/docs/SENIOR_CHAINED_PROMPTS.md"
-  verify_file "$CLAUDE_HOME/html-explainer/docs/EXPERT_PROMPT_GATES.md"
-  verify_file "$CLAUDE_HOME/html-explainer/docs/COHERENCE_GUARD.md"
-  verify_file "$CLAUDE_HOME/html-explainer/docs/fact-sheet-protocol.md"
-  verify_file "$CLAUDE_HOME/html-explainer/docs/INTENT_DISTILLATION.md"
-  verify_file "$CLAUDE_HOME/html-explainer/docs/pattern-router.md"
+  verify_file "$CLAUDE_HOME/html-explainer/docs/DECISION_GATE.md"
+  verify_file "$CLAUDE_HOME/html-explainer/docs/PATTERN_GUIDE.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/QUALITY_BAR.md"
-  verify_file "$CLAUDE_HOME/html-explainer/docs/LEAN_HTML_RENDERING.md"
-  verify_file "$CLAUDE_HOME/html-explainer/docs/HTML_UX_STANDARD.md"
+  verify_file "$CLAUDE_HOME/html-explainer/docs/STYLE.md"
+  verify_file "$CLAUDE_HOME/html-explainer/docs/FACT_SHEET.md"
+  verify_file "$CLAUDE_HOME/html-explainer/docs/CHAIN.md"
+  verify_file "$CLAUDE_HOME/html-explainer/docs/DELIVERY.md"
+  verify_file "$CLAUDE_HOME/html-explainer/docs/reference/INTENT_DISTILLATION.md"
   verify_file "$CLAUDE_HOME/html-explainer/patterns/01-code-approach-comparison.md"
   verify_file "$CLAUDE_HOME/html-explainer/patterns/20-prompt-agent-behavior-tuner.md"
   verify_file "$CLAUDE_HOME/html-explainer/patterns/21-visual-direction-explorer.md"

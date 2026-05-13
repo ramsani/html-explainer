@@ -1,50 +1,39 @@
 # /audit-html
 
-Audit an existing HTML artifact or proposed HTML artifact against the html-explainer quality bar.
+Audit an existing HTML artifact against the html-explainer quality bar.
 
 ## Intent
 
-Decide whether an HTML artifact is useful, safe, evidence-backed, and decision-ready.
+Decide whether the artifact is useful, evidence-backed, readable, and decision-ready.
 
-## Mandatory process
+## Required References
 
-1. Identify the artifact's primary pattern.
-2. Compare it against the matching pattern file in `patterns/`.
-3. Apply the `/audit-html` pack from `docs/CONTEXT_PACKS.md`.
-4. Apply `docs/INTENT_DISTILLATION.md`.
-5. Apply `docs/HTML_ADVANTAGE_GATE.md`.
-6. Apply `docs/ARTIFACT_BUDGET.md`.
-7. Apply `docs/HTML_UX_STANDARD.md`.
-8. Apply `docs/QUALITY_BAR.md`.
-9. Apply `docs/NEXT_ACTION_HANDOFF.md`.
-10. Check whether the artifact improves decision quality over Markdown.
-11. Separate defects by severity.
+Use:
+
+- `docs/DECISION_GATE.md`
+- `docs/PATTERN_GUIDE.md`
+- matching `patterns/NN-*.md` file when the pattern is identifiable
+- `docs/FACT_SHEET.md`
+- `docs/STYLE.md`
+- `docs/QUALITY_BAR.md`
+- `docs/CHAIN.md`
+
+## Process
+
+1. Identify the artifact's primary intent.
+2. Identify the likely pattern.
+3. Compare against the matching pattern file.
+4. Check whether HTML beats Markdown for this case.
+5. Check evidence visibility.
+6. Separate facts, inferences, assumptions, and unknowns.
+7. Check first-screen usefulness.
+8. Check visual clarity and mobile readability.
+9. Check interaction and export if present.
+10. Check the next action and copy-ready prompt.
+11. Score with `docs/QUALITY_BAR.md`.
 12. Recommend accept, revise, reject, or simplify to Markdown.
 
-## Audit criteria
-
-Score 0-100 across:
-
-- pattern fit;
-- decision value;
-- artifact budget fit;
-- HTML advantage fit;
-- HTML cost justification;
-- primary intent fit;
-- secondary intent coverage;
-- base concept clarity;
-- evidence visibility;
-- fact/inference/unknown separation;
-- first-screen usefulness;
-- UX fit;
-- visual clarity;
-- interaction usefulness if applicable;
-- exportability if interactive;
-- risk visibility;
-- simplicity;
-- next-action clarity.
-
-## Output format
+## Output
 
 ```text
 Intent:
@@ -55,29 +44,26 @@ Recommendation: accept | revise | reject | simplify to Markdown
 Critical issues:
 High-value fixes:
 Intent gaps:
+Evidence gaps:
 HTML advantage gaps:
 Budget gaps:
-Evidence gaps:
-UX gaps:
-Overengineering or decoration:
-Next action handoff:
+UX and visual gaps:
+Interaction/export gaps:
+Next-action gaps:
+
+Best next prompt:
 ```
 
-## Hard fail conditions
+## Hard Fail Conditions
 
 Fail the artifact if it:
 
 - invents inspected evidence;
-- does not justify why HTML beats Markdown;
-- uses interactive or standard format when compact would be enough;
 - misses the primary intent;
-- ignores obvious secondary intents that affect the decision;
-- hides the base concept;
 - hides uncertainty;
+- does not justify why HTML beats Markdown;
+- uses interaction without exportable output;
+- is unreadable or incoherent on mobile;
 - claims tests passed without proof;
-- recommends production/security/data changes without evidence;
-- uses HTML only as decoration;
-- creates an interactive tool without exportable output.
-- hides the main recommendation below decoration;
-- is unreadable or incoherent on mobile.
-- leaves the user to invent the next command or fix prompt.
+- recommends risky production/security/data changes without evidence;
+- leaves the user to invent the next command.

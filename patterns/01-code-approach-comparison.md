@@ -32,6 +32,7 @@ Quality checklist:
 - alternatives are meaningfully different;
 - recommendation follows constraints;
 - risks are concrete;
+- validation is explicit;
 - no option is evaluated only by vibes.
 
 Failure modes:
@@ -43,6 +44,10 @@ Failure modes:
 Acceptance criteria:
 The user can choose an approach without needing to reconstruct the trade-offs from prose.
 
+## Tie-breakers
+
+Use comparison when there are multiple viable implementation paths. Use visual implementation plan after one approach has already been chosen.
+
 ## Visual explainer contract
 
-Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.
+Apply `docs/PATTERN_GUIDE.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.

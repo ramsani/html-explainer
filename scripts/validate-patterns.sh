@@ -13,6 +13,7 @@ required_sections=(
   "HTML structure"
   "Quality checklist"
   "Failure modes"
+  "Tie-breakers"
   "Acceptance criteria"
   "Visual explainer contract"
 )
@@ -20,6 +21,30 @@ required_sections=(
 fail() {
   echo "[validate-patterns] ERROR: $*" >&2
   exit 1
+}
+
+section_word_count() {
+  local section="$1"
+  local file="$2"
+  awk -v section="$section" '
+    BEGIN { in_section = 0 }
+    {
+      line = tolower($0)
+      target = tolower(section)
+      if (line ~ "^#+[[:space:]]*" target || line ~ "^" target ":") {
+        in_section = 1
+        sub(/^[^:]*:/, "", $0)
+        print
+        next
+      }
+      if (in_section && line ~ "^#+[[:space:]]+") {
+        exit
+      }
+      if (in_section) {
+        print
+      }
+    }
+  ' "$file" | wc -w | tr -d ' '
 }
 
 [ -d "$PATTERN_DIR" ] || fail "patterns directory not found: $PATTERN_DIR"
@@ -48,6 +73,13 @@ for file in "$PATTERN_DIR"/*.md; do
     fail "pattern must include a text prompt template code fence: ${file#$ROOT_DIR/}"
   fi
 
+  quality_words="$(section_word_count "Quality checklist" "$file")"
+  failure_words="$(section_word_count "Failure modes" "$file")"
+  tie_words="$(section_word_count "Tie-breakers" "$file")"
+
+  [ "$quality_words" -ge 14 ] || fail "quality checklist is too thin in ${file#$ROOT_DIR/}"
+  [ "$failure_words" -ge 12 ] || fail "failure modes are too thin in ${file#$ROOT_DIR/}"
+  [ "$tie_words" -ge 10 ] || fail "tie-breakers are missing or too thin in ${file#$ROOT_DIR/}"
 done
 
 echo "[validate-patterns] OK: $count pattern files validated"

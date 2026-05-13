@@ -13,12 +13,16 @@ Generate a self-contained HTML interactive flow prototype. Inspect relevant UI c
 
 HTML structure: intent, evidence, flow map, clickable prototype, states, edge cases, implementation notes, risks.
 
-Quality checklist: prototype is scoped, interaction clarifies the decision, not presented as final UI.
+Quality checklist: prototype is scoped, interaction clarifies the decision, states are visible, implementation grounding is present, and the artifact is not presented as final UI.
 
-Failure modes: over-polished fake app, interactions outside scope, no implementation grounding.
+Failure modes: over-polished fake app, interactions outside scope, no implementation grounding, no clear success/failure state, no next prompt after the flow is chosen.
 
 Acceptance criteria: the user can validate whether the flow reduces friction before code is changed.
 
+## Tie-breakers
+
+Use this pattern when the user needs to feel a flow. Use process workflow flowchart when the decision is sequence, retries, or operational safety.
+
 ## Visual explainer contract
 
-Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.
+Apply `docs/PATTERN_GUIDE.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.

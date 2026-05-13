@@ -1,56 +1,27 @@
 # /check-the-plan
 
-Review a plan against the real repo before implementation and produce a self-contained HTML review artifact.
+Review an implementation plan before code changes.
 
-## Intent
+## Process
 
-Prevent implementation based on false assumptions, missing files, misunderstood architecture, or excessive blast radius.
+1. Apply `docs/DECISION_GATE.md`.
+2. Use pattern 02 unless another pattern clearly fits better.
+3. Inspect the plan, likely affected files, contracts, tests, and risk areas.
+4. Build the evidence sheet with `docs/FACT_SHEET.md`.
+5. Generate or recommend a compact/standard plan-review artifact.
+6. Apply `docs/QUALITY_BAR.md`.
+7. Apply `docs/CHAIN.md` so approve, revise, reject, split, or implement becomes selectable.
+8. Apply `docs/DELIVERY.md`.
 
-## Mandatory process
+## Must Answer
 
-1. Read the user's plan completely.
-2. Identify every claimed file, function, route, component, dependency, API, test, and workflow.
-3. Inspect the real repo for those claims.
-4. Inspect adjacent files needed to understand behavior.
-5. Define the intent distillation from `docs/INTENT_DISTILLATION.md`.
-6. Apply the `/check-the-plan` pack from `docs/CONTEXT_PACKS.md`.
-7. Apply `docs/HTML_ADVANTAGE_GATE.md`.
-8. Define the artifact budget from `docs/ARTIFACT_BUDGET.md`.
-9. Define the UX contract from `docs/HTML_UX_STANDARD.md`.
-10. Build a fact sheet.
-11. Separate:
-   - verified facts
-   - inferred conclusions
-   - unsupported claims
-   - unknowns
-12. Apply `docs/NEXT_ACTION_HANDOFF.md` so approve/revise/reject/split becomes selectable.
-13. Generate HTML only after verification.
+- What is the plan trying to achieve?
+- What assumptions does it make?
+- What evidence supports or contradicts it?
+- What can break?
+- What must be verified before implementation?
+- Should the user approve, revise, reject, split, or ask for a sharper plan?
 
-## HTML sections
+## Output
 
-- Intent
-- Intent distillation
-- HTML advantage
-- Artifact budget
-- Plan being reviewed
-- UX contract
-- Evidence inspected
-- Fact sheet
-- Current architecture or flow
-- Proposed change map
-- Files affected
-- Blast radius
-- Risk matrix
-- Missing information
-- Do-not-touch boundaries
-- Recommendation: approve, revise, reject, or split
-- Next action handoff: recommended action, ready-to-run command, selectable alternatives
-- Success criteria
-
-## Special rule
-
-Do not implement anything. This command is review-only.
-
-## Final response
-
-Report artifact path, recommendation, highest-risk uncertainty, and the ready-to-run next command.
+End with one recommended next prompt and useful alternatives.

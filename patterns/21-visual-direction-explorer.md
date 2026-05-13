@@ -46,9 +46,13 @@ Failure modes:
 - using motion that distracts from the task;
 - comparing colors without comparing density, hierarchy, or state behavior.
 
+## Tie-breakers
+
+Use visual direction explorer when the user must choose tone, density, or layout direction. Use component state matrix when the decision is completeness across states.
+
 Acceptance criteria:
 The user can choose a visual direction without imagining it from prose.
 
 ## Visual explainer contract
 
-Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.
+Apply `docs/PATTERN_GUIDE.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.

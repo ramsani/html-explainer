@@ -13,12 +13,16 @@ Generate a self-contained HTML workflow flowchart. Inspect real workflow evidenc
 
 HTML structure: intent, evidence, trigger, flowchart, decision nodes, failure paths, retries/idempotency, validation, risks.
 
-Quality checklist: error paths are visible, timing assumptions are clear, repeated side effects are addressed.
+Quality checklist: error paths are visible, timing assumptions are clear, repeated side effects are addressed, validation points are explicit, and ownership/trigger boundaries are named.
 
-Failure modes: happy-path-only diagram, no retry logic, no validation points, treating sequence as proof.
+Failure modes: happy-path-only diagram, no retry logic, no validation points, treating sequence as proof, hiding idempotency or duplicate-side-effect risk.
 
 Acceptance criteria: the user can identify where the workflow succeeds, fails, repeats, or needs protection.
 
+## Tie-breakers
+
+Use workflow flowchart for operational sequence. Use architecture diagram when the main question is system boundaries and component relationships.
+
 ## Visual explainer contract
 
-Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.
+Apply `docs/PATTERN_GUIDE.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.

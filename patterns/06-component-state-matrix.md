@@ -13,12 +13,16 @@ Generate a self-contained HTML component state matrix. Inspect real components f
 
 HTML structure: intent, evidence, component inventory, state matrix, responsive notes, accessibility notes, gaps, recommendation.
 
-Quality checklist: states are real or clearly proposed, gaps are visible, accessibility is considered.
+Quality checklist: states are real or clearly proposed, gaps are visible, accessibility is considered, responsive behavior is covered, and implementation references are present.
 
-Failure modes: static-only mockups, invented states, pretty UI that ignores product constraints.
+Failure modes: static-only mockups, invented states, pretty UI that ignores product constraints, missing empty/loading/error states, ignoring keyboard or screen-reader behavior.
 
 Acceptance criteria: the user can judge UI completeness before implementation.
 
+## Tie-breakers
+
+Use component state matrix when completeness across states matters. Use visual direction explorer when the real question is choosing visual tone.
+
 ## Visual explainer contract
 
-Apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.
+Apply `docs/PATTERN_GUIDE.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.

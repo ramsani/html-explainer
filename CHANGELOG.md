@@ -1,5 +1,31 @@
 # Changelog
 
+## Unreleased — audit corrections and lean core
+
+### Changed
+
+- Consolidated the default operating path into 7 short core docs: decision gate, pattern guide, quality bar, style, fact sheet, chain, and delivery.
+- Moved detailed prior docs into `docs/reference/` so they remain available without being the default path.
+- Simplified the skill and slash commands so agents use the lean core first.
+- External Thariq page download is now opt-in with `FETCH_EXAMPLES=1`; bundled examples remain installed by default.
+
+### Added
+
+- `examples/README.md` mapping example artifacts to patterns.
+- Stronger pattern validation: tie-breakers and substantive quality/failure sections are now required.
+- Stronger command validation: commands must use the consolidated decision gate and quality bar.
+- Stronger example validation: examples must include next prompt/copy-ready continuation and system light/dark support.
+
+### Improved
+
+- Thin patterns now include stronger quality checks, failure modes, and tie-breakers.
+- Example artifacts now include light/dark support and next-prompt continuation.
+- `/audit-html` now acts as a stricter inspector for intent, evidence, visual quality, interaction/export, and next action.
+
+### Why it matters
+
+This addresses the audit's core concern: the system should not be a pile of good ideas. The default path is now smaller, stricter, easier for agents to follow, and harder to degrade silently.
+
 ## Unreleased — user-facing documentation trim
 
 ### Improved
