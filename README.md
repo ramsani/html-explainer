@@ -4,6 +4,18 @@
 ![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)
 ![Patterns](https://img.shields.io/badge/patterns-21-blue.svg)
 
+## Credit First
+
+This project starts from three public contributions that deserve clear credit:
+
+- [`visual-explainer`](https://github.com/nicobailon/visual-explainer) by Nico Bailon, credited as the upstream HTML artifact capability this repo can install and build around.
+- ["The unreasonable effectiveness of HTML"](https://thariqs.github.io/html-effectiveness/) by Thariq S. Bate, credited as the conceptual foundation for using HTML when it keeps humans more in the loop than Markdown.
+- [`skills`](https://github.com/mattpocock/skills) by Matt Pocock, credited as inspiration for small, composable skill-shaped agent instructions.
+
+`html-explainer` is an independent complementary layer. It does not replace those projects, claim affiliation, or copy their work as product output. It packages an intent-first workflow around them so Claude Code can decide when HTML is worth using, inspect evidence first, and end with a useful next prompt.
+
+See [`CREDITS.md`](CREDITS.md) for the full attribution.
+
 `html-explainer` helps Claude Code create HTML artifacts that people actually read.
 
 It is not "HTML because it looks nice." It is HTML when a browser view helps the user understand, decide, review, compare, tune, or continue work better than Markdown.
