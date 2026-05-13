@@ -139,12 +139,14 @@ The artifact memory system defines:
 - lifespan classes: `temporal`, `replaceable`, `evergreen`, `superseded`, `private`, and `do-not-reuse`;
 - metadata and index schemas;
 - freshness, privacy, re-entry, and supersession rules;
+- an actionable knowledge base model for search, relations, quick-reference cards, and next actions;
 - a static explorer template that follows the same decision-ready HTML principles as the rest of the project.
 
 Start here:
 
 - [`docs/ARTIFACT_MEMORY.md`](docs/ARTIFACT_MEMORY.md)
 - [`docs/ARTIFACT_METADATA_SCHEMA.md`](docs/ARTIFACT_METADATA_SCHEMA.md)
+- [`docs/ACTIONABLE_KNOWLEDGE_BASE.md`](docs/ACTIONABLE_KNOWLEDGE_BASE.md)
 - [`templates/artifact-explorer.html`](templates/artifact-explorer.html)
 - [`examples/artifact-index.example.json`](examples/artifact-index.example.json)
 - [`examples/artifact-metadata.example.json`](examples/artifact-metadata.example.json)
