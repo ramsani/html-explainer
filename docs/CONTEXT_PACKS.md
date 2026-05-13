@@ -27,6 +27,7 @@ Every serious artifact uses:
 - `docs/NEXT_ACTION_HANDOFF.md`
 - `docs/PROCESS_CAPSULE.md` when follow-up work is likely
 - `docs/SENIOR_CHAINED_PROMPTS.md` when next prompts need durable engineering-brief quality
+- `docs/EXPERT_PROMPT_GATES.md` when next prompts need technical stage gates
 - `docs/HTML_DELIVERY.md`
 
 Use these conditionally:

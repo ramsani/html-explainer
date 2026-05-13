@@ -16,6 +16,7 @@ The next useful step is not a new visual format. It is preserving enough process
 For any artifact that may lead to follow-up work, include a small process capsule.
 
 Apply `docs/SENIOR_CHAINED_PROMPTS.md` when writing the recommended next prompt and option prompts.
+Apply `docs/EXPERT_PROMPT_GATES.md` when the next prompt asks for planning, implementation, automation, verification, QA, or release judgment.
 
 The capsule must be:
 
@@ -35,13 +36,16 @@ Process capsule:
 Process stage: <explore | deepen | decide | plan | implement | review | share | handoff>
 Primary intent: <what the user came to accomplish>
 Secondary intents: <only the ones that affect the decision>
+Result to protect: <what must stay true in the next step>
 Decision so far: <what this artifact decided or clarified>
 Evidence used: <short list of sources inspected>
+Evidence required next: <what the next agent must prove>
 Open risks or unknowns: <only what affects the next step>
 Recommended next prompt: <copy-ready prompt>
 Option prompts: <three logical copy/edit options when useful>
 Success criteria for next step: <how the user knows the next step worked>
 Out of scope for next step: <what the next agent should not reopen or overbuild>
+Block next step if: <condition that should stop the next agent>
 ```
 
 ## Optional machine-readable form

@@ -36,9 +36,10 @@ Create an artifact that helps the user inspect, compare, verify, decide, or re-e
 25. Apply `docs/SHARE_AND_REENTRY.md` when the artifact may be shared or used by another agent later.
 26. Apply `docs/PROCESS_CAPSULE.md` when follow-up work is likely.
 27. Apply `docs/SENIOR_CHAINED_PROMPTS.md` so next prompts read like durable engineering briefs.
-28. Apply `docs/NEXT_ACTION_HANDOFF.md` so the artifact ends with a copy-ready next step.
-29. Apply `docs/HTML_DELIVERY.md` so the final response includes a clickable absolute path and opens the artifact when tool access allows it.
-30. Save the artifact to a reasonable local path when tool access allows it.
+28. Apply `docs/EXPERT_PROMPT_GATES.md` when next prompts need technical stage gates.
+29. Apply `docs/NEXT_ACTION_HANDOFF.md` so the artifact ends with a copy-ready next step.
+30. Apply `docs/HTML_DELIVERY.md` so the final response includes a clickable absolute path and opens the artifact when tool access allows it.
+31. Save the artifact to a reasonable local path when tool access allows it.
 
 ## Required artifact sections
 
@@ -114,6 +115,7 @@ Before responding, verify:
 - Did it stay as small as possible?
 - Did the final section give one recommended next action, one copy-ready prompt, and three logical copy/edit options when follow-up work is likely?
 - Do the next prompts preserve intent, evidence, acceptance criteria, and out-of-scope boundaries?
+- For technical follow-up work, do the next prompts name result to protect, evidence required, validation loop, and block conditions?
 - Can the generated artifact act as useful input for the next command or next agent?
 - If follow-up work is likely, did it include a compact process capsule?
 - If this belongs in a chain, did it state chain position and the next useful artifact?

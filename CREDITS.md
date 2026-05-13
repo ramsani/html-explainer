@@ -50,6 +50,7 @@ This project contributes:
 - pattern selection guide;
 - explicit rules for evidence-first HTML generation.
 - senior chained prompt discipline for intent-led follow-up work.
+- expert prompt gates distilled from staged app-generation practice.
 
 ## Independence notice
 

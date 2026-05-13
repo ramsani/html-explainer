@@ -5,6 +5,7 @@ Intent: make the next useful step obvious, copy-ready, and low-friction.
 Use this at the end of every command response and generated HTML artifact.
 
 For serious follow-up work, also apply `docs/SENIOR_CHAINED_PROMPTS.md` so the next prompts read like durable engineering briefs, not casual suggestions.
+For technical staged work, apply `docs/EXPERT_PROMPT_GATES.md` so the prompt names the result to protect, required evidence, boundaries, and block conditions.
 
 ## Why
 
@@ -89,8 +90,11 @@ Each copy/edit prompt should include enough structure for the next agent to work
 - decision so far;
 - next job;
 - evidence or artifact to reuse;
+- result to protect;
+- evidence required;
 - acceptance criteria;
 - out of scope when drift is likely.
+- block condition when risk is meaningful.
 
 Keep this compact. A prompt can be senior without being long.
 

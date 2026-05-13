@@ -216,9 +216,10 @@ That means the agent must:
 21. apply `docs/SHARE_AND_REENTRY.md` when the artifact should be shareable or reusable by another agent;
 22. apply `docs/PROCESS_CAPSULE.md` when follow-up work is likely;
 23. apply `docs/SENIOR_CHAINED_PROMPTS.md` when next prompts need durable engineering-brief quality;
-24. apply `docs/NEXT_ACTION_HANDOFF.md`;
-25. apply `docs/HTML_DELIVERY.md`;
-26. expose uncertainty and next action.
+24. apply `docs/EXPERT_PROMPT_GATES.md` when next prompts need technical stage gates;
+25. apply `docs/NEXT_ACTION_HANDOFF.md`;
+26. apply `docs/HTML_DELIVERY.md`;
+27. expose uncertainty and next action.
 
 ## Intent-led process browser
 
@@ -245,6 +246,8 @@ The next action is not an afterthought. It is the bridge to the next useful step
 For important artifacts, that bridge is a compact process capsule: stage, intent, decision, evidence, open risks, next prompt, and success criteria. This keeps the workflow future-ready without adding a separate app or runtime.
 
 The next prompts should read like a senior engineer wrote them: durable, behavioral, scoped, testable, and easy for the user to edit before pasting into the next agent run.
+
+For technical follow-up work, the next prompt should also name what it protects: user outcome, boundary, evidence, validation, rollback, safe automation, or release confidence.
 
 ## Autodiscovery and delivery
 
@@ -529,7 +532,23 @@ It requires:
 
 This prevents weak endings like "continue" or "improve" and makes each artifact a stronger input for the next agent.
 
-### 20. Audit command
+### 20. Expert prompt gates
+
+`docs/EXPERT_PROMPT_GATES.md` gives serious next prompts technical force without copying a staged framework.
+
+It requires the next prompt to name:
+
+- result to protect;
+- minimum sufficient output;
+- evidence required;
+- risks to watch;
+- out of scope;
+- block conditions;
+- validation loop.
+
+It includes compact gates for intake, product, architecture, plan, implementation, automation, verification, and QA.
+
+### 21. Audit command
 
 `/audit-html` reviews an existing artifact and scores it against:
 
@@ -549,7 +568,7 @@ This prevents weak endings like "continue" or "improve" and makes each artifact 
 - simplicity;
 - next-action clarity.
 
-### 21. CI and smoke tests
+### 22. CI and smoke tests
 
 The repo includes GitHub Actions and scripts to validate:
 
@@ -562,7 +581,7 @@ The repo includes GitHub Actions and scripts to validate:
 - required sections in each pattern;
 - example artifact UX minimums.
 
-### 22. Example artifacts
+### 23. Example artifacts
 
 The repo includes example artifacts so models have concrete shapes to imitate:
 

@@ -196,6 +196,7 @@ The artifact must end with a concrete next action handoff:
 - each option states when to choose it, why it helps, and a copy/edit prompt.
 
 Apply `docs/SENIOR_CHAINED_PROMPTS.md` for serious follow-up work.
+Apply `docs/EXPERT_PROMPT_GATES.md` when the next step is technical, staged, risky, or agent-executable.
 
 Do not auto-chain commands without user approval.
 
@@ -205,6 +206,8 @@ Subtract 10 if the options are wording variants instead of real paths.
 Subtract 10 if the prompts do not preserve the primary intent and useful evidence.
 Subtract 15 if next prompts are generic instead of structured work briefs.
 Subtract 10 if next prompts omit acceptance criteria when the next step is non-trivial.
+Subtract 10 if next prompts omit the result to protect.
+Subtract 10 if serious next prompts omit evidence requirements or block conditions.
 
 ### 15b. Delivery friction
 

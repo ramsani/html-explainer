@@ -6,6 +6,8 @@ Use this with `docs/NEXT_ACTION_HANDOFF.md` and `docs/PROCESS_CAPSULE.md`.
 
 Inspired by patterns from Matt Pocock's agent skills: small composable skills, durable briefs, shared language, vertical slices, feedback loops, behavioral contracts, and explicit scope boundaries.
 
+For serious staged work, also apply `docs/EXPERT_PROMPT_GATES.md`. It adds the compact senior constraints that make prompts technically forceful: result to protect, evidence required, out of scope, block conditions, and validation loop.
+
 ## Core rule
 
 A chained prompt is not a casual suggestion.
@@ -43,6 +45,12 @@ Work from:
 Output should include:
 <the next artifact, plan, diff review, prompt, issue, checklist, or decision>
 
+Result to protect:
+<what must remain true if the next step succeeds>
+
+Evidence required:
+<what the next agent must verify before claiming success>
+
 Acceptance criteria:
 - <specific, observable criterion>
 - <specific, observable criterion>
@@ -50,6 +58,9 @@ Acceptance criteria:
 
 Out of scope:
 - <what not to change, reopen, or overbuild>
+
+Block if:
+- <condition that should stop the next agent>
 ```
 
 Keep it short enough to paste and edit.
@@ -149,23 +160,42 @@ Examples:
 - rerun the same command on the same repo;
 - verify the process capsule is present and useful.
 
-### 7. Ask only when the answer changes the work
+### 7. Name the protected result
+
+Strong prompts say what they protect.
+
+Examples:
+
+- protect user trust in a demo;
+- protect an auth/data boundary;
+- protect rollback ability;
+- protect vertical-slice delivery;
+- protect evidence over narrative;
+- protect a workflow from duplicate side effects;
+- protect the user's original intent from scope drift.
+
+If the prompt cannot name the protected result, the next step is not sharp enough.
+
+### 8. Ask only when the answer changes the work
 
 If a question can be answered from the repo, inspect the repo instead.
 
 If a question requires user taste or business intent, ask one focused question or present a recommended default.
 
-### 8. Preserve shared language
+### 9. Preserve shared language
 
 Use the same terms the artifact established:
 
 - primary intent;
 - secondary intents;
+- result to protect;
 - process stage;
 - decision so far;
 - evidence used;
+- evidence required;
 - acceptance criteria;
 - out of scope;
+- block if;
 - next prompt.
 
 Do not rename the same concept across prompts.
@@ -211,6 +241,9 @@ Revise the prompt options if:
 - they sound generic;
 - they are merely different wording for the same path;
 - they omit acceptance criteria;
+- they omit the result to protect when the next step is serious;
+- they omit evidence required for a claim of success;
+- they omit block conditions for risky work;
 - they do not preserve the primary intent;
 - they tell the next agent exactly where to edit without explaining the desired behavior;
 - they make the user choose between vague actions like "continue", "improve", or "analyze more";

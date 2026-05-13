@@ -75,6 +75,7 @@ jobs:
           test -f docs/SHARE_AND_REENTRY.md
           test -f docs/PROCESS_CAPSULE.md
           test -f docs/SENIOR_CHAINED_PROMPTS.md
+          test -f docs/EXPERT_PROMPT_GATES.md
           test -f docs/HTML_UX_STANDARD.md
           test -f docs/pattern-router.md
           test -f docs/QUALITY_BAR.md

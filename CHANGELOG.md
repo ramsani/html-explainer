@@ -1,5 +1,23 @@
 # Changelog
 
+## Unreleased — expert prompt gates
+
+### Added
+
+- `docs/EXPERT_PROMPT_GATES.md` for technically stronger chained prompts.
+- Compact gates for intake, product, architecture, plan, implementation, automation, verification, and QA.
+- Installer, smoke test, and CI checks for the new expert gate document.
+
+### Improved
+
+- Chained prompts now name the result to protect, evidence required, out of scope, block conditions, and validation loop.
+- Process capsules now preserve result-to-protect and evidence-required fields for the next agent.
+- Quality bar now penalizes next prompts that omit technical gates for serious follow-up work.
+
+### Why it matters
+
+The next prompt should feel like an experienced engineer is handing precise work to Claude: clear goal, hard boundaries, evidence, validation, and blocking conditions.
+
 ## Unreleased — senior chained prompts
 
 ### Added
