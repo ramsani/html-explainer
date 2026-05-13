@@ -127,7 +127,7 @@ The installer adds:
 
 - the `thariq-html-effectiveness` skill;
 - intent-first slash commands;
-- 8 short core docs, advanced reference docs, patterns, and bundled examples under `~/.claude/html-explainer/`;
+- core docs, product docs, advanced reference docs, patterns, and bundled examples under `~/.claude/html-explainer/`;
 - a short managed guide in `~/.claude/CLAUDE.md`;
 - backups under `~/.claude/html-explainer/backups/<timestamp>/`.
 
