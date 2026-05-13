@@ -17,6 +17,7 @@ COMMANDS=(
   reenter-project
   build-decision-tool
   audit-html
+  think-with-me-about
 )
 LEGACY_COMMANDS=(
   html-effectiveness
