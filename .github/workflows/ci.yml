@@ -59,11 +59,13 @@ jobs:
           test -f uninstall.sh
           test -f docs/INTENT_DISTILLATION.md
           test -f docs/ARTIFACT_BUDGET.md
+          test -f docs/AUTODISCOVERY.md
           test -f docs/CONTEXT_PACKS.md
           test -f docs/EXPLAINER_CLARITY.md
           test -f docs/GOLDEN_OUTPUTS.md
           test -f docs/HTML_ARTIFACT_CHAINS.md
           test -f docs/HTML_ADVANTAGE_GATE.md
+          test -f docs/HTML_DELIVERY.md
           test -f docs/THARIQ_SITE_LEARNINGS.md
           test -f docs/USER_IN_THE_LOOP.md
           test -f docs/VISUAL_EXPLAINER_PLAYBOOK.md

@@ -179,7 +179,21 @@ That means the agent must:
 18. apply `docs/HTML_ARTIFACT_CHAINS.md` when one artifact should lead to another;
 19. apply `docs/SHARE_AND_REENTRY.md` when the artifact should be shareable or reusable by another agent;
 20. apply `docs/NEXT_ACTION_HANDOFF.md`;
-21. expose uncertainty and next action.
+21. apply `docs/HTML_DELIVERY.md`;
+22. expose uncertainty and next action.
+
+## Autodiscovery and delivery
+
+Agents should consider `html-explainer` automatically for complex plans, diffs, PRs, architecture, repo recaps, workflows, design exploration, prototypes, triage, config editors, prompt tuning, reports, and handoffs.
+
+They should not generate HTML for simple answers, one commands, tiny facts, or anything that fits clearly in a short response.
+
+When an HTML artifact is generated, the agent should:
+
+- save it to a reasonable local path;
+- open it in the browser when tool access allows it;
+- always return a clickable absolute path;
+- keep the chat response short.
 
 ## How the Thariq ideas are used case by case
 

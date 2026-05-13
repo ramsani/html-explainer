@@ -8,6 +8,7 @@ Read the smallest pack that can support the decision. Add adjacent files only wh
 
 Every serious artifact uses:
 
+- `docs/AUTODISCOVERY.md` when the user did not explicitly request an HTML command
 - `docs/INTENT_DISTILLATION.md`
 - `docs/HTML_ADVANTAGE_GATE.md`
 - `docs/EXPLAINER_CLARITY.md`
@@ -22,6 +23,7 @@ Every serious artifact uses:
 - `docs/fact-sheet-protocol.md`
 - `docs/QUALITY_BAR.md`
 - `docs/NEXT_ACTION_HANDOFF.md`
+- `docs/HTML_DELIVERY.md`
 
 Use these conditionally:
 

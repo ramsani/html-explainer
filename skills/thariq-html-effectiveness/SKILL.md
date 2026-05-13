@@ -33,7 +33,8 @@ Always follow:
 21. Apply `docs/HTML_ARTIFACT_CHAINS.md` when the work is better handled as exploration -> plan -> review or similar.
 22. Apply `docs/SHARE_AND_REENTRY.md` when the artifact should be shareable or useful to another agent.
 23. Apply `docs/NEXT_ACTION_HANDOFF.md` so the next command is obvious and copy-ready.
-24. Give the user a minimal decision summary.
+24. Apply `docs/HTML_DELIVERY.md` so generated artifacts are easy to open.
+25. Give the user a minimal decision summary.
 
 ## When to use
 
@@ -68,6 +69,12 @@ Do not use for:
 - questions that fit clearly in 10 lines
 - cases where HTML would only make the response look more impressive
 
+## Autodiscovery
+
+Apply `docs/AUTODISCOVERY.md` when the user does not call a slash command but the task has strong HTML signals.
+
+Do not generate HTML by reflex. Use HTML only when it beats a direct answer.
+
 ## Core rule
 
 HTML is a review surface, not a substitute for analysis.
@@ -76,7 +83,7 @@ If a statement in the HTML is not supported by read source, command output, repo
 
 ## Pattern files
 
-The skill includes 20 operational pattern files under `patterns/`:
+The skill includes 21 operational pattern files under `patterns/`:
 
 1. Code approach comparison
 2. Visual implementation plan

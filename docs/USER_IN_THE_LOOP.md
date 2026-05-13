@@ -19,6 +19,8 @@ A good HTML artifact should reverse that:
 - easier to share;
 - easier to turn into the next prompt.
 
+Apply `docs/HTML_DELIVERY.md` so opening the artifact is not a second task.
+
 ## Loop contract
 
 Every serious artifact should answer:

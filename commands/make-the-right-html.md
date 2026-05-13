@@ -31,7 +31,8 @@ Create an artifact that helps the user inspect, compare, verify, decide, or re-e
 21. Apply `docs/HTML_ARTIFACT_CHAINS.md` when the work naturally needs exploration, planning, review, or handoff across multiple artifacts.
 22. Apply `docs/SHARE_AND_REENTRY.md` when the artifact may be shared or used by another agent later.
 23. Apply `docs/NEXT_ACTION_HANDOFF.md` so the artifact ends with a copy-ready next step.
-24. Save the artifact to a reasonable local path when tool access allows it.
+24. Apply `docs/HTML_DELIVERY.md` so the final response includes a clickable absolute path and opens the artifact when tool access allows it.
+25. Save the artifact to a reasonable local path when tool access allows it.
 
 ## Required artifact sections
 
@@ -57,10 +58,12 @@ Create an artifact that helps the user inspect, compare, verify, decide, or re-e
 - Recommendation
 - Success criteria
 - Next action handoff
+- Delivery: clickable path, and browser opened when available
 
 ## HTML requirements
 
 - Single self-contained HTML file.
+- Saved to a reasonable local path.
 - Inline CSS and JS unless local project rules require otherwise.
 - Clear navigation.
 - First screen shows decision, evidence, recommendation, risk, and next action.
@@ -73,6 +76,7 @@ Create an artifact that helps the user inspect, compare, verify, decide, or re-e
 - Accessible enough: readable contrast, semantic headings, keyboard-friendly controls if interactive.
 - Interactive artifacts must include copy/export output.
 - Responsive layout must remain coherent on mobile.
+- Final response must include a clickable absolute path to the artifact.
 
 ## Final self-check
 
@@ -97,6 +101,7 @@ Before responding, verify:
 - If this belongs in a chain, did it state chain position and the next useful artifact?
 - If someone else will read it, did it include a share-ready summary or agent reentry block?
 - Did the next options match the user's most likely next moves?
+- Did the final response remove opening friction with a clickable path or browser-open action?
 
 ## Final chat response
 
@@ -104,6 +109,7 @@ Keep it short:
 
 ```text
 Created: <path>
+Open: <clickable absolute path>
 Pattern used: <pattern>
 Budget used: <compact / standard / interactive>
 Decision supported: <decision>

@@ -176,6 +176,20 @@ Do not auto-chain commands without user approval.
 Subtract 15 if the user still has to invent the next command.
 Subtract 10 if there are too many next-step options.
 
+### 15b. Delivery friction
+
+Apply `docs/HTML_DELIVERY.md`.
+
+Add credit when:
+
+- the artifact is saved to a reasonable path;
+- the final response includes a clickable absolute path;
+- the artifact opens automatically when tool access allows it;
+- the chat response stays short and points to the artifact.
+
+Subtract 15 if the user has to ask where the file is.
+Subtract 10 if only a relative path is provided.
+
 ### 16. Loop and reentry value
 
 The artifact should keep the user or next agent in the loop.
