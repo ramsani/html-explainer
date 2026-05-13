@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Before / After Diff Review Example</title>
+<style>
+:root{--bg:#f8fafc;--panel:#fff;--ink:#111827;--muted:#64748b;--line:#cbd5e1;--soft:#f1f5f9;--good:#166534;--good-bg:#dcfce7;--warn:#92400e;--warn-bg:#fef3c7;--bad:#991b1b;--bad-bg:#fee2e2;--blue:#1d4ed8;--blue-bg:#dbeafe}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.45}.wrap{max-width:1180px;margin:auto;padding:28px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;margin:14px 0}.weak{border-left:6px solid var(--bad)}.strong{border-left:6px solid var(--good)}.warnline{border-left:6px solid var(--warn)}.badge{display:inline-block;border-radius:999px;padding:5px 9px;font-size:12px;font-weight:800}.ok{background:var(--good-bg);color:var(--good)}.warn{background:var(--warn-bg);color:var(--warn)}.bad{background:var(--bad-bg);color:var(--bad)}.blue{background:var(--blue-bg);color:var(--blue)}.muted{color:var(--muted)}table{width:100%;border-collapse:collapse}th,td{border-bottom:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}th{font-size:12px;text-transform:uppercase;background:var(--soft);color:var(--muted)}code{background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:2px 5px}textarea{width:100%;min-height:96px;border:1px solid var(--line);border-radius:10px;background:var(--soft);color:var(--ink);padding:12px;font:13px ui-monospace,Menlo,monospace}.btn{border:0;border-radius:10px;padding:10px 12px;font-weight:800;background:#111827;color:#fff}@media(prefers-color-scheme:dark){:root{--bg:#0f172a;--panel:#111827;--ink:#e5e7eb;--muted:#94a3b8;--line:#334155;--soft:#1f2937;--good-bg:#052e16;--good:#86efac;--warn-bg:#451a03;--warn:#fcd34d;--bad-bg:#450a0a;--bad:#fca5a5;--blue-bg:#172554;--blue:#93c5fd}.btn{background:#e5e7eb;color:#111827}}@media(max-width:860px){.grid,.tri{grid-template-columns:1fr}.wrap{padding:16px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="card">
+  <p><span class="badge blue">Example data</span> <span class="badge warn">Diff review</span></p>
+  <h1>Before / After: Diff Review</h1>
+  <p><strong>Primary intent:</strong> decide whether a small installer and validation diff is safe to accept.</p>
+  <p><strong>Secondary intents covered:</strong> changed-file summary, evidence, risk, missing checks, recommendation, and continuation prompt.</p>
+  <p><strong>Base concept:</strong> what changed, what could break, what is proven, what is unknown, and what should happen next.</p>
+  <p><strong>Artifact budget:</strong> standard. <strong>HTML advantage:</strong> file risk, evidence, findings, and decision stay visible together. <strong>Mental work removed:</strong> reconstructing risk from a wall of Markdown review notes.</p>
+</header>
+
+<section class="grid">
+  <article class="card weak">
+    <h2>Before: weak Markdown-style review</h2>
+    <p>The change looks fine. It updates the installer and validation script. I would run tests and then merge if everything passes.</p>
+    <ul>
+      <li>No inspected evidence is named.</li>
+      <li>No facts, inferences, assumptions, or unknowns are separated.</li>
+      <li>No release decision is explicit.</li>
+      <li>No next prompt preserves context.</li>
+    </ul>
+  </article>
+  <article class="card strong">
+    <h2>After: decision-ready review</h2>
+    <p><strong>Recommendation:</strong> request changes before merge.</p>
+    <p>The installer path is probably safe, but the validation script now accepts examples without proving a next prompt exists. That weakens the repo promise.</p>
+    <p><span class="badge warn">Decision: request changes</span></p>
+  </article>
+</section>
+
+<section class="card">
+  <h2>Evidence inspected</h2>
+  <table>
+    <tr><th>Source</th><th>Fact</th><th>Status</th></tr>
+    <tr><td><code>install.sh</code></td><td>Copies managed command files into the user Claude home.</td><td><span class="badge ok">Fact</span></td></tr>
+    <tr><td><code>scripts/validate-examples.sh</code></td><td>Checks example HTML for required semantic markers.</td><td><span class="badge ok">Fact</span></td></tr>
+    <tr><td>CI output</td><td>Shell syntax and validators are expected to run in one workflow.</td><td><span class="badge warn">Inference</span></td></tr>
+    <tr><td>Browser preview</td><td>Not provided in this example.</td><td><span class="badge bad">Unknown</span></td></tr>
+  </table>
+</section>
+
+<section class="tri">
+  <article class="card"><h2>Facts</h2><p>The diff changes installer copy behavior and example validation markers.</p></article>
+  <article class="card"><h2>Inferences</h2><p>The installer change is low risk if dry-run and smoke install still pass.</p></article>
+  <article class="card"><h2>Assumptions / unknowns</h2><p>Browser readability and mobile layout are not verified in this example.</p></article>
+</section>
+
+<section class="card warnline">
+  <h2>Risk map</h2>
+  <table>
+    <tr><th>Risk</th><th>Severity</th><th>Reason</th><th>Required check</th></tr>
+    <tr><td>Validation accepts shallow examples</td><td><span class="badge bad">High</span></td><td>This damages the repo quality floor.</td><td>Add marker for next prompt and uncertainty.</td></tr>
+    <tr><td>Installer misses new command</td><td><span class="badge warn">Medium</span></td><td>User installs stale command set.</td><td>Run smoke install in temporary home.</td></tr>
+    <tr><td>README claims unsupported behavior</td><td><span class="badge warn">Medium</span></td><td>Public trust risk.</td><td>Compare README claims to files present.</td></tr>
+  </table>
+</section>
+
+<section class="card">
+  <h2>Findings table</h2>
+  <table>
+    <tr><th>Finding</th><th>Evidence</th><th>Action</th></tr>
+    <tr><td>Missing next-prompt validation would let low-value HTML pass.</td><td><code>scripts/validate-examples.sh</code></td><td>Require next prompt or copy-ready command marker.</td></tr>
+    <tr><td>Installer change is acceptable if smoke tests pass.</td><td><code>install.sh</code>, smoke install</td><td>Run dry-run and temporary-home install.</td></tr>
+  </table>
+</section>
+
+<section class="card">
+  <h2>Missing checks</h2>
+  <ul>
+    <li>Browser preview on desktop and narrow screen.</li>
+    <li>Smoke install after adding a new command.</li>
+    <li>Example validation with an intentionally weak artifact.</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>Decision</h2>
+  <p><strong>Request changes.</strong> Accept after semantic validation blocks shallow examples and the installer smoke tests pass.</p>
+  <textarea id="next">/check-the-diff review this installer and validation change again. Preserve the primary intent: decide whether the diff is safe to merge. Inspect install.sh, scripts/validate-examples.sh, commands/, examples/, and CI. Separate facts, inferences, assumptions, and unknowns. End with accept, request changes, or block.</textarea>
+  <p><button class="btn" onclick="navigator.clipboard.writeText(document.getElementById('next').value)">Copy next prompt</button></p>
+</section>
+</main>
+</body>
+</html>

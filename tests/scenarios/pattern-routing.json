@@ -1,0 +1,112 @@
+[
+  {
+    "id": "repo-reentry",
+    "category": "remember",
+    "prompt": "Help me understand this repo and choose the next highest-value action.",
+    "expected_pattern": "17-project-recap",
+    "acceptable_alternates": ["16-audit-report"],
+    "expected_budget": "standard",
+    "should_generate_html": true,
+    "required_evidence": ["README", "entry points", "scripts", "CI"],
+    "reason": "The user needs repo re-entry and next action selection."
+  },
+  {
+    "id": "diff-review",
+    "category": "review",
+    "prompt": "Review this PR diff and tell me whether to accept it.",
+    "expected_pattern": "03-annotated-pr-diff-review",
+    "acceptable_alternates": [],
+    "expected_budget": "standard",
+    "should_generate_html": true,
+    "required_evidence": ["diff", "changed files", "tests", "risk"],
+    "reason": "A diff review needs file risk, findings, missing checks, and a decision."
+  },
+  {
+    "id": "plan-review",
+    "category": "review",
+    "prompt": "Check this implementation plan before coding.",
+    "expected_pattern": "02-visual-implementation-plan",
+    "acceptable_alternates": ["16-audit-report"],
+    "expected_budget": "compact",
+    "should_generate_html": true,
+    "required_evidence": ["plan", "repo facts", "dependencies", "validation"],
+    "reason": "The user needs fit, risk, and missing proof before implementation."
+  },
+  {
+    "id": "prompt-tuner",
+    "category": "tune",
+    "prompt": "Tune this agent instruction so it avoids fake evidence and produces useful handoffs.",
+    "expected_pattern": "20-prompt-agent-behavior-tuner",
+    "acceptable_alternates": [],
+    "expected_budget": "interactive",
+    "should_generate_html": true,
+    "required_evidence": ["current instruction", "failure modes", "scenario tests"],
+    "reason": "Behavior tuning needs visible dimensions, failure modes, tests, and exportable instructions."
+  },
+  {
+    "id": "architecture-map",
+    "category": "map",
+    "prompt": "Map this module architecture and show where changes are risky.",
+    "expected_pattern": "09-architecture-diagram",
+    "acceptable_alternates": ["04-module-map"],
+    "expected_budget": "standard",
+    "should_generate_html": true,
+    "required_evidence": ["entry points", "callers", "data flow", "boundaries"],
+    "reason": "Architecture relationships and risk zones are spatial."
+  },
+  {
+    "id": "workflow-flowchart",
+    "category": "map",
+    "prompt": "Show this workflow as steps, branches, failure paths, and handoff points.",
+    "expected_pattern": "10-process-workflow-flowchart",
+    "acceptable_alternates": [],
+    "expected_budget": "standard",
+    "should_generate_html": true,
+    "required_evidence": ["workflow steps", "branches", "failure paths", "owners"],
+    "reason": "A workflow needs sequence, branching, and failure path visibility."
+  },
+  {
+    "id": "ticket-triage",
+    "category": "decide",
+    "prompt": "Sort these tickets by value, urgency, risk, and next action.",
+    "expected_pattern": "18-ticket-triage-board",
+    "acceptable_alternates": [],
+    "expected_budget": "interactive",
+    "should_generate_html": true,
+    "required_evidence": ["ticket list", "priority signals", "risk", "dependencies"],
+    "reason": "Triage benefits from grouping, filtering, and visible next actions."
+  },
+  {
+    "id": "visual-direction",
+    "category": "decide",
+    "prompt": "Explore three visual directions for this app and recommend one.",
+    "expected_pattern": "21-visual-direction-explorer",
+    "acceptable_alternates": ["11-technical-decision-deck"],
+    "expected_budget": "interactive",
+    "should_generate_html": true,
+    "required_evidence": ["audience", "brand constraints", "screens", "trade-offs"],
+    "reason": "Visual direction work needs comparison and decision support."
+  },
+  {
+    "id": "simple-command",
+    "category": "negative",
+    "prompt": "What command shows the current git branch?",
+    "expected_pattern": "none",
+    "acceptable_alternates": [],
+    "expected_budget": "none",
+    "should_generate_html": false,
+    "required_evidence": [],
+    "reason": "A tiny factual answer does not justify HTML."
+  },
+  {
+    "id": "thinking-surface",
+    "category": "think",
+    "prompt": "Think with me about whether this repo should become a local knowledge system.",
+    "expected_pattern": "22-insight-surface-loop",
+    "acceptable_alternates": ["11-technical-decision-deck"],
+    "expected_budget": "standard",
+    "should_generate_html": true,
+    "required_evidence": ["topic", "facts", "assumptions", "inversion", "next action"],
+    "reason": "The user needs to move from vague idea to provisional conclusion and re-entry."
+  }
+]

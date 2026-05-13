@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/ramsani/html-explainer/actions/workflows/ci.yml/badge.svg)](https://github.com/ramsani/html-explainer/actions/workflows/ci.yml)
 ![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)
-![Patterns](https://img.shields.io/badge/patterns-21-blue.svg)
+![Patterns](https://img.shields.io/badge/patterns-22-blue.svg)
 
 ## Credit First
 
@@ -42,6 +42,12 @@ It shows the same request two ways:
 The point is simple: HTML is worth the extra tokens only when it removes mental work.
 
 See [`docs/DEMO.md`](docs/DEMO.md) for the demo explanation.
+
+## Visual Preview
+
+This preview shows the core promise: the browser view puts intent, evidence, risk, recommendation, and the next prompt on the same decision surface.
+
+![Decision-ready HTML artifact preview](docs/assets/before-after-decision-preview.png)
 
 ## Install
 
@@ -109,6 +115,7 @@ bash install.sh
 /reenter-project
 /build-decision-tool
 /audit-html
+/think-with-me-about
 ```
 
 | Command | Use it when you want to... |
@@ -120,6 +127,7 @@ bash install.sh
 | `/reenter-project` | Understand a repo quickly and see the next action. |
 | `/build-decision-tool` | Build a temporary editor, triage board, tuner, or config tool. |
 | `/audit-html` | Check whether an existing artifact is actually useful. |
+| `/think-with-me-about` | Turn a vague topic into a visual thinking surface with evidence, inversion, action, and re-entry. |
 
 ## Quick Usage
 
@@ -142,6 +150,7 @@ For common repo work:
 /check-the-plan revisa este plan contra el repo real antes de implementar.
 /check-the-diff revisa el diff actual y dime qué aceptar, corregir o revertir.
 /build-decision-tool convierte esta decisión en una herramienta HTML editable con exportación.
+/think-with-me-about cómo debería decidir si esta idea merece convertirse en producto.
 ```
 
 Generated artifacts should be saved in a practical local path, opened in the browser when the environment allows it, and returned with a clickable absolute path.
@@ -179,6 +188,19 @@ Start here:
 - [`templates/artifact-explorer.html`](templates/artifact-explorer.html)
 - [`examples/artifact-index.example.json`](examples/artifact-index.example.json)
 - [`examples/artifact-metadata.example.json`](examples/artifact-metadata.example.json)
+
+## Artifact Direction System
+
+The repo now treats recurring artifact work as small packages instead of one-off prompts.
+
+Start here:
+
+- [`docs/ARTIFACT_DIRECTIONS.md`](docs/ARTIFACT_DIRECTIONS.md)
+- [`docs/ARTIFACT_MODES.md`](docs/ARTIFACT_MODES.md)
+- [`docs/ARTIFACT_CHECKLISTS.md`](docs/ARTIFACT_CHECKLISTS.md)
+- [`docs/ANTI_SLOP.md`](docs/ANTI_SLOP.md)
+- [`docs/PATTERN_PACKAGE_PROTOCOL.md`](docs/PATTERN_PACKAGE_PROTOCOL.md)
+- [`docs/OPEN_DESIGN_LEARNINGS.md`](docs/OPEN_DESIGN_LEARNINGS.md)
 
 ## When HTML Is Worth It
 
@@ -311,6 +333,7 @@ bash -n install.sh uninstall.sh scripts/*.sh
 scripts/validate-patterns.sh
 scripts/validate-commands.sh
 scripts/validate-examples.sh
+scripts/validate-scenarios.sh
 DRY_RUN=1 INSTALL_UPSTREAM=0 FETCH_EXAMPLES=0 bash install.sh
 scripts/smoke-install.sh
 scripts/smoke-uninstall.sh

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Before / After Prompt Tuner Example</title>
+<style>
+:root{--bg:#f8fafc;--panel:#fff;--ink:#111827;--muted:#64748b;--line:#cbd5e1;--soft:#f1f5f9;--good:#166534;--good-bg:#dcfce7;--warn:#92400e;--warn-bg:#fef3c7;--bad:#991b1b;--bad-bg:#fee2e2;--blue:#1d4ed8;--blue-bg:#dbeafe}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.45}.wrap{max-width:1160px;margin:auto;padding:28px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px;margin:14px 0}.badline{border-left:6px solid var(--bad)}.goodline{border-left:6px solid var(--good)}.warnline{border-left:6px solid var(--warn)}.badge{display:inline-block;border-radius:999px;padding:5px 9px;font-size:12px;font-weight:800}.ok{background:var(--good-bg);color:var(--good)}.warn{background:var(--warn-bg);color:var(--warn)}.bad{background:var(--bad-bg);color:var(--bad)}.blue{background:var(--blue-bg);color:var(--blue)}.muted{color:var(--muted)}label{display:block;margin:8px 0}textarea{width:100%;min-height:130px;border:1px solid var(--line);border-radius:10px;background:var(--soft);color:var(--ink);padding:12px;font:13px ui-monospace,Menlo,monospace}table{width:100%;border-collapse:collapse}th,td{border-bottom:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}th{font-size:12px;text-transform:uppercase;background:var(--soft);color:var(--muted)}code{background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:2px 5px}.btn{border:0;border-radius:10px;padding:10px 12px;font-weight:800;background:#111827;color:#fff}@media(prefers-color-scheme:dark){:root{--bg:#0f172a;--panel:#111827;--ink:#e5e7eb;--muted:#94a3b8;--line:#334155;--soft:#1f2937;--good-bg:#052e16;--good:#86efac;--warn-bg:#451a03;--warn:#fcd34d;--bad-bg:#450a0a;--bad:#fca5a5;--blue-bg:#172554;--blue:#93c5fd}.btn{background:#e5e7eb;color:#111827}}@media(max-width:860px){.grid,.tri{grid-template-columns:1fr}.wrap{padding:16px}}
+</style>
+<script>
+function build(){
+  const evidence=document.getElementById('evidence').checked;
+  const uncertainty=document.getElementById('uncertainty').checked;
+  const next=document.getElementById('nextAction').checked;
+  const lines=['You are tuning an agent behavior contract.'];
+  if(evidence)lines.push('- Inspect named evidence before making claims.');
+  if(uncertainty)lines.push('- Separate facts, inferences, assumptions, and unknowns.');
+  lines.push('- State concrete failure modes and scenario tests.');
+  lines.push('- Produce exportable final instructions, not advice fragments.');
+  if(next)lines.push('- End with one copy-ready next prompt that preserves intent and checks.');
+  document.getElementById('out').value=lines.join('\n');
+}
+window.addEventListener('DOMContentLoaded',build);
+</script>
+</head>
+<body>
+<main class="wrap">
+<header class="card">
+  <p><span class="badge blue">Example data</span> <span class="badge warn">Prompt tuner</span></p>
+  <h1>Before / After: Agent Behavior Tuner</h1>
+  <p><strong>Primary intent:</strong> turn a vague agent-behavior request into testable operating instructions.</p>
+  <p><strong>Secondary intents covered:</strong> behavior dimensions, failure modes, scenario tests, output contract, acceptance criteria, and copy-ready next prompt.</p>
+  <p><strong>Base concept:</strong> force the behavior that prevents known failures, then export the instruction.</p>
+  <p><strong>Artifact budget:</strong> interactive. <strong>HTML advantage:</strong> controls, tests, failures, and final instruction remain visible together. <strong>Mental work removed:</strong> translating vague advice into enforceable behavior.</p>
+</header>
+
+<section class="grid">
+  <article class="card badline">
+    <h2>Before: weak prompt improvement</h2>
+    <p>Be careful, verify your work, explain risks, and be concise.</p>
+    <p class="muted">This sounds reasonable but does not define evidence, failure modes, scenarios, or output contract.</p>
+  </article>
+  <article class="card goodline">
+    <h2>After: operational tuner</h2>
+    <p><strong>Recommendation:</strong> require evidence-first claims, explicit uncertainty, scenario tests, and a copy-ready handoff prompt.</p>
+    <p><span class="badge ok">Ready to export</span></p>
+  </article>
+</section>
+
+<section class="tri">
+  <article class="card"><h2>Evidence</h2><p>Inputs inspected: current instruction, known failure modes, expected output format, and validation needs.</p></article>
+  <article class="card"><h2>Risk / unknown</h2><p>The tuned instruction can still fail if future agents ignore scenario tests or invent evidence.</p></article>
+  <article class="card"><h2>Recommendation</h2><p>Make the instruction short, enforceable, and tied to acceptance criteria.</p></article>
+</section>
+
+<section class="grid">
+  <article class="card">
+    <h2>Behavior dimensions</h2>
+    <label><input id="evidence" type="checkbox" checked onchange="build()"> Evidence-first claims</label>
+    <label><input id="uncertainty" type="checkbox" checked onchange="build()"> Facts vs inferences vs assumptions vs unknowns</label>
+    <label><input id="nextAction" type="checkbox" checked onchange="build()"> Copy-ready next prompt</label>
+  </article>
+  <article class="card warnline">
+    <h2>Failure modes</h2>
+    <ul>
+      <li><strong>Confident but unsupported:</strong> claims tests pass without command output.</li>
+      <li><strong>Scope creep:</strong> changes adjacent files without need.</li>
+      <li><strong>Pretty but weak:</strong> produces HTML that does not improve a decision.</li>
+    </ul>
+  </article>
+</section>
+
+<section class="card">
+  <h2>Scenario tests</h2>
+  <table>
+    <tr><th>Scenario</th><th>Expected behavior</th><th>Acceptance criteria</th></tr>
+    <tr><td>Diff review</td><td>Inspect diff, name evidence, decide accept/request/block.</td><td>No claim of passing tests without proof.</td></tr>
+    <tr><td>Simple command question</td><td>Answer directly without HTML.</td><td>No unnecessary artifact.</td></tr>
+    <tr><td>Vague strategy question</td><td>Use a thinking surface only if layers must stay visible.</td><td>Conclusion and next action are visible.</td></tr>
+  </table>
+</section>
+
+<section class="card">
+  <h2>Output contract</h2>
+  <ul>
+    <li>State primary intent.</li>
+    <li>Name inspected evidence.</li>
+    <li>Separate fact, inference, assumption, and unknown.</li>
+    <li>Name risk and next action.</li>
+    <li>Export final instruction and next prompt.</li>
+  </ul>
+  <textarea id="out"></textarea>
+  <p><button class="btn" onclick="navigator.clipboard.writeText(document.getElementById('out').value)">Copy final instruction</button></p>
+</section>
+
+<section class="card">
+  <h2>Next prompt</h2>
+  <textarea id="next">/make-the-right-html create a prompt tuner artifact for this agent behavior. Preserve the primary intent: turn vague behavior into testable operating instructions. Include evidence, risk, unknowns, scenario tests, acceptance criteria, exportable final instructions, and a copy-ready next prompt.</textarea>
+  <p><button class="btn" onclick="navigator.clipboard.writeText(document.getElementById('next').value)">Copy next prompt</button></p>
+</section>
+</main>
+</body>
+</html>
