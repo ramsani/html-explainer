@@ -6,6 +6,14 @@ It trades a document you would skim for one you would actually read: a self-cont
 
 Its purpose is not to make agent output prettier. Its purpose is to help coding agents produce HTML artifacts that improve technical judgment: review, comparison, diagnosis, planning, triage, reentry, and decision-making.
 
+Think of it as an intent-led process browser:
+
+```text
+user intent -> evidence -> visual understanding -> decision -> next action -> next artifact or command
+```
+
+Each HTML artifact should be a useful stop in the user's path, not a dead-end report.
+
 ```text
 visual-explainer = HTML artifact capability
 html-explainer   = disciplined operating layer for using that capability well
@@ -179,7 +187,7 @@ Every generated HTML file should be easy to open locally, easy to skim in the fi
 Every serious artifact follows this sequence:
 
 ```text
-route -> intent distillation -> artifact budget -> pattern file -> UX contract -> evidence -> fact sheet -> artifact -> quality bar -> next action handoff -> decision
+route -> intent spine -> evidence -> visual understanding -> decision -> next action -> next artifact or command
 ```
 
 That means the agent must:
@@ -208,6 +216,28 @@ That means the agent must:
 22. apply `docs/NEXT_ACTION_HANDOFF.md`;
 23. apply `docs/HTML_DELIVERY.md`;
 24. expose uncertainty and next action.
+
+## Intent-led process browser
+
+`html-explainer` treats each artifact as part of a navigable process.
+
+The user should be able to move through complex work like this:
+
+```text
+understand a repo
+-> see the highest-leverage opportunity
+-> choose an implementation direction
+-> review the plan
+-> review the diff
+-> share the result or reenter later
+```
+
+The artifact must therefore do two jobs:
+
+1. answer the current intent clearly;
+2. preserve enough context for the next command or agent.
+
+The next action is not an afterthought. It is the bridge to the next useful step.
 
 ## Autodiscovery and delivery
 

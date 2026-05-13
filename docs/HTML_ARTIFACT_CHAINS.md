@@ -4,6 +4,25 @@ Intent: use a small sequence of HTML artifacts when one artifact cannot carry ex
 
 Keep chains short. The goal is momentum, not ceremony.
 
+## Intent-led process browser
+
+Treat artifact chains as an intent-led process browser:
+
+```text
+user intent -> evidence -> visual understanding -> decision -> next action -> next artifact or command
+```
+
+Each artifact is a stop in the user's path.
+
+It must:
+
+- answer the current intent;
+- preserve context for the next step;
+- make the next useful action selectable;
+- avoid turning the chain into ceremony.
+
+The chain is successful when the user feels guided through the work without having to reconstruct the process in their head.
+
 ## Why
 
 Some work is not a single answer. A useful HTML workflow may start with exploration, narrow into one direction, become an implementation plan, then become a review or handoff.
@@ -72,6 +91,8 @@ research comparison map
 
 - Use one artifact at a time.
 - Recommend the next artifact only when it removes real work.
+- The next artifact or command must advance the original primary intent.
+- Each step should narrow, deepen, implement, review, or hand off. If it does none of these, stop.
 - Do not generate a chain automatically.
 - Each artifact must stand alone.
 - Each artifact must include a next action handoff.
@@ -86,6 +107,7 @@ When an artifact is part of a chain, include:
 - what remains undecided;
 - next artifact or direct action;
 - ready-to-run command or prompt.
+- what context should carry forward.
 
 ## Good example
 

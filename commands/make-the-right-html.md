@@ -112,6 +112,7 @@ Before responding, verify:
 - Did the final section give one recommended next action, one ready-to-run command, and only useful alternatives?
 - Can the generated artifact act as useful input for the next command or next agent?
 - If this belongs in a chain, did it state chain position and the next useful artifact?
+- If this belongs in an intent-led process, did the next step carry forward the original intent and evidence?
 - If someone else will read it, did it include a share-ready summary or agent reentry block?
 - Did the next options match the user's most likely next moves?
 - Did the final response remove opening friction with a clickable path or browser-open action?

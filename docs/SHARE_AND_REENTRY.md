@@ -4,6 +4,8 @@ Intent: make important HTML artifacts useful beyond the current chat.
 
 An artifact should be easy for a human to open, skim, share, and hand to another agent.
 
+It should also act as a bridge in an intent-led process: the next agent should know what the user wanted, what was already inspected, what was decided, and what should happen next.
+
 ## When to apply
 
 Apply this for:
@@ -41,6 +43,7 @@ For artifacts that may guide later implementation or verification, include:
 
 ```text
 Agent reentry:
+Original user intent:
 What was decided:
 What is still unknown:
 Files or sources inspected:
@@ -72,6 +75,7 @@ The purpose is to let a new agent continue without rereading the whole conversat
 
 ```text
 Agent reentry:
+Original user intent: review this PR safely before merge.
 What was decided: use optimistic updates, but fix query cancellation first.
 What is still unknown: whether retry idempotency is covered by tests.
 Files inspected: src/hooks/useOptimisticTasks.ts, src/api/tasks.ts, TaskList tests.
