@@ -18,6 +18,8 @@ Choose the budget only after applying `docs/HTML_ADVANTAGE_GATE.md`.
 
 After choosing the budget, apply `docs/LEAN_HTML_RENDERING.md` to keep the artifact small and fast.
 
+For planning and crossroad decisions, apply `docs/DECISION_COST_GATE.md`. Higher token cost is acceptable only when the decision cost is higher.
+
 ## Compact
 
 Use `compact` when the user needs orientation, a quick choice, or a lightweight review.
@@ -100,6 +102,7 @@ HTML benefit:
 Mental work removed:
 Token/complexity guard:
 Lean rendering guard:
+Decision cost:
 HTML advantage:
 ```
 
@@ -110,6 +113,7 @@ Examples:
 - "Mental work removed: reconstructing sequence, dependencies, and risk."
 - "Token/complexity guard: compact artifact, no custom JS."
 - "Lean rendering guard: one visual model, shared CSS tokens, optional details for depth."
+- "Decision cost: wrong auth approach would become project foundation."
 - "HTML advantage: searchable commands and exportable reentry checklist."
 
 ## Thariq value test

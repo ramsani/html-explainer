@@ -22,8 +22,12 @@ It must declare:
 - what wall of text or mental reconstruction it replaces;
 - what complexity guard keeps it small enough.
 - what lean rendering guard prevents CSS/JS bloat.
+- what decision cost makes HTML worth the extra tokens.
 
 If the HTML costs more attention than the problem itself, use Markdown or shrink the artifact.
+
+Add credit when HTML is used at a real decision crossroads.
+Subtract 15 if HTML is used for a low-consequence choice that Markdown would cover.
 
 ### 3. HTML advantage
 

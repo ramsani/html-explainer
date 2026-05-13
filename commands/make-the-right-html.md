@@ -17,23 +17,24 @@ Create an artifact that helps the user inspect, compare, verify, decide, or re-e
 7. Open `docs/USER_IN_THE_LOOP.md` and define how the artifact invites inspection, choice, challenge, editing, or export.
 8. Open `docs/VISUAL_STYLE_STANDARD.md` and use system light/dark with minimal, flat, professional styling.
 9. Open `docs/LEAN_HTML_RENDERING.md` and define the lean rendering guard.
-10. Open `docs/HTML_ADVANTAGE_GATE.md` and prove HTML beats Markdown for this task.
-11. Open `docs/ARTIFACT_BUDGET.md` and choose compact, standard, or interactive.
-12. Use `docs/pattern-router.md` to select one primary pattern.
-13. Open the matching file in `patterns/` and apply its evidence requirements, prompt template, HTML structure, visual explainer contract, quality checklist, failure modes, and acceptance criteria.
-14. Open `docs/HTML_UX_STANDARD.md` and define the artifact's UX contract.
-15. Inspect real sources before generation.
-16. Build a fact sheet using `docs/fact-sheet-protocol.md`.
-17. Separate facts, inferences, unsupported claims, and unknowns.
-18. Generate the smallest useful HTML artifact.
-19. Apply `docs/QUALITY_BAR.md` before finalizing.
-20. Compare against `docs/GOLDEN_OUTPUTS.md` when the artifact is a PR review, visual exploration, or project reentry.
-21. Include uncertainty visibly.
-22. Apply `docs/HTML_ARTIFACT_CHAINS.md` when the work naturally needs exploration, planning, review, or handoff across multiple artifacts.
-23. Apply `docs/SHARE_AND_REENTRY.md` when the artifact may be shared or used by another agent later.
-24. Apply `docs/NEXT_ACTION_HANDOFF.md` so the artifact ends with a copy-ready next step.
-25. Apply `docs/HTML_DELIVERY.md` so the final response includes a clickable absolute path and opens the artifact when tool access allows it.
-26. Save the artifact to a reasonable local path when tool access allows it.
+10. Open `docs/DECISION_COST_GATE.md` when the task is a plan, architecture choice, PR review, design direction, or implementation approach.
+11. Open `docs/HTML_ADVANTAGE_GATE.md` and prove HTML beats Markdown for this task.
+12. Open `docs/ARTIFACT_BUDGET.md` and choose compact, standard, or interactive.
+13. Use `docs/pattern-router.md` to select one primary pattern.
+14. Open the matching file in `patterns/` and apply its evidence requirements, prompt template, HTML structure, visual explainer contract, quality checklist, failure modes, and acceptance criteria.
+15. Open `docs/HTML_UX_STANDARD.md` and define the artifact's UX contract.
+16. Inspect real sources before generation.
+17. Build a fact sheet using `docs/fact-sheet-protocol.md`.
+18. Separate facts, inferences, unsupported claims, and unknowns.
+19. Generate the smallest useful HTML artifact.
+20. Apply `docs/QUALITY_BAR.md` before finalizing.
+21. Compare against `docs/GOLDEN_OUTPUTS.md` when the artifact is a PR review, visual exploration, or project reentry.
+22. Include uncertainty visibly.
+23. Apply `docs/HTML_ARTIFACT_CHAINS.md` when the work naturally needs exploration, planning, review, or handoff across multiple artifacts.
+24. Apply `docs/SHARE_AND_REENTRY.md` when the artifact may be shared or used by another agent later.
+25. Apply `docs/NEXT_ACTION_HANDOFF.md` so the artifact ends with a copy-ready next step.
+26. Apply `docs/HTML_DELIVERY.md` so the final response includes a clickable absolute path and opens the artifact when tool access allows it.
+27. Save the artifact to a reasonable local path when tool access allows it.
 
 ## Required artifact sections
 
@@ -47,6 +48,7 @@ Create an artifact that helps the user inspect, compare, verify, decide, or re-e
 - User-in-the-loop value
 - Visual style
 - Lean rendering guard
+- Decision cost
 - UX contract
 - Evidence inspected
 - Fact sheet

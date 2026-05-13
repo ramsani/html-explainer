@@ -51,6 +51,9 @@ This file is a distilled operating note, not a copy of the site.
 10. Use real context as the differentiator.
     Claude Code can inspect the user's environment. The HTML should be grounded in that context, not generic.
 
+11. Use HTML at decision crossroads.
+    The token cost is worth it when the cost of a wrong plan, wrong architecture, wrong PR decision, or wrong design direction is higher.
+
 ## Style baseline
 
 Use `docs/VISUAL_STYLE_STANDARD.md`.
@@ -75,3 +78,4 @@ The baseline is:
 - HTML that looks impressive but leaves the next action unclear.
 - HTML that the user is unlikely to read.
 - HTML that lets the agent keep making choices alone.
+- HTML for low-consequence answers that should have stayed Markdown.

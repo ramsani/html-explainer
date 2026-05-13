@@ -61,6 +61,7 @@ jobs:
           test -f docs/ARTIFACT_BUDGET.md
           test -f docs/AUTODISCOVERY.md
           test -f docs/CONTEXT_PACKS.md
+          test -f docs/DECISION_COST_GATE.md
           test -f docs/EXPLAINER_CLARITY.md
           test -f docs/GOLDEN_OUTPUTS.md
           test -f docs/HTML_ARTIFACT_CHAINS.md

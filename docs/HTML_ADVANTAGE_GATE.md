@@ -4,6 +4,8 @@ Use this before generating any artifact.
 
 HTML must be better than Markdown point by point. If it is only prettier, it fails.
 
+For plan mode or major choices, also apply `docs/DECISION_COST_GATE.md`.
+
 ## The four advantages
 
 A generated HTML artifact must provide at least one strong advantage and should name it explicitly.
@@ -86,6 +88,7 @@ HTML will let the user:
 Output produced:
 Decision:
 User-in-the-loop value:
+Decision cost:
 ```
 
 ## Explainer advantage

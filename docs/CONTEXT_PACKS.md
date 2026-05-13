@@ -17,6 +17,7 @@ Every serious artifact uses:
 - `docs/USER_IN_THE_LOOP.md`
 - `docs/VISUAL_STYLE_STANDARD.md`
 - `docs/LEAN_HTML_RENDERING.md`
+- `docs/DECISION_COST_GATE.md` when decision cost matters
 - `docs/ARTIFACT_BUDGET.md`
 - `docs/pattern-router.md`
 - selected `patterns/NN-*.md`

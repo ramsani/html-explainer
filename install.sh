@@ -183,6 +183,7 @@ if [ "$DRY_RUN" = "0" ]; then
   verify_file "$CLAUDE_HOME/html-explainer/docs/ARTIFACT_BUDGET.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/AUTODISCOVERY.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/CONTEXT_PACKS.md"
+  verify_file "$CLAUDE_HOME/html-explainer/docs/DECISION_COST_GATE.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/EXPLAINER_CLARITY.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/GOLDEN_OUTPUTS.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/HTML_ARTIFACT_CHAINS.md"

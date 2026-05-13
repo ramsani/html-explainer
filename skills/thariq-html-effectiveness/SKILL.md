@@ -19,23 +19,24 @@ Always follow:
 7. Open `docs/USER_IN_THE_LOOP.md` and define how the artifact invites inspection, choice, challenge, editing, or export.
 8. Open `docs/VISUAL_STYLE_STANDARD.md` and use system light/dark with minimal, flat, professional styling.
 9. Open `docs/LEAN_HTML_RENDERING.md` and define the lean rendering guard.
-10. Open `docs/HTML_ADVANTAGE_GATE.md` and identify why HTML beats Markdown point by point.
-11. Open `docs/ARTIFACT_BUDGET.md` and choose compact, standard, or interactive. Default to compact.
-12. Use `docs/pattern-router.md` to choose one primary pattern.
-13. Open the matching file in `patterns/` and apply its evidence requirements, HTML structure, visual explainer contract, quality checklist, failure modes, and acceptance criteria.
-14. Open `docs/HTML_UX_STANDARD.md` and define the first-screen contract, interaction contract, and export requirement.
-15. Explore sources.
-16. Verify facts.
-17. Build a fact sheet using `docs/fact-sheet-protocol.md`.
-18. Generate the smallest useful HTML artifact.
-19. Apply `docs/QUALITY_BAR.md` before finalizing.
-20. Compare against `docs/GOLDEN_OUTPUTS.md` when the artifact matches a golden case.
-21. Mark uncertainty visibly.
-22. Apply `docs/HTML_ARTIFACT_CHAINS.md` when the work is better handled as exploration -> plan -> review or similar.
-23. Apply `docs/SHARE_AND_REENTRY.md` when the artifact should be shareable or useful to another agent.
-24. Apply `docs/NEXT_ACTION_HANDOFF.md` so the next command is obvious and copy-ready.
-25. Apply `docs/HTML_DELIVERY.md` so generated artifacts are easy to open.
-26. Give the user a minimal decision summary.
+10. Open `docs/DECISION_COST_GATE.md` when the task is a plan, architecture choice, PR review, design direction, or implementation approach.
+11. Open `docs/HTML_ADVANTAGE_GATE.md` and identify why HTML beats Markdown point by point.
+12. Open `docs/ARTIFACT_BUDGET.md` and choose compact, standard, or interactive. Default to compact.
+13. Use `docs/pattern-router.md` to choose one primary pattern.
+14. Open the matching file in `patterns/` and apply its evidence requirements, HTML structure, visual explainer contract, quality checklist, failure modes, and acceptance criteria.
+15. Open `docs/HTML_UX_STANDARD.md` and define the first-screen contract, interaction contract, and export requirement.
+16. Explore sources.
+17. Verify facts.
+18. Build a fact sheet using `docs/fact-sheet-protocol.md`.
+19. Generate the smallest useful HTML artifact.
+20. Apply `docs/QUALITY_BAR.md` before finalizing.
+21. Compare against `docs/GOLDEN_OUTPUTS.md` when the artifact matches a golden case.
+22. Mark uncertainty visibly.
+23. Apply `docs/HTML_ARTIFACT_CHAINS.md` when the work is better handled as exploration -> plan -> review or similar.
+24. Apply `docs/SHARE_AND_REENTRY.md` when the artifact should be shareable or useful to another agent.
+25. Apply `docs/NEXT_ACTION_HANDOFF.md` so the next command is obvious and copy-ready.
+26. Apply `docs/HTML_DELIVERY.md` so generated artifacts are easy to open.
+27. Give the user a minimal decision summary.
 
 ## When to use
 
@@ -127,6 +128,7 @@ Every serious artifact should include:
 - User-in-the-loop value
 - Visual style: system light/dark, minimal, flat, professional
 - Lean rendering guard
+- Decision cost
 - Artifact chain position when useful
 - Share-ready summary when useful
 - Agent reentry block when useful

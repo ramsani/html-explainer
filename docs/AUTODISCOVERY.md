@@ -10,12 +10,15 @@ Do not generate HTML by reflex.
 
 Do consider HTML when the user's intent involves complex inspection, comparison, planning, review, explanation, tuning, or handoff.
 
+Apply `docs/DECISION_COST_GATE.md` when the task is a plan, architecture choice, PR review, design direction, or implementation approach.
+
 ## Strong HTML signals
 
 Consider `html-explainer` when the user asks for:
 
 - implementation plan;
 - plan review;
+- plan mode with options or trade-offs;
 - PR or diff review;
 - architecture explanation;
 - module map;
@@ -30,6 +33,8 @@ Consider `html-explainer` when the user asks for:
 - research comparison;
 - shareable report;
 - handoff to another person or agent.
+
+The strongest signal is a human decision crossroads: the user must pick a path and the cost of picking wrong is meaningful.
 
 ## Fast Markdown signals
 
@@ -48,10 +53,11 @@ Prefer a direct Markdown answer when:
 ```text
 1. Identify primary intent.
 2. If simple, answer directly.
-3. If complex, apply HTML advantage gate.
-4. If HTML wins, use /pick-the-right-html logic.
-5. If the pattern is obvious and the user asked for an artifact, use /make-the-right-html logic.
-6. If unsure, recommend the next command instead of generating.
+3. If complex, apply decision cost gate.
+4. Apply HTML advantage gate.
+5. If HTML wins, use /pick-the-right-html logic.
+6. If the pattern is obvious and the user asked for an artifact, use /make-the-right-html logic.
+7. If unsure, recommend the next command instead of generating.
 ```
 
 ## Token guard
