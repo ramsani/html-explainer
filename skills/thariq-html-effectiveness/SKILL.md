@@ -92,6 +92,50 @@ Interactive artifacts must export something usable.
 - Creating editors without exportable output.
 - Leaving the user to invent the next command.
 
+## Worked Examples
+
+### Simple Case
+
+Input: "Review this small diff before I accept it."
+
+Use pattern 03. Budget is `compact`.
+
+```text
+Intent: decide whether the diff is safe to accept.
+Evidence: git diff, changed files, related tests.
+Fact sheet: changed files are facts; release risk is inference; unrun tests are unknown.
+Artifact shape: files changed, behavior before/after, findings, missing checks, recommendation.
+Next prompt: ask the agent to add the missing test or run the exact validation command.
+```
+
+### Medium Case
+
+Input: "Help me understand this repo and see the biggest opportunity."
+
+Use pattern 17. Budget is `standard`.
+
+```text
+Intent: reenter the project and choose the next highest-leverage action.
+Evidence: README, install scripts, commands, patterns, examples, CI, changelog.
+Fact sheet: installed commands are facts; quality risk is inference; real adoption is unknown unless inspected.
+Artifact shape: project identity, workflow map, entry points, risks, opportunities, next action.
+Next prompt: continue with the recommended opportunity, preserving evidence and out-of-scope boundaries.
+```
+
+### Complex Case
+
+Input: "Turn these issues into a plan I can execute."
+
+Use pattern 18 or 20 depending on whether the user is triaging tasks or tuning agent behavior. Budget is `interactive` only if the user can sort, tune, copy, or export.
+
+```text
+Intent: convert many inputs into a prioritized next step.
+Evidence: issue list, labels, dependencies, risk, user goal.
+Fact sheet: issue text is fact; priority score is inference; missing owner or effort is unknown.
+Artifact shape: buckets, scores, blockers, filters, exportable plan.
+Next prompt: execute the exported Now bucket with acceptance criteria and block conditions.
+```
+
 ## Final Response After HTML
 
 Keep the chat short:

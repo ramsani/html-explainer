@@ -1,5 +1,9 @@
 # html-explainer
 
+[![CI](https://github.com/ramsani/html-explainer/actions/workflows/ci.yml/badge.svg)](https://github.com/ramsani/html-explainer/actions/workflows/ci.yml)
+![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)
+![Patterns](https://img.shields.io/badge/patterns-21-blue.svg)
+
 `html-explainer` helps Claude Code create HTML artifacts that people actually read.
 
 It is not "HTML because it looks nice." It is HTML when a browser view helps the user understand, decide, review, compare, tune, or continue work better than Markdown.
@@ -179,6 +183,26 @@ Detailed older docs live in `docs/reference/`. They are available when needed, b
 Use `visual-explainer` when you mainly want quick HTML output.
 
 Use `html-explainer` when the HTML should help make or review a real decision.
+
+## What This Is Not
+
+- Not a standalone web app.
+- Not an official Anthropic or Claude Code project.
+- Not a replacement for `visual-explainer`.
+- Not a general visual design tool.
+- Not HTML for every answer.
+
+Use it when HTML helps the user make or review a real decision.
+
+## Contributing
+
+Contributions are welcome when they strengthen the core path:
+
+```text
+intent -> evidence -> visual understanding -> decision -> expert next prompt
+```
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening a PR.
 
 ## Safe Uninstall
 

@@ -33,6 +33,13 @@ for file in "$EXAMPLES_DIR"/*.html; do
   if ! grep -Eqi 'prefers-color-scheme' "$file"; then
     fail "$rel must support system light/dark mode"
   fi
+  grep -q '@media(prefers-color-scheme:dark)' "$file" || fail "$rel must use a valid dark-mode media query"
+  if grep -Eq '@media@media|\}\(prefers-color-scheme:dark\)|[;{]\(prefers-color-scheme:dark\)' "$file"; then
+    fail "$rel has a malformed dark-mode media query"
+  fi
+
+  next_prompt_count="$(grep -o '<h2>Next prompt</h2>' "$file" 2>/dev/null | wc -l | tr -d ' ' || true)"
+  [ "$next_prompt_count" -le 1 ] || fail "$rel must not duplicate the Next prompt section"
 
   if grep -Eqi 'tuner|editor|triage|feature flag|copy|export' "$file"; then
     grep -Eqi 'copy|export|textarea|download' "$file" || fail "$rel is editor-like and must include copy/export output"

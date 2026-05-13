@@ -24,15 +24,15 @@ Thariq's work is credited as the conceptual approach behind the pattern library:
 
 `html-explainer` does not copy the examples as product output. It operationalizes the approach into reusable agent patterns, such as plan reviews, diff reviews, architecture maps, project recaps, triage boards, design-system inspections, prototypes, reports, and prompt tuners.
 
-## Skills for real engineers
+## Public skills pattern
 
 - Author: Matt Pocock
 - Project: `skills`
 - Repository: https://github.com/mattpocock/skills
 
-Matt Pocock's skills repo is credited as an inspiration for the next-step prompt discipline in `html-explainer`: small composable skills, durable work briefs, shared language, vertical slices, feedback loops, behavioral contracts, acceptance criteria, and explicit scope boundaries.
+Matt Pocock's public `skills` repo is credited as inspiration for treating agent behavior as small, composable instructions instead of one large prompt.
 
-`html-explainer` does not copy Matt's skills as product output. It adapts the engineering style into `docs/SENIOR_CHAINED_PROMPTS.md`, which helps generated HTML artifacts end with next prompts that another capable agent can execute without losing the user's original intent.
+`html-explainer` does not copy Matt's skills as product output. It uses the general public idea of skill-shaped workflows to keep next prompts compact, scoped, and executable.
 
 ## This project
 
