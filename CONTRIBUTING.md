@@ -5,7 +5,7 @@ Thanks for improving `html-explainer`.
 The project should stay small and useful. Every change should strengthen this path:
 
 ```text
-intent -> evidence -> visual understanding -> decision -> expert next prompt
+intent -> evidence -> visual understanding -> decision -> next action -> reusable memory
 ```
 
 ## Good Contributions
@@ -26,6 +26,7 @@ bash -n install.sh uninstall.sh scripts/*.sh
 scripts/validate-patterns.sh
 scripts/validate-commands.sh
 scripts/validate-examples.sh
+scripts/validate-scenarios.sh
 DRY_RUN=1 INSTALL_UPSTREAM=0 FETCH_EXAMPLES=0 bash install.sh
 scripts/smoke-install.sh
 scripts/smoke-uninstall.sh
@@ -61,6 +62,7 @@ Examples must include:
 - evidence;
 - risk or uncertainty;
 - next prompt or exportable output;
+- archive recommendation when the artifact may be reused;
 - system light/dark support.
 
 Interactive examples must include copy/export output.

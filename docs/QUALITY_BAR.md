@@ -21,7 +21,8 @@ Score 0-100:
 | First screen gives decision, risk, next action | 12 |
 | Visual model clarifies the concept | 8 |
 | Interaction/export useful when present | 7 |
-| Next prompt is copy-ready and preserves context | 8 |
+| Next prompt is copy-ready and preserves context | 5 |
+| Archive recommendation protects reusable memory | 3 |
 
 Decision:
 
@@ -42,6 +43,7 @@ Fail immediately if it:
 - makes interaction without exportable output;
 - puts the recommendation below decoration;
 - leaves the user to invent the next command;
+- saves or recommends saving low-value scratch work as reusable knowledge;
 - is incoherent on mobile.
 
 ## Required Ending
@@ -54,6 +56,9 @@ Why:
 Ready-to-run prompt:
 Two or three useful alternatives:
 Block conditions:
+Archive recommendation:
 ```
 
 The next prompt must preserve intent, evidence, acceptance criteria, out-of-scope items, and uncertainty.
+
+The archive recommendation must state `save`, `do not save`, `private`, `refresh`, or `supersede` when the artifact can become future context.

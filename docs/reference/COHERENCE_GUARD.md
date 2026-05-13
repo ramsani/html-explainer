@@ -11,7 +11,7 @@ Use this before adding new rules, docs, patterns, sections, gates, examples, or 
 It is an intent-led process browser for agent work:
 
 ```text
-intent -> evidence -> visual understanding -> decision -> expert next prompt
+intent -> evidence -> visual understanding -> decision -> next action -> reusable memory
 ```
 
 Everything in the repo must serve that path.

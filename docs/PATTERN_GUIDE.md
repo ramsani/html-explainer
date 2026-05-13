@@ -27,6 +27,7 @@ Use this to choose one primary artifact pattern.
 | Config, flags, settings, permissions | 19 Feature flag / config editor |
 | Prompt, agent behavior, rubric, skill | 20 Prompt / agent behavior tuner |
 | Visual direction or UI tone options | 21 Visual direction explorer |
+| Think through a topic, idea, strategy, risk, or unclear decision | 22 Insight Surface Loop |
 
 ## Tie-Breakers
 
@@ -35,6 +36,7 @@ Use this to choose one primary artifact pattern.
 - If the user must manipulate values, prefer editor, triage board, tuner, or prototype.
 - If the user must choose look and feel, prefer visual direction explorer.
 - If future HTML must match product taste, create design token reference first.
+- If the user is still forming the question or conclusion, prefer Insight Surface Loop.
 
 ## Minimum Viable Pattern
 

@@ -259,7 +259,7 @@ Examples:
 The explorer page must itself follow the core `html-explainer` principle:
 
 ```text
-intent -> evidence -> visual understanding -> decision -> expert next prompt
+intent -> evidence -> visual understanding -> decision -> next action -> reusable memory
 ```
 
 It should not be a generic archive table.

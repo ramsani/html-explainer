@@ -110,7 +110,7 @@ Use html-explainer when the user asks for an HTML artifact, or when a complex pl
 Core operating path:
 
 ```text
-intent -> evidence -> visual understanding -> decision -> expert next prompt
+intent -> evidence -> visual understanding -> decision -> next action -> reusable memory
 ```
 
 Prefer these installed commands:
@@ -124,7 +124,7 @@ Prefer these installed commands:
 - `/audit-html` to score and improve an artifact.
 - `/think-with-me-about` to think through a topic using an Insight Surface Loop.
 
-Do not use HTML for simple answers, one commands, tiny facts, or low-consequence notes. Every artifact must preserve the user's primary intent, cover obvious secondary intents when they affect the decision, show evidence, separate facts/inferences/unknowns, use the smallest useful budget, and end with a copy/edit next prompt that carries intent, evidence, acceptance criteria, out-of-scope items, and block conditions when useful.
+Do not use HTML for simple answers, one commands, tiny facts, or low-consequence notes. Every artifact must preserve the user's primary intent, cover obvious secondary intents when they affect the decision, show evidence, separate facts/inferences/unknowns, use the smallest useful budget, end with a copy/edit next prompt, and recommend whether to save, refresh, keep private, supersede, or discard the artifact when it may become future context.
 
 Reference docs live in `~/.claude/html-explainer/docs/`.
 <!-- html-explainer:end -->
@@ -267,6 +267,7 @@ if [ "$DRY_RUN" = "0" ]; then
   verify_file "$CLAUDE_HOME/html-explainer/docs/CHAIN.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/DELIVERY.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/INSIGHT_SURFACE_LOOP.md"
+  verify_file "$CLAUDE_HOME/html-explainer/docs/V1_FUNCTION_AUDIT.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/reference/INTENT_DISTILLATION.md"
   verify_file "$CLAUDE_HOME/html-explainer/patterns/01-code-approach-comparison.md"
   verify_file "$CLAUDE_HOME/html-explainer/patterns/20-prompt-agent-behavior-tuner.md"

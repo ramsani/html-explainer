@@ -7,7 +7,7 @@ Use this before creating any HTML artifact.
 Create HTML only when it makes the user's work easier than Markdown.
 
 ```text
-intent -> evidence -> visual understanding -> decision -> expert next prompt
+intent -> evidence -> visual understanding -> decision -> next action -> reusable memory
 ```
 
 ## Use HTML When
@@ -38,6 +38,7 @@ Evidence needed:
 Markdown cost:
 HTML advantage:
 Smallest useful budget:
+Archive value:
 Not doing:
 ```
 
@@ -70,3 +71,11 @@ Do not generate HTML if:
 - no browser advantage can be named;
 - the artifact would hide uncertainty;
 - the next action would remain vague.
+
+## Memory Gate
+
+Before delivery, decide whether the artifact should be saved, refreshed later, kept private, or discarded.
+
+Use `docs/ARTIFACT_MEMORY.md` when the artifact has future value.
+
+Do not preserve low-confidence scratch work as reusable knowledge.

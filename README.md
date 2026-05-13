@@ -23,7 +23,7 @@ It is not "HTML because it looks nice." It is HTML when a browser view helps the
 Core path:
 
 ```text
-intent -> evidence -> visual understanding -> decision -> expert next prompt
+intent -> evidence -> visual understanding -> decision -> next action -> reusable memory
 ```
 
 `visual-explainer` gives Claude the HTML artifact capability.
@@ -232,7 +232,7 @@ Every artifact should:
 - explain why HTML beats Markdown for this case;
 - respect system light/dark mode;
 - keep visual design minimal, flat, readable, and professional;
-- end with a clear next action and an editable next prompt.
+- end with a clear next action, an editable next prompt, and an archive recommendation when the result may be useful later.
 
 If interaction is included, it must change something meaningful and export usable output: Markdown, JSON, config, issue body, checklist, or prompt.
 
@@ -241,7 +241,7 @@ If interaction is included, it must change something meaningful and export usabl
 The default agent path is intentionally small:
 
 ```text
-DECISION_GATE -> PATTERN_GUIDE -> pattern file -> FACT_SHEET -> STYLE -> QUALITY_BAR -> CHAIN -> DELIVERY
+DECISION_GATE -> PATTERN_GUIDE -> pattern file -> FACT_SHEET -> STYLE -> QUALITY_BAR -> CHAIN -> DELIVERY -> ARTIFACT_MEMORY
 ```
 
 Detailed older docs live in `docs/reference/`. They are available when needed, but they are not the default path.
@@ -280,7 +280,7 @@ Use it when HTML helps the user make or review a real decision.
 Contributions are welcome when they strengthen the core path:
 
 ```text
-intent -> evidence -> visual understanding -> decision -> expert next prompt
+intent -> evidence -> visual understanding -> decision -> next action -> reusable memory
 ```
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening a PR.
