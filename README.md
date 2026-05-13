@@ -1,18 +1,82 @@
 # html-explainer
 
-`html-explainer` helps Claude Code create HTML artifacts that people actually read.
+[![CI](https://github.com/ramsani/html-explainer/actions/workflows/ci.yml/badge.svg)](https://github.com/ramsani/html-explainer/actions/workflows/ci.yml)
+![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)
+![Patterns](https://img.shields.io/badge/patterns-21-blue.svg)
 
-It is not "HTML because it looks nice." It is HTML when a browser view helps the user understand, decide, review, compare, tune, or continue work better than Markdown.
+`html-explainer` helps Claude Code decide when HTML is actually worth using, then generate decision-ready HTML artifacts with evidence, risks, recommendations, and copy-ready next prompts.
 
-Core path:
+It is not a design tool.
+It is not HTML for every answer.
+It is a workflow layer for turning complex work into browser-based decision surfaces.
 
 ```text
 intent -> evidence -> visual understanding -> decision -> expert next prompt
 ```
 
-`visual-explainer` gives Claude the HTML artifact capability.
+Use it when Markdown would make the user do too much mental work and a browser view can make comparison, review, tuning, or decision-making clearer.
 
-`html-explainer` adds the operating discipline: when to use HTML, what evidence to inspect, how to keep the user in the loop, and how to end with the next useful prompt.
+## Try The Demo First
+
+Open [`examples/before-after-decision.example.html`](examples/before-after-decision.example.html).
+
+It shows the same request two ways:
+
+- a skimmable answer that looks organized but leaves the user to do the hard thinking;
+- an intent-led HTML artifact that exposes evidence, risk, recommendation, and a copy-ready next prompt.
+
+The point is simple: HTML is worth the extra tokens only when it removes mental work.
+
+See [`docs/DEMO.md`](docs/DEMO.md) for the demo explanation.
+
+## What Problem It Solves
+
+LLMs can generate attractive HTML artifacts, but attractive is not enough.
+
+A useful artifact should help the user understand, compare, decide, review, tune, or continue work with less ambiguity. `html-explainer` adds an operating model around HTML generation so Claude Code must inspect evidence, choose the right artifact pattern, expose uncertainty, and finish with a practical next step.
+
+Use this when you want Claude Code to:
+
+- review a plan before coding;
+- review a PR or diff visually;
+- understand a repo quickly;
+- compare implementation options;
+- build a temporary decision tool;
+- tune prompts, agents, skills, or rubrics;
+- map an architecture, workflow, process, or failure path.
+
+Do not use it for short answers, single commands, tiny facts, or low-consequence notes.
+
+## Credit First
+
+This project starts from three public contributions that deserve clear credit:
+
+- [`visual-explainer`](https://github.com/nicobailon/visual-explainer) by Nico Bailon, credited as the upstream HTML artifact capability this repo can install and build around.
+- ["The unreasonable effectiveness of HTML"](https://thariqs.github.io/html-effectiveness/) by Thariq S. Bate, credited as the conceptual foundation for using HTML when it keeps humans more in the loop than Markdown.
+- [`skills`](https://github.com/mattpocock/skills) by Matt Pocock, credited as inspiration for small, composable skill-shaped agent instructions.
+
+`html-explainer` is an independent complementary layer. It does not replace those projects, claim affiliation, or copy their work as product output. It packages an intent-first workflow around them so Claude Code can decide when HTML is worth using, inspect evidence first, and end with a useful next prompt.
+
+See [`CREDITS.md`](CREDITS.md) for the full attribution.
+
+## What It Adds Over visual-explainer
+
+`visual-explainer` is excellent at generating rich HTML artifacts.
+
+`html-explainer` is for users who want more control over the reasoning before and after the artifact:
+
+- intent selection before generation;
+- evidence-first workflow;
+- pattern routing;
+- quality bar;
+- lean artifact budget;
+- next-step prompts that preserve context;
+- safe installer and uninstaller;
+- brief `CLAUDE.md` guide so the agent remembers how to use the system.
+
+Use `visual-explainer` when you mainly want quick HTML output.
+
+Use `html-explainer` when the HTML should help make or review a real decision.
 
 ## Install
 
@@ -39,6 +103,14 @@ The installer adds:
 - 7 short core docs, advanced reference docs, patterns, and bundled examples under `~/.claude/html-explainer/`;
 - a short managed guide in `~/.claude/CLAUDE.md`;
 - backups under `~/.claude/html-explainer/backups/<timestamp>/`.
+
+Safe by default:
+
+- supports `DRY_RUN=1`;
+- creates backups before replacing managed files;
+- updates only a marked `html-explainer` block in `CLAUDE.md`;
+- includes `uninstall.sh`;
+- can skip upstream `visual-explainer` with `INSTALL_UPSTREAM=0`.
 
 The `CLAUDE.md` guide is marked with:
 
@@ -151,6 +223,32 @@ Every artifact should:
 
 If interaction is included, it must change something meaningful and export usable output: Markdown, JSON, config, issue body, checklist, or prompt.
 
+## Quality Checks
+
+This repo validates:
+
+- installer shell syntax;
+- uninstaller shell syntax;
+- command structure;
+- pattern completeness;
+- example artifacts;
+- dry-run install;
+- dry-run uninstall;
+- smoke install with temporary `CLAUDE_HOME`;
+- smoke uninstall with temporary `CLAUDE_HOME`.
+
+Run local verification with:
+
+```bash
+bash -n install.sh uninstall.sh scripts/*.sh
+scripts/validate-patterns.sh
+scripts/validate-commands.sh
+scripts/validate-examples.sh
+DRY_RUN=1 INSTALL_UPSTREAM=0 FETCH_EXAMPLES=0 bash install.sh
+scripts/smoke-install.sh
+scripts/smoke-uninstall.sh
+```
+
 ## Internal Shape
 
 The default agent path is intentionally small:
@@ -161,24 +259,29 @@ DECISION_GATE -> PATTERN_GUIDE -> pattern file -> FACT_SHEET -> STYLE -> QUALITY
 
 Detailed older docs live in `docs/reference/`. They are available when needed, but they are not the default path.
 
-## What It Adds Over visual-explainer
+## What This Is Not
 
-`visual-explainer` is excellent at generating rich HTML artifacts.
+- Not a standalone web app.
+- Not an official Anthropic or Claude Code project.
+- Not a replacement for `visual-explainer`.
+- Not a general visual design tool.
+- Not HTML for every answer.
 
-`html-explainer` is for users who want more control over the reasoning before and after the artifact:
+Use it when HTML helps the user make or review a real decision.
 
-- intent selection before generation;
-- evidence-first workflow;
-- pattern routing;
-- quality bar;
-- lean artifact budget;
-- next-step prompts that preserve context;
-- safe installer and uninstaller;
-- brief `CLAUDE.md` guide so the agent remembers how to use the system.
+## Roadmap
 
-Use `visual-explainer` when you mainly want quick HTML output.
+See [`ROADMAP.md`](ROADMAP.md).
 
-Use `html-explainer` when the HTML should help make or review a real decision.
+## Contributing
+
+Contributions are welcome when they strengthen the core path:
+
+```text
+intent -> evidence -> visual understanding -> decision -> expert next prompt
+```
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening a PR.
 
 ## Safe Uninstall
 
@@ -219,18 +322,6 @@ FETCH_EXAMPLES=1 bash install.sh
 
 # Install into another Claude home
 CLAUDE_HOME="$HOME/.claude" bash install.sh
-```
-
-## Verify Locally
-
-```bash
-bash -n install.sh uninstall.sh scripts/*.sh
-scripts/validate-patterns.sh
-scripts/validate-commands.sh
-scripts/validate-examples.sh
-DRY_RUN=1 INSTALL_UPSTREAM=0 FETCH_EXAMPLES=0 bash install.sh
-scripts/smoke-install.sh
-scripts/smoke-uninstall.sh
 ```
 
 ## Credits
