@@ -26,6 +26,14 @@ For reusable artifact memory, follow `docs/ARTIFACT_MEMORY.md` and use the local
 
 Do not commit generated user artifact history into this repository.
 
+## Memory Receipt
+
+Apply `docs/MEMORY_ACCESS.md`.
+
+If the artifact was saved or should be saved, show one quiet line that tells the user where it belongs and how to ask for it later.
+
+If it should not be saved, say so in one short line.
+
 ## Browser
 
 Open the HTML in the browser when the environment allows it.
@@ -46,6 +54,7 @@ Quality result:
 Main uncertainty:
 Next command:
 Archive recommendation:
+Saved for later:
 ```
 
 Do not paste the full HTML into chat unless requested.

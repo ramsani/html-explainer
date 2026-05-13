@@ -13,7 +13,8 @@ Build a temporary HTML editor, triage board, tuner, or config tool.
 7. Apply `docs/STYLE.md`.
 8. Apply `docs/QUALITY_BAR.md`.
 9. Apply `docs/CHAIN.md` so exported output has a clear next use.
-10. Apply `docs/DELIVERY.md`.
+10. Apply `docs/MEMORY_ACCESS.md` when the exported result may be reused.
+11. Apply `docs/DELIVERY.md`.
 
 ## Must Include
 
@@ -23,6 +24,7 @@ Build a temporary HTML editor, triage board, tuner, or config tool.
 - copy/export output;
 - next prompt that uses the exported result.
 - archive recommendation when the result may be useful later.
+- a tiny saved/not-saved receipt.
 
 ## Hard Rule
 

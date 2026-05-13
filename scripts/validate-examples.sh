@@ -31,6 +31,7 @@ for file in "$EXAMPLES_DIR"/*.html; do
   grep -Eqi 'what could go wrong|what is still unclear|risk|unknown|uncertainty|assumption|not verified' "$file" || fail "$rel must expose risk, uncertainty, assumptions, or unverified claims"
   grep -Eqi 'continue from here|next prompt|ready-to-run|copy prompt|copy-ready|exportable prompt|next command' "$file" || fail "$rel must expose a next prompt or copy-ready next command"
   grep -Eqi 'save this|save decision|memory label|archive recommendation|memory decision|suggested validity|do-not-reuse|reusable memory' "$file" || fail "$rel must expose archive or memory decision"
+  grep -Eqi 'saved for later|find it fast|not saved' "$file" || fail "$rel must expose a quiet memory access receipt"
 
   if ! grep -Eqi 'prefers-color-scheme' "$file"; then
     fail "$rel must support system light/dark mode"

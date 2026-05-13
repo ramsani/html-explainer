@@ -28,6 +28,9 @@ The agent can use internal terms while thinking. The artifact should use plain, 
 | Recommendation | Best next move |
 | Next prompt | Continue from here |
 | Archive recommendation | Save this? |
+| Knowledge base access | Find it fast |
+| Saved artifact | Saved for later |
+| Unsaved artifact | Not saved |
 | Freshness risk | When to review |
 | Suggested validity | Memory label |
 | Pattern | Example type |
@@ -45,6 +48,8 @@ What could go wrong
 Best next move
 Continue from here
 Save this?
+Saved for later
+Find it fast
 ```
 
 Avoid visible labels like:
@@ -58,6 +63,8 @@ Fact sheet
 Quality gate
 Pattern routing
 Output contract
+Metadata index
+Knowledge graph
 ```
 
 ## Final Test

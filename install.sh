@@ -271,6 +271,7 @@ if [ "$DRY_RUN" = "0" ]; then
   verify_file "$CLAUDE_HOME/html-explainer/docs/LANGUAGE_POLICY.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/USER_VALUE.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/USER_FACING_COPY.md"
+  verify_file "$CLAUDE_HOME/html-explainer/docs/MEMORY_ACCESS.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/QUALITY_CLAIMS.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/INSIGHT_SURFACE_LOOP.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/V1_FUNCTION_AUDIT.md"

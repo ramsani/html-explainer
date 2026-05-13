@@ -19,7 +19,8 @@ Do not use for simple facts, single commands, tiny edits, or low-consequence not
 9. Apply `docs/STYLE.md`.
 10. Apply `docs/QUALITY_BAR.md`.
 11. Apply `docs/CHAIN.md` for the next prompt.
-12. Apply `docs/DELIVERY.md`.
+12. Apply `docs/MEMORY_ACCESS.md` for a quiet saved/not-saved receipt.
+13. Apply `docs/DELIVERY.md`.
 
 When artifact memory docs are present, recommend whether to preserve the artifact using `docs/ARTIFACT_MEMORY.md`.
 

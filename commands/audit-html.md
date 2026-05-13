@@ -18,6 +18,7 @@ Use:
 - `docs/STYLE.md`
 - `docs/QUALITY_BAR.md`
 - `docs/CHAIN.md`
+- `docs/MEMORY_ACCESS.md`
 
 ## Process
 
@@ -33,8 +34,9 @@ Use:
 10. Check artifact language against the user or intended audience.
 11. Check the next action and copy-ready prompt.
 12. Check archive recommendation when the artifact may be reused.
-13. Score with `docs/QUALITY_BAR.md`.
-14. Recommend accept, revise, reject, or simplify to Markdown.
+13. Check whether memory access is visible but quiet.
+14. Score with `docs/QUALITY_BAR.md`.
+15. Recommend accept, revise, reject, or simplify to Markdown.
 
 ## Output
 
@@ -55,6 +57,7 @@ Interaction/export gaps:
 Next-action gaps:
 Language gaps:
 Memory gaps:
+Memory access:
 
 Best next prompt:
 ```
@@ -73,3 +76,4 @@ Fail the artifact if it:
 - recommends risky production/security/data changes without evidence;
 - leaves the user to invent the next command.
 - omits archive guidance when the artifact may become future context.
+- hides how reusable work can be found later.

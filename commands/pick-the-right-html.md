@@ -14,6 +14,7 @@ Use:
 - the selected `patterns/NN-*.md` file
 - `docs/QUALITY_BAR.md`
 - `docs/CHAIN.md` when follow-up work is likely
+- `docs/MEMORY_ACCESS.md` when the artifact may be reused
 
 Use `docs/reference/` only if the decision needs deeper guidance.
 
@@ -50,6 +51,7 @@ Ready-to-run command:
 Useful alternatives:
 Archive value:
 Archive recommendation:
+Saved for later:
 ```
 
 ## Rules
@@ -60,3 +62,4 @@ Archive recommendation:
 - Do not leave the user to invent the next command.
 - Do not auto-chain commands without user approval.
 - If the artifact may become future context, state whether to save, refresh later, keep private, supersede, or discard it.
+- If it may be reused, include one quiet line for how to find it later.

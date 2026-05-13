@@ -12,7 +12,8 @@ Review an implementation plan before code changes.
 6. Generate or recommend a compact/standard plan-review artifact.
 7. Apply `docs/QUALITY_BAR.md`.
 8. Apply `docs/CHAIN.md` so approve, revise, reject, split, or implement becomes selectable.
-9. Apply `docs/DELIVERY.md`.
+9. Apply `docs/MEMORY_ACCESS.md` when the review may be reused.
+10. Apply `docs/DELIVERY.md`.
 
 ## Must Answer
 
@@ -26,4 +27,4 @@ Review an implementation plan before code changes.
 
 ## Output
 
-End with one recommended next prompt, useful alternatives, and archive recommendation.
+End with one recommended next prompt, useful alternatives, archive recommendation, and a tiny saved/not-saved receipt.

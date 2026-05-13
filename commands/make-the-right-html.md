@@ -14,8 +14,9 @@ Generate a self-contained HTML artifact using the html-explainer operating model
 8. Apply `docs/STYLE.md`.
 9. Apply `docs/USER_FACING_COPY.md`.
 10. Apply `docs/QUALITY_BAR.md`.
-11. Apply `docs/CHAIN.md` when follow-up work is likely.
-12. Apply `docs/DELIVERY.md`.
+11. Apply `docs/MEMORY_ACCESS.md` when the artifact may be reused.
+12. Apply `docs/CHAIN.md` when follow-up work is likely.
+13. Apply `docs/DELIVERY.md`.
 
 Use `docs/reference/` only when a serious case needs deeper guidance.
 
@@ -59,6 +60,7 @@ Before responding:
 - Did the next prompt preserve intent, evidence, acceptance criteria, boundaries, and uncertainty?
 - Did the artifact language match the user or intended audience?
 - Did the artifact explain whether it should be saved, refreshed, kept private, superseded, or discarded?
+- Did it show a tiny "Saved for later" or "Not saved" receipt without becoming bulky?
 - Did visible copy help the user without exposing internal process labels?
 
 ## Final Chat Response
@@ -73,6 +75,7 @@ Quality result:
 Main uncertainty:
 Next command:
 Archive recommendation:
+Saved for later:
 ```
 
 Do not paste the full HTML into chat unless requested.

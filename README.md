@@ -224,9 +224,23 @@ The artifact memory system defines:
 - an actionable knowledge base model for search, relations, quick-reference cards, and next actions;
 - a static explorer template that follows the same decision-ready HTML principles as the rest of the project.
 
+User-facing artifacts should expose this value as a tiny receipt, not a technical report:
+
+```text
+Saved for later: Project decisions
+Find it fast: ask for "show the last repo review"
+```
+
+If the work is not worth preserving:
+
+```text
+Not saved: this was only useful for this example.
+```
+
 Start here:
 
 - [`docs/ARTIFACT_MEMORY.md`](docs/ARTIFACT_MEMORY.md)
+- [`docs/MEMORY_ACCESS.md`](docs/MEMORY_ACCESS.md)
 - [`docs/ARTIFACT_METADATA_SCHEMA.md`](docs/ARTIFACT_METADATA_SCHEMA.md)
 - [`docs/ACTIONABLE_KNOWLEDGE_BASE.md`](docs/ACTIONABLE_KNOWLEDGE_BASE.md)
 - [`templates/artifact-explorer.html`](templates/artifact-explorer.html)

@@ -50,4 +50,5 @@ When an artifact may be useful later, include:
 - suggested validity class;
 - freshness risk;
 - review trigger;
-- re-entry prompt.
+- re-entry prompt;
+- a tiny access hint using `docs/MEMORY_ACCESS.md`.

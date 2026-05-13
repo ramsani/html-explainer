@@ -13,7 +13,8 @@ Review a diff, PR, patch, or changed files before accepting them.
 7. Apply `docs/STYLE.md`.
 8. Apply `docs/QUALITY_BAR.md`.
 9. Apply `docs/CHAIN.md` so accept, fix, verify, split, revert, or share becomes selectable.
-10. Apply `docs/DELIVERY.md`.
+10. Apply `docs/MEMORY_ACCESS.md` when the review may be reused.
+11. Apply `docs/DELIVERY.md`.
 
 ## Must Answer
 
@@ -27,4 +28,4 @@ Review a diff, PR, patch, or changed files before accepting them.
 
 ## Output
 
-End with one recommended next prompt, useful alternatives, and archive recommendation. Include revert only when evidence shows it is plausible.
+End with one recommended next prompt, useful alternatives, archive recommendation, and a tiny saved/not-saved receipt. Include revert only when evidence shows it is plausible.

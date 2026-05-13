@@ -19,10 +19,11 @@ Score 0-100:
 | HTML advantage is real | 12 |
 | Budget is smallest useful size | 8 |
 | First screen gives decision, risk, next action | 12 |
-| Visual model clarifies the concept | 8 |
+| Visual model clarifies the concept | 6 |
 | Interaction/export useful when present | 7 |
 | Next prompt is copy-ready and preserves context | 5 |
 | Archive recommendation protects reusable memory | 3 |
+| Memory access is obvious but quiet | 2 |
 
 Decision:
 
@@ -45,6 +46,8 @@ Fail immediately if it:
 - leaves the user to invent the next command;
 - saves or recommends saving low-value scratch work as reusable knowledge;
 - exposes internal process labels when simple user-facing language would be clearer;
+- hides where reusable work can be found later;
+- turns memory guidance into a bulky or distracting report;
 - is incoherent on mobile.
 
 ## Required Ending
@@ -63,3 +66,5 @@ Archive recommendation:
 The next prompt must preserve intent, evidence, acceptance criteria, out-of-scope items, and uncertainty.
 
 The archive recommendation must state `save`, `do not save`, `private`, `refresh`, or `supersede` when the artifact can become future context.
+
+The memory access hint must be short enough to read in a glance.
