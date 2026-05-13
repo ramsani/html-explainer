@@ -30,6 +30,7 @@ Use:
 - `docs/HTML_ARTIFACT_CHAINS.md` to decide whether the right answer is one artifact now plus an obvious next artifact later.
 - `docs/SHARE_AND_REENTRY.md` when the output should be usable by another human or agent.
 - `docs/PROCESS_CAPSULE.md` when the artifact should become input to the next step.
+- `docs/SENIOR_CHAINED_PROMPTS.md` when next prompts need to act like durable engineering briefs.
 - `docs/NEXT_ACTION_HANDOFF.md` to produce a copy-ready next command and selectable alternatives.
 
 ## Process

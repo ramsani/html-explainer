@@ -15,6 +15,8 @@ The next useful step is not a new visual format. It is preserving enough process
 
 For any artifact that may lead to follow-up work, include a small process capsule.
 
+Apply `docs/SENIOR_CHAINED_PROMPTS.md` when writing the recommended next prompt and option prompts.
+
 The capsule must be:
 
 - short;
@@ -39,6 +41,7 @@ Open risks or unknowns: <only what affects the next step>
 Recommended next prompt: <copy-ready prompt>
 Option prompts: <three logical copy/edit options when useful>
 Success criteria for next step: <how the user knows the next step worked>
+Out of scope for next step: <what the next agent should not reopen or overbuild>
 ```
 
 ## Optional machine-readable form
@@ -54,7 +57,8 @@ When useful, add the same capsule as a small JSON block near the end of the HTML
   "evidenceUsed": ["README.md", "app/api/auth/route.ts", "lib/session.ts"],
   "openRisks": ["unclear session expiry behavior"],
   "recommendedNextPrompt": "/check-the-plan revise the auth boundary section using this artifact as context",
-  "successCriteria": ["auth risk is explicit", "validation command is named"]
+  "successCriteria": ["auth risk is explicit", "validation command is named"],
+  "outOfScope": ["do not change implementation yet"]
 }
 </script>
 ```

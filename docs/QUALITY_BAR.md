@@ -195,12 +195,16 @@ The artifact must end with a concrete next action handoff:
 - three logical selectable options when follow-up work is likely;
 - each option states when to choose it, why it helps, and a copy/edit prompt.
 
+Apply `docs/SENIOR_CHAINED_PROMPTS.md` for serious follow-up work.
+
 Do not auto-chain commands without user approval.
 
 Subtract 15 if the user still has to invent the next command.
 Subtract 10 if there are too many next-step options.
 Subtract 10 if the options are wording variants instead of real paths.
 Subtract 10 if the prompts do not preserve the primary intent and useful evidence.
+Subtract 15 if next prompts are generic instead of structured work briefs.
+Subtract 10 if next prompts omit acceptance criteria when the next step is non-trivial.
 
 ### 15b. Delivery friction
 

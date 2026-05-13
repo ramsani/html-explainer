@@ -46,12 +46,13 @@ The process is designed so quality is built before the artifact is generated. Va
 
 ## Attribution
 
-This project is built as a complementary layer around two important prior contributions:
+This project is built as a complementary layer around three important prior contributions:
 
 - **Visual Explainer by Nico Bailon** — the upstream agent skill that generates rich, self-contained HTML pages for diagrams, visual plans, slides, diff reviews, plan audits, project recaps, fact checks, and complex tables.
 - **The HTML effectiveness approach by Thariq S. Bate** — the idea that HTML can be a superior medium for many agent outputs because it can represent structure, comparison, interaction, visual hierarchy, and decision context better than flat Markdown.
+- **Skills for real engineers by Matt Pocock** — an inspiration for the next-step prompt discipline: small composable skills, durable work briefs, shared language, vertical slices, feedback loops, acceptance criteria, and explicit scope boundaries.
 
-`html-explainer` is not an official project of Nico Bailon or Thariq S. Bate. It is an independent integration and operating layer that credits both sources: Visual Explainer as the implementation foundation, and Thariq's HTML effectiveness approach as the conceptual pattern library.
+`html-explainer` is not an official project of Nico Bailon, Thariq S. Bate, or Matt Pocock. It is an independent integration and operating layer that credits these sources: Visual Explainer as the implementation foundation, Thariq's HTML effectiveness approach as the conceptual pattern library, and Matt Pocock's skills repo as inspiration for senior-quality chained prompts.
 
 See [`CREDITS.md`](CREDITS.md) for details.
 
@@ -214,9 +215,10 @@ That means the agent must:
 20. apply `docs/HTML_ARTIFACT_CHAINS.md` when one artifact should lead to another;
 21. apply `docs/SHARE_AND_REENTRY.md` when the artifact should be shareable or reusable by another agent;
 22. apply `docs/PROCESS_CAPSULE.md` when follow-up work is likely;
-23. apply `docs/NEXT_ACTION_HANDOFF.md`;
-24. apply `docs/HTML_DELIVERY.md`;
-25. expose uncertainty and next action.
+23. apply `docs/SENIOR_CHAINED_PROMPTS.md` when next prompts need durable engineering-brief quality;
+24. apply `docs/NEXT_ACTION_HANDOFF.md`;
+25. apply `docs/HTML_DELIVERY.md`;
+26. expose uncertainty and next action.
 
 ## Intent-led process browser
 
@@ -241,6 +243,8 @@ The artifact must therefore do two jobs:
 The next action is not an afterthought. It is the bridge to the next useful step.
 
 For important artifacts, that bridge is a compact process capsule: stage, intent, decision, evidence, open risks, next prompt, and success criteria. This keeps the workflow future-ready without adding a separate app or runtime.
+
+The next prompts should read like a senior engineer wrote them: durable, behavioral, scoped, testable, and easy for the user to edit before pasting into the next agent run.
 
 ## Autodiscovery and delivery
 
@@ -509,7 +513,23 @@ It preserves:
 
 This keeps the system future-ready without adding a separate app, database, browser extension, or runtime.
 
-### 19. Audit command
+### 19. Senior chained prompts
+
+`docs/SENIOR_CHAINED_PROMPTS.md` makes the next prompts act like compact engineering briefs.
+
+It requires:
+
+- user intent preserved;
+- decision so far carried forward;
+- behavior described over mechanical edits;
+- acceptance criteria;
+- out-of-scope boundaries;
+- vertical next steps;
+- validation or feedback loop when useful.
+
+This prevents weak endings like "continue" or "improve" and makes each artifact a stronger input for the next agent.
+
+### 20. Audit command
 
 `/audit-html` reviews an existing artifact and scores it against:
 
@@ -529,7 +549,7 @@ This keeps the system future-ready without adding a separate app, database, brow
 - simplicity;
 - next-action clarity.
 
-### 20. CI and smoke tests
+### 21. CI and smoke tests
 
 The repo includes GitHub Actions and scripts to validate:
 
@@ -542,7 +562,7 @@ The repo includes GitHub Actions and scripts to validate:
 - required sections in each pattern;
 - example artifact UX minimums.
 
-### 21. Example artifacts
+### 22. Example artifacts
 
 The repo includes example artifacts so models have concrete shapes to imitate:
 

@@ -26,6 +26,7 @@ Every serious artifact uses:
 - `docs/QUALITY_BAR.md`
 - `docs/NEXT_ACTION_HANDOFF.md`
 - `docs/PROCESS_CAPSULE.md` when follow-up work is likely
+- `docs/SENIOR_CHAINED_PROMPTS.md` when next prompts need durable engineering-brief quality
 - `docs/HTML_DELIVERY.md`
 
 Use these conditionally:

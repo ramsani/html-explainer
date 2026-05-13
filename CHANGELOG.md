@@ -1,5 +1,23 @@
 # Changelog
 
+## Unreleased — senior chained prompts
+
+### Added
+
+- `docs/SENIOR_CHAINED_PROMPTS.md` for next-step prompts that read like compact engineering briefs.
+- Matt Pocock skills attribution in `CREDITS.md` and README.
+- Installer, smoke test, and CI checks for the new prompt discipline doc.
+
+### Improved
+
+- Next action handoffs now require stronger prompt structure for serious follow-up work.
+- Process capsules now carry out-of-scope boundaries for the next step.
+- Quality bar now penalizes generic next prompts and missing acceptance criteria.
+
+### Why it matters
+
+This makes each HTML artifact a better input for the next agent run. The user gets prompts that preserve intent, evidence, decision, acceptance criteria, and scope boundaries instead of vague "continue" instructions.
+
 ## Unreleased — visual direction explorer
 
 ### Added

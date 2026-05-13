@@ -4,6 +4,8 @@ Intent: make the next useful step obvious, copy-ready, and low-friction.
 
 Use this at the end of every command response and generated HTML artifact.
 
+For serious follow-up work, also apply `docs/SENIOR_CHAINED_PROMPTS.md` so the next prompts read like durable engineering briefs, not casual suggestions.
+
 ## Why
 
 The artifact should not leave the user asking "now what?"
@@ -78,6 +80,19 @@ Bad option labels:
 - Improve
 - Continue
 - Next
+
+## Senior prompt quality
+
+Each copy/edit prompt should include enough structure for the next agent to work without guessing:
+
+- primary intent to preserve;
+- decision so far;
+- next job;
+- evidence or artifact to reuse;
+- acceptance criteria;
+- out of scope when drift is likely.
+
+Keep this compact. A prompt can be senior without being long.
 
 ## Report as next-step input
 
