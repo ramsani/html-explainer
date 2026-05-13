@@ -213,9 +213,10 @@ That means the agent must:
 19. compare against `docs/GOLDEN_OUTPUTS.md` when a reference case applies;
 20. apply `docs/HTML_ARTIFACT_CHAINS.md` when one artifact should lead to another;
 21. apply `docs/SHARE_AND_REENTRY.md` when the artifact should be shareable or reusable by another agent;
-22. apply `docs/NEXT_ACTION_HANDOFF.md`;
-23. apply `docs/HTML_DELIVERY.md`;
-24. expose uncertainty and next action.
+22. apply `docs/PROCESS_CAPSULE.md` when follow-up work is likely;
+23. apply `docs/NEXT_ACTION_HANDOFF.md`;
+24. apply `docs/HTML_DELIVERY.md`;
+25. expose uncertainty and next action.
 
 ## Intent-led process browser
 
@@ -238,6 +239,8 @@ The artifact must therefore do two jobs:
 2. preserve enough context for the next command or agent.
 
 The next action is not an afterthought. It is the bridge to the next useful step.
+
+For important artifacts, that bridge is a compact process capsule: stage, intent, decision, evidence, open risks, next prompt, and success criteria. This keeps the workflow future-ready without adding a separate app or runtime.
 
 ## Autodiscovery and delivery
 
@@ -490,7 +493,23 @@ It cuts:
 - return a clickable absolute path;
 - keep the chat response short.
 
-### 18. Audit command
+### 18. Process capsule
+
+`docs/PROCESS_CAPSULE.md` makes important artifacts reusable as the next step's input.
+
+It preserves:
+
+- process stage;
+- primary intent;
+- decision so far;
+- evidence used;
+- open risks or unknowns;
+- recommended next prompt;
+- success criteria for the next step.
+
+This keeps the system future-ready without adding a separate app, database, browser extension, or runtime.
+
+### 19. Audit command
 
 `/audit-html` reviews an existing artifact and scores it against:
 
@@ -510,7 +529,7 @@ It cuts:
 - simplicity;
 - next-action clarity.
 
-### 19. CI and smoke tests
+### 20. CI and smoke tests
 
 The repo includes GitHub Actions and scripts to validate:
 
@@ -523,7 +542,7 @@ The repo includes GitHub Actions and scripts to validate:
 - required sections in each pattern;
 - example artifact UX minimums.
 
-### 20. Example artifacts
+### 21. Example artifacts
 
 The repo includes example artifacts so models have concrete shapes to imitate:
 

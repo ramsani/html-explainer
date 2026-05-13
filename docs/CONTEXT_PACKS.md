@@ -25,6 +25,7 @@ Every serious artifact uses:
 - `docs/fact-sheet-protocol.md`
 - `docs/QUALITY_BAR.md`
 - `docs/NEXT_ACTION_HANDOFF.md`
+- `docs/PROCESS_CAPSULE.md` when follow-up work is likely
 - `docs/HTML_DELIVERY.md`
 
 Use these conditionally:

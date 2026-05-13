@@ -20,6 +20,7 @@ It must:
 - preserve context for the next step;
 - make the next useful action selectable;
 - offer copy/edit prompts for the three most logical next paths when follow-up work is likely;
+- include a compact process capsule when the next step depends on the current decision;
 - avoid turning the chain into ceremony.
 
 The chain is successful when the user feels guided through the work without having to reconstruct the process in their head.
@@ -111,6 +112,7 @@ When an artifact is part of a chain, include:
 - ready-to-run command or prompt.
 - what context should carry forward.
 - three logical copy/edit prompts when there are real branches.
+- process capsule fields when the artifact should become input to the next agent.
 
 ## Good example
 

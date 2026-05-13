@@ -233,6 +233,26 @@ Add credit when it includes:
 Subtract 10 if a serious plan, PR review, recap, or report cannot be shared or reused without the original chat.
 Subtract 20 if the artifact is technically correct but unlikely to be read or acted on.
 
+### 16b. Process capsule
+
+Apply `docs/PROCESS_CAPSULE.md` when follow-up work is likely.
+
+Add credit when the artifact includes:
+
+- process stage;
+- primary intent;
+- decision so far;
+- evidence used;
+- open risks or unknowns;
+- recommended next prompt;
+- success criteria for the next step.
+
+Add credit when the capsule is also available as a compact JSON block.
+
+Subtract 10 if the artifact is part of a chain but does not preserve process state.
+Subtract 10 if the process capsule is too long.
+Subtract 15 if the capsule loses or changes the user's primary intent.
+
 ### 17. Explainer clarity
 
 Apply `docs/EXPLAINER_CLARITY.md`.

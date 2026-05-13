@@ -195,6 +195,7 @@ if [ "$DRY_RUN" = "0" ]; then
   verify_file "$CLAUDE_HOME/html-explainer/docs/VISUAL_STYLE_STANDARD.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/NEXT_ACTION_HANDOFF.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/SHARE_AND_REENTRY.md"
+  verify_file "$CLAUDE_HOME/html-explainer/docs/PROCESS_CAPSULE.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/fact-sheet-protocol.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/INTENT_DISTILLATION.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/pattern-router.md"

@@ -6,6 +6,8 @@ An artifact should be easy for a human to open, skim, share, and hand to another
 
 It should also act as a bridge in an intent-led process: the next agent should know what the user wanted, what was already inspected, what was decided, and what should happen next.
 
+For artifacts likely to continue into another step, apply `docs/PROCESS_CAPSULE.md`.
+
 ## When to apply
 
 Apply this for:
@@ -70,6 +72,7 @@ The purpose is to let a new agent continue without rereading the whole conversat
 - It must distinguish decisions from open questions.
 - It must name the next command or prompt.
 - It must name validation before production or merge when relevant.
+- It should stay aligned with the process capsule when one is included.
 
 ## Good example
 

@@ -34,9 +34,10 @@ Create an artifact that helps the user inspect, compare, verify, decide, or re-e
 23. Include uncertainty visibly.
 24. Apply `docs/HTML_ARTIFACT_CHAINS.md` when the work naturally needs exploration, planning, review, or handoff across multiple artifacts.
 25. Apply `docs/SHARE_AND_REENTRY.md` when the artifact may be shared or used by another agent later.
-26. Apply `docs/NEXT_ACTION_HANDOFF.md` so the artifact ends with a copy-ready next step.
-27. Apply `docs/HTML_DELIVERY.md` so the final response includes a clickable absolute path and opens the artifact when tool access allows it.
-28. Save the artifact to a reasonable local path when tool access allows it.
+26. Apply `docs/PROCESS_CAPSULE.md` when follow-up work is likely.
+27. Apply `docs/NEXT_ACTION_HANDOFF.md` so the artifact ends with a copy-ready next step.
+28. Apply `docs/HTML_DELIVERY.md` so the final response includes a clickable absolute path and opens the artifact when tool access allows it.
+29. Save the artifact to a reasonable local path when tool access allows it.
 
 ## Required artifact sections
 
@@ -62,6 +63,7 @@ Create an artifact that helps the user inspect, compare, verify, decide, or re-e
 - Unknowns
 - Share-ready summary when useful
 - Agent reentry block when useful
+- Process capsule when follow-up work is likely
 - Recommendation
 - Success criteria
 - Next action handoff with one recommended prompt and three logical copy/edit options when useful
@@ -111,6 +113,7 @@ Before responding, verify:
 - Did it stay as small as possible?
 - Did the final section give one recommended next action, one copy-ready prompt, and three logical copy/edit options when follow-up work is likely?
 - Can the generated artifact act as useful input for the next command or next agent?
+- If follow-up work is likely, did it include a compact process capsule?
 - If this belongs in a chain, did it state chain position and the next useful artifact?
 - If this belongs in an intent-led process, did the next step carry forward the original intent and evidence?
 - If someone else will read it, did it include a share-ready summary or agent reentry block?
