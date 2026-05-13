@@ -9,8 +9,9 @@ The active path is intentionally small:
 5. `FACT_SHEET.md`
 6. `CHAIN.md`
 7. `DELIVERY.md`
-8. `ARTIFACT_MEMORY.md` when the result may be reused later
-9. `MEMORY_ACCESS.md` when the user needs to find saved work again
+8. `HUMAN_INTERFACE.md`
+9. `ARTIFACT_MEMORY.md` when the result may be reused later
+10. `MEMORY_ACCESS.md` when the user needs to find saved work again
 
 Files with older names in this directory are compatibility stubs for existing installs, links, and CI checks.
 
@@ -25,6 +26,7 @@ Read these to understand the current V1 product shape:
 - `USER_VALUE.md` explains every benefit delivered to the user.
 - `LANGUAGE_POLICY.md` defines English repo docs and language-matched user output.
 - `USER_FACING_COPY.md` keeps visible artifact text simple and helpful.
+- `HUMAN_INTERFACE.md` keeps invitations respectful, optional, and powerful.
 - `MEMORY_ACCESS.md` makes saved work easy to find again without exposing archive mechanics.
 - `QUALITY_CLAIMS.md` states what the repo is engineered to prevent and what it does not yet statistically guarantee.
 - `V1_FUNCTION_AUDIT.md` maps each function to its user promise, likely failure, and guardrail.

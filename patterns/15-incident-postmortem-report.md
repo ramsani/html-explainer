@@ -23,6 +23,10 @@ Acceptance criteria: the user can understand what failed, why it likely failed, 
 
 Use incident report after something failed. Use audit report when the user wants a standards-based review without a specific incident.
 
+## Human interface contract
+
+Apply `docs/HUMAN_INTERFACE.md`. The artifact must recommend one best next move while keeping optional actions visible: continue, revise, compare, think this through, save for later, or stop when enough. Any interaction must give the user real control, not decoration.
+
 ## Visual explainer contract
 
 Apply `docs/PATTERN_GUIDE.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.

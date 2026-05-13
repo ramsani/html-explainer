@@ -15,6 +15,7 @@ required_sections=(
   "Failure modes"
   "Tie-breakers"
   "Acceptance criteria"
+  "Human interface contract"
   "Visual explainer contract"
 )
 
@@ -76,10 +77,12 @@ for file in "$PATTERN_DIR"/*.md; do
   quality_words="$(section_word_count "Quality checklist" "$file")"
   failure_words="$(section_word_count "Failure modes" "$file")"
   tie_words="$(section_word_count "Tie-breakers" "$file")"
+  human_words="$(section_word_count "Human interface contract" "$file")"
 
   [ "$quality_words" -ge 14 ] || fail "quality checklist is too thin in ${file#$ROOT_DIR/}"
   [ "$failure_words" -ge 12 ] || fail "failure modes are too thin in ${file#$ROOT_DIR/}"
   [ "$tie_words" -ge 10 ] || fail "tie-breakers are missing or too thin in ${file#$ROOT_DIR/}"
+  [ "$human_words" -ge 18 ] || fail "human interface contract is too thin in ${file#$ROOT_DIR/}"
 done
 
 echo "[validate-patterns] OK: $count pattern files validated"

@@ -11,10 +11,11 @@ Build a temporary HTML editor, triage board, tuner, or config tool.
 5. Build the evidence sheet with `docs/FACT_SHEET.md`.
 6. Use `interactive` budget only because controls change state or produce output.
 7. Apply `docs/STYLE.md`.
-8. Apply `docs/QUALITY_BAR.md`.
-9. Apply `docs/CHAIN.md` so exported output has a clear next use.
-10. Apply `docs/MEMORY_ACCESS.md` when the exported result may be reused.
-11. Apply `docs/DELIVERY.md`.
+8. Apply `docs/HUMAN_INTERFACE.md`.
+9. Apply `docs/QUALITY_BAR.md`.
+10. Apply `docs/CHAIN.md` so exported output has a clear next use.
+11. Apply `docs/MEMORY_ACCESS.md` when the exported result may be reused.
+12. Apply `docs/DELIVERY.md`.
 
 ## Must Include
 

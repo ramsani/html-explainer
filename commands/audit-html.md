@@ -16,6 +16,7 @@ Use:
 - matching `patterns/NN-*.md` file when the pattern is identifiable
 - `docs/FACT_SHEET.md`
 - `docs/STYLE.md`
+- `docs/HUMAN_INTERFACE.md`
 - `docs/QUALITY_BAR.md`
 - `docs/CHAIN.md`
 - `docs/MEMORY_ACCESS.md`
@@ -32,11 +33,12 @@ Use:
 8. Check visual clarity and mobile readability.
 9. Check interaction and export if present.
 10. Check artifact language against the user or intended audience.
-11. Check the next action and copy-ready prompt.
-12. Check archive recommendation when the artifact may be reused.
-13. Check whether memory access is visible but quiet.
-14. Score with `docs/QUALITY_BAR.md`.
-15. Recommend accept, revise, reject, or simplify to Markdown.
+11. Check whether the artifact invites choice without pressure.
+12. Check the next action and copy-ready prompt.
+13. Check archive recommendation when the artifact may be reused.
+14. Check whether memory access is visible but quiet.
+15. Score with `docs/QUALITY_BAR.md`.
+16. Recommend accept, revise, reject, or simplify to Markdown.
 
 ## Output
 
@@ -56,6 +58,7 @@ UX and visual gaps:
 Interaction/export gaps:
 Next-action gaps:
 Language gaps:
+Human-interface gaps:
 Memory gaps:
 Memory access:
 
@@ -77,3 +80,4 @@ Fail the artifact if it:
 - leaves the user to invent the next command.
 - omits archive guidance when the artifact may become future context.
 - hides how reusable work can be found later.
+- pushes one path without giving the user a graceful choice.

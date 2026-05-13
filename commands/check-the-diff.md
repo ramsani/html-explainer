@@ -11,10 +11,11 @@ Review a diff, PR, patch, or changed files before accepting them.
 5. Build the evidence sheet with `docs/FACT_SHEET.md`.
 6. Generate or recommend a compact/standard diff-review artifact.
 7. Apply `docs/STYLE.md`.
-8. Apply `docs/QUALITY_BAR.md`.
-9. Apply `docs/CHAIN.md` so accept, fix, verify, split, revert, or share becomes selectable.
-10. Apply `docs/MEMORY_ACCESS.md` when the review may be reused.
-11. Apply `docs/DELIVERY.md`.
+8. Apply `docs/HUMAN_INTERFACE.md`.
+9. Apply `docs/QUALITY_BAR.md`.
+10. Apply `docs/CHAIN.md` so accept, fix, verify, split, revert, or share becomes selectable.
+11. Apply `docs/MEMORY_ACCESS.md` when the review may be reused.
+12. Apply `docs/DELIVERY.md`.
 
 ## Must Answer
 

@@ -51,6 +51,10 @@ The user can understand where to change code and what not to touch.
 
 Use module map for one repo area. Use architecture diagram when the question spans services, boundaries, data flow, or operational risk.
 
+## Human interface contract
+
+Apply `docs/HUMAN_INTERFACE.md`. The artifact must recommend one best next move while keeping optional actions visible: continue, revise, compare, think this through, save for later, or stop when enough. Any interaction must give the user real control, not decoration.
+
 ## Visual explainer contract
 
 Apply `docs/PATTERN_GUIDE.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.

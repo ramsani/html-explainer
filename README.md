@@ -20,6 +20,8 @@ See [`CREDITS.md`](CREDITS.md) for the full attribution.
 
 It is not "HTML because it looks nice." It is HTML when a browser view helps the user understand, decide, review, compare, tune, or continue work better than Markdown.
 
+The experience should feel simple on purpose: one clear surface, one recommended next move, a few respectful options, and useful power under the mouse. The user can continue, compare, revise, save, think it through, or stop without losing context.
+
 The repository is documented in English so it is easy to share, install, inspect, and contribute to. The user experience should match the user's language. If the user writes in Spanish, the agent response and generated artifact should be in Spanish unless the user asks for another language.
 
 Core path:
@@ -42,6 +44,14 @@ intent -> evidence -> visual understanding -> decision -> next action -> reusabl
 
 The repo is designed so serious HTML artifacts must expose intent, evidence, uncertainty, risk, recommendation, next action, and reusable memory.
 
+It also protects the human side of the interaction:
+
+- invitations are quiet, not pushy;
+- deeper functions are offered only when useful;
+- every pattern leaves the user free to choose another path;
+- interactive controls must help compare, tune, preview, copy, export, save, or continue;
+- the artifact should feel like capable support, not visible machinery.
+
 ## What The User Gets
 
 `html-explainer` turns agent output into a browser-readable decision surface.
@@ -50,6 +60,8 @@ The user gets:
 
 - faster understanding because the first screen shows the point, risk, and next action;
 - less mental work because evidence, trade-offs, unknowns, and recommendations are visible together;
+- a natural interface because the artifact uses plain labels, calm invitations, and a small set of meaningful choices;
+- real control because useful interactions let the user compare, tune, preview, copy, export, save, or continue;
 - safer decisions because claims are tied to inspected evidence;
 - clearer reviews because plans, diffs, workflows, and architectures show risk before action;
 - useful next prompts because every serious artifact carries the context needed for the next agent step;
@@ -59,6 +71,18 @@ The user gets:
 - trust through validation because examples, commands, patterns, routing scenarios, install, and uninstall are checked locally.
 
 The user should not need to understand the operating philosophy. They should feel the result as clarity, speed, safer choices, and less repeated explanation.
+
+## What It Feels Like
+
+The artifact should make the next useful action obvious without cornering the user.
+
+```text
+Best next move: Review before implementing.
+Other useful options: Compare approaches · Think this through · Save for later
+Continue from here: <copy-ready prompt>
+```
+
+The invitation to `/think-with-me-about` is not a pop-up or sales pitch. It appears only when the user is still forming the question, facing a hard decision, or carrying an idea that needs evidence, stress testing, and a clearer next action.
 
 ## 60-Second Demo
 
@@ -101,7 +125,7 @@ The installer adds:
 
 - the `thariq-html-effectiveness` skill;
 - intent-first slash commands;
-- 7 short core docs, advanced reference docs, patterns, and bundled examples under `~/.claude/html-explainer/`;
+- 8 short core docs, advanced reference docs, patterns, and bundled examples under `~/.claude/html-explainer/`;
 - a short managed guide in `~/.claude/CLAUDE.md`;
 - backups under `~/.claude/html-explainer/backups/<timestamp>/`.
 
@@ -172,6 +196,7 @@ bash install.sh
 | Audit an artifact | Score, hard fails, evidence gaps, HTML gaps, and fix path. | Separates useful artifacts from polished noise. |
 | Think through an idea | Framing, evidence, tensions, stress test, conclusion, action, and re-entry. | Converts vague thinking into a usable next move. |
 | Save useful work | Metadata, validity, freshness, privacy, and re-entry guidance. | Prevents good artifacts from being lost or stale artifacts from being trusted. |
+| Keep control | Quiet choices, copy/export actions, and optional deeper thinking. | The user sees what they can do next without being pushed. |
 
 ## Quick Usage
 

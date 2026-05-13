@@ -17,10 +17,11 @@ Do not use for simple facts, single commands, tiny edits, or low-consequence not
 7. Select the smallest useful artifact budget.
 8. Generate one self-contained HTML file.
 9. Apply `docs/STYLE.md`.
-10. Apply `docs/QUALITY_BAR.md`.
-11. Apply `docs/CHAIN.md` for the next prompt.
-12. Apply `docs/MEMORY_ACCESS.md` for a quiet saved/not-saved receipt.
-13. Apply `docs/DELIVERY.md`.
+10. Apply `docs/HUMAN_INTERFACE.md`.
+11. Apply `docs/QUALITY_BAR.md`.
+12. Apply `docs/CHAIN.md` for the next prompt.
+13. Apply `docs/MEMORY_ACCESS.md` for a quiet saved/not-saved receipt.
+14. Apply `docs/DELIVERY.md`.
 
 When artifact memory docs are present, recommend whether to preserve the artifact using `docs/ARTIFACT_MEMORY.md`.
 

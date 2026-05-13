@@ -13,10 +13,11 @@ Generate a self-contained HTML artifact using the html-explainer operating model
 7. Generate the smallest useful HTML artifact.
 8. Apply `docs/STYLE.md`.
 9. Apply `docs/USER_FACING_COPY.md`.
-10. Apply `docs/QUALITY_BAR.md`.
-11. Apply `docs/MEMORY_ACCESS.md` when the artifact may be reused.
-12. Apply `docs/CHAIN.md` when follow-up work is likely.
-13. Apply `docs/DELIVERY.md`.
+10. Apply `docs/HUMAN_INTERFACE.md`.
+11. Apply `docs/QUALITY_BAR.md`.
+12. Apply `docs/MEMORY_ACCESS.md` when the artifact may be reused.
+13. Apply `docs/CHAIN.md` when follow-up work is likely.
+14. Apply `docs/DELIVERY.md`.
 
 Use `docs/reference/` only when a serious case needs deeper guidance.
 

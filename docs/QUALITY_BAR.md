@@ -17,13 +17,14 @@ Score 0-100:
 | Evidence visible | 12 |
 | Facts, inferences, assumptions, unknowns separated | 10 |
 | HTML advantage is real | 12 |
-| Budget is smallest useful size | 8 |
+| Budget is smallest useful size | 6 |
 | First screen gives decision, risk, next action | 12 |
 | Visual model clarifies the concept | 6 |
 | Interaction/export useful when present | 7 |
 | Next prompt is copy-ready and preserves context | 5 |
 | Archive recommendation protects reusable memory | 3 |
 | Memory access is obvious but quiet | 2 |
+| User agency is visible and respectful | 2 |
 
 Decision:
 
@@ -48,6 +49,8 @@ Fail immediately if it:
 - exposes internal process labels when simple user-facing language would be clearer;
 - hides where reusable work can be found later;
 - turns memory guidance into a bulky or distracting report;
+- traps the user in one path without a clear choice to continue, revise, compare, save, or stop;
+- uses pushy language when a quiet invitation would be enough;
 - is incoherent on mobile.
 
 ## Required Ending

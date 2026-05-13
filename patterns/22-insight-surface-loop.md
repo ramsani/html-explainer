@@ -162,6 +162,10 @@ The user can see the topic, real question, provisional conclusion, risk, next ac
 
 A strong Insight Surface makes the user's next better thought obvious.
 
+## Human interface contract
+
+Apply `docs/HUMAN_INTERFACE.md`. The artifact must recommend one best next move while keeping optional actions visible: continue, revise, compare, think this through, save for later, or stop when enough. Any interaction must give the user real control, not decoration.
+
 ## Visual explainer contract
 
 Apply `docs/PATTERN_GUIDE.md` and `docs/INSIGHT_SURFACE_LOOP.md`. The artifact must include a decisive first screen, evidence separation, stress testing, synthesis, action, and re-entry prompt. It must explain why HTML is substantially better than Markdown for this thinking task.

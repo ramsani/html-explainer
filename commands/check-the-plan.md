@@ -10,10 +10,11 @@ Review an implementation plan before code changes.
 4. Inspect the plan, likely affected files, contracts, tests, and risk areas.
 5. Build the evidence sheet with `docs/FACT_SHEET.md`.
 6. Generate or recommend a compact/standard plan-review artifact.
-7. Apply `docs/QUALITY_BAR.md`.
-8. Apply `docs/CHAIN.md` so approve, revise, reject, split, or implement becomes selectable.
-9. Apply `docs/MEMORY_ACCESS.md` when the review may be reused.
-10. Apply `docs/DELIVERY.md`.
+7. Apply `docs/HUMAN_INTERFACE.md`.
+8. Apply `docs/QUALITY_BAR.md`.
+9. Apply `docs/CHAIN.md` so approve, revise, reject, split, or implement becomes selectable.
+10. Apply `docs/MEMORY_ACCESS.md` when the review may be reused.
+11. Apply `docs/DELIVERY.md`.
 
 ## Must Answer
 

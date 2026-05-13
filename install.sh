@@ -268,6 +268,7 @@ if [ "$DRY_RUN" = "0" ]; then
   verify_file "$CLAUDE_HOME/html-explainer/docs/FACT_SHEET.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/CHAIN.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/DELIVERY.md"
+  verify_file "$CLAUDE_HOME/html-explainer/docs/HUMAN_INTERFACE.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/LANGUAGE_POLICY.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/USER_VALUE.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/USER_FACING_COPY.md"

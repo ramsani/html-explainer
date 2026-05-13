@@ -44,6 +44,14 @@ The user should see plain labels such as "What you need", "What I checked", "Wha
 
 Avoid exposing internal labels such as "Primary intent", "Artifact budget", "HTML advantage", "Pattern routing", "Quality gate", or "Fact sheet" in the visible artifact unless the user specifically asks for implementation detail.
 
+## Human Interface
+
+Apply `docs/HUMAN_INTERFACE.md`.
+
+Invite the user into the next useful action without pressure. The artifact may recommend one best next move, but it should also leave the user free to compare, revise, think this through, save for later, or stop.
+
+If interaction exists, it must put useful power in the user's mouse: compare, tune, preview, copy, export, save, or continue.
+
 ## Lean Rendering
 
 Keep the HTML small:

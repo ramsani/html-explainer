@@ -13,6 +13,7 @@ Use:
 - `docs/PATTERN_GUIDE.md`
 - the selected `patterns/NN-*.md` file
 - `docs/QUALITY_BAR.md`
+- `docs/HUMAN_INTERFACE.md`
 - `docs/CHAIN.md` when follow-up work is likely
 - `docs/MEMORY_ACCESS.md` when the artifact may be reused
 

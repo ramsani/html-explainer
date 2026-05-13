@@ -49,6 +49,7 @@ Every pattern must contain:
 - at least 3 failure modes;
 - at least 1 tie-breaker or "do not use when" rule;
 - acceptance criteria;
+- human interface contract;
 - visual explainer contract.
 
 ## Use Pattern Files
@@ -56,3 +57,9 @@ Every pattern must contain:
 After routing, open the matching file under `patterns/`.
 
 Do not rely only on the table. The pattern file carries the evidence, structure, failure modes, and acceptance criteria.
+
+## Human Interface Contract
+
+Every pattern must apply `docs/HUMAN_INTERFACE.md`.
+
+The artifact must show the user one recommended next move and a small set of optional actions. It should invite deeper functions such as compare, review, think this through, save, or continue only when they help the user's intent.

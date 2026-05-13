@@ -23,6 +23,10 @@ Acceptance criteria: a stakeholder can understand and challenge the decision qui
 
 Use a deck when the artifact must align people. Use comparison or architecture when the user alone needs to make a technical choice.
 
+## Human interface contract
+
+Apply `docs/HUMAN_INTERFACE.md`. The artifact must recommend one best next move while keeping optional actions visible: continue, revise, compare, think this through, save for later, or stop when enough. Any interaction must give the user real control, not decoration.
+
 ## Visual explainer contract
 
 Apply `docs/PATTERN_GUIDE.md` for this pattern. The artifact must include the primary visual model, useful interaction when it removes work, a decisive first screen, and a clear reason it is substantially better than Markdown.
