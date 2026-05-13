@@ -82,6 +82,7 @@ jobs:
           test -f docs/QUALITY_BAR.md
           test -f docs/LEAN_HTML_RENDERING.md
           test -f docs/fact-sheet-protocol.md
+          test -f docs/INSIGHT_SURFACE_LOOP.md
           test -f skills/thariq-html-effectiveness/SKILL.md
           test -f commands/pick-the-right-html.md
           test -f commands/make-the-right-html.md
@@ -90,6 +91,8 @@ jobs:
           test -f commands/reenter-project.md
           test -f commands/build-decision-tool.md
           test -f commands/audit-html.md
+          test -f commands/think-with-me-about.md
+          test -f patterns/22-insight-surface-loop.md
           test -f examples/plan-review-minimal.example.html
           test -f examples/diff-review-minimal.example.html
           test -f examples/prompt-tuner-minimal.example.html
@@ -99,3 +102,4 @@ jobs:
           test -f examples/ticket-triage.example.html
           test -f examples/prompt-tuner-full.example.html
           test -f examples/visual-direction-explorer.example.html
+          test -f examples/think-with-me-about.example.html
