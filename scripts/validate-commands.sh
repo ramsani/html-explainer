@@ -12,6 +12,7 @@ expected=(
   reenter-project
   build-decision-tool
   audit-html
+  think-with-me-about
 )
 
 legacy=(

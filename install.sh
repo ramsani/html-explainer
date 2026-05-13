@@ -21,6 +21,7 @@ COMMANDS=(
   reenter-project
   build-decision-tool
   audit-html
+  think-with-me-about
 )
 LEGACY_COMMANDS=(
   html-effectiveness
@@ -104,7 +105,7 @@ write_claude_md_block() {
 <!-- html-explainer:start -->
 ## html-explainer
 
-Use html-explainer when the user asks for an HTML artifact, or when a complex plan, diff, PR, architecture, repo recap, workflow, design exploration, report, triage board, config editor, or prompt-tuning task would be easier to understand in a browser than in Markdown.
+Use html-explainer when the user asks for an HTML artifact, or when a complex plan, diff, PR, architecture, repo recap, workflow, design exploration, report, triage board, config editor, prompt-tuning task, or iterative thinking task would be easier to understand in a browser than in Markdown.
 
 Core operating path:
 
@@ -121,6 +122,7 @@ Prefer these installed commands:
 - `/reenter-project` for repo recaps and project reentry.
 - `/build-decision-tool` for interactive editors, triage boards, or prompt/config tuners.
 - `/audit-html` to score and improve an artifact.
+- `/think-with-me-about` to think through a topic using an Insight Surface Loop.
 
 Do not use HTML for simple answers, one commands, tiny facts, or low-consequence notes. Every artifact must preserve the user's primary intent, cover obvious secondary intents when they affect the decision, show evidence, separate facts/inferences/unknowns, use the smallest useful budget, and end with a copy/edit next prompt that carries intent, evidence, acceptance criteria, out-of-scope items, and block conditions when useful.
 
@@ -264,10 +266,12 @@ if [ "$DRY_RUN" = "0" ]; then
   verify_file "$CLAUDE_HOME/html-explainer/docs/FACT_SHEET.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/CHAIN.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/DELIVERY.md"
+  verify_file "$CLAUDE_HOME/html-explainer/docs/INSIGHT_SURFACE_LOOP.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/reference/INTENT_DISTILLATION.md"
   verify_file "$CLAUDE_HOME/html-explainer/patterns/01-code-approach-comparison.md"
   verify_file "$CLAUDE_HOME/html-explainer/patterns/20-prompt-agent-behavior-tuner.md"
   verify_file "$CLAUDE_HOME/html-explainer/patterns/21-visual-direction-explorer.md"
+  verify_file "$CLAUDE_HOME/html-explainer/patterns/22-insight-surface-loop.md"
   grep -qF "$HTML_EXPLAINER_BLOCK_START" "$CLAUDE_MD_FILE" || {
     echo "Verification failed. Missing html-explainer guide in $CLAUDE_MD_FILE" >&2
     exit 1
