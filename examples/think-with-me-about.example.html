@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Think With Me About — Insight Surface Example</title>
+<style>
+:root{--bg:#f8fafc;--panel:#fff;--ink:#111827;--muted:#64748b;--line:#cbd5e1;--soft:#f1f5f9;--good:#166534;--good-bg:#dcfce7;--warn:#92400e;--warn-bg:#fef3c7;--bad:#991b1b;--bad-bg:#fee2e2;--blue:#1d4ed8;--blue-bg:#dbeafe;--purple:#6d28d9;--purple-bg:#ede9fe}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}.wrap{max-width:1180px;margin:auto;padding:28px}.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;margin:14px 0}.hero{border-top:6px solid var(--blue)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.badge{display:inline-block;border-radius:999px;padding:5px 9px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.02em}.good{background:var(--good-bg);color:var(--good)}.warn{background:var(--warn-bg);color:var(--warn)}.bad{background:var(--bad-bg);color:var(--bad)}.blue{background:var(--blue-bg);color:var(--blue)}.purple{background:var(--purple-bg);color:var(--purple)}.neutral{background:var(--soft);color:var(--muted)}.muted{color:var(--muted)}.metric{font-size:28px;font-weight:900}.section-title{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.list{margin:8px 0 0 0;padding-left:20px}.decision{border-left:5px solid var(--blue);padding-left:12px}.risk{border-left:5px solid var(--warn);padding-left:12px}.inversion{border-left:5px solid var(--bad);padding-left:12px}.insight{border-left:5px solid var(--good);padding-left:12px}textarea{width:100%;min-height:110px;border:1px solid var(--line);background:var(--soft);color:var(--ink);border-radius:10px;padding:12px;font:13px ui-monospace,SFMono-Regular,Menlo,monospace}.btn{border:0;border-radius:10px;padding:10px 12px;font-weight:800;background:#111827;color:#fff;cursor:pointer}code{background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:2px 5px}.table{width:100%;border-collapse:collapse}th,td{border-bottom:1px solid var(--line);text-align:left;padding:10px;vertical-align:top}th{font-size:12px;text-transform:uppercase;color:var(--muted);background:var(--soft)}@media(prefers-color-scheme:dark){:root{--bg:#0f172a;--panel:#111827;--ink:#e5e7eb;--muted:#94a3b8;--line:#334155;--soft:#1f2937;--good-bg:#052e16;--good:#86efac;--warn-bg:#451a03;--warn:#fcd34d;--bad-bg:#450a0a;--bad:#fca5a5;--blue-bg:#172554;--blue:#93c5fd;--purple-bg:#2e1065;--purple:#c4b5fd}.btn{background:#e5e7eb;color:#111827}}@media(max-width:900px){.grid,.two{grid-template-columns:1fr}.wrap{padding:16px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header class="card hero">
+  <p><span class="badge blue">Example</span> <span class="badge purple">Insight Surface Loop</span> <span class="badge warn">Replaceable knowledge</span></p>
+  <h1>Think With Me About: How html-explainer can help users reach better conclusions faster</h1>
+  <p class="muted">This example shows how a vague topic becomes a visual thinking surface with evidence, assumptions, tension, inversion, synthesis, action, and a next prompt.</p>
+  <div class="decision">
+    <strong>Provisional conclusion:</strong> The strongest version is not “HTML for thinking.” It is a low-friction thinking loop that turns unclear ideas into reusable local knowledge through evidence, inversion, action, and re-entry.
+  </div>
+</header>
+
+<section class="grid">
+  <article class="card"><div class="metric">Medium</div><div class="muted">Confidence</div><p>Based on current repo direction, not yet validated by user testing.</p></article>
+  <article class="card"><div class="metric">1</div><div class="muted">Next action</div><p>Create the first KISS command and one example artifact before adding automation.</p></article>
+  <article class="card"><div class="metric">Save</div><div class="muted">Archive recommendation</div><p>Classify as <code>replaceable</code>; it should be improved after real use.</p></article>
+</section>
+
+<section class="card" id="north-star">
+  <div class="section-title"><h2>North Star</h2><span class="badge blue">Frame</span></div>
+  <table class="table">
+    <tr><th>Field</th><th>Current answer</th></tr>
+    <tr><td>Topic</td><td>How can html-explainer help users think through complex ideas and reach better conclusions faster?</td></tr>
+    <tr><td>Real question</td><td>Can the repo become a thinking companion without becoming a heavy app?</td></tr>
+    <tr><td>Decision sought</td><td>Whether to add a `/think-with-me-about` command and Insight Surface Loop pattern.</td></tr>
+    <tr><td>Constraint</td><td>KISS, lean, fast, local-first, no heavy runtime.</td></tr>
+  </table>
+</section>
+
+<section class="two">
+  <article class="card" id="evidence-board">
+    <div class="section-title"><h2>Evidence Board</h2><span class="badge good">Ground</span></div>
+    <h3>Facts</h3>
+    <ul class="list"><li>The repo already uses decision gates, pattern routing, fact sheets, quality bars, delivery rules, and next prompts.</li><li>The artifact memory direction gives a place to preserve useful conclusions.</li></ul>
+    <h3>Inferences</h3>
+    <ul class="list"><li>A thinking surface can compose existing repo capabilities instead of adding a disconnected feature.</li><li>HTML is useful when multiple thinking layers must stay visible at once.</li></ul>
+    <h3>Assumptions</h3>
+    <ul class="list"><li>Users will value guided thinking if it feels lightweight.</li><li>A command name like `/think-with-me-about` lowers adoption friction.</li></ul>
+    <h3>Unknowns</h3>
+    <ul class="list"><li>Whether users will prefer this over normal chat for simple topics.</li><li>Which sections should be hidden or collapsed in future versions.</li></ul>
+  </article>
+
+  <article class="card" id="perspective-map">
+    <div class="section-title"><h2>Perspective Map</h2><span class="badge purple">Expand</span></div>
+    <ul class="list"><li><strong>User:</strong> wants clearer conclusions in less time.</li><li><strong>Repo maintainer:</strong> needs low-friction implementation and validation.</li><li><strong>Agent:</strong> needs a structured loop to avoid vague brainstorming.</li><li><strong>Future knowledge base:</strong> needs clean metadata and re-entry prompts.</li><li><strong>Risk lens:</strong> the feature fails if it becomes a generic dashboard or theory lecture.</li></ul>
+  </article>
+</section>
+
+<section class="two">
+  <article class="card risk" id="tension-map">
+    <div class="section-title"><h2>Tension Map</h2><span class="badge warn">Stress</span></div>
+    <ul class="list"><li><strong>Depth vs friction:</strong> more thinking structure can improve insight but overwhelm the user.</li><li><strong>Clarity vs completeness:</strong> the first version must not cover every cognitive model.</li><li><strong>Artifact vs app:</strong> the feature should remain one self-contained HTML surface, not become a product.</li><li><strong>Insight vs decoration:</strong> visuals must change the thinking, not merely organize text.</li></ul>
+  </article>
+
+  <article class="card inversion" id="inversion-panel">
+    <div class="section-title"><h2>Inversion Panel</h2><span class="badge bad">How this fails</span></div>
+    <ul class="list"><li>It becomes a pretty brainstorm with no conclusion.</li><li>It names many thinking models and helps with none.</li><li>It asks the user to fill too many fields.</li><li>It archives low-value scratch work as if it were durable knowledge.</li><li>It creates fake confidence or unsupported insight.</li></ul>
+  </article>
+</section>
+
+<section class="card insight" id="insight-card">
+  <div class="section-title"><h2>Insight Card</h2><span class="badge good">Synthesize</span></div>
+  <p><strong>Strongest insight:</strong> The asymmetric value is not the thinking method alone. It is the composition of thinking method + decision-ready HTML + artifact memory + re-entry prompts.</p>
+  <p><strong>Provisional conclusion:</strong> Add `/think-with-me-about` as a KISS command backed by the Insight Surface Loop. Keep the first version simple: one method doc, one command, one pattern, one example artifact.</p>
+  <p><strong>What would change this conclusion:</strong> If the first example cannot feel simpler than a normal chat answer, the command should be narrowed or postponed.</p>
+</section>
+
+<section class="card" id="action-queue">
+  <div class="section-title"><h2>Action Queue</h2><span class="badge blue">Decide</span></div>
+  <table class="table">
+    <tr><th>Action</th><th>Recommendation</th></tr>
+    <tr><td>Do now</td><td>Create the method doc, command, pattern, and one example artifact.</td></tr>
+    <tr><td>Test next</td><td>Use the command on a real unclear repo/product decision.</td></tr>
+    <tr><td>Investigate</td><td>Which sections users actually need on the first screen.</td></tr>
+    <tr><td>Stop doing</td><td>Do not add a mind-map app, database, or heavy interaction.</td></tr>
+    <tr><td>Decision status</td><td>Proceed with a minimal PR.</td></tr>
+  </table>
+</section>
+
+<section class="card" id="preserve-reenter">
+  <div class="section-title"><h2>Preserve / Re-enter</h2><span class="badge purple">Next cycle</span></div>
+  <p><strong>Archive recommendation:</strong> Save as <code>replaceable</code>.</p>
+  <p><strong>Freshness risk:</strong> Medium. It should be refreshed after the first real user test.</p>
+  <p><strong>Suggested tags:</strong> <code>think-with-me-about</code>, <code>insight-surface-loop</code>, <code>decision-html</code>, <code>artifact-memory</code></p>
+  <textarea id="next">/think-with-me-about whether the first implementation of /think-with-me-about is actually simpler and more useful than a normal chat answer. Use the current example artifact as context. Stress-test friction, evidence quality, first-screen clarity, and whether the output produces a stronger conclusion and next action.</textarea>
+  <p><button class="btn" onclick="navigator.clipboard.writeText(document.getElementById('next').value)">Copy next prompt</button></p>
+</section>
+</main>
+</body>
+</html>
