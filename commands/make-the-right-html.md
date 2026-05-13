@@ -26,15 +26,16 @@ Create an artifact that helps the user inspect, compare, verify, decide, or re-e
 16. Inspect real sources before generation.
 17. Build a fact sheet using `docs/fact-sheet-protocol.md`.
 18. Separate facts, inferences, unsupported claims, and unknowns.
-19. Generate the smallest useful HTML artifact.
-20. Apply `docs/QUALITY_BAR.md` before finalizing.
-21. Compare against `docs/GOLDEN_OUTPUTS.md` when the artifact is a PR review, visual exploration, or project reentry.
-22. Include uncertainty visibly.
-23. Apply `docs/HTML_ARTIFACT_CHAINS.md` when the work naturally needs exploration, planning, review, or handoff across multiple artifacts.
-24. Apply `docs/SHARE_AND_REENTRY.md` when the artifact may be shared or used by another agent later.
-25. Apply `docs/NEXT_ACTION_HANDOFF.md` so the artifact ends with a copy-ready next step.
-26. Apply `docs/HTML_DELIVERY.md` so the final response includes a clickable absolute path and opens the artifact when tool access allows it.
-27. Save the artifact to a reasonable local path when tool access allows it.
+19. Separate repo/product files from local generated session artifacts.
+20. Generate the smallest useful HTML artifact.
+21. Apply `docs/QUALITY_BAR.md` before finalizing.
+22. Compare against `docs/GOLDEN_OUTPUTS.md` when the artifact is a PR review, visual exploration, or project reentry.
+23. Include uncertainty visibly.
+24. Apply `docs/HTML_ARTIFACT_CHAINS.md` when the work naturally needs exploration, planning, review, or handoff across multiple artifacts.
+25. Apply `docs/SHARE_AND_REENTRY.md` when the artifact may be shared or used by another agent later.
+26. Apply `docs/NEXT_ACTION_HANDOFF.md` so the artifact ends with a copy-ready next step.
+27. Apply `docs/HTML_DELIVERY.md` so the final response includes a clickable absolute path and opens the artifact when tool access allows it.
+28. Save the artifact to a reasonable local path when tool access allows it.
 
 ## Required artifact sections
 
@@ -52,6 +53,7 @@ Create an artifact that helps the user inspect, compare, verify, decide, or re-e
 - UX contract
 - Evidence inspected
 - Fact sheet
+- Local artifact classification when the repo contains generated outputs
 - Current state
 - Visual model, comparison, map, timeline, table, prototype, or editor
 - Risks
@@ -98,6 +100,8 @@ Before responding, verify:
 - Did the first screen make the supported decision obvious?
 - Did it inspect evidence?
 - Did it separate facts from inference?
+- Did it avoid turning local generated HTML into a product risk unless evidence supports that?
+- Did it verify CI/tags/examples before claiming they are missing?
 - Did it make uncertainty visible?
 - Did it improve decision quality over Markdown?
 - Did every interaction create useful state or exportable output?

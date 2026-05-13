@@ -90,6 +90,13 @@ The artifact must clearly separate:
 - unknowns
 - unsupported claims
 
+The artifact must also separate:
+
+- repo/product files;
+- local generated session artifacts;
+- candidate examples;
+- ignored or intentionally untracked files.
+
 ### 8. Correct pattern fit
 
 The artifact must use the right form for the work:
@@ -232,6 +239,8 @@ Add credit when:
 Subtract 20 if the artifact is mostly a technical inventory.
 Subtract 15 if next options are unlikely or scary for the situation.
 Subtract 10 if it mixes languages in a way that makes reading harder.
+Subtract 15 if it treats local generated HTML as the main product risk without evidence that it affects users.
+Subtract 15 if it claims CI, tags, or validation gaps without inspecting the relevant source first.
 
 ### 18. Visual explainer value
 
@@ -311,6 +320,7 @@ Use this score when auditing an artifact:
 Fail the artifact if it:
 
 - invents inspected files or commands;
+- makes stale or unverified repo claims that change the recommendation;
 - does not justify the cost of HTML;
 - does not pass any HTML advantage test;
 - should have been Markdown;

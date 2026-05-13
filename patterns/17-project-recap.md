@@ -42,6 +42,8 @@ Before generating HTML:
 2. Identify project purpose, architecture, workflows, constraints, risks, and open questions.
 3. Do not summarize README only.
 4. Separate verified facts, inferences, and unknowns.
+5. Classify generated local artifacts separately from repo/product files. Do not make local HTML outputs the main risk unless they are tracked, published, or blocking the user's goal.
+6. Verify CI, tags, dirty files, examples, and validation scripts before calling them missing.
 
 The HTML must help a user or agent re-enter the project and decide the next safe action.
 
@@ -93,6 +95,7 @@ Good visual forms:
 - risk/constraint board;
 - next-action checklist;
 - verified vs inferred badges.
+- local artifact hygiene strip only when generated files affect the current decision.
 
 ## Quality checklist
 
@@ -102,6 +105,8 @@ Good visual forms:
 - Risks are operational.
 - Next action is specific and low ambiguity.
 - The recap distinguishes current facts from stale/inferred context.
+- Local generated artifacts are classified without exaggerating their product risk.
+- Claims about CI, tags, examples, and validation are checked against live files or marked as unverified.
 - The first screen answers "what is this, why does it matter, and what should I do next?"
 - It includes at least one visual orientation model: system map, workflow map, risk map, or reentry path.
 
@@ -149,6 +154,8 @@ Why bad: not enough to re-enter a real project.
 - No uncertainty markers.
 - Treating old docs as current without checking.
 - Creating a technical inventory instead of a reentry explanation.
+- Treating session-generated HTML as the repo's highest risk.
+- Claiming CI or versioning gaps without inspecting `.github/workflows/`, `git tag --list`, or the README.
 
 ## Acceptance criteria
 

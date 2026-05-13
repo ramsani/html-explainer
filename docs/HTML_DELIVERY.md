@@ -19,6 +19,25 @@ Next command:
 
 `Open` should be a clickable absolute path when the environment supports file links.
 
+## Save location
+
+When generating an artifact inside a repo, avoid writing it to the repo root unless the user explicitly asks for that.
+
+Prefer:
+
+```text
+<repo>/.html-explainer/artifacts/<clear-slug>.html
+```
+
+or an existing artifact/output directory if the repo already has one.
+
+Why:
+
+- generated HTML should not pollute the project root;
+- later repo recaps should not treat local review artifacts as product files;
+- the user still gets a clickable absolute path;
+- curated examples remain in `examples/`.
+
 ## Open behavior
 
 When tool access allows it and doing so will not disrupt the user:
@@ -40,7 +59,7 @@ Use absolute paths in final responses.
 Good:
 
 ```text
-Open: [project-recap.html](/Users/papa/0Proyectos/html-explainer/project-recap.html)
+Open: [project-recap.html](/Users/papa/0Proyectos/html-explainer/.html-explainer/artifacts/project-recap.html)
 ```
 
 Bad:

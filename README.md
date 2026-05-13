@@ -625,6 +625,14 @@ Then generate:
 /make-the-right-html genera el artefacto HTML correcto usando router, pattern file, fact sheet, quality bar, evidencia, riesgos, incertidumbre y criterio de éxito.
 ```
 
+Generated local artifacts should be saved under:
+
+```text
+<repo>/.html-explainer/artifacts/
+```
+
+The repo ignores local generated HTML in the project root so test artifacts do not get confused with product files.
+
 For repo workflows:
 
 ```text

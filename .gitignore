@@ -1,0 +1,4 @@
+# Local HTML artifacts generated while using the skill.
+# Curated examples belong in examples/ and remain tracked.
+/*.html
+/.html-explainer/
