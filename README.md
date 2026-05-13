@@ -52,6 +52,8 @@ It also protects the human side of the interaction:
 - interactive controls must help compare, tune, preview, copy, export, save, or continue;
 - the artifact should feel like capable support, not visible machinery.
 
+The V1 closeout audit checks every repo function against this promise. See [`docs/V1_FUNCTION_AUDIT.md`](docs/V1_FUNCTION_AUDIT.md).
+
 ## What The User Gets
 
 `html-explainer` turns agent output into a browser-readable decision surface.
