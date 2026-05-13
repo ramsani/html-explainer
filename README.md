@@ -224,6 +224,31 @@ For common repo work:
 /think-with-me-about cómo debería decidir si esta idea merece convertirse en producto.
 ```
 
+## Natural Workflow
+
+Use the commands like working modes:
+
+| Situation | Use | Example prompt |
+|---|---|---|
+| You have a vague idea or hard question | `/think-with-me-about` | `/think-with-me-about si esta idea debería convertirse en producto o solo quedarse como aprendizaje.` |
+| You are not sure HTML is worth it | `/pick-the-right-html` | `/pick-the-right-html revisa esta tarea y dime qué artefacto conviene crear. No generes todavía el HTML.` |
+| You already want the artifact | `/make-the-right-html` | `/make-the-right-html crea el artefacto correcto con evidencia, riesgos, siguiente acción y memoria reutilizable.` |
+| You have a plan before implementation | `/check-the-plan` | `/check-the-plan revisa este plan antes de implementarlo: <plan>` |
+| Files already changed | `/check-the-diff` | `/check-the-diff revisa los cambios actuales y dime si debo aceptar, corregir, verificar o dividir.` |
+| You are returning to a repo | `/reenter-project` | `/reenter-project ayúdame a entender dónde está este repo, qué está sólido, qué falta y cuál es el siguiente paso.` |
+| You need to compare or tune options | `/build-decision-tool` | `/build-decision-tool crea una herramienta para priorizar estas tareas por valor, riesgo y esfuerzo.` |
+| You already have an HTML artifact | `/audit-html` | `/audit-html revisa este artefacto HTML y dime si realmente ayuda o solo se ve bonito.` |
+
+Typical sequence:
+
+```text
+/think-with-me-about <idea or decision>
+/pick-the-right-html <same topic, after the thinking pass>
+/make-the-right-html <recommended artifact>
+/check-the-plan <plan before implementation>
+/check-the-diff <changes before accepting>
+```
+
 Generated artifacts should be saved in a practical local path, opened in the browser when the environment allows it, and returned with a clickable absolute path.
 
 ## Local Artifact Memory
