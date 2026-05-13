@@ -1,0 +1,63 @@
+{
+  "schema_version": "0.1.0",
+  "id": "repo-recap-html-explainer-2026-05-13-a1bc24a",
+  "title": "html-explainer repo recap",
+  "created_at": "2026-05-13T00:00:00-07:00",
+  "updated_at": "2026-05-13T00:00:00-07:00",
+  "artifact_path": "artifacts/replaceable/repo-recap-html-explainer-2026-05-13-a1bc24a.html",
+  "metadata_path": "metadata/replaceable/repo-recap-html-explainer-2026-05-13-a1bc24a.json",
+  "artifact_type": "project-recap",
+  "pattern": "17-project-recap",
+  "validity": "replaceable",
+  "freshness_risk": "medium",
+  "privacy": "local",
+  "project": "html-explainer",
+  "source_context": [
+    {
+      "type": "repo",
+      "name": "ramsani/html-explainer",
+      "ref": "a1bc24a",
+      "inspected": [
+        "README.md",
+        "install.sh",
+        "commands/",
+        "patterns/",
+        "scripts/",
+        ".github/workflows/ci.yml"
+      ]
+    }
+  ],
+  "claims_scope": "Valid for the inspected repo state and files listed in source_context.",
+  "summary": "Explains repo purpose, operating model, current strengths, risks, and next best action.",
+  "key_decisions": [
+    "Treat generated HTML as decision surfaces, not decoration.",
+    "Preserve evidence, uncertainty, and next prompts."
+  ],
+  "known_limits": [
+    "Does not prove behavior quality across scenario tests.",
+    "May become stale after major README, installer, command, or pattern changes."
+  ],
+  "supersedes": [
+    "old-repo-map-2026-05-01"
+  ],
+  "superseded_by": null,
+  "related_artifacts": [
+    "decision-surface-principles-2026-05-13"
+  ],
+  "recommended_review_date": "2026-06-13",
+  "review_triggers": [
+    "major installer change",
+    "pattern system change",
+    "README repositioning",
+    "new scenario test harness"
+  ],
+  "original_prompt": "Review this repo and help me understand its biggest opportunity using HTML only if it is justified.",
+  "handoff_prompt": "/reenter-project inspect the current html-explainer repo state and refresh the replaceable repo recap if README, install scripts, commands, patterns, scripts, or CI changed materially.",
+  "next_action": "Add scenario-based behavior tests before expanding feature scope.",
+  "tags": [
+    "repo-recap",
+    "claude-code",
+    "html-artifact",
+    "decision-surface"
+  ]
+}

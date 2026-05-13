@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>html-explainer Artifact Explorer</title>
+<style>
+:root{--bg:#f8fafc;--panel:#fff;--ink:#111827;--muted:#64748b;--line:#cbd5e1;--soft:#f1f5f9;--good:#166534;--good-bg:#dcfce7;--warn:#92400e;--warn-bg:#fef3c7;--bad:#991b1b;--bad-bg:#fee2e2;--blue:#1d4ed8;--blue-bg:#dbeafe;--purple:#6d28d9;--purple-bg:#ede9fe}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}.wrap{max-width:1220px;margin:auto;padding:28px}.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;margin:14px 0}.hero{border-top:6px solid var(--blue)}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.two{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}.badge{display:inline-block;border-radius:999px;padding:5px 9px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.02em}.temporal{background:var(--warn-bg);color:var(--warn)}.replaceable{background:var(--blue-bg);color:var(--blue)}.evergreen{background:var(--good-bg);color:var(--good)}.superseded{background:var(--bad-bg);color:var(--bad)}.private{background:var(--purple-bg);color:var(--purple)}.neutral{background:var(--soft);color:var(--muted)}.metric{font-size:30px;font-weight:900}.muted{color:var(--muted)}button,input,select,textarea{font:inherit}input,select{width:100%;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:10px;padding:10px}.filters{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:10px}.artifact{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--panel);margin:10px 0}.artifact h3{margin:.2rem 0}.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.btn{border:0;border-radius:10px;padding:9px 11px;font-weight:800;background:#111827;color:#fff;cursor:pointer}.btn.secondary{background:var(--soft);color:var(--ink);border:1px solid var(--line)}.decision{border-left:5px solid var(--blue);padding-left:12px}.risk-high{border-left:5px solid var(--bad)}.risk-medium{border-left:5px solid var(--warn)}.risk-low{border-left:5px solid var(--good)}textarea{width:100%;min-height:96px;border:1px solid var(--line);background:var(--soft);color:var(--ink);border-radius:10px;padding:12px;font:13px ui-monospace,SFMono-Regular,Menlo,monospace}.small{font-size:13px}.empty{display:none;padding:18px;text-align:center;color:var(--muted)}@media(prefers-color-scheme:dark){:root{--bg:#0f172a;--panel:#111827;--ink:#e5e7eb;--muted:#94a3b8;--line:#334155;--soft:#1f2937;--good-bg:#052e16;--good:#86efac;--warn-bg:#451a03;--warn:#fcd34d;--bad-bg:#450a0a;--bad:#fca5a5;--blue-bg:#172554;--blue:#93c5fd;--purple-bg:#2e1065;--purple:#c4b5fd}.btn{background:#e5e7eb;color:#111827}.btn.secondary{background:#1f2937;color:#e5e7eb}}@media(max-width:900px){.grid,.two,.filters{grid-template-columns:1fr}.wrap{padding:16px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="card hero">
+    <p><span class="badge replaceable">Local-first</span> <span class="badge evergreen">Decision-ready explorer</span></p>
+    <h1>html-explainer Artifact Explorer</h1>
+    <p class="muted">This page is a reference explorer for local generated HTML artifacts. It is not a generic archive table: it helps decide what to open, refresh, supersede, reuse, or ignore.</p>
+    <div class="decision">
+      <strong>Core path:</strong>
+      <code>intent -> evidence -> visual understanding -> decision -> expert next prompt</code>
+    </div>
+  </header>
+
+  <section class="grid" aria-label="Artifact summary">
+    <div class="card"><div class="metric" id="count-total">0</div><div class="muted">Total artifacts</div></div>
+    <div class="card"><div class="metric" id="count-open-next">0</div><div class="muted">Suggested to open</div></div>
+    <div class="card"><div class="metric" id="count-review">0</div><div class="muted">Need review</div></div>
+    <div class="card"><div class="metric" id="count-private">0</div><div class="muted">Private/local only</div></div>
+  </section>
+
+  <section class="two">
+    <article class="card">
+      <h2>Next decision</h2>
+      <p id="next-decision" class="muted">Load an index to see what should be opened first.</p>
+    </article>
+    <aside class="card">
+      <h2>Use with local index</h2>
+      <p class="small muted">Place this explorer beside a local <code>index.json</code>, or paste sample index JSON into the browser console during early testing. This template ships with sample data so the behavior is visible immediately.</p>
+    </aside>
+  </section>
+
+  <section class="card">
+    <h2>Filters</h2>
+    <div class="filters">
+      <label>Search<input id="search" placeholder="Search title, project, tags, summary"></label>
+      <label>Validity<select id="validity"><option value="all">All</option><option value="temporal">Temporal</option><option value="replaceable">Replaceable</option><option value="evergreen">Evergreen</option><option value="superseded">Superseded</option><option value="private">Private</option><option value="do-not-reuse">Do not reuse</option></select></label>
+      <label>Freshness<select id="freshness"><option value="all">All</option><option value="high">High risk</option><option value="medium">Medium risk</option><option value="low">Low risk</option><option value="unknown">Unknown</option></select></label>
+      <label>Project<select id="project"><option value="all">All projects</option></select></label>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Artifacts</h2>
+    <div id="artifact-list"></div>
+    <div id="empty" class="empty">No artifacts match the current filters.</div>
+  </section>
+
+  <section class="card">
+    <h2>Copy-ready re-entry prompt</h2>
+    <p class="muted">Select an artifact to generate a practical next prompt.</p>
+    <textarea id="prompt" readonly>Open an artifact to generate a re-entry prompt.</textarea>
+    <p><button class="btn" onclick="copyPrompt()">Copy prompt</button></p>
+  </section>
+</main>
+<script>
+const sampleIndex={schema_version:"0.1.0",generated_at:"2026-05-13T00:00:00-07:00",output_root:"~/.claude/html-explainer/outputs",artifacts:[{id:"repo-recap-html-explainer-2026-05-13-a1bc24a",title:"html-explainer repo recap",created_at:"2026-05-13T00:00:00-07:00",artifact_path:"artifacts/replaceable/repo-recap-html-explainer-2026-05-13-a1bc24a.html",metadata_path:"metadata/replaceable/repo-recap-html-explainer-2026-05-13-a1bc24a.json",artifact_type:"project-recap",pattern:"17-project-recap",validity:"replaceable",freshness_risk:"medium",privacy:"local",project:"html-explainer",summary:"Repo recap with evidence, risks, and next action.",tags:["repo-recap","claude-code","decision-surface"]},{id:"decision-surface-principles-2026-05-13",title:"Decision surface principles",created_at:"2026-05-13T00:00:00-07:00",artifact_path:"artifacts/evergreen/decision-surface-principles-2026-05-13.html",metadata_path:"metadata/evergreen/decision-surface-principles-2026-05-13.json",artifact_type:"concept-explainer",pattern:"13-concept-explainer",validity:"evergreen",freshness_risk:"low",privacy:"shareable",project:"html-explainer",summary:"Evergreen explanation of when HTML becomes useful for decisions rather than decoration.",tags:["principles","html","quality-bar"]},{id:"tool-pricing-comparison-2026-05-13",title:"Tool pricing comparison",created_at:"2026-05-13T00:00:00-07:00",artifact_path:"artifacts/temporal/tool-pricing-comparison-2026-05-13.html",metadata_path:"metadata/temporal/tool-pricing-comparison-2026-05-13.json",artifact_type:"research-comparison-map",pattern:"14-research-comparison-map",validity:"temporal",freshness_risk:"high",privacy:"local",project:"tool-evaluation",summary:"Time-sensitive comparison that should be refreshed when pricing or product plans change.",tags:["pricing","research","temporal"]},{id:"old-repo-map-2026-05-01",title:"Old repo map",created_at:"2026-05-01T00:00:00-07:00",artifact_path:"artifacts/superseded/old-repo-map-2026-05-01.html",metadata_path:"metadata/superseded/old-repo-map-2026-05-01.json",artifact_type:"module-map",pattern:"04-module-map",validity:"superseded",freshness_risk:"high",privacy:"local",project:"html-explainer",summary:"Older map kept for history after a newer repo recap replaced it.",tags:["repo-map","superseded"]},{id:"client-workflow-review-2026-05-13",title:"Client workflow review",created_at:"2026-05-13T00:00:00-07:00",artifact_path:"artifacts/private/client-workflow-review-2026-05-13.html",metadata_path:"metadata/private/client-workflow-review-2026-05-13.json",artifact_type:"workflow-flowchart",pattern:"10-process-workflow-flowchart",validity:"private",freshness_risk:"medium",privacy:"private",project:"private-client-work",summary:"Private local workflow review. Do not share without user review.",tags:["private","workflow"]}]};
+let artifacts=sampleIndex.artifacts;let selected=null;
+function badgeClass(v){return ["temporal","replaceable","evergreen","superseded","private"].includes(v)?v:"neutral"}
+function riskClass(r){return r==="high"?"risk-high":r==="medium"?"risk-medium":"risk-low"}
+function decisionFor(a){if(a.validity==="temporal"||a.freshness_risk==="high")return"refresh before relying";if(a.validity==="superseded")return"open only for history";if(a.validity==="evergreen")return"reuse as reference";if(a.validity==="private")return"keep local and review before sharing";if(a.validity==="replaceable")return"open, then consider superseding";return"inspect before reuse"}
+function reentryPrompt(a){return `/reenter-project use the local artifact "${a.title}" (${a.id}) as context. First inspect its metadata at ${a.metadata_path}. Decide whether to reuse, refresh, supersede, ignore, or keep private. Preserve its original intent, evidence basis, known limits, validity class, freshness risk, and next action. If refreshed, create a new artifact that links back to this one through supersedes/superseded_by metadata.`}
+function renderProjects(){const p=[...new Set(artifacts.map(a=>a.project).filter(Boolean))].sort();const el=document.getElementById('project');p.forEach(x=>{const o=document.createElement('option');o.value=x;o.textContent=x;el.appendChild(o)})}
+function filtered(){const q=document.getElementById('search').value.toLowerCase();const v=document.getElementById('validity').value;const f=document.getElementById('freshness').value;const p=document.getElementById('project').value;return artifacts.filter(a=>{const hay=[a.title,a.project,a.summary,a.pattern,(a.tags||[]).join(' ')].join(' ').toLowerCase();return(!q||hay.includes(q))&&(v==='all'||a.validity===v)&&(f==='all'||a.freshness_risk===f)&&(p==='all'||a.project===p)})}
+function render(){const list=document.getElementById('artifact-list');list.innerHTML='';const data=filtered();document.getElementById('empty').style.display=data.length?'none':'block';data.forEach(a=>{const d=document.createElement('article');d.className=`artifact ${riskClass(a.freshness_risk)}`;d.innerHTML=`<div class="row"><span class="badge ${badgeClass(a.validity)}">${a.validity}</span><span class="badge neutral">${a.pattern||'unknown pattern'}</span><span class="badge neutral">freshness: ${a.freshness_risk}</span></div><h3>${a.title}</h3><p>${a.summary||''}</p><p class="small muted"><strong>Project:</strong> ${a.project||'unknown'} · <strong>Created:</strong> ${a.created_at||'unknown'} · <strong>Decision:</strong> ${decisionFor(a)}</p><div class="actions"><a class="btn" href="${a.artifact_path}">Open artifact</a><a class="btn secondary" href="${a.metadata_path}">Open metadata</a><button class="btn secondary" data-id="${a.id}">Use for re-entry</button></div>`;d.querySelector('button').addEventListener('click',()=>selectArtifact(a.id));list.appendChild(d)});updateCounts();updateNextDecision(data)}
+function selectArtifact(id){selected=artifacts.find(a=>a.id===id);document.getElementById('prompt').value=reentryPrompt(selected)}
+function updateCounts(){document.getElementById('count-total').textContent=artifacts.length;document.getElementById('count-open-next').textContent=artifacts.filter(a=>['evergreen','replaceable'].includes(a.validity)).length;document.getElementById('count-review').textContent=artifacts.filter(a=>a.freshness_risk==='high'||a.validity==='temporal').length;document.getElementById('count-private').textContent=artifacts.filter(a=>a.privacy==='private'||a.validity==='private').length}
+function updateNextDecision(data){const target=data.find(a=>a.validity==='temporal'||a.freshness_risk==='high')||data.find(a=>a.validity==='replaceable')||data.find(a=>a.validity==='evergreen');document.getElementById('next-decision').textContent=target?`Open "${target.title}" and ${decisionFor(target)}.`:'No matching artifact. Clear filters or load a broader index.'}
+function copyPrompt(){navigator.clipboard&&navigator.clipboard.writeText(document.getElementById('prompt').value)}
+['search','validity','freshness','project'].forEach(id=>document.getElementById(id).addEventListener('input',render));renderProjects();render();
+</script>
+</body>
+</html>
