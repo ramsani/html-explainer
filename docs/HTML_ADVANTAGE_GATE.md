@@ -66,6 +66,14 @@ It must answer:
 
 If the user must hunt for the purpose, recommendation, or next action, the artifact fails.
 
+### 5. The user stays in the loop
+
+HTML should make the user more likely to read, inspect, challenge, adjust, or approve the work.
+
+Use HTML when it turns a plan, PR, report, or exploration into something the user can actively review instead of skim or ignore.
+
+If the artifact does not invite inspection or decision, it is underusing HTML.
+
 ## Required gate output
 
 Before generating HTML, state:
@@ -77,6 +85,7 @@ HTML will let the user:
 5-second first screen:
 Output produced:
 Decision:
+User-in-the-loop value:
 ```
 
 ## Explainer advantage
@@ -95,6 +104,8 @@ If the artifact is only a prettier inventory, revise it.
 The selected primary visual model should come from `docs/VISUAL_EXPLAINER_PLAYBOOK.md`.
 
 The artifact style should follow `docs/VISUAL_STYLE_STANDARD.md`: system light/dark, minimal, flat, professional, and explanation-first.
+
+The artifact should apply `docs/USER_IN_THE_LOOP.md`: it must make user inspection, choice, challenge, or export easier.
 
 `Decision` must be one of:
 

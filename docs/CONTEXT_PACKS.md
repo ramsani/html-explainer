@@ -13,6 +13,7 @@ Every serious artifact uses:
 - `docs/EXPLAINER_CLARITY.md`
 - `docs/VISUAL_EXPLAINER_PLAYBOOK.md`
 - `docs/THARIQ_SITE_LEARNINGS.md`
+- `docs/USER_IN_THE_LOOP.md`
 - `docs/VISUAL_STYLE_STANDARD.md`
 - `docs/ARTIFACT_BUDGET.md`
 - `docs/pattern-router.md`
@@ -117,6 +118,7 @@ Read more context only when:
 - the artifact will guide implementation;
 - the result will be shared with another person or agent;
 - a safety, data, auth, deploy, payment, or migration boundary appears.
+- local context can make the artifact materially less generic: git history, prior HTML artifacts, issue/PR context, connected tools, or browser context.
 
 ## Stop rules
 

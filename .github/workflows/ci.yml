@@ -65,6 +65,7 @@ jobs:
           test -f docs/HTML_ARTIFACT_CHAINS.md
           test -f docs/HTML_ADVANTAGE_GATE.md
           test -f docs/THARIQ_SITE_LEARNINGS.md
+          test -f docs/USER_IN_THE_LOOP.md
           test -f docs/VISUAL_EXPLAINER_PLAYBOOK.md
           test -f docs/VISUAL_STYLE_STANDARD.md
           test -f docs/NEXT_ACTION_HANDOFF.md

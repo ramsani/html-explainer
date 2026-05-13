@@ -19,6 +19,7 @@ Use:
 - `docs/EXPLAINER_CLARITY.md` to identify the reader, their likely confusion, and the action they need.
 - `docs/VISUAL_EXPLAINER_PLAYBOOK.md` to choose the primary visual model and useful interaction.
 - `docs/THARIQ_SITE_LEARNINGS.md` to apply the site-level lessons.
+- `docs/USER_IN_THE_LOOP.md` to decide how the artifact keeps the user involved.
 - `docs/VISUAL_STYLE_STANDARD.md` to require system light/dark and minimal, flat, professional styling.
 - `docs/pattern-router.md` to map task signals to the right pattern.
 - The selected file in `patterns/` to determine evidence requirements, HTML structure, quality checklist, failure modes, and acceptance criteria.
@@ -35,21 +36,22 @@ Use:
 3. Distill primary intent, obvious secondary intents, and base concept.
 4. Define the reader contract.
 5. Choose the primary visual model from the visual explainer playbook.
-6. State the visual style contract.
-7. Apply the HTML advantage gate.
-8. Choose the artifact budget: compact, standard, or interactive.
-9. State what wall of text or mental reconstruction the HTML replaces.
-10. Use the router to select one primary pattern.
-11. Open/read the matching pattern file.
-12. Define the UX contract.
-13. Optionally select up to two supporting sections.
-14. State what evidence must be inspected before generation.
-15. State the minimum validation required.
-16. State the recommended next action.
-17. State whether this is standalone or part of an artifact chain.
-18. State whether share/reentry blocks are needed.
-19. Provide a copy-ready command or prompt.
-20. Provide up to three selectable alternatives only when real branches exist.
+6. State the user-in-the-loop value.
+7. State the visual style contract.
+8. Apply the HTML advantage gate.
+9. Choose the artifact budget: compact, standard, or interactive.
+10. State what wall of text or mental reconstruction the HTML replaces.
+11. Use the router to select one primary pattern.
+12. Open/read the matching pattern file.
+13. Define the UX contract.
+14. Optionally select up to two supporting sections.
+15. State what evidence must be inspected before generation.
+16. State the minimum validation required.
+17. State the recommended next action.
+18. State whether this is standalone or part of an artifact chain.
+19. State whether share/reentry blocks are needed.
+20. Provide a copy-ready command or prompt.
+21. Provide up to three selectable alternatives only when real branches exist.
 
 ## Output
 
@@ -65,6 +67,8 @@ Intent distillation:
 Reader contract:
 
 Primary visual model:
+
+User-in-the-loop value:
 
 Visual style:
 

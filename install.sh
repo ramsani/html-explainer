@@ -187,6 +187,7 @@ if [ "$DRY_RUN" = "0" ]; then
   verify_file "$CLAUDE_HOME/html-explainer/docs/HTML_ARTIFACT_CHAINS.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/HTML_ADVANTAGE_GATE.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/THARIQ_SITE_LEARNINGS.md"
+  verify_file "$CLAUDE_HOME/html-explainer/docs/USER_IN_THE_LOOP.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/VISUAL_EXPLAINER_PLAYBOOK.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/VISUAL_STYLE_STANDARD.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/NEXT_ACTION_HANDOFF.md"

@@ -182,12 +182,16 @@ The artifact should keep the user or next agent in the loop.
 
 Add credit when it includes:
 
+- a clear choice the user is being invited to make;
+- something inspectable without reading the full document;
+- a way to compare, filter, edit, challenge, or export when useful;
 - chain position when the work is part of exploration -> plan -> review;
 - share-ready summary for another human;
 - agent reentry block for later implementation or verification;
 - clear statement of what was decided and what remains open.
 
 Subtract 10 if a serious plan, PR review, recap, or report cannot be shared or reused without the original chat.
+Subtract 20 if the artifact is technically correct but unlikely to be read or acted on.
 
 ### 17. Explainer clarity
 

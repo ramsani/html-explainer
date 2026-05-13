@@ -165,20 +165,21 @@ That means the agent must:
 4. apply `docs/EXPLAINER_CLARITY.md`;
 5. apply `docs/VISUAL_EXPLAINER_PLAYBOOK.md`;
 6. apply `docs/THARIQ_SITE_LEARNINGS.md`;
-7. apply `docs/VISUAL_STYLE_STANDARD.md`;
-8. apply `docs/ARTIFACT_BUDGET.md`;
-9. use `docs/pattern-router.md` to select one primary pattern;
-10. open the matching file in `patterns/`;
-11. apply `docs/HTML_UX_STANDARD.md`;
-12. inspect real evidence;
-13. create a fact sheet;
-14. generate the smallest useful HTML artifact;
-15. apply `docs/QUALITY_BAR.md` before finalizing;
-16. compare against `docs/GOLDEN_OUTPUTS.md` when a reference case applies;
-17. apply `docs/HTML_ARTIFACT_CHAINS.md` when one artifact should lead to another;
-18. apply `docs/SHARE_AND_REENTRY.md` when the artifact should be shareable or reusable by another agent;
-19. apply `docs/NEXT_ACTION_HANDOFF.md`;
-20. expose uncertainty and next action.
+7. apply `docs/USER_IN_THE_LOOP.md`;
+8. apply `docs/VISUAL_STYLE_STANDARD.md`;
+9. apply `docs/ARTIFACT_BUDGET.md`;
+10. use `docs/pattern-router.md` to select one primary pattern;
+11. open the matching file in `patterns/`;
+12. apply `docs/HTML_UX_STANDARD.md`;
+13. inspect real evidence;
+14. create a fact sheet;
+15. generate the smallest useful HTML artifact;
+16. apply `docs/QUALITY_BAR.md` before finalizing;
+17. compare against `docs/GOLDEN_OUTPUTS.md` when a reference case applies;
+18. apply `docs/HTML_ARTIFACT_CHAINS.md` when one artifact should lead to another;
+19. apply `docs/SHARE_AND_REENTRY.md` when the artifact should be shareable or reusable by another agent;
+20. apply `docs/NEXT_ACTION_HANDOFF.md`;
+21. expose uncertainty and next action.
 
 ## How the Thariq ideas are used case by case
 

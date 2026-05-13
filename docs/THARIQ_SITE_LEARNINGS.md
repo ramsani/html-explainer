@@ -16,6 +16,8 @@ This file is a distilled operating note, not a copy of the site.
 - They make design exploration concrete: live alternatives, not descriptions.
 - They use custom interfaces when text input would be awkward.
 - They make artifacts shareable and readable outside the chat.
+- They keep the user involved by making plans, reviews, and options easier to inspect than long Markdown.
+- They use Claude Code's real context access as a major advantage: files, diffs, git history, browser, and connected tools.
 
 ## What to import into html-explainer
 
@@ -43,6 +45,12 @@ This file is a distilled operating note, not a copy of the site.
 8. Do not overbuild.
    A single purposeful HTML file is better than a generic app shell.
 
+9. Keep the user in the loop.
+   The artifact should invite inspection, comparison, editing, approval, or challenge.
+
+10. Use real context as the differentiator.
+    Claude Code can inspect the user's environment. The HTML should be grounded in that context, not generic.
+
 ## Style baseline
 
 Use `docs/VISUAL_STYLE_STANDARD.md`.
@@ -65,3 +73,5 @@ The baseline is:
 - Big tables where a diagram would explain faster.
 - Interaction that does not change state or export output.
 - HTML that looks impressive but leaves the next action unclear.
+- HTML that the user is unlikely to read.
+- HTML that lets the agent keep making choices alone.
