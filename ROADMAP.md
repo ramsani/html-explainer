@@ -20,4 +20,4 @@ This roadmap is intentionally small. The project should grow by improving trust,
 
 Do not expand the system until the current behavior is easier to verify.
 
-The priority is not more HTML. The priority is decision-ready HTML that reliably helps users inspect evidence, understand risk, choose the next action, and continue work with less ambiguity.
+The priority is not more HTML. The priority is decision-ready HTML that reliably helps users inspect evidence, understand risk, choose the next action, preserve reusable memory, and receive the result in the language that creates the least friction.

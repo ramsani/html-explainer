@@ -20,6 +20,8 @@ See [`CREDITS.md`](CREDITS.md) for the full attribution.
 
 It is not "HTML because it looks nice." It is HTML when a browser view helps the user understand, decide, review, compare, tune, or continue work better than Markdown.
 
+The repository is documented in English so it is easy to share, install, inspect, and contribute to. The user experience should match the user's language. If the user writes in Spanish, the agent response and generated artifact should be in Spanish unless the user asks for another language.
+
 Core path:
 
 ```text
@@ -29,6 +31,24 @@ intent -> evidence -> visual understanding -> decision -> next action -> reusabl
 `visual-explainer` gives Claude the HTML artifact capability.
 
 `html-explainer` adds the operating discipline: when to use HTML, what evidence to inspect, how to keep the user in the loop, and how to end with the next useful prompt.
+
+## What The User Gets
+
+`html-explainer` turns agent output into a browser-readable decision surface.
+
+The user gets:
+
+- faster understanding because the first screen shows the point, risk, and next action;
+- less mental work because evidence, trade-offs, unknowns, and recommendations are visible together;
+- safer decisions because claims are tied to inspected evidence;
+- clearer reviews because plans, diffs, workflows, and architectures show risk before action;
+- useful next prompts because every serious artifact carries the context needed for the next agent step;
+- reusable memory because valuable artifacts include an archive decision, freshness risk, and re-entry path;
+- less noise because HTML is rejected when Markdown is enough;
+- lower onboarding friction because commands are named by user intent, not internal implementation;
+- trust through validation because examples, commands, patterns, routing scenarios, install, and uninstall are checked locally.
+
+The user should not need to understand the operating philosophy. They should feel the result as clarity, speed, safer choices, and less repeated explanation.
 
 ## 60-Second Demo
 
@@ -129,6 +149,20 @@ bash install.sh
 | `/audit-html` | Check whether an existing artifact is actually useful. |
 | `/think-with-me-about` | Turn a vague topic into a visual thinking surface with evidence, stress testing, action, and re-entry. |
 
+## Results By Use Case
+
+| User need | What html-explainer delivers | User benefit |
+|---|---|---|
+| Decide if HTML is worth it | Pattern choice, budget, evidence needs, and next command. | Avoids wasting time on decorative artifacts. |
+| Generate a decision artifact | Self-contained HTML with evidence, risk, recommendation, and next action. | Turns scattered context into a clear decision surface. |
+| Review a plan | Fit check, assumptions, missing proof, risks, and approve/revise/reject path. | Prevents weak plans from becoming weak implementation. |
+| Review a diff or PR | Changed-file summary, findings, missing checks, severity, and merge decision. | Makes accept/request/block decisions easier and safer. |
+| Re-enter a repo | Project identity, current state, evidence, risks, and next high-value action. | Restores context quickly without rereading everything. |
+| Build a decision tool | Temporary editor, tuner, triage board, or config tool with export. | Lets the user manipulate choices and copy usable output. |
+| Audit an artifact | Score, hard fails, evidence gaps, HTML gaps, and fix path. | Separates useful artifacts from polished noise. |
+| Think through an idea | Framing, evidence, tensions, stress test, conclusion, action, and re-entry. | Converts vague thinking into a usable next move. |
+| Save useful work | Metadata, validity, freshness, privacy, and re-entry guidance. | Prevents good artifacts from being lost or stale artifacts from being trusted. |
+
 ## Quick Usage
 
 Start by choosing the right artifact:
@@ -195,6 +229,8 @@ The repo now treats recurring artifact work as small packages instead of one-off
 
 Start here:
 
+- [`docs/USER_VALUE.md`](docs/USER_VALUE.md)
+- [`docs/LANGUAGE_POLICY.md`](docs/LANGUAGE_POLICY.md)
 - [`docs/ARTIFACT_DIRECTIONS.md`](docs/ARTIFACT_DIRECTIONS.md)
 - [`docs/ARTIFACT_MODES.md`](docs/ARTIFACT_MODES.md)
 - [`docs/ARTIFACT_CHECKLISTS.md`](docs/ARTIFACT_CHECKLISTS.md)
@@ -252,12 +288,14 @@ Detailed older docs live in `docs/reference/`. They are available when needed, b
 
 `html-explainer` is for users who want more control over the reasoning before and after the artifact:
 
+- language-matched responses and artifacts for the user's audience;
 - intent selection before generation;
 - evidence-first workflow;
 - pattern routing;
 - quality bar;
 - lean artifact budget;
 - next-step prompts that preserve context;
+- local-first artifact memory;
 - safe installer and uninstaller;
 - brief `CLAUDE.md` guide so the agent remembers how to use the system.
 

@@ -9,16 +9,17 @@ Do not use for simple facts, single commands, tiny edits, or low-consequence not
 ## Mandatory Process
 
 1. Apply `docs/DECISION_GATE.md`.
-2. Use HTML only if the topic benefits from a visual thinking surface.
-3. Apply `docs/INSIGHT_SURFACE_LOOP.md`.
-4. Apply `docs/FACT_SHEET.md`.
-5. Separate facts, inferences, assumptions, hypotheses, and unknowns.
-6. Select the smallest useful artifact budget.
-7. Generate one self-contained HTML file.
-8. Apply `docs/STYLE.md`.
-9. Apply `docs/QUALITY_BAR.md`.
-10. Apply `docs/CHAIN.md` for the next prompt.
-11. Apply `docs/DELIVERY.md`.
+2. Apply `docs/LANGUAGE_POLICY.md`.
+3. Use HTML only if the topic benefits from a visual thinking surface.
+4. Apply `docs/INSIGHT_SURFACE_LOOP.md`.
+5. Apply `docs/FACT_SHEET.md`.
+6. Separate facts, inferences, assumptions, hypotheses, and unknowns.
+7. Select the smallest useful artifact budget.
+8. Generate one self-contained HTML file.
+9. Apply `docs/STYLE.md`.
+10. Apply `docs/QUALITY_BAR.md`.
+11. Apply `docs/CHAIN.md` for the next prompt.
+12. Apply `docs/DELIVERY.md`.
 
 When artifact memory docs are present, recommend whether to preserve the artifact using `docs/ARTIFACT_MEMORY.md`.
 

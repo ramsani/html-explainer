@@ -9,6 +9,7 @@ Do not generate HTML yet.
 Use:
 
 - `docs/DECISION_GATE.md`
+- `docs/LANGUAGE_POLICY.md`
 - `docs/PATTERN_GUIDE.md`
 - the selected `patterns/NN-*.md` file
 - `docs/QUALITY_BAR.md`
@@ -20,19 +21,21 @@ Use `docs/reference/` only if the decision needs deeper guidance.
 
 1. Identify the user's primary intent.
 2. Identify obvious secondary intents that affect the decision.
-3. Decide whether HTML beats Markdown.
-4. Choose the smallest useful budget: compact, standard, or interactive.
-5. Select one primary pattern.
-6. Read the matching pattern file.
-7. State required evidence.
-8. State the UX/visual model.
-9. State risks to avoid.
-10. Provide the next ready-to-run command.
+3. Identify the user's language and intended artifact audience.
+4. Decide whether HTML beats Markdown.
+5. Choose the smallest useful budget: compact, standard, or interactive.
+6. Select one primary pattern.
+7. Read the matching pattern file.
+8. State required evidence.
+9. State the UX/visual model.
+10. State risks to avoid.
+11. Provide the next ready-to-run command.
 
 ## Output
 
 ```text
 Intent:
+Output language:
 HTML justified: yes | no
 Why HTML beats Markdown:
 Artifact budget:
@@ -45,6 +48,7 @@ Acceptance criteria:
 Next action:
 Ready-to-run command:
 Useful alternatives:
+Archive value:
 ```
 
 ## Rules

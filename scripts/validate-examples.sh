@@ -23,6 +23,7 @@ for file in "$EXAMPLES_DIR"/*.html; do
   grep -Eqi 'secondary intent|secondary|also needs|covered' "$file" || fail "$rel must expose obvious secondary intent coverage"
   grep -Eqi 'base concept|simple model|core idea|model' "$file" || fail "$rel must expose the base concept or simple model"
   grep -Eqi 'html advantage|browser advantage|html benefit' "$file" || fail "$rel must expose why HTML beats Markdown"
+  grep -Eqi 'artifact language|output language|user language|audience language' "$file" || fail "$rel must expose artifact language or audience language"
   grep -Eqi 'artifact budget|budget|compact|standard|interactive' "$file" || fail "$rel must expose artifact budget"
   grep -Eqi 'mental work|work removed|wall of text|markdown cost|html benefit' "$file" || fail "$rel must expose the mental work HTML removes"
   grep -Eqi 'evidence|inspected|sources' "$file" || fail "$rel must expose inspected evidence or sources"

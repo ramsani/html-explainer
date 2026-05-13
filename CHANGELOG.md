@@ -1,5 +1,23 @@
 # Changelog
 
+## Unreleased — product value and language alignment
+
+### Added
+
+- `docs/USER_VALUE.md` to list every user-facing benefit and delivered result.
+- `docs/LANGUAGE_POLICY.md` to define English repository documentation with user-language output.
+- README sections for "What The User Gets" and "Results By Use Case".
+
+### Improved
+
+- Main generation and selection commands now account for output language and artifact audience.
+- Delivery guidance now requires language matching before final response.
+- Installer guide now teaches the agent to respond in the user's language while keeping repo material in English.
+
+### Why it matters
+
+The repo now sells the result more clearly: users get faster understanding, safer decisions, lower mental load, reusable memory, language-matched artifacts, and less noise because HTML is only used when it earns its keep.
+
 ## Unreleased — audit corrections and lean core
 
 ### Changed

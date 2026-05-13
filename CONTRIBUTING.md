@@ -14,6 +14,7 @@ intent -> evidence -> visual understanding -> decision -> next action -> reusabl
 - Better examples.
 - Clearer command behavior.
 - Stronger validation scripts.
+- Clearer user value and language-matching behavior.
 - Safer install/uninstall behavior.
 - Simpler docs that remove confusion.
 
@@ -63,6 +64,7 @@ Examples must include:
 - risk or uncertainty;
 - next prompt or exportable output;
 - archive recommendation when the artifact may be reused;
+- user-language output unless a different audience is requested;
 - system light/dark support.
 
 Interactive examples must include copy/export output.

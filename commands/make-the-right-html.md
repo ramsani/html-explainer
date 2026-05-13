@@ -5,15 +5,16 @@ Generate a self-contained HTML artifact using the html-explainer operating model
 ## Mandatory Process
 
 1. Apply `docs/DECISION_GATE.md`.
-2. Apply `docs/PATTERN_GUIDE.md`.
-3. Open the selected `patterns/NN-*.md` file.
-4. Inspect real sources before making claims.
-5. Build a fact sheet with `docs/FACT_SHEET.md`.
-6. Generate the smallest useful HTML artifact.
-7. Apply `docs/STYLE.md`.
-8. Apply `docs/QUALITY_BAR.md`.
-9. Apply `docs/CHAIN.md` when follow-up work is likely.
-10. Apply `docs/DELIVERY.md`.
+2. Apply `docs/LANGUAGE_POLICY.md`.
+3. Apply `docs/PATTERN_GUIDE.md`.
+4. Open the selected `patterns/NN-*.md` file.
+5. Inspect real sources before making claims.
+6. Build a fact sheet with `docs/FACT_SHEET.md`.
+7. Generate the smallest useful HTML artifact.
+8. Apply `docs/STYLE.md`.
+9. Apply `docs/QUALITY_BAR.md`.
+10. Apply `docs/CHAIN.md` when follow-up work is likely.
+11. Apply `docs/DELIVERY.md`.
 
 Use `docs/reference/` only when a serious case needs deeper guidance.
 
@@ -41,6 +42,7 @@ Use `docs/reference/` only when a serious case needs deeper guidance.
 - Recommendation.
 - Success criteria.
 - Next action handoff with one recommended prompt and useful alternatives.
+- Archive recommendation when the result may be useful later.
 
 ## Final Self-Check
 
@@ -54,6 +56,8 @@ Before responding:
 - Did HTML add visible structure, interaction, export, or faster decision?
 - Did the first screen make the next decision obvious?
 - Did the next prompt preserve intent, evidence, acceptance criteria, boundaries, and uncertainty?
+- Did the artifact language match the user or intended audience?
+- Did the artifact explain whether it should be saved, refreshed, kept private, superseded, or discarded?
 
 ## Final Chat Response
 
@@ -66,6 +70,7 @@ Decision supported:
 Quality result:
 Main uncertainty:
 Next command:
+Archive recommendation:
 ```
 
 Do not paste the full HTML into chat unless requested.

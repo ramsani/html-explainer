@@ -2,6 +2,12 @@
 
 Use this after generating an artifact.
 
+## Language
+
+Match the user's language unless the user requests another language or the artifact is for a different audience.
+
+Apply `docs/LANGUAGE_POLICY.md` before final delivery.
+
 ## Save Location
 
 For generated working artifacts inside a repo, prefer:
@@ -43,3 +49,5 @@ Archive recommendation:
 ```
 
 Do not paste the full HTML into chat unless requested.
+
+The final response should feel simple. The user should see what was created, where it is, what decision it supports, what remains uncertain, and what to do next.

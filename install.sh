@@ -107,6 +107,8 @@ write_claude_md_block() {
 
 Use html-explainer when the user asks for an HTML artifact, or when a complex plan, diff, PR, architecture, repo recap, workflow, design exploration, report, triage board, config editor, prompt-tuning task, or iterative thinking task would be easier to understand in a browser than in Markdown.
 
+Repository docs are in English. Respond to the user in the language they use unless they ask for another language. Generated artifact copy should match the user's language unless the artifact is for a different audience.
+
 Core operating path:
 
 ```text
@@ -124,7 +126,7 @@ Prefer these installed commands:
 - `/audit-html` to score and improve an artifact.
 - `/think-with-me-about` to think through a topic using an Insight Surface Loop.
 
-Do not use HTML for simple answers, one commands, tiny facts, or low-consequence notes. Every artifact must preserve the user's primary intent, cover obvious secondary intents when they affect the decision, show evidence, separate facts/inferences/unknowns, use the smallest useful budget, end with a copy/edit next prompt, and recommend whether to save, refresh, keep private, supersede, or discard the artifact when it may become future context.
+Do not use HTML for simple answers, one commands, tiny facts, or low-consequence notes. Every artifact must preserve the user's primary intent, cover obvious secondary intents when they affect the decision, show evidence, separate facts/inferences/unknowns, use the smallest useful budget, use the user's language, end with a copy/edit next prompt, and recommend whether to save, refresh, keep private, supersede, or discard the artifact when it may become future context.
 
 Reference docs live in `~/.claude/html-explainer/docs/`.
 <!-- html-explainer:end -->
@@ -266,6 +268,8 @@ if [ "$DRY_RUN" = "0" ]; then
   verify_file "$CLAUDE_HOME/html-explainer/docs/FACT_SHEET.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/CHAIN.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/DELIVERY.md"
+  verify_file "$CLAUDE_HOME/html-explainer/docs/LANGUAGE_POLICY.md"
+  verify_file "$CLAUDE_HOME/html-explainer/docs/USER_VALUE.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/INSIGHT_SURFACE_LOOP.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/V1_FUNCTION_AUDIT.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/reference/INTENT_DISTILLATION.md"

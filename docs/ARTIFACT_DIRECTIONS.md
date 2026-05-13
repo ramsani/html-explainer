@@ -12,6 +12,7 @@ Each serious artifact should declare one primary direction:
 | `map` | The user must see relationships. | Components, flows, boundaries, risks, and safe zones. |
 | `tune` | The user must improve behavior or instructions. | Failure modes, scenario tests, output contract, and exportable instruction. |
 | `remember` | The user may reuse the result later. | Metadata, validity, freshness, archive recommendation, and re-entry prompt. |
+| `think` | The user has an unclear idea, risk, decision, or opportunity. | A framed thinking surface with evidence, stress test, conclusion, action, and re-entry. |
 
 ## Required Declaration
 
@@ -22,6 +23,7 @@ Primary intent:
 Secondary intents covered:
 Base concept:
 Artifact direction:
+User value:
 Artifact budget:
 HTML advantage:
 Mental work removed:
