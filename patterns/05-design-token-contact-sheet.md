@@ -9,13 +9,15 @@ Evidence required: theme files, CSS/Tailwind config, component styles, existing 
 Prompt template:
 ```text
 Generate a self-contained HTML design token reference sheet. Inspect the real styling sources first. Show tokens, usage examples, component examples, inconsistencies, accessibility notes, and safe UI recommendations. Make it usable as a reference for future HTML artifacts.
+
+If color, spacing, radius, shadow, or typography values are shown, include click-to-copy token values with simple copied feedback.
 ```
 
-HTML structure: intent, evidence, token groups, usage samples, component examples, do/don't examples, inconsistencies, accessibility notes, future-artifact guidance, recommendation.
+HTML structure: intent, evidence, token groups, copyable swatches or token values, usage samples, component examples, do/don't examples, inconsistencies, accessibility notes, future-artifact guidance, recommendation.
 
-Quality checklist: tokens are real, examples map to components, inconsistencies are actionable, future artifact guidance is concrete, and the sheet does not invent a new visual language.
+Quality checklist: tokens are real, shown values can be copied when useful, examples map to components, inconsistencies are actionable, future artifact guidance is concrete, and the sheet does not invent a new visual language.
 
-Failure modes: inventing a design system, proposing new style before reading existing style, ignoring accessibility, producing only swatches with no usage guidance.
+Failure modes: inventing a design system, proposing new style before reading existing style, ignoring accessibility, producing only swatches with no usage guidance, showing token values that cannot be copied or reused.
 
 Acceptance criteria: the user and a future agent can see the existing visual system and avoid inconsistent UI changes.
 

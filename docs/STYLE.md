@@ -14,7 +14,8 @@ Use:
 - lightweight cards or sections;
 - tables, timelines, diagrams, or controls only when they clarify;
 - system light/dark mode with `prefers-color-scheme`;
-- reduced motion support when animation exists.
+- CSS transitions or animations with easing curves only when they clarify timing, feedback, or state change;
+- reduced motion support with `@media (prefers-reduced-motion: reduce)` when animation exists.
 
 Avoid:
 
@@ -25,6 +26,7 @@ Avoid:
 - oversized cards inside cards;
 - labels that explain the UI instead of the work;
 - interaction that does not change a decision.
+- animation that is only there to impress.
 
 ## First Screen
 

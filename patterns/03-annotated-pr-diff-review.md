@@ -94,13 +94,15 @@ Good visual forms:
 - severity cards;
 - before/after table;
 - file-risk matrix;
-- collapsible diff snippets;
+- collapsible diff snippets with margin notes on the relevant lines;
+- jump links from findings to changed files or diff hunks;
 - test coverage checklist;
 - release risk badge.
 
 ## Quality checklist
 
 - Findings map to real changed files or diff hunks.
+- Finding links jump to the exact file, hunk, or line note when practical.
 - Behavior change is described, not only code style.
 - Severity is justified by impact and likelihood.
 - Missing tests are visible.

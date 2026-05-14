@@ -69,6 +69,8 @@ When interaction exists, it must give the user real control:
 
 Do not add controls that only decorate the page.
 
+If a value, prompt, issue body, Markdown summary, config, checklist, token, or code snippet is useful after the page closes, provide copy or export. Interaction should turn the artifact into a tool, not a nicer screenshot.
+
 ## Tone
 
 Be calm, capable, and plain.

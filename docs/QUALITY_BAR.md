@@ -45,6 +45,7 @@ Fail immediately if it:
 - claims tests or facts without proof;
 - uses HTML only as decoration;
 - makes interaction without exportable output;
+- shows reusable values or prompts without a copy/export path;
 - puts the recommendation below decoration;
 - leaves the user to invent the next command;
 - saves or recommends saving low-value scratch work as reusable knowledge;

@@ -9,13 +9,15 @@ Evidence required: UI context, existing animation/style rules, accessibility con
 Prompt template:
 ```text
 Generate a self-contained HTML microinteraction sandbox. Show before/after, timing controls when useful, reduced-motion consideration, implementation notes, and whether the motion improves task completion.
+
+Use CSS transitions or animations with explicit easing only when motion clarifies timing, feedback, or state change. Include controls for duration or curve only when the user needs to compare behavior.
 ```
 
-HTML structure: intent, evidence, before/after demo, controls, reduced-motion notes, implementation notes, recommendation.
+HTML structure: intent, evidence, before/after demo, timing or easing controls when useful, reduced-motion notes, implementation notes, copied/exportable implementation snippet, recommendation.
 
-Quality checklist: motion has purpose, timing is inspectable, accessibility is considered, reduced-motion behavior exists, and selected parameters can be copied or described.
+Quality checklist: motion has purpose, timing is inspectable, easing choices are visible when they affect the decision, accessibility is considered, reduced-motion behavior exists, and selected parameters can be copied or described.
 
-Failure modes: decorative animation, slow interactions, no reduced-motion path, hidden timing choices, animation that distracts from the primary action.
+Failure modes: decorative animation, slow interactions, no reduced-motion path, hidden timing choices, animation that distracts from the primary action, motion controls that do not change or export a useful result.
 
 Acceptance criteria: the user can decide whether the interaction improves usability.
 
