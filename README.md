@@ -85,7 +85,7 @@ It also protects the human side of the interaction:
 
 The V1 closeout audit checks every repo function against this promise. See [`docs/V1_FUNCTION_AUDIT.md`](docs/V1_FUNCTION_AUDIT.md).
 
-V1.1 adds invisible quality control: local scripts confirm artifacts contain the required parts before they are trusted. `/make-the-right-html` now uses a delivery command before the final response. The user sees the clean result, not the machinery.
+V1.1 adds invisible quality control: local scripts confirm artifacts contain the required parts before they are trusted. The HTML-generating commands use a delivery command before the final response. The user sees the clean result, not the machinery.
 
 Every artifact is shaped around intent, evidence, visual clarity, decision support, next action, and reusable memory before delivery.
 

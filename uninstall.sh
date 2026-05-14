@@ -18,6 +18,7 @@ COMMANDS=(
   build-decision-tool
   audit-html
   think-with-me-about
+  open-html-explainer-memory
 )
 LEGACY_COMMANDS=(
   html-effectiveness
@@ -54,6 +55,8 @@ restore_path() {
     run rm -rf "$dst"
     run mkdir -p "$(dirname "$dst")"
     run cp -R "$src" "$dst"
+  else
+    remove_path "$dst"
   fi
 }
 
@@ -110,6 +113,7 @@ if [ "$RESTORE_BACKUP" = "1" ] && [ -n "${BACKUP:-}" ]; then
   restore_path "$BACKUP" "skills/visual-explainer" "$CLAUDE_HOME/skills/visual-explainer"
   restore_path "$BACKUP" "docs" "$CLAUDE_HOME/html-explainer/docs"
   restore_path "$BACKUP" "patterns" "$CLAUDE_HOME/html-explainer/patterns"
+  restore_path "$BACKUP" "scripts" "$CLAUDE_HOME/html-explainer/scripts"
   restore_path "$BACKUP" "local-examples" "$CLAUDE_HOME/html-explainer/local-examples"
 
   for cmd in "${COMMANDS[@]}"; do
@@ -128,6 +132,7 @@ else
   remove_path "$CLAUDE_HOME/skills/thariq-html-effectiveness"
   remove_path "$CLAUDE_HOME/html-explainer/docs"
   remove_path "$CLAUDE_HOME/html-explainer/patterns"
+  remove_path "$CLAUDE_HOME/html-explainer/scripts"
   remove_path "$CLAUDE_HOME/html-explainer/local-examples"
 
   for cmd in "${COMMANDS[@]}" "${LEGACY_COMMANDS[@]}"; do

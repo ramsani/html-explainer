@@ -40,5 +40,10 @@ find "$TMP_DIR/outputs/metadata/replaceable" -type f -name '*.json' | grep -q . 
 grep -q "Tu conocimiento útil" "$TMP_DIR/outputs/index.html" || fail "knowledge base HTML missing user-facing title"
 grep -q "Maps of Content" "$TMP_DIR/outputs/index.html" || fail "knowledge base HTML missing MOC section"
 grep -q "resurfacing" "$TMP_DIR/outputs/index.html" || fail "knowledge base HTML missing resurfacing signal"
+grep -q "function reentryPrompt" "$TMP_DIR/outputs/index.html" || fail "knowledge base HTML missing re-entry prompt helper"
+grep -q "window.prompt" "$TMP_DIR/outputs/index.html" || fail "knowledge base HTML missing annotation prompt"
+if grep -q "function prompt(" "$TMP_DIR/outputs/index.html"; then
+  fail "knowledge base HTML shadows browser prompt"
+fi
 
 echo "[validate-runtime] OK: runtime delivery and local memory validated"

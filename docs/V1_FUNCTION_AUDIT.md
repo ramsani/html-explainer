@@ -63,7 +63,7 @@ The repo now treats quality as required artifact behavior:
 | Pattern files did not all declare user agency. | Some artifacts could recommend action without preserving user freedom. | Added `HUMAN_INTERFACE.md`, required a Human Interface Contract in all 22 patterns, and added command validation. |
 | README under-presented the human value. | A visitor could see mechanics before feeling the product promise. | Added "What It Feels Like", control/freedom benefits, and quiet invitation language. |
 | Quality Bar had no executable artifact gate. | A weak HTML could look valid because only strings and files were checked. | Added `scripts/audit-artifact.py`, good/bad fixtures, and `scripts/validate-golden-artifacts.sh`. |
-| Artifact delivery was not tied to the audit script. | A generated artifact could skip the quality gate. | Added `scripts/deliver-artifact.py` and made `/make-the-right-html` run it before final delivery. |
+| Artifact delivery was not tied to the audit script. | A generated artifact could skip the quality gate. | Added `scripts/deliver-artifact.py` and made HTML-generating commands run it before final delivery. |
 | Artifact memory was documented but not implemented. | Users could expect saved knowledge without a real local index. | Added `scripts/save-artifact.py`, local metadata, and runtime validation. |
 
 ## Function-By-Function V1 Verdict
