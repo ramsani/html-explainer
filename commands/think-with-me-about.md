@@ -24,7 +24,10 @@ Do not use for simple facts, single commands, tiny edits, or low-consequence not
 12. Confirm the required user-facing parts in `docs/INVISIBLE_QUALITY.md`.
 13. Apply `docs/CHAIN.md` for the next prompt.
 14. Apply `docs/MEMORY_ACCESS.md` for a quiet saved/not-saved receipt.
-15. Apply `docs/DELIVERY.md`.
+15. Save the artifact to a local HTML file.
+16. Run `~/.claude/html-explainer/scripts/deliver-artifact.py <artifact.html> --min-score 90`.
+17. If delivery is blocked, revise the artifact and run the delivery command again.
+18. Apply `docs/DELIVERY.md`.
 
 When artifact memory docs are present, recommend whether to preserve the artifact using `docs/ARTIFACT_MEMORY.md`.
 
@@ -70,6 +73,7 @@ Do not deliver a serious artifact unless it passes these gates:
 - Facts, inferences, assumptions, hypotheses, and unknowns are separated.
 - Interaction is minimal and only included when it reduces cognitive load.
 - Include copy/export for the next prompt when interaction is present.
+- Delivery uses `deliver-artifact.py` before the final chat response.
 - Final response includes a clickable absolute path.
 
 ## Archive Recommendation
@@ -108,6 +112,7 @@ Before responding:
 - Did it use the smallest useful HTML surface?
 - Did it avoid academic theory overload?
 - Did it explain whether to preserve the artifact?
+- Did `deliver-artifact.py` approve the artifact at 90+ before final delivery?
 
 ## Final Chat Response
 

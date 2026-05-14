@@ -57,7 +57,17 @@ for cmd in "${expected[@]}"; do
   grep -Eqi "archive recommendation|save, refresh|saved, refreshed|memory" "$file" || fail "command must include archive or memory guidance: commands/$cmd.md"
 done
 
-for cmd in make-the-right-html build-decision-tool; do
+html_delivery=(
+  make-the-right-html
+  check-the-plan
+  check-the-diff
+  reenter-project
+  build-decision-tool
+  audit-html
+  think-with-me-about
+)
+
+for cmd in "${html_delivery[@]}"; do
   grep -q "deliver-artifact.py" "$COMMAND_DIR/$cmd.md" || fail "$cmd must run delivery gate"
   grep -q "before the final chat response" "$COMMAND_DIR/$cmd.md" || fail "$cmd must approve delivery before final response"
 done

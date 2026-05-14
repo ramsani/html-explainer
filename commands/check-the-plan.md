@@ -17,7 +17,9 @@ Completion goal: `goals/plan-review-complete.goal.md`.
 9. Confirm the required user-facing parts in `docs/INVISIBLE_QUALITY.md`.
 10. Apply `docs/CHAIN.md` so approve, revise, reject, split, or implement becomes selectable.
 11. Apply `docs/MEMORY_ACCESS.md` when the review may be reused.
-12. Apply `docs/DELIVERY.md`.
+12. If an HTML file is delivered, run `~/.claude/html-explainer/scripts/deliver-artifact.py <artifact.html> --min-score 90`.
+13. If delivery is blocked, revise the artifact and run the delivery command again.
+14. Apply `docs/DELIVERY.md`.
 
 ## Must Answer
 
@@ -31,7 +33,7 @@ Completion goal: `goals/plan-review-complete.goal.md`.
 
 ## Output
 
-End with one recommended next prompt, useful alternatives, archive recommendation, and a tiny saved/not-saved receipt.
+End with one recommended next prompt, useful alternatives, archive recommendation, and a tiny saved/not-saved receipt. If HTML is delivered, include delivery approval from `deliver-artifact.py` before the final chat response.
 
 ## Completion
 

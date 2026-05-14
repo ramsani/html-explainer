@@ -44,6 +44,8 @@ Use:
 16. Run `~/.claude/html-explainer/scripts/audit-artifact.py <artifact.html> --json` when a local file is available.
 17. Score with `docs/QUALITY_BAR.md`.
 18. Recommend accept, revise, reject, or simplify to Markdown.
+19. If a revised HTML file is delivered, run `~/.claude/html-explainer/scripts/deliver-artifact.py <artifact.html> --min-score 90`.
+20. If delivery is blocked, revise the artifact and run the delivery command again before the final chat response.
 
 ## Output
 
@@ -69,6 +71,7 @@ Memory access:
 Completeness gaps:
 
 Best next prompt:
+Delivery approval:
 ```
 
 ## Hard Fail Conditions

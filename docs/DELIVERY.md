@@ -46,6 +46,14 @@ Confirm `docs/INVISIBLE_QUALITY.md` before final delivery.
 
 The artifact should already contain the required user-facing parts before the user sees it. Delivery confirms completeness; it does not ask the user to discover missing pieces.
 
+If an HTML file is delivered, run:
+
+```bash
+~/.claude/html-explainer/scripts/deliver-artifact.py <artifact.html> --min-score 90
+```
+
+Do not deliver a blocked artifact. Revise it and run the delivery command again before the final chat response.
+
 ## Final Chat Response
 
 Keep it short:

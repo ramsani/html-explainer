@@ -18,7 +18,9 @@ Completion goal: `goals/diff-review-complete.goal.md`.
 10. Confirm the required user-facing parts in `docs/INVISIBLE_QUALITY.md`.
 11. Apply `docs/CHAIN.md` so accept, fix, verify, split, revert, or share becomes selectable.
 12. Apply `docs/MEMORY_ACCESS.md` when the review may be reused.
-13. Apply `docs/DELIVERY.md`.
+13. If an HTML file is delivered, run `~/.claude/html-explainer/scripts/deliver-artifact.py <artifact.html> --min-score 90`.
+14. If delivery is blocked, revise the artifact and run the delivery command again.
+15. Apply `docs/DELIVERY.md`.
 
 ## Must Answer
 
@@ -32,7 +34,7 @@ Completion goal: `goals/diff-review-complete.goal.md`.
 
 ## Output
 
-End with one recommended next prompt, useful alternatives, archive recommendation, and a tiny saved/not-saved receipt. Include revert only when evidence shows it is plausible.
+End with one recommended next prompt, useful alternatives, archive recommendation, and a tiny saved/not-saved receipt. Include revert only when evidence shows it is plausible. If HTML is delivered, include delivery approval from `deliver-artifact.py` before the final chat response.
 
 ## Completion
 
