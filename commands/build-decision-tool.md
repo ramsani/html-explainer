@@ -16,7 +16,10 @@ Build a temporary HTML editor, triage board, tuner, or config tool.
 10. Confirm the required user-facing parts in `docs/INVISIBLE_QUALITY.md`.
 11. Apply `docs/CHAIN.md` so exported output has a clear next use.
 12. Apply `docs/MEMORY_ACCESS.md` when the exported result may be reused.
-13. Apply `docs/DELIVERY.md`.
+13. Save the tool to a local HTML file.
+14. Run `~/.claude/html-explainer/scripts/deliver-artifact.py <artifact.html> --min-score 90`.
+15. If delivery is blocked, revise the tool and run the delivery command again.
+16. Apply `docs/DELIVERY.md`.
 
 ## Must Include
 
@@ -27,6 +30,7 @@ Build a temporary HTML editor, triage board, tuner, or config tool.
 - next prompt that uses the exported result.
 - archive recommendation when the result may be useful later.
 - a tiny saved/not-saved receipt.
+- delivery approval from `deliver-artifact.py` before the final chat response.
 
 ## Hard Rule
 

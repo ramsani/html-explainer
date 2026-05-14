@@ -54,7 +54,10 @@ for cmd in "${expected[@]}"; do
   grep -Eqi "archive recommendation|save, refresh|saved, refreshed|memory" "$file" || fail "command must include archive or memory guidance: commands/$cmd.md"
 done
 
-grep -q "deliver-artifact.py" "$COMMAND_DIR/make-the-right-html.md" || fail "make-the-right-html must run delivery gate"
+for cmd in make-the-right-html build-decision-tool; do
+  grep -q "deliver-artifact.py" "$COMMAND_DIR/$cmd.md" || fail "$cmd must run delivery gate"
+  grep -q "before the final chat response" "$COMMAND_DIR/$cmd.md" || fail "$cmd must approve delivery before final response"
+done
 
 for cmd in "${legacy[@]}"; do
   [ ! -f "$COMMAND_DIR/$cmd.md" ] || fail "legacy command file still present: commands/$cmd.md"

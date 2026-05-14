@@ -26,7 +26,7 @@ It does this through:
 - The repo has command, pattern, example, and scenario validation.
 - The repo requires serious artifacts to expose intent, evidence, uncertainty, risk, recommendation, next action, and memory guidance.
 - The repo rejects common shallow examples through local validation.
-- The installed generation path has a local delivery command that blocks artifacts below the configured score.
+- The installed generation commands require a local delivery command before the final response, so weak artifacts are blocked in the normal command flow.
 - The repo can save approved artifacts into a local file-based memory index.
 - The repo keeps generated user artifact history outside the repository.
 - The repo is documented in English and instructs agents to answer in the user's language.
@@ -34,7 +34,7 @@ It does this through:
 ## What We Do Not Claim Yet
 
 - No statistical success rate such as 95%.
-- No guarantee that every agent will follow the installed command path if it bypasses the repo instructions.
+- No guarantee that every agent will follow the delivery gate if it ignores or bypasses the installed command files.
 - No guarantee that every generated artifact is useful without judgment for the user's real situation.
 - No hosted service, database, background sync, or automatic memory indexer.
 
