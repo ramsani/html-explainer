@@ -43,7 +43,7 @@ for cmd in "${expected[@]}"; do
   grep -q "docs/LANGUAGE_POLICY.md" "$file" || fail "command must use language policy: commands/$cmd.md"
   grep -q "Completion goal: \`goals/" "$file" || fail "command must reference a goal contract: commands/$cmd.md"
   grep -q "^## Completion$" "$file" || fail "command must include thin Completion handoff: commands/$cmd.md"
-  grep -q "Use the completion goal named above as the stopping condition" "$file" || fail "command must delegate closeout to its goal contract: commands/$cmd.md"
+  grep -q "Use the completion goal named above as the completion standard" "$file" || fail "command must delegate closeout to its goal contract: commands/$cmd.md"
   if [ "$cmd" = "open-html-explainer-memory" ]; then
     grep -q "rebuild-knowledge-base.py" "$file" || fail "memory command must rebuild knowledge base"
     grep -q "outputs/index.html" "$file" || fail "memory command must return knowledge base path"

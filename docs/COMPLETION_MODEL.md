@@ -52,20 +52,25 @@ Goals should judge the result a capable human would care about.
 
 Do not make regex pretend to be product judgment.
 
-Use regex and scripts to block obvious structural failure. Use `/goal` to keep Claude working until quality is demonstrated in the conversation and output.
+Use regex and scripts to block obvious structural failure. Use goal contracts to define the completion standard. Use `/goal` explicitly when you want Claude Code to keep working until quality is demonstrated in the conversation and output.
 
 Commands should stay thin. A command defines the user's mode of work, the minimum references to inspect, and the output shape. It should not duplicate the full finish line. The matching goal contract defines when the work is actually done.
+
+Important distinction:
+
+- goal contract = reusable completion standard stored in `goals/`;
+- `/goal` loop = Claude Code's autonomous loop, active only when the user invokes `/goal`.
 
 ## Default Flow
 
 ```text
-1. User invokes a command.
+1. User invokes a command, or starts with `/goal` for autonomous closeout.
 2. Command selects a pattern and goal contract.
 3. Agent inspects evidence.
 4. Agent generates or reviews the artifact.
 5. Scripts verify structural safety.
-6. /goal evaluates professional completion.
-7. Claude keeps correcting until the goal is satisfied.
+6. Goal contract defines professional completion.
+7. If `/goal` is active, Claude keeps correcting until the goal is satisfied.
 8. Final response reports evidence, path, and next action.
 ```
 

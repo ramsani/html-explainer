@@ -40,4 +40,4 @@ If there is no exportable output, do not build an editor. Use a compact artifact
 
 ## Completion
 
-Use the completion goal named above as the stopping condition. Report a blocker instead of claiming completion if the goal cannot be satisfied.
+Use the completion goal named above as the completion standard. If the user invoked /goal, keep working until that goal is satisfied; otherwise, report a blocker instead of claiming completion when the standard cannot be met.

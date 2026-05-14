@@ -4,9 +4,14 @@ Use `/goal` when the work is too long for one turn and has a clear finish line.
 
 Do not use it for short answers, one-command help, tiny facts, or low-risk notes.
 
+Goal contracts and the `/goal` loop are different:
+
+- goal contracts live in `goals/` and define what done means;
+- `/goal` is the Claude Code loop that keeps working, and it runs only when invoked explicitly.
+
 ## Architecture Role
 
-`/goal` is the intelligent closeout layer.
+`/goal` is the autonomous closeout layer.
 
 It replaces:
 
@@ -27,7 +32,8 @@ The simple architecture is:
 
 ```text
 deterministic scripts = cheap floor
-/goal = intelligent quality evaluator and finish line
+goal contracts = reusable finish line
+/goal = autonomous quality loop when explicitly invoked
 human = final product judgment when stakes are high
 ```
 
