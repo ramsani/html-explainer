@@ -37,8 +37,14 @@ python3 ~/.claude/html-explainer/scripts/deliver-artifact.py artifact.html \
 This creates:
 
 - `~/.claude/html-explainer/outputs/index.json`
+- `~/.claude/html-explainer/outputs/index.html`
 - `~/.claude/html-explainer/outputs/artifacts/<validity>/<id>.html`
 - `~/.claude/html-explainer/outputs/metadata/<validity>/<id>.json`
+- `~/.claude/html-explainer/outputs/annotations/<id>.json`
+
+`index.html` is regenerated automatically after save. It is the user-facing knowledge base.
+
+The explorer includes Maps of Content, resurfacing recommendations, backlinks, related artifact links, search, filters, open/metadata/re-entry actions, and annotations that do not change the original HTML.
 
 ## Why This Exists
 
@@ -311,6 +317,16 @@ The explorer should:
 - make temporal validity and supersession relationships obvious;
 - remain local-first and privacy-first.
 
+## Automatic Knowledge Base Update
+
+When an artifact is saved, the user should not need to do extra work.
+
+```text
+approved artifact -> save-artifact.py -> metadata -> index.json -> rebuild-knowledge-base.py -> index.html
+```
+
+This keeps the local wiki current after each useful HTML is created.
+
 ## Privacy Rules
 
 The system must assume generated artifacts may contain sensitive information.
@@ -326,14 +342,16 @@ Rules:
 
 ## First Implementation Boundary
 
-The first implementation should provide:
+The first implementation provides:
 
 - this architecture document;
 - a metadata schema document;
 - an actionable knowledge base model;
 - sample `index.json`;
 - sample artifact metadata;
-- a static explorer template.
+- a static explorer template;
+- local save script;
+- automatic `index.html` regeneration.
 
 It should not add:
 

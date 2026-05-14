@@ -25,6 +25,20 @@ artifact -> metadata -> knowledge card -> relation graph -> search facets -> act
 
 This model keeps the raw artifact available, but it does not force the user to reopen every HTML file to recover value.
 
+## Zero-Friction Promise
+
+The user should not classify, tag, link, index, or remember folders.
+
+When an artifact is approved and saved, the system should automatically save the HTML, write metadata, update backlinks, refresh Maps of Content, update the resurfacing queue, create an annotation sidecar, and regenerate the local `index.html` explorer.
+
+The user-facing receipt should stay small:
+
+```text
+Saved for later: <topic>
+Find it fast: "<natural phrase>"
+Open knowledge base: ~/.claude/html-explainer/outputs/index.html
+```
+
 ## Distinction From Archive
 
 An archive stores files.
@@ -171,6 +185,22 @@ Show chains such as:
 ```text
 initial repo map -> repo recap -> refreshed architecture map -> current implementation plan
 ```
+
+### Maps of Content
+
+Generate lightweight topic hubs from tags and topics. Each MOC should show current pages, pages that need review, superseded history, and a prompt to continue the theme.
+
+### Backlinks
+
+Every artifact card should show incoming and outgoing relationships. Backlinks may be explicit from metadata or inferred from shared project, tag, pattern, source, or supersession chain.
+
+### Resurfacing
+
+The explorer should bring back old knowledge when it becomes useful again. The first local score can use freshness risk, validity class, age, next action presence, known limits, and previous resurface count.
+
+### Annotations
+
+Annotations should not modify the original HTML. Store notes, highlights, and review decisions beside metadata so the original artifact remains traceable.
 
 ## Search Facets
 
@@ -329,11 +359,12 @@ The local `index.json` can evolve to include these sections:
     "freshness": []
   },
   "review_queue": [],
-  "current_references": []
+  "current_references": [],
+  "mocs": []
 }
 ```
 
-The first PR does not need to implement generation for this expanded index, but the design should not block it.
+`scripts/rebuild-knowledge-base.py` generates this expanded index and the local `index.html` explorer from saved metadata.
 
 ## Minimum Viable Knowledge Base
 
@@ -346,6 +377,11 @@ The minimum viable local knowledge base is:
 - filters by project, validity, freshness, and search text;
 - recommended re-entry prompt;
 - visible current/stale/private/superseded distinction.
+- automatic explorer regeneration after saving;
+- Maps of Content from topics/tags;
+- local resurfacing queue;
+- backlinks and related links;
+- annotation surface that does not mutate the original HTML.
 
 ## Strong Knowledge Base
 

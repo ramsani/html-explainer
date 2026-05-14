@@ -280,7 +280,15 @@ The artifact memory system implements a local file path and defines:
 - freshness, privacy, re-entry, and supersession rules;
 - an actionable knowledge base model for search, relations, quick-reference cards, and next actions;
 - a static explorer template that follows the same decision-ready HTML principles as the rest of the project;
-- local scripts to audit, save, and index artifacts without a server or database.
+- local scripts to audit, save, index, relate, resurface, and browse artifacts without a server or database.
+
+The local knowledge base page is:
+
+```text
+~/.claude/html-explainer/outputs/index.html
+```
+
+It is regenerated after saving useful artifacts. It shows Maps of Content, resurfacing suggestions, backlinks, related pages, filters, annotations, and copy-ready re-entry prompts.
 
 User-facing artifacts should expose this value as a tiny receipt, not a technical report:
 

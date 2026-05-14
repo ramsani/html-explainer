@@ -75,6 +75,11 @@ unknown
   "freshness_risk": "",
   "privacy": "",
   "summary": "",
+  "knowledge_type": "",
+  "topics": [],
+  "aliases": [],
+  "recommended_action": "",
+  "confidence": "unknown",
   "source_context": [],
   "known_limits": [],
   "handoff_prompt": "",
@@ -116,6 +121,17 @@ unknown
   ],
   "claims_scope": "Valid for the inspected repo state and files listed in source_context.",
   "summary": "Explains repo purpose, operating model, current strengths, risks, and next best action.",
+  "knowledge_type": "map",
+  "topics": [
+    "html-explainer",
+    "repo understanding"
+  ],
+  "aliases": [
+    "repo recap",
+    "html-explainer map"
+  ],
+  "recommended_action": "inspect",
+  "confidence": "medium",
   "key_decisions": [
     "Treat generated HTML as decision surfaces, not decoration.",
     "Preserve evidence, uncertainty, and next prompts."
@@ -137,6 +153,9 @@ unknown
   "original_prompt": "",
   "handoff_prompt": "",
   "next_action": "",
+  "resurface_count": 0,
+  "last_resurfaced_at": "",
+  "annotations_path": "annotations/repo-recap-html-explainer-2026-05-13-a1bc24a.json",
   "tags": [
     "repo-recap",
     "claude-code",
@@ -166,6 +185,11 @@ unknown
 | `source_context` | Evidence or context inspected. |
 | `claims_scope` | Boundary of claims made by the artifact. |
 | `summary` | Short explanation of artifact value. |
+| `knowledge_type` | Reusable value type: decision, map, review, prompt, workflow, research, principle, status, incident, or design. |
+| `topics` | Human-friendly themes used for Maps of Content. |
+| `aliases` | Natural phrases that should find this artifact. |
+| `recommended_action` | What the explorer should invite next: open, reuse, refresh, supersede, compare, inspect, ignore, private-review. |
+| `confidence` | Low, medium, high, or unknown confidence in reuse. |
 | `key_decisions` | Important decisions or conclusions captured. |
 | `known_limits` | Uncertainties, missing evidence, or constraints. |
 | `supersedes` | Artifact IDs this artifact replaces. |
@@ -176,6 +200,9 @@ unknown
 | `original_prompt` | Prompt that created the artifact, if safe to store. |
 | `handoff_prompt` | Prompt to continue from the artifact. |
 | `next_action` | Recommended next user or agent action. |
+| `resurface_count` | Number of times this artifact has been resurfaced. |
+| `last_resurfaced_at` | Last resurfacing timestamp. |
+| `annotations_path` | Local sidecar for notes and highlights. |
 | `tags` | Search and grouping tags. |
 
 ## Index Schema
@@ -213,6 +240,11 @@ Recommended artifact entry shape:
   "privacy": "local",
   "project": "html-explainer",
   "summary": "Repo recap with evidence, risks, and next action.",
+  "knowledge_type": "map",
+  "topics": ["html-explainer", "repo understanding"],
+  "aliases": ["repo recap", "html-explainer map"],
+  "recommended_action": "inspect",
+  "confidence": "medium",
   "tags": ["repo-recap", "claude-code"]
 }
 ```

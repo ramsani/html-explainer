@@ -7,6 +7,8 @@ import argparse
 import json
 import re
 import shutil
+import subprocess
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -49,6 +51,12 @@ def main() -> int:
     parser.add_argument("--summary", default="")
     parser.add_argument("--find-it-fast", required=True)
     parser.add_argument("--next-action", default="")
+    parser.add_argument("--knowledge-type", default="")
+    parser.add_argument("--topic", action="append", default=[])
+    parser.add_argument("--alias", action="append", default=[])
+    parser.add_argument("--recommended-action", default="")
+    parser.add_argument("--confidence", choices=["low", "medium", "high", "unknown"], default="unknown")
+    parser.add_argument("--no-rebuild", action="store_true")
     parser.add_argument("--score", type=int, default=None)
     parser.add_argument("--tag", action="append", default=[])
     args = parser.parse_args()
@@ -84,10 +92,19 @@ def main() -> int:
         "summary": args.summary,
         "find_it_fast": args.find_it_fast,
         "next_action": args.next_action,
+        "knowledge_type": args.knowledge_type,
+        "topics": args.topic or args.tag[:4],
+        "aliases": args.alias,
+        "recommended_action": args.recommended_action,
+        "confidence": args.confidence,
+        "resurface_count": 0,
+        "last_resurfaced_at": "",
+        "annotations_path": f"annotations/{artifact_id}.json",
         "score": args.score,
         "tags": args.tag,
     }
     write_json(metadata_path, metadata)
+    write_json(output_root / "annotations" / f"{artifact_id}.json", {"artifact_id": artifact_id, "notes": [], "highlights": []})
 
     index_path = output_root / "index.json"
     index = read_index(index_path)
@@ -109,13 +126,23 @@ def main() -> int:
             "project": args.project,
             "summary": args.summary,
             "find_it_fast": args.find_it_fast,
+            "knowledge_type": args.knowledge_type,
+            "topics": args.topic or args.tag[:4],
+            "aliases": args.alias,
+            "recommended_action": args.recommended_action,
+            "confidence": args.confidence,
             "tags": args.tag,
         },
     )
     write_json(index_path, index)
 
+    if not args.no_rebuild:
+        rebuild = Path(__file__).with_name("rebuild-knowledge-base.py")
+        subprocess.run([sys.executable, str(rebuild), "--output-root", str(output_root)], check=True)
+
     print(f"saved: {artifact_path}")
     print(f"metadata: {metadata_path}")
+    print(f"knowledge base: {output_root / 'index.html'}")
     print(f"find it fast: {args.find_it_fast}")
     return 0
 

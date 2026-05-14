@@ -39,6 +39,11 @@ def main() -> int:
     parser.add_argument("--summary", default="")
     parser.add_argument("--find-it-fast", default="")
     parser.add_argument("--next-action", default="")
+    parser.add_argument("--knowledge-type", default="")
+    parser.add_argument("--topic", action="append", default=[])
+    parser.add_argument("--alias", action="append", default=[])
+    parser.add_argument("--recommended-action", default="")
+    parser.add_argument("--confidence", choices=["low", "medium", "high", "unknown"], default="unknown")
     parser.add_argument("--tag", action="append", default=[])
     args = parser.parse_args()
 
@@ -98,6 +103,16 @@ def main() -> int:
             save_command.extend(["--summary", args.summary])
         if args.next_action:
             save_command.extend(["--next-action", args.next_action])
+        if args.knowledge_type:
+            save_command.extend(["--knowledge-type", args.knowledge_type])
+        if args.recommended_action:
+            save_command.extend(["--recommended-action", args.recommended_action])
+        if args.confidence:
+            save_command.extend(["--confidence", args.confidence])
+        for topic in args.topic:
+            save_command.extend(["--topic", topic])
+        for alias in args.alias:
+            save_command.extend(["--alias", alias])
         for tag in args.tag:
             save_command.extend(["--tag", tag])
         completed = subprocess.run(save_command, check=False, text=True)

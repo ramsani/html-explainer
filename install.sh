@@ -282,6 +282,7 @@ if [ "$DRY_RUN" = "0" ]; then
   verify_file "$CLAUDE_HOME/html-explainer/docs/V1_FUNCTION_AUDIT.md"
   verify_file "$CLAUDE_HOME/html-explainer/scripts/audit-artifact.py"
   verify_file "$CLAUDE_HOME/html-explainer/scripts/deliver-artifact.py"
+  verify_file "$CLAUDE_HOME/html-explainer/scripts/rebuild-knowledge-base.py"
   verify_file "$CLAUDE_HOME/html-explainer/scripts/save-artifact.py"
   verify_file "$CLAUDE_HOME/html-explainer/docs/reference/INTENT_DISTILLATION.md"
   verify_file "$CLAUDE_HOME/html-explainer/patterns/01-code-approach-comparison.md"
