@@ -2,6 +2,8 @@
 
 Audit an existing HTML artifact against the html-explainer quality bar.
 
+Completion goal: `goals/artifact-ready.goal.md` when improving the artifact, or `goals/docs-coherent.goal.md` when auditing repo documentation.
+
 ## Intent
 
 Decide whether the artifact is useful, evidence-backed, readable, and decision-ready.

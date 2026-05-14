@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Score an HTML artifact against the invisible quality gate."""
+"""Check an HTML artifact against the deterministic structural floor.
+
+Professional quality is judged by goal contracts in goals/*.goal.md.
+This script blocks obvious structural failures; it does not try to be
+a complete semantic evaluator.
+"""
 
 from __future__ import annotations
 

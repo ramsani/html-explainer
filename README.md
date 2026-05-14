@@ -138,6 +138,8 @@ Use it for audits, PR closure, artifact delivery, memory validation, and V1-styl
 
 More examples: [`docs/GOAL_WORKFLOWS.md`](docs/GOAL_WORKFLOWS.md).
 
+The reusable goal contracts live in [`goals/`](goals/). The completion model is documented in [`docs/COMPLETION_MODEL.md`](docs/COMPLETION_MODEL.md).
+
 ## Verify Locally
 
 Run the same checks expected from contributors and CI:
@@ -147,6 +149,7 @@ bash -n install.sh uninstall.sh scripts/*.sh
 scripts/validate-patterns.sh
 scripts/validate-commands.sh
 scripts/validate-examples.sh
+scripts/validate-goals.sh
 scripts/validate-golden-artifacts.sh
 scripts/validate-scenarios.sh
 scripts/smoke-install.sh

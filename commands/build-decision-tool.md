@@ -2,6 +2,8 @@
 
 Build a temporary HTML editor, triage board, tuner, or config tool.
 
+Completion goal: `goals/artifact-ready.goal.md`.
+
 ## Process
 
 1. Apply `docs/DECISION_GATE.md`.

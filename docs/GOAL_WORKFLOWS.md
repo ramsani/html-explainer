@@ -97,6 +97,22 @@ This lets `/goal` replace fragile semantic checklists where the real question is
 /goal the README is ready when a new user can understand in under two minutes what html-explainer installs, when to use it, what command to try first, what good output looks like, how local memory works, how to verify locally, and how to uninstall.
 ```
 
+## Goal Contract Files
+
+Reusable goal contracts live in `goals/`.
+
+Use them as copy/paste finish lines:
+
+- `goals/artifact-ready.goal.md`
+- `goals/plan-review-complete.goal.md`
+- `goals/diff-review-complete.goal.md`
+- `goals/memory-ready.goal.md`
+- `goals/docs-coherent.goal.md`
+- `goals/repo-v1-complete.goal.md`
+- `goals/pattern-package-complete.goal.md`
+
+The command file explains how to work. The goal file explains when to stop.
+
 ## What To Remove From Future Work
 
 When `/goal` is available, avoid adding new docs or scripts that only say:
@@ -113,7 +129,7 @@ Keep a script only when it can verify something without model judgment.
 ## V1 Closeout
 
 ```text
-/goal html-explainer V1 is complete when bash -n install.sh uninstall.sh scripts/*.sh passes, validate-patterns, validate-commands, validate-examples, validate-golden-artifacts, validate-scenarios, smoke-install, smoke-uninstall, and smoke-artifact-memory all pass, README/CI/CONTRIBUTING list the same required checks, and git status shows no generated junk.
+/goal html-explainer V1 is complete when bash -n install.sh uninstall.sh scripts/*.sh passes, validate-patterns, validate-commands, validate-examples, validate-goals, validate-golden-artifacts, validate-scenarios, smoke-install, smoke-uninstall, and smoke-artifact-memory all pass, README/CI/CONTRIBUTING list the same required checks, and git status shows no generated junk.
 ```
 
 ## Artifact Delivery

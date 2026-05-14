@@ -134,6 +134,7 @@ Do not use HTML for simple answers, one commands, tiny facts, or low-consequence
 
 Reference docs live in `~/.claude/html-explainer/docs/`.
 Runtime scripts live in `~/.claude/html-explainer/scripts/`. Generated HTML should pass `deliver-artifact.py` before final delivery.
+Goal contracts live in `~/.claude/html-explainer/goals/`. Use them with `/goal` when a task needs intelligent completion.
 <!-- html-explainer:end -->
 EOF
 }
@@ -206,6 +207,7 @@ for cmd in "${LEGACY_COMMANDS[@]}"; do
   backup_path "$CLAUDE_HOME/commands/$cmd.md" "commands/legacy/$cmd.md"
 done
 backup_path "$CLAUDE_HOME/html-explainer/docs" "docs"
+backup_path "$CLAUDE_HOME/html-explainer/goals" "goals"
 backup_path "$CLAUDE_HOME/html-explainer/patterns" "patterns"
 backup_path "$CLAUDE_HOME/html-explainer/scripts" "scripts"
 backup_path "$CLAUDE_HOME/html-explainer/local-examples" "local-examples"
@@ -234,6 +236,7 @@ for cmd in "${LEGACY_COMMANDS[@]}"; do
 done
 copy_files "$PACKAGE_DIR/commands" "$CLAUDE_HOME/commands"
 copy_dir_clean "$PACKAGE_DIR/docs" "$CLAUDE_HOME/html-explainer/docs"
+copy_dir_clean "$PACKAGE_DIR/goals" "$CLAUDE_HOME/html-explainer/goals"
 copy_dir_clean "$PACKAGE_DIR/patterns" "$CLAUDE_HOME/html-explainer/patterns"
 copy_dir_clean "$PACKAGE_DIR/scripts" "$CLAUDE_HOME/html-explainer/scripts"
 if [ -d "$PACKAGE_DIR/examples" ]; then
@@ -269,6 +272,7 @@ if [ "$DRY_RUN" = "0" ]; then
     verify_file "$CLAUDE_HOME/commands/$cmd.md"
   done
   verify_file "$CLAUDE_HOME/html-explainer/docs/DECISION_GATE.md"
+  verify_file "$CLAUDE_HOME/html-explainer/docs/COMPLETION_MODEL.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/PATTERN_GUIDE.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/QUALITY_BAR.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/STYLE.md"
@@ -284,6 +288,9 @@ if [ "$DRY_RUN" = "0" ]; then
   verify_file "$CLAUDE_HOME/html-explainer/docs/QUALITY_CLAIMS.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/DOCS_MAP.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/GOAL_WORKFLOWS.md"
+  verify_file "$CLAUDE_HOME/html-explainer/goals/artifact-ready.goal.md"
+  verify_file "$CLAUDE_HOME/html-explainer/goals/repo-v1-complete.goal.md"
+  verify_file "$CLAUDE_HOME/html-explainer/goals/docs-coherent.goal.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/INSIGHT_SURFACE_LOOP.md"
   verify_file "$CLAUDE_HOME/html-explainer/docs/V1_FUNCTION_AUDIT.md"
   verify_file "$CLAUDE_HOME/html-explainer/scripts/audit-artifact.py"

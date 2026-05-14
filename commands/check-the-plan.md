@@ -2,6 +2,8 @@
 
 Review an implementation plan before code changes.
 
+Completion goal: `goals/plan-review-complete.goal.md`.
+
 ## Process
 
 1. Apply `docs/DECISION_GATE.md`.

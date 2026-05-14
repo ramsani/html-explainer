@@ -112,6 +112,7 @@ if [ "$RESTORE_BACKUP" = "1" ] && [ -n "${BACKUP:-}" ]; then
   restore_path "$BACKUP" "skills/thariq-html-effectiveness" "$CLAUDE_HOME/skills/thariq-html-effectiveness"
   restore_path "$BACKUP" "skills/visual-explainer" "$CLAUDE_HOME/skills/visual-explainer"
   restore_path "$BACKUP" "docs" "$CLAUDE_HOME/html-explainer/docs"
+  restore_path "$BACKUP" "goals" "$CLAUDE_HOME/html-explainer/goals"
   restore_path "$BACKUP" "patterns" "$CLAUDE_HOME/html-explainer/patterns"
   restore_path "$BACKUP" "scripts" "$CLAUDE_HOME/html-explainer/scripts"
   restore_path "$BACKUP" "local-examples" "$CLAUDE_HOME/html-explainer/local-examples"
@@ -131,6 +132,7 @@ else
 
   remove_path "$CLAUDE_HOME/skills/thariq-html-effectiveness"
   remove_path "$CLAUDE_HOME/html-explainer/docs"
+  remove_path "$CLAUDE_HOME/html-explainer/goals"
   remove_path "$CLAUDE_HOME/html-explainer/patterns"
   remove_path "$CLAUDE_HOME/html-explainer/scripts"
   remove_path "$CLAUDE_HOME/html-explainer/local-examples"

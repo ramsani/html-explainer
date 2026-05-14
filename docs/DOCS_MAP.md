@@ -20,10 +20,21 @@ These files define the active behavior for V1:
 - `DELIVERY.md`
 - `ARTIFACT_MEMORY.md`
 - `ACTIONABLE_KNOWLEDGE_BASE.md`
+- `COMPLETION_MODEL.md`
 - `QUALITY_CLAIMS.md`
 - `ENGINEERING_TRANSLATION.md`
 - `V1_FUNCTION_AUDIT.md`
 - `GOAL_WORKFLOWS.md`
+
+Goal contracts:
+
+- `../goals/artifact-ready.goal.md`
+- `../goals/plan-review-complete.goal.md`
+- `../goals/diff-review-complete.goal.md`
+- `../goals/memory-ready.goal.md`
+- `../goals/docs-coherent.goal.md`
+- `../goals/repo-v1-complete.goal.md`
+- `../goals/pattern-package-complete.goal.md`
 
 ## Reference Only
 

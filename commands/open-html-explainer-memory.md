@@ -2,6 +2,8 @@
 
 Open the local html-explainer knowledge base.
 
+Completion goal: `goals/memory-ready.goal.md` when verifying saved memory, otherwise keep the response short.
+
 ## Process
 
 1. Apply `docs/LANGUAGE_POLICY.md`.

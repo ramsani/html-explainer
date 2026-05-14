@@ -2,6 +2,8 @@
 
 Select the correct HTML artifact pattern before generating anything.
 
+Completion goal: `goals/artifact-ready.goal.md` only after the user asks to generate the selected artifact.
+
 Do not generate HTML yet.
 
 ## Required References

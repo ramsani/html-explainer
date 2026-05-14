@@ -2,6 +2,8 @@
 
 Review a diff, PR, patch, or changed files before accepting them.
 
+Completion goal: `goals/diff-review-complete.goal.md`.
+
 ## Process
 
 1. Apply `docs/DECISION_GATE.md`.

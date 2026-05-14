@@ -2,6 +2,8 @@
 
 Create a repo/project recap that helps the user re-enter context quickly.
 
+Completion goal: `goals/repo-v1-complete.goal.md` for full audits, or `goals/artifact-ready.goal.md` for a single recap artifact.
+
 ## Process
 
 1. Apply `docs/DECISION_GATE.md`.

@@ -22,6 +22,7 @@ jobs:
           bash -n scripts/validate-patterns.sh
           bash -n scripts/validate-commands.sh
           bash -n scripts/validate-examples.sh
+          bash -n scripts/validate-goals.sh
           bash -n scripts/validate-golden-artifacts.sh
           bash -n scripts/validate-scenarios.sh
           bash -n scripts/smoke-install.sh
@@ -39,6 +40,9 @@ jobs:
 
       - name: Validate example artifacts
         run: scripts/validate-examples.sh
+
+      - name: Validate goal contracts
+        run: scripts/validate-goals.sh
 
       - name: Validate golden artifact fixtures
         run: scripts/validate-golden-artifacts.sh

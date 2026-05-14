@@ -2,6 +2,8 @@
 
 Generate a self-contained HTML artifact using the html-explainer operating model.
 
+Completion goal: `goals/artifact-ready.goal.md`.
+
 ## Mandatory Process
 
 1. Apply `docs/DECISION_GATE.md`.

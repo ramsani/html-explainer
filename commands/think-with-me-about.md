@@ -2,6 +2,8 @@
 
 Create a decision-ready HTML thinking surface using the Insight Surface Loop.
 
+Completion goal: `goals/artifact-ready.goal.md`.
+
 Use when the user wants to think through a topic, idea, decision, strategy, problem, opportunity, or unclear question.
 
 Do not use for simple facts, single commands, tiny edits, or low-consequence notes where Markdown is enough.
