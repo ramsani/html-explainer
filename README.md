@@ -124,6 +124,18 @@ From Claude Code, use:
 /open-html-explainer-memory
 ```
 
+## Autonomous Closeout
+
+For longer work, use Claude Code's `/goal` so Claude keeps going until a verifiable finish line is met:
+
+```text
+/goal html-explainer V1 is complete when all validation scripts and smoke tests pass, README/CI/CONTRIBUTING list the same checks, and git status shows no generated junk.
+```
+
+Use it for audits, PR closure, artifact delivery, memory validation, and V1-style verification. Do not use it for small questions.
+
+More examples: [`docs/GOAL_WORKFLOWS.md`](docs/GOAL_WORKFLOWS.md).
+
 ## Verify Locally
 
 Run the same checks expected from contributors and CI:

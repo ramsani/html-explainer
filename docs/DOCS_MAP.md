@@ -23,6 +23,7 @@ These files define the active behavior for V1:
 - `QUALITY_CLAIMS.md`
 - `ENGINEERING_TRANSLATION.md`
 - `V1_FUNCTION_AUDIT.md`
+- `GOAL_WORKFLOWS.md`
 
 ## Reference Only
 

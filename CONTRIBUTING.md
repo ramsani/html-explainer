@@ -37,6 +37,14 @@ DRY_RUN=1 INSTALL_UPSTREAM=0 FETCH_EXAMPLES=0 bash install.sh
 
 These checks confirm required behavior. New artifacts and patterns should include the required user-facing parts before validation runs.
 
+For substantial PRs, `/goal` is the recommended closeout mode:
+
+```text
+/goal this PR is ready when bash -n install.sh uninstall.sh scripts/*.sh passes, validate-patterns, validate-commands, validate-examples, validate-golden-artifacts, validate-scenarios, smoke-install, smoke-uninstall, and smoke-artifact-memory all pass, README/CI/CONTRIBUTING stay aligned, and git status shows no generated junk.
+```
+
+Use `/goal` only when the work has a verifiable finish line. Do not use it to justify new commands, hooks, services, or long-running machinery.
+
 When adding a new principle or product promise, update `docs/ENGINEERING_TRANSLATION.md` with the concrete behavior, affected files, and confirmation check. If the promise affects generated HTML, add or update runtime validation.
 
 ## Adding Or Changing A Pattern
