@@ -113,6 +113,8 @@ Use them as copy/paste finish lines:
 
 The command file explains how to work. The goal file explains when to stop.
 
+Keep that split strict. Do not copy the goal's full checklist into command files. Commands should stay short enough for the agent to act quickly; goals should carry the deeper quality judgment.
+
 ## What To Remove From Future Work
 
 When `/goal` is available, avoid adding new docs or scripts that only say:

@@ -48,6 +48,8 @@ Use `/goal` only when the work has a verifiable finish line. Do not use it to ju
 
 Before adding a new validator, ask whether the check is deterministic. If it needs judgment over usefulness, clarity, user value, or the conversation as a whole, prefer a goal contract in `goals/`. If it can run cheaply in CI without Claude, keep it as a script.
 
+When adding or changing a command, keep it operational and short. Put the completion standard in the matching `goals/*.goal.md` file instead of repeating a checklist inside `commands/*.md`.
+
 When adding a new principle or product promise, update `docs/ENGINEERING_TRANSLATION.md` with the concrete behavior, affected files, and confirmation check. If the promise affects generated HTML, add or update runtime validation.
 
 ## Adding Or Changing A Pattern

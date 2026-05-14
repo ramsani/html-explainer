@@ -68,11 +68,6 @@ Saved for later:
 - If the artifact may become future context, state whether to save, refresh later, keep private, supersede, or discard it.
 - If it may be reused, include one quiet line for how to find it later.
 
-## Done Means
+## Completion
 
-- Primary intent was answered.
-- Required evidence was inspected or the lack of evidence was stated.
-- HTML was generated only if it beats Markdown.
-- The artifact or response includes risk, uncertainty, recommendation, and next action.
-- Save / private / refresh / supersede / discard decision was made.
-- If HTML was delivered, deliver-artifact.py approved it.
+Use the completion goal named above as the stopping condition. Report a blocker instead of claiming completion if the goal cannot be satisfied.

@@ -54,6 +54,8 @@ Do not make regex pretend to be product judgment.
 
 Use regex and scripts to block obvious structural failure. Use `/goal` to keep Claude working until quality is demonstrated in the conversation and output.
 
+Commands should stay thin. A command defines the user's mode of work, the minimum references to inspect, and the output shape. It should not duplicate the full finish line. The matching goal contract defines when the work is actually done.
+
 ## Default Flow
 
 ```text
