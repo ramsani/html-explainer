@@ -4,6 +4,35 @@ Use `/goal` when the work is too long for one turn and has a clear finish line.
 
 Do not use it for short answers, one-command help, tiny facts, or low-risk notes.
 
+## Architecture Role
+
+`/goal` is the intelligent closeout layer.
+
+It replaces:
+
+- repeated "continue" prompts from the user;
+- long manual checklists inside a conversation;
+- vague reminders to "make sure it is done";
+- semantic judgment that depends on a fresh reading of the conversation.
+
+It does not replace:
+
+- CI checks that must run without Claude Code;
+- installer and uninstaller smoke tests;
+- file existence checks;
+- deterministic artifact memory checks;
+- cheap structural gates that block obviously weak artifacts.
+
+The simple architecture is:
+
+```text
+deterministic scripts = cheap floor
+/goal = intelligent finish line
+human = final product judgment when stakes are high
+```
+
+Do not add new hooks, servers, databases, MCPs, or extra commands just to use `/goal`.
+
 ## How To Write A Useful Goal
 
 A good goal has:
@@ -14,6 +43,19 @@ A good goal has:
 - a stop condition if the work cannot finish.
 
 The evaluator only sees what Claude reports in the conversation. Claude must show the checks it ran and the result.
+
+## What To Remove From Future Work
+
+When `/goal` is available, avoid adding new docs or scripts that only say:
+
+- keep going until done;
+- remember to run the checks;
+- judge whether the output is good;
+- repeat this review after every turn.
+
+Write a concrete `/goal` condition instead.
+
+Keep a script only when it can verify something without model judgment.
 
 ## V1 Closeout
 

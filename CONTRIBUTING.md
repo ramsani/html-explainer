@@ -45,6 +45,8 @@ For substantial PRs, `/goal` is the recommended closeout mode:
 
 Use `/goal` only when the work has a verifiable finish line. Do not use it to justify new commands, hooks, services, or long-running machinery.
 
+Before adding a new validator, ask whether the check is deterministic. If it needs judgment over the conversation, prefer a concrete `/goal` condition. If it can run cheaply in CI without Claude, keep it as a script.
+
 When adding a new principle or product promise, update `docs/ENGINEERING_TRANSLATION.md` with the concrete behavior, affected files, and confirmation check. If the promise affects generated HTML, add or update runtime validation.
 
 ## Adding Or Changing A Pattern

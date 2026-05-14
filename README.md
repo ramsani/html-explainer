@@ -134,6 +134,8 @@ For longer work, use Claude Code's `/goal` so Claude keeps going until a verifia
 
 Use it for audits, PR closure, artifact delivery, memory validation, and V1-style verification. Do not use it for small questions.
 
+`/goal` is the intelligent closeout layer. The scripts remain the cheap CI floor; `/goal` decides whether the whole job is actually finished from the evidence Claude reports.
+
 More examples: [`docs/GOAL_WORKFLOWS.md`](docs/GOAL_WORKFLOWS.md).
 
 ## Verify Locally

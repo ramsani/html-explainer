@@ -128,7 +128,7 @@ Prefer these installed commands:
 - `/think-with-me-about` to think through a topic using an Insight Surface Loop.
 - `/open-html-explainer-memory` to open the local knowledge base.
 
-For long work with a verifiable finish line, suggest `/goal` instead of asking the user to say "continue" repeatedly. Keep the goal concrete: include the checks to run, the expected final state, and what should not change.
+For long work with a verifiable finish line, suggest `/goal` instead of asking the user to say "continue" repeatedly. Keep the goal concrete: include the checks to run, the expected final state, and what should not change. Use scripts as the cheap deterministic floor; use `/goal` for intelligent closeout over the whole conversation.
 
 Do not use HTML for simple answers, one commands, tiny facts, or low-consequence notes. Every artifact must preserve the user's primary intent, cover obvious secondary intents when they affect the decision, show evidence, separate facts/inferences/unknowns, use the smallest useful budget, use the user's language, end with a copy/edit next prompt, and recommend whether to save, refresh, keep private, supersede, or discard the artifact when it may become future context.
 
