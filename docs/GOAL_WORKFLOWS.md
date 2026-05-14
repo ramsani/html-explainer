@@ -27,7 +27,7 @@ The simple architecture is:
 
 ```text
 deterministic scripts = cheap floor
-/goal = intelligent finish line
+/goal = intelligent quality evaluator and finish line
 human = final product judgment when stakes are high
 ```
 
@@ -43,6 +43,59 @@ A good goal has:
 - a stop condition if the work cannot finish.
 
 The evaluator only sees what Claude reports in the conversation. Claude must show the checks it ran and the result.
+
+## Goal As Quality Evaluator
+
+The strongest use of `/goal` is not "keep working." It is "keep improving until the result is truly useful."
+
+Write goals that judge the user outcome:
+
+- Can the user understand the point in the first screen?
+- Can the user see what evidence supports the recommendation?
+- Can the user tell what is fact, inference, assumption, and unknown?
+- Can the user make a decision or choose a next action without asking for a second explanation?
+- Can the user find or reuse the artifact later without learning the internal machinery?
+
+Avoid goals that only judge labels:
+
+```text
+Weak: /goal the artifact mentions intent, evidence, risk, and next action.
+Strong: /goal the artifact is ready when a user can open it and immediately see what decision it supports, what evidence was inspected, the main risk, the recommended next move, and how to reuse or discard it later.
+```
+
+This lets `/goal` replace fragile semantic checklists where the real question is usefulness, clarity, and decision value.
+
+## Quality Goals
+
+### Decision-Ready Artifact
+
+```text
+/goal the artifact is decision-ready when the first screen lets a user understand the decision, evidence basis, main risk, recommendation, next action, and memory choice without reading internal process labels; deliver-artifact.py approves it at 90+; and the final response includes the file path and one useful next command.
+```
+
+### Human Interface Quality
+
+```text
+/goal the artifact feels simple and powerful when the visible copy is plain, non-technical, respectful, and in the user's language; every button or interaction changes state or exports useful output; the user has at least one graceful alternative to the recommended path; and no internal engineering philosophy is exposed.
+```
+
+### Knowledge Base Value
+
+```text
+/goal the saved artifact adds real memory value when it has clear title, intent, summary, tags or topics, freshness risk, privacy class, next action, find-it-fast text, metadata, annotation sidecar, and appears in the regenerated knowledge base with a useful re-entry prompt.
+```
+
+### Anti-Slop Artifact Review
+
+```text
+/goal the artifact is not slop when it cannot be reduced to the same information in simpler Markdown without losing comparison, inspection, interaction, decision support, or reusable memory; if Markdown is enough, stop and return the simpler answer.
+```
+
+### README Product Clarity
+
+```text
+/goal the README is ready when a new user can understand in under two minutes what html-explainer installs, when to use it, what command to try first, what good output looks like, how local memory works, how to verify locally, and how to uninstall.
+```
 
 ## What To Remove From Future Work
 
