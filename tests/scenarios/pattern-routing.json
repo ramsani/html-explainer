@@ -1,197 +1,23 @@
 [
-  {
-    "id": "repo-reentry",
-    "category": "remember",
-    "prompt": "Help me understand this repo and choose the next highest-value action.",
-    "expected_pattern": "17-project-recap",
-    "acceptable_alternates": [
-      "16-audit-report"
-    ],
-    "expected_budget": "standard",
-    "should_generate_html": true,
-    "required_evidence": [
-      "README",
-      "entry points",
-      "scripts",
-      "CI"
-    ],
-    "reason": "The user needs repo re-entry and next action selection.",
-    "what_can_go_wrong": "Recap becomes a generic README summary.",
-    "guardrail": "Require README, entry points, scripts, CI, current state, risk, next action, and memory decision.",
-    "user_value": "Turns repo re-entry into reusable operational context instead of one-time orientation."
-  },
-  {
-    "id": "diff-review",
-    "category": "review",
-    "prompt": "Review this PR diff and tell me whether to accept it.",
-    "expected_pattern": "03-annotated-pr-diff-review",
-    "acceptable_alternates": [],
-    "expected_budget": "standard",
-    "should_generate_html": true,
-    "required_evidence": [
-      "diff",
-      "changed files",
-      "tests",
-      "risk"
-    ],
-    "reason": "A diff review needs file risk, findings, missing checks, and a decision.",
-    "what_can_go_wrong": "Review sounds confident without proof or misses release risk.",
-    "guardrail": "Require changed files, tests, risk, findings, missing checks, and accept/revise/block decision.",
-    "user_value": "Converts code review from prose opinion into a decision surface."
-  },
-  {
-    "id": "plan-review",
-    "category": "review",
-    "prompt": "Check this implementation plan before coding.",
-    "expected_pattern": "02-visual-implementation-plan",
-    "acceptable_alternates": [
-      "16-audit-report"
-    ],
-    "expected_budget": "compact",
-    "should_generate_html": true,
-    "required_evidence": [
-      "plan",
-      "repo facts",
-      "dependencies",
-      "validation"
-    ],
-    "reason": "The user needs fit, risk, and missing proof before implementation.",
-    "what_can_go_wrong": "Agent approves a plan that does not fit the real repo.",
-    "guardrail": "Require plan, repo facts, dependencies, validation gaps, and explicit approve/revise/reject decision.",
-    "user_value": "Blocks weak implementation before code exists."
-  },
-  {
-    "id": "prompt-tuner",
-    "category": "tune",
-    "prompt": "Tune this agent instruction so it avoids fake evidence and produces useful handoffs.",
-    "expected_pattern": "20-prompt-agent-behavior-tuner",
-    "acceptable_alternates": [],
-    "expected_budget": "interactive",
-    "should_generate_html": true,
-    "required_evidence": [
-      "current instruction",
-      "failure modes",
-      "scenario tests"
-    ],
-    "reason": "Behavior tuning needs visible dimensions, failure modes, tests, and exportable instructions.",
-    "what_can_go_wrong": "Tuning becomes vague personality advice.",
-    "guardrail": "Require failure modes, scenario tests, output contract, exportable instructions, and next prompt.",
-    "user_value": "Turns behavior design into a reusable operating contract."
-  },
-  {
-    "id": "architecture-map",
-    "category": "map",
-    "prompt": "Map this module architecture and show where changes are risky.",
-    "expected_pattern": "09-architecture-diagram",
-    "acceptable_alternates": [
-      "04-module-map"
-    ],
-    "expected_budget": "standard",
-    "should_generate_html": true,
-    "required_evidence": [
-      "entry points",
-      "callers",
-      "data flow",
-      "boundaries"
-    ],
-    "reason": "Architecture relationships and risk zones are spatial.",
-    "what_can_go_wrong": "Architecture diagram becomes decorative boxes without risk boundaries.",
-    "guardrail": "Require entry points, callers, data flow, boundaries, safe zones, and unknowns.",
-    "user_value": "Makes hidden coupling visible before changes are made."
-  },
-  {
-    "id": "workflow-flowchart",
-    "category": "map",
-    "prompt": "Show this workflow as steps, branches, failure paths, and handoff points.",
-    "expected_pattern": "10-process-workflow-flowchart",
-    "acceptable_alternates": [],
-    "expected_budget": "standard",
-    "should_generate_html": true,
-    "required_evidence": [
-      "workflow steps",
-      "branches",
-      "failure paths",
-      "owners"
-    ],
-    "reason": "A workflow needs sequence, branching, and failure path visibility.",
-    "what_can_go_wrong": "Workflow hides branch failures and handoff points.",
-    "guardrail": "Require steps, branches, failure paths, owners, and next action.",
-    "user_value": "Turns process confusion into inspectable operational flow."
-  },
-  {
-    "id": "ticket-triage",
-    "category": "decide",
-    "prompt": "Sort these tickets by value, urgency, risk, and next action.",
-    "expected_pattern": "18-ticket-triage-board",
-    "acceptable_alternates": [],
-    "expected_budget": "interactive",
-    "should_generate_html": true,
-    "required_evidence": [
-      "ticket list",
-      "priority signals",
-      "risk",
-      "dependencies"
-    ],
-    "reason": "Triage benefits from grouping, filtering, and visible next actions.",
-    "what_can_go_wrong": "Triage sorts by preference instead of value, risk, and dependency.",
-    "guardrail": "Require ticket list, priority signals, risk, dependencies, export, and next action.",
-    "user_value": "Creates a temporary decision board instead of a static task list."
-  },
-  {
-    "id": "visual-direction",
-    "category": "decide",
-    "prompt": "Explore three visual directions for this app and recommend one.",
-    "expected_pattern": "21-visual-direction-explorer",
-    "acceptable_alternates": [
-      "11-technical-decision-deck"
-    ],
-    "expected_budget": "interactive",
-    "should_generate_html": true,
-    "required_evidence": [
-      "audience",
-      "brand constraints",
-      "screens",
-      "trade-offs"
-    ],
-    "reason": "Visual direction work needs comparison and decision support.",
-    "what_can_go_wrong": "Visual exploration becomes taste theater.",
-    "guardrail": "Require audience, constraints, options, trade-offs, recommendation, and next prompt.",
-    "user_value": "Converts aesthetic choice into a decision with criteria."
-  },
-  {
-    "id": "simple-command",
-    "category": "negative",
-    "prompt": "What command shows the current git branch?",
-    "expected_pattern": "none",
-    "acceptable_alternates": [],
-    "expected_budget": "none",
-    "should_generate_html": false,
-    "required_evidence": [],
-    "reason": "A tiny factual answer does not justify HTML.",
-    "what_can_go_wrong": "System overuses HTML and wastes attention.",
-    "guardrail": "Negative scenario forces Markdown/plain answer when HTML adds no value.",
-    "user_value": "Protects trust by refusing unnecessary artifact generation."
-  },
-  {
-    "id": "thinking-surface",
-    "category": "think",
-    "prompt": "Think with me about whether this repo should become a local knowledge system.",
-    "expected_pattern": "22-insight-surface-loop",
-    "acceptable_alternates": [
-      "11-technical-decision-deck"
-    ],
-    "expected_budget": "standard",
-    "should_generate_html": true,
-    "required_evidence": [
-      "topic",
-      "facts",
-      "assumptions",
-      "stress test",
-      "next action"
-    ],
-    "reason": "The user needs to move from vague idea to provisional conclusion and re-entry.",
-    "what_can_go_wrong": "Thinking surface becomes theory-heavy brainstorming.",
-    "guardrail": "Require facts, assumptions, stress test, provisional conclusion, action, archive recommendation, and re-entry.",
-    "user_value": "Turns vague thinking into reusable decision memory."
-  }
+  {"id":"repo-reentry","category":"remember","prompt":"Help me understand this repo and choose the next highest-value action.","expected_pattern":"17-project-recap","acceptable_alternates":["16-audit-report"],"expected_budget":"standard","should_generate_html":true,"required_evidence":["README","entry points","scripts","CI"],"reason":"The user needs repo re-entry and next action selection.","what_can_go_wrong":"Recap becomes a generic README summary.","guardrail":"Require README, entry points, scripts, CI, current state, risk, next action, and memory decision.","user_value":"Turns repo re-entry into reusable operational context instead of one-time orientation."},
+  {"id":"repo-reentry-poor-readme","category":"remember","prompt":"This repo has a poor README; map what matters from files and scripts.","expected_pattern":"17-project-recap","acceptable_alternates":["04-module-map"],"expected_budget":"standard","should_generate_html":true,"required_evidence":["files","scripts","entry points","tests"],"reason":"README alone is insufficient.","what_can_go_wrong":"Agent trusts weak docs.","guardrail":"Require direct file inspection and state README limits.","user_value":"Gives useful re-entry even when docs are poor."},
+  {"id":"diff-review","category":"review","prompt":"Review this PR diff and tell me whether to accept it.","expected_pattern":"03-annotated-pr-diff-review","acceptable_alternates":[],"expected_budget":"standard","should_generate_html":true,"required_evidence":["diff","changed files","tests","risk"],"reason":"A diff review needs file risk, findings, missing checks, and a decision.","what_can_go_wrong":"Review sounds confident without proof or misses release risk.","guardrail":"Require changed files, tests, risk, findings, missing checks, and accept/revise/block decision.","user_value":"Converts code review from prose opinion into a decision surface."},
+  {"id":"diff-without-tests","category":"review","prompt":"Review this diff; there are no tests attached.","expected_pattern":"03-annotated-pr-diff-review","acceptable_alternates":["16-audit-report"],"expected_budget":"standard","should_generate_html":true,"required_evidence":["diff","changed files","missing tests"],"reason":"Missing tests are part of the decision.","what_can_go_wrong":"The artifact treats unverified code as safe.","guardrail":"Expose missing tests as a risk and block or revise when needed.","user_value":"Prevents a confident merge recommendation without proof."},
+  {"id":"plan-review","category":"review","prompt":"Check this implementation plan before coding.","expected_pattern":"02-visual-implementation-plan","acceptable_alternates":["16-audit-report"],"expected_budget":"compact","should_generate_html":true,"required_evidence":["plan","repo facts","dependencies","validation"],"reason":"The user needs fit, risk, and missing proof before implementation.","what_can_go_wrong":"Agent approves a plan that does not fit the real repo.","guardrail":"Require plan, repo facts, dependencies, validation gaps, and explicit approve/revise/reject decision.","user_value":"Blocks weak implementation before code exists."},
+  {"id":"ambiguous-plan","category":"ambiguous","prompt":"Make this plan better, but I am not sure what success means.","expected_pattern":"02-visual-implementation-plan","acceptable_alternates":["22-insight-surface-loop"],"expected_budget":"compact","should_generate_html":true,"required_evidence":["plan","unclear success criteria"],"reason":"Ambiguity must be surfaced before implementation.","what_can_go_wrong":"The artifact optimizes the wrong goal.","guardrail":"State ambiguity and ask for the smallest missing decision.","user_value":"Prevents false precision."},
+  {"id":"prompt-tuner","category":"tune","prompt":"Tune this agent instruction so it avoids fake evidence and produces useful handoffs.","expected_pattern":"20-prompt-agent-behavior-tuner","acceptable_alternates":[],"expected_budget":"interactive","should_generate_html":true,"required_evidence":["current instruction","failure modes","scenario tests"],"reason":"Behavior tuning needs visible dimensions, failure modes, tests, and exportable instructions.","what_can_go_wrong":"Tuning becomes vague personality advice.","guardrail":"Require failure modes, scenario tests, output contract, exportable instructions, and next prompt.","user_value":"Turns behavior design into a reusable operating contract."},
+  {"id":"prompt-tuning-without-examples","category":"tune","prompt":"Tune this prompt but I have no examples yet.","expected_pattern":"20-prompt-agent-behavior-tuner","acceptable_alternates":["22-insight-surface-loop"],"expected_budget":"standard","should_generate_html":true,"required_evidence":["current prompt","missing examples","assumptions"],"reason":"The artifact can tune hypotheses but must expose missing examples.","what_can_go_wrong":"It invents test cases and claims confidence.","guardrail":"Mark examples as missing and create scenario placeholders.","user_value":"Keeps tuning useful without fake evidence."},
+  {"id":"architecture-map","category":"map","prompt":"Map this module architecture and show where changes are risky.","expected_pattern":"09-architecture-diagram","acceptable_alternates":["04-module-map"],"expected_budget":"standard","should_generate_html":true,"required_evidence":["entry points","callers","data flow","boundaries"],"reason":"Architecture relationships and risk zones are spatial.","what_can_go_wrong":"Architecture diagram becomes decorative boxes without risk boundaries.","guardrail":"Require entry points, callers, data flow, boundaries, safe zones, and unknowns.","user_value":"Makes hidden coupling visible before changes are made."},
+  {"id":"workflow-flowchart","category":"map","prompt":"Show this workflow as steps, branches, failure paths, and handoff points.","expected_pattern":"10-process-workflow-flowchart","acceptable_alternates":[],"expected_budget":"standard","should_generate_html":true,"required_evidence":["workflow steps","branches","failure paths","owners"],"reason":"A workflow needs sequence, branching, and failure path visibility.","what_can_go_wrong":"Workflow hides branch failures and handoff points.","guardrail":"Require steps, branches, failure paths, owners, and next action.","user_value":"Turns process confusion into inspectable operational flow."},
+  {"id":"workflow-failure-routes","category":"map","prompt":"Map this workflow and focus on where it fails.","expected_pattern":"10-process-workflow-flowchart","acceptable_alternates":["15-incident-postmortem-report"],"expected_budget":"standard","should_generate_html":true,"required_evidence":["failure paths","owners","handoffs","recovery"],"reason":"Failure paths determine operational value.","what_can_go_wrong":"The happy path hides the real risk.","guardrail":"Show failure branches and recovery actions.","user_value":"Makes the process safer before automation."},
+  {"id":"ticket-triage","category":"decide","prompt":"Sort these tickets by value, urgency, risk, and next action.","expected_pattern":"18-ticket-triage-board","acceptable_alternates":[],"expected_budget":"interactive","should_generate_html":true,"required_evidence":["ticket list","priority signals","risk","dependencies"],"reason":"Triage benefits from grouping, filtering, and visible next actions.","what_can_go_wrong":"Triage sorts by preference instead of value, risk, and dependency.","guardrail":"Require ticket list, priority signals, risk, dependencies, export, and next action.","user_value":"Creates a temporary decision board instead of a static task list."},
+  {"id":"visual-direction","category":"decide","prompt":"Explore three visual directions for this app and recommend one.","expected_pattern":"21-visual-direction-explorer","acceptable_alternates":["11-technical-decision-deck"],"expected_budget":"interactive","should_generate_html":true,"required_evidence":["audience","brand constraints","screens","trade-offs"],"reason":"Visual direction work needs comparison and decision support.","what_can_go_wrong":"Visual exploration becomes taste theater.","guardrail":"Require audience, constraints, options, trade-offs, recommendation, and next prompt.","user_value":"Converts aesthetic choice into a decision with criteria."},
+  {"id":"visual-without-audience","category":"ambiguous","prompt":"Make this look premium, but I do not know the audience.","expected_pattern":"21-visual-direction-explorer","acceptable_alternates":["22-insight-surface-loop"],"expected_budget":"standard","should_generate_html":true,"required_evidence":["missing audience","constraints","assumptions"],"reason":"Visual decisions need audience context.","what_can_go_wrong":"The artifact optimizes taste instead of fit.","guardrail":"Expose missing audience and keep recommendation provisional.","user_value":"Avoids polished but wrong design direction."},
+  {"id":"private-artifact","category":"private","prompt":"Create a local artifact from sensitive project notes; do not make it shareable.","expected_pattern":"16-audit-report","acceptable_alternates":["17-project-recap"],"expected_budget":"compact","should_generate_html":true,"required_evidence":["private notes","privacy boundary","reuse limits"],"reason":"Privacy affects memory and sharing decisions.","what_can_go_wrong":"Private material becomes reusable public context.","guardrail":"Mark private and include refresh/share warning.","user_value":"Keeps local memory useful without leaking sensitive context."},
+  {"id":"temporal-artifact","category":"temporal","prompt":"Summarize today's incident status and tell me what to do next.","expected_pattern":"15-incident-postmortem-report","acceptable_alternates":["17-project-recap"],"expected_budget":"compact","should_generate_html":true,"required_evidence":["current status","time","owner","next update"],"reason":"Temporal artifacts can go stale quickly.","what_can_go_wrong":"Old status is reused as current truth.","guardrail":"Mark temporal and require refresh condition.","user_value":"Useful now without becoming stale memory."},
+  {"id":"do-not-save-artifact","category":"negative-memory","prompt":"Make a scratch comparison I do not need later.","expected_pattern":"14-research-comparison-map","acceptable_alternates":["none"],"expected_budget":"compact","should_generate_html":true,"required_evidence":["options","criteria","scratch scope"],"reason":"Some artifacts are useful but should not enter memory.","what_can_go_wrong":"Low-value scratch work pollutes the knowledge base.","guardrail":"State do not save or discard decision.","user_value":"Keeps memory clean."},
+  {"id":"simple-command","category":"negative","prompt":"What command shows the current git branch?","expected_pattern":"none","acceptable_alternates":[],"expected_budget":"none","should_generate_html":false,"required_evidence":[],"reason":"A tiny factual answer does not justify HTML.","what_can_go_wrong":"System overuses HTML and wastes attention.","guardrail":"Negative scenario forces Markdown/plain answer when HTML adds no value.","user_value":"Protects trust by refusing unnecessary artifact generation."},
+  {"id":"insufficient-evidence","category":"negative","prompt":"Tell me which vendor is best, but do not look anything up and I provided no facts.","expected_pattern":"none","acceptable_alternates":[],"expected_budget":"none","should_generate_html":false,"required_evidence":[],"reason":"There is not enough evidence for a decision artifact.","what_can_go_wrong":"The artifact manufactures confidence.","guardrail":"Refuse decision-ready HTML and ask for evidence or permission to inspect.","user_value":"Prevents fake certainty."},
+  {"id":"interaction-justified","category":"interactive","prompt":"Let me compare five options by value, effort, risk, and export the winner.","expected_pattern":"18-ticket-triage-board","acceptable_alternates":["19-feature-flag-config-editor"],"expected_budget":"interactive","should_generate_html":true,"required_evidence":["options","criteria","export need"],"reason":"Interaction removes real manual ranking work.","what_can_go_wrong":"A static table forces the user to recalculate.","guardrail":"Require controls and exportable output.","user_value":"Gives useful power under the mouse."},
+  {"id":"interaction-not-justified","category":"negative","prompt":"Show the one command I should run next.","expected_pattern":"none","acceptable_alternates":[],"expected_budget":"none","should_generate_html":false,"required_evidence":[],"reason":"A single command does not justify HTML or interaction.","what_can_go_wrong":"The system creates a toy UI for a one-line answer.","guardrail":"Return Markdown only.","user_value":"Keeps friction low."}
 ]

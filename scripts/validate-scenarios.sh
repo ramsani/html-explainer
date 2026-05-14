@@ -36,13 +36,16 @@ required = {
 
 if not isinstance(scenarios, list):
     raise SystemExit("scenario file must contain a list")
-if len(scenarios) < 8:
-    raise SystemExit(f"expected at least 8 scenarios, found {len(scenarios)}")
+if len(scenarios) < 20:
+    raise SystemExit(f"expected at least 20 scenarios, found {len(scenarios)}")
 
 ids = set()
 categories = set()
 negative_count = 0
 ambiguous_count = 0
+private_count = 0
+temporal_count = 0
+no_html_count = 0
 valid_budgets = {"none", "compact", "standard", "interactive"}
 
 for index, scenario in enumerate(scenarios, start=1):
@@ -68,16 +71,27 @@ for index, scenario in enumerate(scenarios, start=1):
         raise SystemExit(f"{sid} generates HTML but has no expected pattern")
     if not scenario["should_generate_html"]:
         negative_count += 1
+        no_html_count += 1
     if scenario["acceptable_alternates"]:
         ambiguous_count += 1
+    if scenario["category"] == "private":
+        private_count += 1
+    if scenario["category"] == "temporal":
+        temporal_count += 1
     for text_field in ("prompt", "reason", "expected_pattern", "expected_budget", "what_can_go_wrong", "guardrail", "user_value"):
         if not str(scenario[text_field]).strip():
             raise SystemExit(f"{sid} has empty {text_field}")
 
 if negative_count < 1:
     raise SystemExit("expected at least one negative no-HTML scenario")
-if ambiguous_count < 1:
-    raise SystemExit("expected at least one scenario with acceptable alternates")
+if ambiguous_count < 3:
+    raise SystemExit("expected at least three scenarios with acceptable alternates")
+if private_count < 1:
+    raise SystemExit("expected at least one private scenario")
+if temporal_count < 1:
+    raise SystemExit("expected at least one temporal scenario")
+if no_html_count < 3:
+    raise SystemExit("expected at least three no-HTML scenarios")
 
 print(f"[validate-scenarios] OK: {len(scenarios)} scenarios across {len(categories)} categories")
 PY

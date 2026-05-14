@@ -22,6 +22,7 @@ class TextExtractor(HTMLParser):
 
 
 def normalize(html: str) -> str:
+    html = re.sub(r"<(script|style)\b[^>]*>.*?</\1>", " ", html, flags=re.IGNORECASE | re.DOTALL)
     parser = TextExtractor()
     parser.feed(html)
     text = " ".join(parser.parts)
@@ -55,6 +56,73 @@ def has_generic_next_action(html: str, text: str) -> bool:
             re.IGNORECASE,
         )
     )
+
+
+def lacks_concrete_evidence(html: str, text: str) -> bool:
+    matches = re.finditer(
+        r"(what i checked|evidence|sources?|lo que revis[eé]|evidencia|fuentes?)[:\s-]*(.{0,260})",
+        text,
+        re.IGNORECASE,
+    )
+    concrete_signals = [
+        r"\breadme\b",
+        r"\bdiff\b",
+        r"\btests?\b",
+        r"\bci\b",
+        r"\bscript\b",
+        r"\bfile\b",
+        r"\bdocs?\b",
+        r"\bcommand\b",
+        r"\bplan\b",
+        r"\btask\b",
+        r"\bblocker\b",
+        r"\bpriority\b",
+        r"\bconstraint\b",
+        r"\bmetadata\b",
+        r"\boutput\b",
+        r"\bfixture\b",
+        r"\bissue\b",
+        r"\bpr\b",
+        r"\barchivo\b",
+        r"\bprueba",
+        r"\bsalida\b",
+    ]
+    found = False
+    for evidence_match in matches:
+        found = True
+        if has_any(evidence_match.group(2), concrete_signals):
+            return False
+    return found is False
+
+
+def has_useless_button(html: str, text: str) -> bool:
+    if not re.search(r"\bsize:\s*interactive\b|\bbudget:\s*interactive\b|\binteractive\b", text, re.IGNORECASE):
+        return False
+    buttons = re.findall(r"<button\b([^>]*)>(.*?)</button>", html, re.IGNORECASE | re.DOTALL)
+    for attrs, label in buttons:
+        combined = f"{attrs} {label}"
+        if re.search(r"onclick=|type=[\"']submit|copy|export|download|compare|filter|save|copiar|exportar|descargar|comparar|guardar", combined, re.IGNORECASE):
+            continue
+        return True
+    return False
+
+
+def interaction_without_export(html: str, text: str) -> bool:
+    has_interaction = bool(re.search(r"<input\b|<select\b|<textarea\b", html, re.IGNORECASE)) or (
+        bool(re.search(r"<button\b", html, re.IGNORECASE))
+        and bool(re.search(r"\bsize:\s*interactive\b|\bbudget:\s*interactive\b|\binteractive\b", text, re.IGNORECASE))
+    )
+    has_output = bool(re.search(r"copy|export|download|textarea|copiar|exportar|descargar", html, re.IGNORECASE))
+    return has_interaction and not has_output
+
+
+def recommendation_not_early(html: str, text: str) -> bool:
+    early = text[:3000]
+    return not has_any(early, [r"\bbest next move\b", r"\brecommendation\b", r"\brecommended\b", r"\bnext action\b", r"\bbest option\b", r"\bcurrent risk\b", r"\btarget behavior\b", r"\bstatus:\b", r"\bnext\b", r"\brecomendaci[oó]n\b", r"\brecomendado\b", r"\bsiguiente acci[oó]n\b", r"\bmejor siguiente paso\b"])
+
+
+def missing_memory_decision(html: str, text: str) -> bool:
+    return not has_any(text, [r"\bsave decision\b", r"\bsave this\?\b", r"\bdo not save\b", r"\bprivate\b", r"\brefresh\b", r"\bsupersede\b", r"\bdiscard\b", r"\bguardar\b", r"\bno guardar\b", r"\bprivado\b", r"\brefrescar\b", r"\bsuperseder\b", r"\bdescartar\b"])
 
 
 CHECKS = [
@@ -122,7 +190,7 @@ CHECKS = [
         "id": "interaction_export",
         "points": 7,
         "label": "Interaction/export useful when present",
-        "patterns": [r"\bcopy\b", r"\bexport\b", r"<textarea\b", r"<button\b", r"\bdownload\b", r"\bcopiar\b", r"\bexportar\b", r"\bdescargar\b"],
+        "patterns": [r"\bcopy\b", r"\bexport\b", r"<textarea\b", r"\bdownload\b", r"\bcopiar\b", r"\bexportar\b", r"\bdescargar\b"],
         "html": True,
     },
     {
@@ -167,6 +235,11 @@ HARD_FAILS = [
         ),
     ),
     (
+        "no_concrete_evidence",
+        "Evidence is missing or not concrete",
+        lacks_concrete_evidence,
+    ),
+    (
         "unsupported_test_claim",
         "Claims tests passed without visible proof",
         lambda html, text: bool(re.search(r"\btests? pass(?:ed)?\b", text)) and not bool(re.search(r"\b(command output|what i checked|evidence)\b", text)),
@@ -185,6 +258,26 @@ HARD_FAILS = [
         "generic_next_action",
         "Next action is too generic to be useful",
         has_generic_next_action,
+    ),
+    (
+        "useless_button",
+        "Contains a button without a useful action",
+        has_useless_button,
+    ),
+    (
+        "interaction_without_export",
+        "Interactive controls exist without copy/export/download output",
+        interaction_without_export,
+    ),
+    (
+        "recommendation_not_early",
+        "Recommendation or next action does not appear early",
+        recommendation_not_early,
+    ),
+    (
+        "missing_memory_decision",
+        "Missing save/private/refresh/supersede/discard decision",
+        missing_memory_decision,
     ),
 ]
 

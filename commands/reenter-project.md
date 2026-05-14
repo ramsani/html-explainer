@@ -31,3 +31,12 @@ Create a repo/project recap that helps the user re-enter context quickly.
 ## Output
 
 End with one recommended next prompt, useful alternatives, archive recommendation, and a tiny saved/not-saved receipt for the next likely step.
+
+## Done Means
+
+- Primary intent was answered.
+- Required evidence was inspected or the lack of evidence was stated.
+- HTML was generated only if it beats Markdown.
+- The artifact or response includes risk, uncertainty, recommendation, and next action.
+- Save / private / refresh / supersede / discard decision was made.
+- If HTML was delivered, deliver-artifact.py approved it.

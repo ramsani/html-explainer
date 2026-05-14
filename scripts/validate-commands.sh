@@ -41,6 +41,7 @@ for cmd in "${expected[@]}"; do
   [ -f "$file" ] || fail "missing command file: commands/$cmd.md"
   grep -q "^# /$cmd$" "$file" || fail "command heading mismatch in commands/$cmd.md"
   grep -q "docs/LANGUAGE_POLICY.md" "$file" || fail "command must use language policy: commands/$cmd.md"
+  grep -q "^## Done Means$" "$file" || fail "command must include Done Means: commands/$cmd.md"
   if [ "$cmd" = "open-html-explainer-memory" ]; then
     grep -q "rebuild-knowledge-base.py" "$file" || fail "memory command must rebuild knowledge base"
     grep -q "outputs/index.html" "$file" || fail "memory command must return knowledge base path"

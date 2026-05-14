@@ -22,8 +22,11 @@ jobs:
           bash -n scripts/validate-patterns.sh
           bash -n scripts/validate-commands.sh
           bash -n scripts/validate-examples.sh
+          bash -n scripts/validate-golden-artifacts.sh
+          bash -n scripts/validate-scenarios.sh
           bash -n scripts/smoke-install.sh
           bash -n scripts/smoke-uninstall.sh
+          bash -n scripts/smoke-artifact-memory.sh
 
       - name: Make scripts executable
         run: chmod +x scripts/*.sh install.sh uninstall.sh
@@ -36,6 +39,15 @@ jobs:
 
       - name: Validate example artifacts
         run: scripts/validate-examples.sh
+
+      - name: Validate golden artifact fixtures
+        run: scripts/validate-golden-artifacts.sh
+
+      - name: Validate routing scenarios
+        run: scripts/validate-scenarios.sh
+
+      - name: Smoke test artifact memory
+        run: scripts/smoke-artifact-memory.sh
 
       - name: Dry-run installer
         run: DRY_RUN=1 INSTALL_UPSTREAM=0 FETCH_EXAMPLES=0 bash install.sh
@@ -80,6 +92,7 @@ jobs:
           test -f docs/HTML_UX_STANDARD.md
           test -f docs/pattern-router.md
           test -f docs/QUALITY_BAR.md
+          test -f docs/DOCS_MAP.md
           test -f docs/LEAN_HTML_RENDERING.md
           test -f docs/fact-sheet-protocol.md
           test -f skills/thariq-html-effectiveness/SKILL.md
@@ -90,6 +103,13 @@ jobs:
           test -f commands/reenter-project.md
           test -f commands/build-decision-tool.md
           test -f commands/audit-html.md
+          test -f commands/think-with-me-about.md
+          test -f commands/open-html-explainer-memory.md
+          test -f scripts/audit-artifact.py
+          test -f scripts/deliver-artifact.py
+          test -f scripts/save-artifact.py
+          test -f scripts/rebuild-knowledge-base.py
+          test -f scripts/smoke-artifact-memory.sh
           test -f examples/plan-review-minimal.example.html
           test -f examples/diff-review-minimal.example.html
           test -f examples/prompt-tuner-minimal.example.html

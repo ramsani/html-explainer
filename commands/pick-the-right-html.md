@@ -65,3 +65,12 @@ Saved for later:
 - Do not auto-chain commands without user approval.
 - If the artifact may become future context, state whether to save, refresh later, keep private, supersede, or discard it.
 - If it may be reused, include one quiet line for how to find it later.
+
+## Done Means
+
+- Primary intent was answered.
+- Required evidence was inspected or the lack of evidence was stated.
+- HTML was generated only if it beats Markdown.
+- The artifact or response includes risk, uncertainty, recommendation, and next action.
+- Save / private / refresh / supersede / discard decision was made.
+- If HTML was delivered, deliver-artifact.py approved it.

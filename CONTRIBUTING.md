@@ -29,10 +29,10 @@ scripts/validate-commands.sh
 scripts/validate-examples.sh
 scripts/validate-golden-artifacts.sh
 scripts/validate-scenarios.sh
-scripts/validate-runtime.sh
-DRY_RUN=1 INSTALL_UPSTREAM=0 FETCH_EXAMPLES=0 bash install.sh
 scripts/smoke-install.sh
 scripts/smoke-uninstall.sh
+scripts/smoke-artifact-memory.sh
+DRY_RUN=1 INSTALL_UPSTREAM=0 FETCH_EXAMPLES=0 bash install.sh
 ```
 
 These checks confirm required behavior. New artifacts and patterns should include the required user-facing parts before validation runs.
