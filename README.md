@@ -228,6 +228,7 @@ bash install.sh
 /build-decision-tool
 /audit-html
 /think-with-me-about
+/open-html-explainer-memory
 ```
 
 | Command | Use it when you want to... |
@@ -240,6 +241,7 @@ bash install.sh
 | `/build-decision-tool` | Build a temporary editor, triage board, tuner, or config tool. |
 | `/audit-html` | Check whether an existing artifact is actually useful. |
 | `/think-with-me-about` | Turn a vague topic into a visual thinking surface with evidence, stress testing, action, and re-entry. |
+| `/open-html-explainer-memory` | Open the local knowledge base of saved artifacts. |
 
 ## Results By Use Case
 

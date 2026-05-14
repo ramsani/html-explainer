@@ -13,6 +13,7 @@ expected=(
   build-decision-tool
   audit-html
   think-with-me-about
+  open-html-explainer-memory
 )
 
 legacy=(
@@ -39,8 +40,13 @@ for cmd in "${expected[@]}"; do
   file="$COMMAND_DIR/$cmd.md"
   [ -f "$file" ] || fail "missing command file: commands/$cmd.md"
   grep -q "^# /$cmd$" "$file" || fail "command heading mismatch in commands/$cmd.md"
-  grep -q "docs/DECISION_GATE.md" "$file" || fail "command must use consolidated decision gate: commands/$cmd.md"
   grep -q "docs/LANGUAGE_POLICY.md" "$file" || fail "command must use language policy: commands/$cmd.md"
+  if [ "$cmd" = "open-html-explainer-memory" ]; then
+    grep -q "rebuild-knowledge-base.py" "$file" || fail "memory command must rebuild knowledge base"
+    grep -q "outputs/index.html" "$file" || fail "memory command must return knowledge base path"
+    continue
+  fi
+  grep -q "docs/DECISION_GATE.md" "$file" || fail "command must use consolidated decision gate: commands/$cmd.md"
   grep -q "docs/QUALITY_BAR.md" "$file" || fail "command must use quality bar: commands/$cmd.md"
   grep -q "docs/HUMAN_INTERFACE.md" "$file" || fail "command must use human interface guidance: commands/$cmd.md"
   grep -q "docs/INVISIBLE_QUALITY.md" "$file" || fail "command must confirm required user-facing parts: commands/$cmd.md"
