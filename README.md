@@ -4,21 +4,11 @@
 ![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)
 ![Patterns](https://img.shields.io/badge/patterns-22-blue.svg)
 
-## Credit First
-
-This project starts from three public contributions that deserve clear credit:
-
-- [`visual-explainer`](https://github.com/nicobailon/visual-explainer) by Nico Bailon, credited as the upstream HTML artifact capability this repo can install and build around.
-- ["The unreasonable effectiveness of HTML"](https://thariqs.github.io/html-effectiveness/) by Thariq S. Bate, credited as the conceptual foundation for using HTML when it keeps humans more in the loop than Markdown.
-- [`skills`](https://github.com/mattpocock/skills) by Matt Pocock, credited as inspiration for small, composable skill-shaped agent instructions.
-
-`html-explainer` is an independent complementary layer. It does not replace those projects, claim affiliation, or copy their work as product output. It packages an intent-first workflow around them so Claude Code can decide when HTML is worth using, inspect evidence first, and end with a useful next prompt.
-
-See [`CREDITS.md`](CREDITS.md) for the full attribution.
-
-`html-explainer` helps Claude Code create HTML artifacts that people actually read.
+`html-explainer` helps Claude Code create HTML artifacts that people actually use.
 
 It is not "HTML because it looks nice." It is HTML when a browser view helps the user understand, decide, review, compare, tune, or continue work better than Markdown.
+
+It adds a local delivery gate and a local knowledge base. A useful artifact is generated, checked, saved when valuable, connected to related work, and made easy to find again.
 
 The experience should feel simple on purpose: one clear surface, one recommended next move, a few respectful options, and useful power under the mouse. The user can continue, compare, revise, save, think it through, or stop without losing context.
 
@@ -33,6 +23,47 @@ intent -> evidence -> visual understanding -> decision -> next action -> reusabl
 `visual-explainer` gives Claude the HTML artifact capability.
 
 `html-explainer` adds the operating discipline: when to use HTML, what evidence to inspect, how to keep the user in the loop, and how to end with the next useful prompt.
+
+## What You Get In 60 Seconds
+
+After installing, Claude Code gets commands that can:
+
+- decide when HTML is worth using and when Markdown is enough;
+- generate self-contained decision-ready HTML;
+- audit the HTML before delivery and block weak artifacts;
+- save valuable artifacts into a local knowledge base;
+- regenerate a local `index.html` with Maps of Content, resurfacing, related pages, filters, annotations, and re-entry prompts.
+
+Open the local knowledge base after saving artifacts:
+
+```bash
+open ~/.claude/html-explainer/outputs/index.html
+```
+
+## Why This Is Different
+
+Most agent HTML output is a one-time pretty file.
+
+`html-explainer` treats HTML as a decision surface and reusable memory:
+
+```text
+ask -> inspect evidence -> choose pattern -> generate HTML -> audit -> save -> reconnect later
+```
+
+The user sees a clean artifact. The system handles the checks, metadata, freshness risk, and future re-entry path.
+
+## Who This Is For
+
+Use it when Claude Code work needs a clearer surface than chat:
+
+- repo recaps and re-entry;
+- plan, diff, and PR review;
+- architecture and workflow maps;
+- research comparisons;
+- decision decks;
+- prompt or agent behavior tuning;
+- thinking through unclear ideas;
+- turning useful outputs into local knowledge.
 
 ## Design Promise
 
@@ -112,6 +143,16 @@ This preview shows the core promise: the browser view puts intent, evidence, ris
 
 ## Install
 
+Quick install:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/ramsani/html-explainer/main/install.sh | bash
+```
+
+Restart Claude Code after installation.
+
+Prefer to inspect first:
+
 First run a preview:
 
 ```bash
@@ -125,8 +166,6 @@ Then install:
 ```bash
 bash install.sh
 ```
-
-Restart Claude Code after installation.
 
 The installer adds:
 
@@ -144,6 +183,18 @@ The `CLAUDE.md` guide is marked with:
 ```
 
 Future installs update only that block. Existing `CLAUDE.md` content is not overwritten.
+
+## Credit First
+
+This project starts from three public contributions that deserve clear credit:
+
+- [`visual-explainer`](https://github.com/nicobailon/visual-explainer) by Nico Bailon, credited as the upstream HTML artifact capability this repo can install and build around.
+- ["The unreasonable effectiveness of HTML"](https://thariqs.github.io/html-effectiveness/) by Thariq S. Bate, credited as the conceptual foundation for using HTML when it keeps humans more in the loop than Markdown.
+- [`skills`](https://github.com/mattpocock/skills) by Matt Pocock, credited as inspiration for small, composable skill-shaped agent instructions.
+
+`html-explainer` is an independent complementary layer. It does not replace those projects, claim affiliation, or copy their work as product output. It packages an intent-first workflow around them so Claude Code can decide when HTML is worth using, inspect evidence first, and end with a useful next prompt.
+
+See [`CREDITS.md`](CREDITS.md) for the full attribution.
 
 ## Update
 

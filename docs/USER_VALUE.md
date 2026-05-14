@@ -22,7 +22,9 @@ Every serious artifact should make the user's next move easier.
 | Better reviews | Plans, diffs, PRs, and workflows expose findings, missing checks, and severity. | "I can accept, revise, block, or verify with confidence." |
 | Better thinking | Unclear ideas are framed, grounded, stress-tested, synthesized, and converted into action. | "My vague thought became a usable next step." |
 | Better continuation | Next prompts preserve intent, evidence, boundaries, checks, and uncertainty. | "The next agent does not have to restart." |
-| Reusable knowledge | Useful artifacts include archive recommendation, validity class, freshness risk, and re-entry path. | "This can help me later without becoming stale truth." |
+| Reusable knowledge | Useful artifacts are saved with metadata, validity class, freshness risk, re-entry path, and local explorer links. | "This can help me later without becoming stale truth." |
+| Living knowledge base | `index.html` is regenerated with Maps of Content, resurfacing, related pages, filters, annotations, and re-entry prompts. | "My useful work comes back when it matters." |
+| Quiet quality control | Generated HTML is checked by a local delivery gate before final delivery. | "Weak artifacts get blocked before I rely on them." |
 | Less noise | Decision Gate rejects HTML when Markdown is enough. | "The tool does not waste my attention." |
 | Clearer collaboration | Output language matches the user's language unless another audience is requested. | "It speaks to me directly." |
 | Trustworthy growth | Commands, patterns, examples, scenarios, install, and uninstall are validated. | "The system has a quality floor." |
@@ -39,7 +41,8 @@ Every serious artifact should make the user's next move easier.
 | Decision tool | Small editor, triage board, tuner, or config surface with export. | The user manipulates choices and leaves with usable output. |
 | Artifact audit | Score, hard fails, gaps, and fix path. | The user can reject pretty but weak artifacts. |
 | Thinking surface | Frame, evidence, tensions, stress test, conclusion, and next prompt. | The user turns vague thinking into action. |
-| Artifact memory | Metadata, validity, freshness, privacy, supersession, and re-entry rules. | The user keeps useful outputs without trusting stale ones. |
+| Artifact memory | Metadata, validity, freshness, privacy, supersession, annotations, and re-entry rules. | The user keeps useful outputs without trusting stale ones. |
+| Local knowledge base | Searchable `index.html` with topics, resurfacing, backlinks, related artifacts, and copy-ready continuation prompts. | The user can reopen, rediscover, connect, annotate, and continue from prior work. |
 
 ## What The User Should Not Feel
 
@@ -59,3 +62,4 @@ The best output feels simple:
 4. It recommends the next action.
 5. It gives a prompt or export the user can reuse.
 6. It says whether the artifact is worth saving.
+7. If saved, it makes the local knowledge base easy to open and query later.
