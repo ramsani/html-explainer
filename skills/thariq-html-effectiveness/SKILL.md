@@ -55,7 +55,7 @@ Do not use for:
 
 ## Pattern Files
 
-There are 21 operational pattern files under `patterns/`.
+There are 22 operational pattern files under `patterns/`.
 
 Do not rely on the general list. Select and apply one primary pattern file.
 

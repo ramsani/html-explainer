@@ -123,6 +123,7 @@ Method: Insight Surface Loop
 Budget:
 Primary insight:
 Confidence:
+Quality result:
 Next action:
 Archive recommendation:
 Next command:
