@@ -10,14 +10,25 @@ Prompt template:
 ```text
 Generate a self-contained HTML design token reference sheet. Inspect the real styling sources first. Show tokens, usage examples, component examples, inconsistencies, accessibility notes, and safe UI recommendations. Make it usable as a reference for future HTML artifacts.
 
+Use this 9-section schema when the evidence supports it:
+1. Visual Theme & Atmosphere
+2. Color Palette & Roles
+3. Typography Rules
+4. Component Stylings
+5. Layout Principles
+6. Depth & Elevation
+7. Do's and Don'ts
+8. Responsive Behavior
+9. Agent Prompt Guide
+
 If color, spacing, radius, shadow, or typography values are shown, include click-to-copy token values with simple copied feedback.
 ```
 
-HTML structure: intent, evidence, token groups, copyable swatches or token values, usage samples, component examples, do/don't examples, inconsistencies, accessibility notes, future-artifact guidance, recommendation.
+HTML structure: intent, evidence, 9-section token schema, copyable swatches or token values, usage samples, component examples, do/don't examples, inconsistencies, accessibility notes, future-artifact guidance, recommendation.
 
-Quality checklist: tokens are real, shown values can be copied when useful, examples map to components, inconsistencies are actionable, future artifact guidance is concrete, and the sheet does not invent a new visual language.
+Quality checklist: tokens are real, the 9 sections are filled from evidence or marked unknown, shown values can be copied when useful, examples map to components, inconsistencies are actionable, future artifact guidance is concrete, and the sheet does not invent a new visual language.
 
-Failure modes: inventing a design system, proposing new style before reading existing style, ignoring accessibility, producing only swatches with no usage guidance, showing token values that cannot be copied or reused.
+Failure modes: inventing a design system, forcing all 9 sections when evidence is missing, proposing new style before reading existing style, ignoring accessibility, producing only swatches with no usage guidance, showing token values that cannot be copied or reused.
 
 Acceptance criteria: the user and a future agent can see the existing visual system and avoid inconsistent UI changes.
 

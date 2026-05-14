@@ -17,6 +17,7 @@ intent -> evidence -> visual understanding -> decision -> next action -> reusabl
 - Clearer user value and language-matching behavior.
 - Safer install/uninstall behavior.
 - Simpler docs that remove confusion.
+- Small skill folders with `SKILL.md` and only the assets, references, or `DESIGN.md` they actually need.
 
 ## Before Opening a PR
 

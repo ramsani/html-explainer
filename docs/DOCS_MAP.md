@@ -25,6 +25,7 @@ These files define the active behavior for V1:
 - `ENGINEERING_TRANSLATION.md`
 - `V1_FUNCTION_AUDIT.md`
 - `GOAL_WORKFLOWS.md`
+- `SKILL_STRUCTURE.md`
 
 Goal contracts:
 
