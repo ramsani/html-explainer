@@ -16,7 +16,7 @@ Core path:
 intent -> evidence -> visual understanding -> decision -> next action -> reusable memory
 ```
 
-The user sees a clear artifact. The repo provides the quiet process behind it: routing, evidence checks, delivery audit, local memory, and re-entry prompts.
+The user sees a clear artifact. The repo provides the quiet process behind it: routing, evidence checks, delivery audit, `/goal` completion contracts, local memory, and re-entry prompts.
 
 ## Who It Is For
 
@@ -96,6 +96,8 @@ It should show:
 
 Interactive artifacts must produce usable output: copied prompt, Markdown, JSON, config, checklist, issue body, or another exportable result.
 
+Generated HTML is expected to pass `deliver-artifact.py` at `90+` before delivery. For longer work, the matching `/goal` contract keeps the agent working until the artifact is actually ready, not merely created.
+
 Open the quick demo:
 
 ```text
@@ -135,6 +137,8 @@ For longer work, use Claude Code's `/goal` so Claude keeps going until a verifia
 Use it for audits, PR closure, artifact delivery, memory validation, and V1-style verification. Do not use it for small questions.
 
 `/goal` is the intelligent closeout layer. The scripts remain the cheap CI floor; `/goal` decides whether the whole job is actually finished and whether the result is truly useful from the evidence Claude reports.
+
+Each HTML-producing command points to a reusable goal contract. If HTML is generated, the command must run `deliver-artifact.py` before the final response; the goal contract treats skipped delivery as unfinished work.
 
 More examples: [`docs/GOAL_WORKFLOWS.md`](docs/GOAL_WORKFLOWS.md).
 
