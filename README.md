@@ -18,6 +18,12 @@ intent -> evidence -> visual understanding -> decision -> next action -> reusabl
 
 The user sees a clear artifact. The repo provides the quiet process behind it: routing, evidence checks, delivery audit, goal contracts, optional `/goal` autonomous closeout, local memory, and re-entry prompts.
 
+Open a demo artifact:
+
+```text
+examples/before-after-decision.example.html
+```
+
 ## Who It Is For
 
 Use it when Claude Code work needs more than a chat answer:
@@ -66,6 +72,15 @@ If you already know you want the artifact:
 /make-the-right-html genera el artefacto HTML correcto con evidencia, riesgos, incertidumbre, siguiente acción y prompt listo para copiar.
 ```
 
+## What You Get After One Command
+
+- a local HTML artifact you can open immediately;
+- visible evidence, risk, recommendation, and next action;
+- a quality result before delivery;
+- a save, private, refresh, supersede, discard, or do-not-save decision;
+- a copy-ready continuation prompt;
+- a reusable knowledge-base entry when the artifact is worth keeping.
+
 ## Core Commands
 
 | Command | Use it when you want to... |
@@ -97,12 +112,6 @@ It should show:
 Interactive artifacts must produce usable output: copied prompt, Markdown, JSON, config, checklist, issue body, or another exportable result.
 
 Generated HTML is expected to pass `deliver-artifact.py` at `90+` before delivery. Each HTML command points to a goal contract that defines the completion standard. To activate Claude Code's autonomous `/goal` loop, start the request with `/goal`.
-
-Open the quick demo:
-
-```text
-examples/before-after-decision.example.html
-```
 
 ## Local Memory
 
