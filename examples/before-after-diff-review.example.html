@@ -88,7 +88,23 @@
   <h2>Decision</h2>
   <p><strong>Request changes.</strong> Accept after semantic validation blocks shallow examples and the installer smoke tests pass.</p>
   <textarea id="next">/check-the-diff review this installer and validation change again. Preserve the primary intent: decide whether the diff is safe to merge. Inspect install.sh, scripts/validate-examples.sh, commands/, examples/, and CI. Separate what is known, what this suggests, what I am assuming, and what is still unclear. End with accept, request changes, or block.</textarea>
-  <p><button class="btn" onclick="navigator.clipboard.writeText(document.getElementById('next').value)">Copy next prompt</button></p>
+  <p><button class="btn" onclick="copyPrompt(this)">Copy next prompt</button> <span class="copy-msg" style="display:none;color:#166534;font-weight:700;">✓ Copied</span></p>
+</section>
+<script>
+function copyPrompt(btn) {
+  const text = document.getElementById('next').value;
+  navigator.clipboard.writeText(text).then(() => showCopy(btn)).catch(() => {
+    const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+    showCopy(btn);
+  });
+}
+function showCopy(btn) {
+  btn.nextElementSibling.style.display = 'inline';
+  btn.textContent = 'Copied';
+  setTimeout(() => { btn.nextElementSibling.style.display = 'none'; btn.textContent = 'Copy next prompt'; }, 2000);
+}
+</script>
 </section>
 <section class="card"><h2>Save this?</h2><p><strong>Not saved:</strong> this demo is only useful as a repo example.</p><p><strong>Save decision:</strong> do not save this demo as user knowledge. It is a reference example for the repo, not a live project artifact.</p><p><strong>Memory label:</strong> <code>do-not-reuse</code> for user memory; keep only as a repo example.</p><p><strong>When to review:</strong> low for the teaching model, medium if the matching pattern changes.</p></section>
 </main>

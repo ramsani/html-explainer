@@ -246,7 +246,7 @@ def render_page(data: dict) -> str:
 <section class="card">
 <h2>Continuar desde aquí</h2>
 <textarea id="prompt" readonly>Elige una página para generar un prompt de reentrada.</textarea>
-<p><button class="btn" onclick="copyPrompt()">Copiar prompt</button></p>
+<p><button class="btn" onclick="copyPrompt(this)">Copiar prompt</button> <span id="copy-msg" style="display:none;color:var(--green);font-weight:700;">✓ Copiado</span></p>
 </section>
 </main>
 <script type="application/json" id="kb-data">{escaped_payload}</script>
@@ -266,7 +266,7 @@ function annotate(id){{const current=localStorage.getItem('html-explainer-note:'
 function promptWindow(label,value){{return window.prompt(label,value)}}
 function render(){{$('total').textContent=artifacts.length;$('topics').textContent=(kb.facets?.topics||[]).length;$('review-count').textContent=(kb.review_queue||[]).length;$('links-count').textContent=(kb.relations||[]).length;const top=artifacts.find(a=>(kb.review_queue||[]).includes(a.id))||artifacts[0];$('top-action').textContent=top?`Abre "${{top.title}}" y decide si conviene ${{actionLabel(top).toLowerCase()}}.`:'Todavía no hay páginas guardadas.';$('mocs').innerHTML=(kb.mocs||[]).slice(0,12).map(m=>`<div class="moc"><a href="#" onclick="setSearch('${{escapeHtml(m.topic)}}')">${{escapeHtml(m.topic)}}</a><span class="badge">${{m.count}}</span></div>`).join('')||'<p class="muted">Sin temas todavía.</p>';$('review-list').innerHTML=(kb.review_queue||[]).map(id=>artifacts.find(a=>a.id===id)).filter(Boolean).map(card).join('')||'<p class="muted">Nada urgente por revisar.</p>';$('list').innerHTML=filtered().map(card).join('')||'<p class="muted">Sin resultados.</p>'}}
 function setSearch(v){{$('q').value=v;render();return false}}
-function copyPrompt(){{navigator.clipboard&&navigator.clipboard.writeText($('prompt').value)}}
+function copyPrompt(btn){{const text=$('prompt').value;navigator.clipboard.writeText(text).then(()=>{{btn.nextElementSibling.style.display='inline';btn.textContent='Copiado';setTimeout(()=>{{btn.nextElementSibling.style.display='none';btn.textContent='Copiar prompt'}},2000)}}).catch(()=>{{const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);btn.nextElementSibling.style.display='inline';btn.textContent='Copiado';setTimeout(()=>{{btn.nextElementSibling.style.display='none';btn.textContent='Copiar prompt'}},2000)}})}}
 ['q','project','type','action'].forEach(id=>$(id).addEventListener('input',render));renderOptions();render();
 </script>
 </body>

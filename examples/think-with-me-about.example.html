@@ -100,7 +100,11 @@
   <p><strong>When to review:</strong> Medium. It should be refreshed after the first real user test.</p>
   <p><strong>Useful tags:</strong> <code>think-with-me-about</code>, <code>insight-surface-loop</code>, <code>decision-html</code>, <code>artifact-memory</code></p>
   <textarea id="next">/think-with-me-about whether the first implementation of /think-with-me-about is actually simpler and more useful than a normal chat answer. Use the current example artifact as context. Stress-test friction, evidence quality, first-screen clarity, and whether the output produces a stronger conclusion and next action.</textarea>
-  <p><button class="btn" onclick="navigator.clipboard.writeText(document.getElementById('next').value)">Copy next prompt</button></p>
+  <p><button class="btn" onclick="copyPrompt(this)">Copy next prompt</button> <span class="copy-msg" style="display:none;color:#166534;font-weight:700;">✓ Copied</span></p>
+</section>
+<script>
+function copyPrompt(btn){const text=document.getElementById('next').value;navigator.clipboard.writeText(text).then(()=>showCopy(btn)).catch(()=>{const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);showCopy(btn)})}function showCopy(btn){btn.nextElementSibling.style.display='inline';btn.textContent='Copied';setTimeout(()=>{btn.nextElementSibling.style.display='none';btn.textContent='Copy next prompt'},2000)}
+</script>
 </section>
 </main>
 </body>

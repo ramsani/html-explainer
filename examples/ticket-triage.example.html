@@ -8,7 +8,7 @@
 @media(prefers-color-scheme:dark){:root{--bg:#0f172a;--panel:#111827;--ink:#e5e7eb;--muted:#94a3b8;--line:#334155}body{background:var(--bg);color:var(--ink)}.card,.node,.column{background:var(--panel)}code,th{background:#1f2937;color:#e5e7eb}}
 </style>
 <script>
-function copyPlan(){navigator.clipboard.writeText(document.getElementById('export').value)}
+function copyPlan(btn){const text=document.getElementById('export').value;navigator.clipboard.writeText(text).then(()=>showCopy(btn)).catch(()=>{const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);showCopy(btn)})}function showCopy(btn){btn.textContent='Copied';btn.nextElementSibling.style.display='inline';setTimeout(()=>{btn.textContent='Copy plan';btn.nextElementSibling.style.display='none'},2000)}
 function filter(kind){document.querySelectorAll('[data-kind]').forEach(c=>{c.style.display=(kind==='all'||c.dataset.kind===kind)?'block':'none'})}
 </script>
 </head>
@@ -49,7 +49,7 @@ function filter(kind){document.querySelectorAll('[data-kind]').forEach(c=>{c.sty
 2. Add /html-validate-workspace to check evidence paths and quality bar conditions.
 3. Expand remaining patterns only after examples prove the shape.
 
-Do not start visual polish work before validation exists.</textarea><br><button class="copy" onclick="copyPlan()">Copy plan</button></section>
+Do not start visual polish work before validation exists.</textarea><br><button class="copy" onclick="copyPlan(this)">Copy plan</button> <span style="display:none;color:#166534;font-weight:700;">✓ Copied</span></section>
 <section class="card"><h2>Continue from here</h2><p><code>/make-the-right-html continue from this artifact with the same intent, evidence, risks, what good looks like, and out-of-scope boundaries.</code></p></section>
 <section class="card"><h2>Save this?</h2><p><strong>Not saved:</strong> this demo is only useful as a repo example.</p><p><strong>Save decision:</strong> do not save this demo as user knowledge. It is a reference example for the repo, not a live project artifact.</p><p><strong>Memory label:</strong> <code>do-not-reuse</code> for user memory; keep only as a repo example.</p><p><strong>When to review:</strong> low for the teaching model, medium if the matching pattern changes.</p></section>
 </main></body></html>

@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Incorporar de visual-explainer — Decisión</title>
+  <style>
+    :root {
+      --bg: #fafaf9;
+      --surface: #ffffff;
+      --surface2: #f5f5f4;
+      --border: #e7e5e4;
+      --border2: #d6d3d1;
+      --text: #1c1917;
+      --text-dim: #78716c;
+      --text-faint: #a8a29e;
+      --accent: #0d9488;
+      --accent-dim: rgba(13, 148, 136, 0.08);
+      --red: #dc2626;
+      --red-dim: rgba(220, 38, 38, 0.08);
+      --green: #16a34a;
+      --green-dim: rgba(22, 163, 74, 0.08);
+      --amber: #d97706;
+      --amber-dim: rgba(217, 119, 6, 0.08);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0c0a09;
+        --surface: #1c1917;
+        --surface2: #262220;
+        --border: #292524;
+        --border2: #3f3f46;
+        --text: #fafaf9;
+        --text-dim: #a8a29e;
+        --text-faint: #78716c;
+        --accent: #2dd4bf;
+        --accent-dim: rgba(45, 212, 191, 0.08);
+        --red: #f87171;
+        --red-dim: rgba(248, 113, 113, 0.08);
+        --green: #4ade80;
+        --green-dim: rgba(74, 222, 128, 0.08);
+        --amber: #fbbf24;
+        --amber-dim: rgba(251, 191, 36, 0.08);
+      }
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .header__title {
+      font-size: clamp(20px, 4vw, 28px);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin-bottom: 0.35rem;
+    }
+    .header__sub {
+      color: var(--text-dim);
+      font-size: 14px;
+    }
+
+    /* ── SECTION ── */
+    .section {
+      margin-bottom: 2rem;
+    }
+    .section__title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── INTRO CARDS ── */
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 580px) {
+      .intro-grid { grid-template-columns: 1fr; }
+    }
+    .intro-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+    }
+    .intro-card--accent {
+      border-left: 4px solid var(--accent);
+      background: var(--accent-dim);
+    }
+    .intro-card--amber {
+      border-left: 4px solid var(--amber);
+      background: var(--amber-dim);
+    }
+    .intro-card--green {
+      border-left: 4px solid var(--green);
+      background: var(--green-dim);
+      grid-column: 1 / -1;
+    }
+    .intro-card__label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-bottom: 0.3rem;
+    }
+    .intro-card--accent .intro-card__label { color: var(--accent); }
+    .intro-card--amber .intro-card__label   { color: var(--amber); }
+    .intro-card--green .intro-card__label  { color: var(--green); }
+    .intro-card__text {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    /* ── EVIDENCE TAGS ── */
+    .evidence-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .ev-tag {
+      font-family: ui-monospace, monospace;
+      font-size: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2px 6px;
+      color: var(--text-dim);
+    }
+
+    /* ── FINDINGS ── */
+    .findings-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+    }
+    @media (max-width: 580px) {
+      .findings-grid { grid-template-columns: 1fr; }
+    }
+    .finding {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+    }
+    .finding--fact       { border-left: 3px solid var(--green); }
+    .finding--inference  { border-left: 3px solid var(--accent); }
+    .finding--assumption { border-left: 3px solid var(--amber); }
+    .finding--unknown    { border-left: 3px solid var(--red); }
+    .finding__type {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      margin-bottom: 0.25rem;
+    }
+    .finding__text {
+      font-size: 12px;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* ── ITEMS TABLE ── */
+    .items-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    .items-table th {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      text-align: left;
+      padding: 0.5rem 0.6rem;
+      border-bottom: 2px solid var(--border);
+      background: var(--surface2);
+    }
+    .items-table td {
+      padding: 0.6rem 0.6rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .items-table tr:last-child td { border-bottom: none; }
+    .items-table tbody tr:hover { background: var(--accent-dim); }
+    .item-name { font-weight: 600; font-size: 12px; }
+    .item-loc  { font-family: ui-monospace, monospace; font-size: 10px; color: var(--text-faint); margin-top: 2px; }
+    .scope-tag {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 500;
+      background: var(--accent-dim);
+      color: var(--accent);
+      padding: 1px 5px;
+      border-radius: 3px;
+      margin-top: 3px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+    .badge--add  { background: var(--green-dim); color: var(--green); }
+    .badge--add::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--green); }
+    .badge--skip { background: var(--red-dim);  color: var(--red); }
+    .badge--skip::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--red); }
+    .reason { font-size: 11px; color: var(--text-dim); line-height: 1.5; }
+
+    /* ── REJECTED ── */
+    .reject-list { display: flex; flex-direction: column; gap: 0.5rem; }
+    .reject-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      padding: 0.6rem 0.9rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+    .reject-x {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--red-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .reject-x svg { width: 9px; height: 9px; color: var(--red); }
+    .reject-name   { font-size: 12px; font-weight: 600; color: var(--text); }
+    .reject-reason { font-size: 11px; color: var(--text-dim); margin-top: 1px; }
+
+    /* ── FOOTPRINT ── */
+    .footprint-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    .footprint-table th {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-faint);
+      text-align: left;
+      padding: 0.5rem 0.6rem;
+      border-bottom: 2px solid var(--border);
+      background: var(--surface2);
+    }
+    .footprint-table td {
+      padding: 0.5rem 0.6rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .footprint-table tr:last-child td { border-bottom: none; }
+    .footprint-table code {
+      font-family: ui-monospace, monospace;
+      font-size: 10px;
+      background: var(--surface2);
+      padding: 1px 4px;
+      border-radius: 3px;
+    }
+    .ok { color: var(--green); font-size: 11px; }
+
+    /* ── RISK ── */
+    .risk-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+    }
+    @media (max-width: 580px) {
+      .risk-grid { grid-template-columns: 1fr; }
+    }
+    .risk-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.9rem 1rem;
+    }
+    .risk-card--low { border-left: 3px solid var(--green); }
+    .risk-card--med { border-left: 3px solid var(--amber); }
+    .risk-level   { font-size: 9px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.3rem; }
+    .risk-card--low .risk-level { color: var(--green); }
+    .risk-card--med .risk-level { color: var(--amber); }
+    .risk-title   { font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 0.3rem; }
+    .risk-desc    { font-size: 11px; color: var(--text-dim); line-height: 1.5; }
+    .risk-fix     { font-size: 10px; color: var(--text-faint); font-style: italic; margin-top: 0.4rem; }
+
+    /* ── ROLLBACK ── */
+    .rb-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .rb-step  { font-size: 9px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); margin-bottom: 0.2rem; }
+    .rb-text  { font-size: 12px; color: var(--text); }
+    .rb-cmd   { font-family: ui-monospace, monospace; font-size: 10px; background: var(--surface2); border: 1px solid var(--border2); border-radius: 4px; padding: 0.25rem 0.5rem; color: var(--text-dim); display: inline-block; margin-top: 0.3rem; }
+
+    /* ── STEPS ── */
+    .step-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .step-title { font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 0.2rem; }
+    .step-note  { font-size: 11px; color: var(--text-dim); }
+
+    /* ── DIVIDER ── */
+    .divider { height: 1px; background: var(--border); margin: 1.5rem 0; }
+
+    /* ── NEXT ── */
+    .next-box {
+      background: var(--accent-dim);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.1rem 1.25rem;
+    }
+    .next-label  { font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+    .next-prompt {
+      font-family: ui-monospace, monospace;
+      font-size: 12px;
+      background: var(--surface);
+      border: 1px solid var(--border2);
+      border-radius: 4px;
+      padding: 0.5rem 0.75rem;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    .next-alts  { font-size: 11px; color: var(--text-dim); }
+    .next-alt   { font-size: 11px; color: var(--text-dim); margin-top: 0.25rem; padding-left: 0.5rem; }
+
+    /* ── MEMORY RECEIPT ── */
+    .mem-line {
+      font-size: 11px;
+      color: var(--text-faint);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding: 0.5rem 1rem;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+    .mem-item { display: flex; align-items: center; gap: 4px; }
+    .mem-dot  { width: 5px; height: 5px; border-radius: 50%; }
+    .mem-dot--g { background: var(--green); }
+    .mem-dot--a { background: var(--amber); }
+    .mem-dot--r { background: var(--red); }
+
+    /* ── META ROW ── */
+    .meta-row {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+    .meta-chip {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.4rem 0.9rem;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .meta-key {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-faint);
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header class="header">
+    <h1 class="header__title">Incorporar de visual-explainer</h1>
+    <p class="header__sub">Qué ejecutar, qué no, riesgos, rollback y cómo validar. Decisión lista para ejecutar.</p>
+  </header>
+
+  <!-- SECONDARY NEEDS -->
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:0.75rem 1.1rem;margin-bottom:1rem;font-size:13px;color:var(--text-dim);">
+    <strong style="color:var(--text);font-size:11px;letter-spacing:0.5px;text-transform:uppercase;">Secondary needs — también needs:</strong>
+    Qué riesgos hay y cómo resolverlos si algo sale mal · Qué cambia y qué no en el repo · Cómo validar que quedó bien · Cómo revertir si se rompe.
+  </div>
+
+  <!-- WHAT THIS IS FOR -->
+  <div class="intro-grid">
+    <div class="intro-card intro-card--accent">
+      <div class="intro-card__label">Qué necesitas decidir</div>
+      <p class="intro-card__text">Qué elementos de visual-explainer incorporar al repo. 6 para agregar, 5 para rechazar. Sin ambigüedad.</p>
+    </div>
+    <div class="intro-card intro-card--amber">
+      <div class="intro-card__label">Riesgo general</div>
+      <p class="intro-card__text">Bajo. Cambios focalizados en docs. Scripts, commands y goals no se tocan.</p>
+    </div>
+    <div class="intro-card intro-card--green">
+      <div class="intro-card__label">Siguiente acción</div>
+      <p class="intro-card__text">Ejecutá los 5 pasos en orden. Si algo falla, rollback inmediato. Validá después de cada paso.</p>
+    </div>
+  </div>
+
+  <!-- WHAT I CHECKED -->
+  <div class="section">
+    <h2 class="section__title">Lo que inspectaste</h2>
+    <p style="font-size:13px;color:var(--text-dim);margin-bottom:0.6rem;">Qué inspectaste: README.md, CHANGELOG.md, SKILL.md, css-patterns.md, slide-patterns.md, libraries.md, commands/diff-review.md, commands/fact-check.md, commands/project-recap.md, docs/STYLE.md, docs/PATTERN_GUIDE.md, docs/ANTI_SLOP.md — todos los sources de ambas fuentes.</p>
+  </div>
+
+  <!-- WHY HTML -->
+  <div class="section">
+    <h2 class="section__title">Por qué ayuda HTML</h2>
+    <p style="font-size:13px;color:var(--text-dim);line-height:1.6;">
+      Por qué ayuda HTML: una tabla comparativa de 6 items + 5 rechazados con ubicación, alcance, riesgos y rollback se lee mejor en el navegador que en chat. La estructura visual permite evaluar el trade-off completo de un vistazo. El trabajo que ahorra es poder ver cada decisión junto a su riesgo y rollback en una sola pantalla.
+    </p>
+  </div>
+
+  <!-- META -->
+  <div class="meta-row">
+    <div class="meta-chip"><span class="meta-key">Budget</span><span>standard</span></div>
+    <div class="meta-chip"><span class="meta-key">Patrón</span><span>11 — Decision Deck</span></div>
+  </div>
+
+  <!-- FINDINGS -->
+  <div class="section">
+    <h2 class="section__title">Lo que encontramos</h2>
+    <p style="font-size:12px;color:var(--text-dim);margin-bottom:0.75rem;">Separamos lo que sabemos de lo que inferimos, lo que asumimos, y lo que sigue incierto:</p>
+    <div class="findings-grid">
+      <div class="finding finding--fact">
+        <div class="finding__type">Lo que sabemos</div>
+        <div class="finding__text">visual-explainer tiene 1814 líneas de CSS patterns. html-explainer tiene 66 líneas en STYLE.md.</div>
+      </div>
+      <div class="finding finding--fact">
+        <div class="finding__type">Lo que sabemos</div>
+        <div class="finding__text">ANTI_SLOP.md de html-explainer solo cubre slop de decisión, no visual.</div>
+      </div>
+      <div class="finding finding--inference">
+        <div class="finding__type">Lo que inferimos</div>
+        <div class="finding__text">Los CSS patterns pueden adaptarse sin dependencias externas.</div>
+      </div>
+      <div class="finding finding--inference">
+        <div class="finding__type">Lo que inferimos</div>
+        <div class="finding__text">Los font pairings aplican solo cuando el usuario pide diseño visual, no como default.</div>
+      </div>
+      <div class="finding finding--assumption">
+        <div class="finding__type">Lo que asumimos</div>
+        <div class="finding__text">El LLM leerá CSS_PATTERNS.md cuando genere HTML sin necesidad de forzarlo.</div>
+      </div>
+      <div class="finding finding--unknown">
+        <div class="finding__type">Lo que sigue incierto</div>
+        <div class="finding__text">Si ~400 líneas de CSS_PATTERNS.md harán que el LLM lo ignore o lo siga demasiado rígidamente.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ADDITIONS -->
+  <div class="section">
+    <h2 class="section__title">6 elementos a incorporar</h2>
+    <table class="items-table">
+      <thead>
+        <tr>
+          <th>Elemento</th>
+          <th>Dónde</th>
+          <th>Qué aporta</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="item-name">CSS patterns prácticos</div>
+            <div class="item-loc">docs/CSS_PATTERNS.md · archivo nuevo</div>
+            <span class="scope-tag">~400 líneas</span>
+          </td>
+          <td><span class="badge badge--add">Agregar</span></td>
+          <td>
+            <p class="reason">Overflow protection, code blocks con white-space:pre-wrap, tables con sticky headers y status badges, depth tiers (hero/elevated/recessed), animation choreography (fadeUp/scale/drawIn), Mermaid containers con zoom/pan, responsive nav con details/summary.</p>
+            <p class="reason" style="margin-top:4px;">Adaptado de css-patterns.md. Nombres de clase de .ve-card a .card para no crear confusión.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="item-name">Anti-slop visual</div>
+            <div class="item-loc">docs/ANTI_SLOP.md · extender</div>
+            <span class="scope-tag">+60 líneas</span>
+          </td>
+          <td><span class="badge badge--add">Extender</span></td>
+          <td>
+            <p class="reason">Tipografía prohibida (Inter, Roboto, Arial), colores prohibidos (violeta/indigo Tailwind, cyan-magenta-pink), patrones prohibidos (emoji headers, gradient text, glowing boxes, centered-uniform layout).</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="item-name">Tests de calidad visuales</div>
+            <div class="item-loc">docs/STYLE.md · extender</div>
+            <span class="scope-tag">+20 líneas</span>
+          </td>
+          <td><span class="badge badge--add">Extender</span></td>
+          <td>
+            <p class="reason"><strong>Squint test:</strong> Desenfocá. ¿Las secciones son distintas?<br><strong>Swap test:</strong> Si reemplazás fonts/colors por genérico y nadie nota, no hay diseño.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="item-name">Font pairings concretos</div>
+            <div class="item-loc">docs/STYLE.md · extender</div>
+            <span class="scope-tag">+30 líneas</span>
+          </td>
+          <td><span class="badge badge--add">Extender</span></td>
+          <td>
+            <p class="reason">5 pairings: DM Sans+Fira Code, Instrument Serif+JetBrains Mono, IBM Plex Sans+Mono, Bricolage Grotesque+Fragment Mono, Plus Jakarta Sans+Azeret Mono. Default sigue siendo system fonts.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="item-name">Diagram type selection</div>
+            <div class="item-loc">docs/PATTERN_GUIDE.md · extender</div>
+            <span class="scope-tag">+40 líneas</span>
+          </td>
+          <td><span class="badge badge--add">Extender</span></td>
+          <td>
+            <p class="reason">Decision tree: CSS Grid para text-heavy, Mermaid para topology, HTML table para datos tabulares, SVG inline para timelines simples, Chart.js solo si hay gráficos reales.</p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="item-name">Responsive nav TOC</div>
+            <div class="item-loc">docs/CSS_PATTERNS.md · incluir</div>
+            <span class="scope-tag">incluido arriba</span>
+          </td>
+          <td><span class="badge badge--add">Agregar</span></td>
+          <td>
+            <p class="reason"><code>&lt;details&gt;/&lt;summary&gt;</code> sticky sidebar desktop, horizontal scroll mobile. Cero dependencias externas.</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- REJECTED -->
+  <div class="section">
+    <h2 class="section__title">5 elementos fuera — rechazados con razón</h2>
+    <div class="reject-list">
+      <div class="reject-item">
+        <div class="reject-x">
+          <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="2" y1="2" x2="8" y2="8"/>
+            <line x1="8" y1="2" x2="2" y2="8"/>
+          </svg>
+        </div>
+        <div>
+          <div class="reject-name">Slide deck mode</div>
+          <div class="reject-reason">html-explainer es para decisiones, no presentaciones. Viewport-snap es medio diferente. visual-explainer tiene su propio nicho.</div>
+        </div>
+      </div>
+      <div class="reject-item">
+        <div class="reject-x">
+          <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="2" y1="2" x2="8" y2="8"/>
+            <line x1="8" y1="2" x2="2" y2="8"/>
+          </svg>
+        </div>
+        <div>
+          <div class="reject-name">Vercel sharing (share.sh)</div>
+          <div class="reject-reason">Dependencia externa, fuera del scope. html-explainer tiene memoria local propia.</div>
+        </div>
+      </div>
+      <div class="reject-item">
+        <div class="reject-x">
+          <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="2" y1="2" x2="8" y2="8"/>
+            <line x1="8" y1="2" x2="2" y2="8"/>
+          </svg>
+        </div>
+        <div>
+          <div class="reject-name">surf-cli image generation</div>
+          <div class="reject-reason">Depende de herramienta externa. Genera decoration, no decision support.</div>
+        </div>
+      </div>
+      <div class="reject-item">
+        <div class="reject-x">
+          <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="2" y1="2" x2="8" y2="8"/>
+            <line x1="8" y1="2" x2="2" y2="8"/>
+          </svg>
+        </div>
+        <div>
+          <div class="reject-name">Chart.js</div>
+          <div class="reject-reason">Library dependency externa. SVG inline con sparklines es suficiente.</div>
+        </div>
+      </div>
+      <div class="reject-item">
+        <div class="reject-x">
+          <svg viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="2" y1="2" x2="8" y2="8"/>
+            <line x1="8" y1="2" x2="2" y2="8"/>
+          </svg>
+        </div>
+        <div>
+          <div class="reject-name">anime.js</div>
+          <div class="reject-reason">Overkill. CSS transitions con stagger son suficientes. Animación compleja no es el foco.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- FOOTPRINT -->
+  <div class="section">
+    <h2 class="section__title">Qué cambia y qué no</h2>
+    <table class="footprint-table">
+      <thead>
+        <tr>
+          <th>Archivo</th>
+          <th>Acción</th>
+          <th>Líneas aprox.</th>
+          <th>Validador</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>docs/CSS_PATTERNS.md</code></td>
+          <td><span class="badge badge--add">Archivo nuevo</span></td>
+          <td>~400</td>
+          <td><span class="ok">✓</span> syntax check</td>
+        </tr>
+        <tr>
+          <td><code>docs/ANTI_SLOP.md</code></td>
+          <td><span class="badge badge--add">Extender</span></td>
+          <td>+60</td>
+          <td><span class="ok">✓</span> archivo existe</td>
+        </tr>
+        <tr>
+          <td><code>docs/STYLE.md</code></td>
+          <td><span class="badge badge--add">Extender</span></td>
+          <td>+50</td>
+          <td><span class="ok">✓</span> archivo existe</td>
+        </tr>
+        <tr>
+          <td><code>docs/PATTERN_GUIDE.md</code></td>
+          <td><span class="badge badge--add">Extender</span></td>
+          <td>+40</td>
+          <td><span class="ok">✓</span> archivo existe</td>
+        </tr>
+        <tr>
+          <td><code>patterns/*.md</code></td>
+          <td><span class="badge badge--skip">Sin cambio</span></td>
+          <td>—</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td><code>scripts/*.sh</code></td>
+          <td><span class="badge badge--skip">Sin cambio</span></td>
+          <td>—</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td><code>goals/*.md</code></td>
+          <td><span class="badge badge--skip">Sin cambio</span></td>
+          <td>—</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td><code>commands/*.md</code></td>
+          <td><span class="badge badge--skip">Sin cambio</span></td>
+          <td>—</td>
+          <td>N/A</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- RISKS -->
+  <div class="section">
+    <h2 class="section__title">Qué podría salir mal</h2>
+    <div class="risk-grid">
+      <div class="risk-card risk-card--low">
+        <div class="risk-level">Riesgo bajo</div>
+        <div class="risk-title">CSS_PATTERNS.md muy extenso</div>
+        <div class="risk-desc">Que el LLM lo ignore por las ~400 líneas.</div>
+        <div class="risk-fix">Si pasa: resumir a las 10 secciones más críticas.</div>
+      </div>
+      <div class="risk-card risk-card--low">
+        <div class="risk-level">Riesgo bajo</div>
+        <div class="risk-title">Conflicto con STYLE.md existente</div>
+        <div class="risk-desc">Agregar a un archivo que ya tiene contenido puede causar conflicto de formato.</div>
+        <div class="risk-fix">Si pasa: git restore para revertir.</div>
+      </div>
+      <div class="risk-card risk-card--med">
+        <div class="risk-level">Riesgo medio</div>
+        <div class="risk-title">Font pairings usados en todo</div>
+        <div class="risk-desc">Si el LLM los usa indiscriminadamente, artefactos se vuelven más lentos y verbosos.</div>
+        <div class="risk-fix">Agregar nota: solo cuando el patrón lo requiera (05, 21). Default sigue siendo system fonts.</div>
+      </div>
+      <div class="risk-card risk-card--low">
+        <div class="risk-level">Riesgo bajo</div>
+        <div class="risk-title">ANTI_SLOP crece fuera de scope</div>
+        <div class="risk-desc">Que la sección visual confunda con la de decisión ya existente.</div>
+        <div class="risk-fix">Si pasa: separar en dos archivos si es necesario.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROLLBACK -->
+  <div class="section">
+    <h2 class="section__title">Si algo sale mal</h2>
+    <div class="rb-item">
+      <div class="rb-step">Paso 1 — Revertir todo</div>
+      <div class="rb-text">Si los cambios rompen validación, revertí todo inmediatamente.</div>
+      <code class="rb-cmd">git restore docs/ patterns/</code>
+    </div>
+    <div class="rb-item">
+      <div class="rb-step">Paso 2 — Borrar archivo nuevo</div>
+      <div class="rb-text">Si CSS_PATTERNS.md genera problemas, borrarlo.</div>
+      <code class="rb-cmd">rm docs/CSS_PATTERNS.md</code>
+    </div>
+    <div class="rb-item">
+      <div class="rb-step">Paso 3 — Validar que quedó limpio</div>
+      <div class="rb-text">Después de rollback, correr validaciones.</div>
+      <code class="rb-cmd">bash scripts/validate-patterns.sh && bash scripts/validate-goals.sh</code>
+    </div>
+    <div class="rb-item">
+      <div class="rb-step">Paso 4 — No forzar</div>
+      <div class="rb-text">Si algo no pasa validación después de rollback, no usar force. Preguntar.</div>
+    </div>
+  </div>
+
+  <!-- VALIDATION COMMANDS -->
+  <div class="section">
+    <h2 class="section__title">Ejecutá esto para validar</h2>
+    <code class="rb-cmd" style="display:block;margin-bottom:0.3rem;font-size:11px;">bash -n install.sh uninstall.sh scripts/*.sh</code>
+    <code class="rb-cmd" style="display:block;margin-bottom:0.3rem;font-size:11px;">bash scripts/validate-patterns.sh</code>
+    <code class="rb-cmd" style="display:block;margin-bottom:0.3rem;font-size:11px;">bash scripts/validate-goals.sh</code>
+    <code class="rb-cmd" style="display:block;margin-bottom:0.3rem;font-size:11px;">bash scripts/validate-commands.sh</code>
+    <p style="font-size:11px;color:var(--text-faint);margin-top:0.5rem;">Todos deben pasar en verde. Si alguno falla, rollback inmediato.</p>
+  </div>
+
+  <!-- STEPS -->
+  <div class="section">
+    <h2 class="section__title">Cómo ejecutarlo — paso a paso</h2>
+    <div class="step-item">
+      <div class="step-title">Paso 1 — Crear docs/CSS_PATTERNS.md</div>
+      <div class="step-note">Copiar de css-patterns.md de visual-explainer: overflow protection, code blocks, tables, depth tiers, animation choreography, Mermaid containers, responsive nav. Adaptar .ve-card a .card. ~400 líneas.</div>
+    </div>
+    <div class="step-item">
+      <div class="step-title">Paso 2 — Extender docs/ANTI_SLOP.md</div>
+      <div class="step-note">Agregar sección "## Anti-Slop Visual" con tipografía/colores/patrones prohibidos. Mantener la sección existente. +60 líneas.</div>
+    </div>
+    <div class="step-item">
+      <div class="step-title">Paso 3 — Extender docs/STYLE.md</div>
+      <div class="step-note">Agregar font pairings y quality tests (squint/swift). +50 líneas.</div>
+    </div>
+    <div class="step-item">
+      <div class="step-title">Paso 4 — Extender docs/PATTERN_GUIDE.md</div>
+      <div class="step-note">Agregar tabla "Diagram type selection" como anexo. +40 líneas.</div>
+    </div>
+    <div class="step-item">
+      <div class="step-title">Paso 5 — Validar todo junto</div>
+      <div class="step-note">Ejecutar los 4 scripts de validación. Si todo pasa, commitear.</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- NEXT PROMPT -->
+  <div class="next-box">
+    <div class="next-label">Prompt para continuar</div>
+    <p style="font-size:12px;color:var(--text-dim);margin-bottom:0.5rem;">Comparar opciones, revisá el plan, pensá esto más, guardá para después, o seguí con el siguiente comando:</p>
+    <code class="next-prompt">ejecuta los 5 pasos en orden. después de cada paso, validá con bash scripts/validate-patterns.sh && bash scripts/validate-goals.sh. si algo falla, rollback con git restore docs/ patterns/ y reportame qué falló.</code>
+    <div class="next-alts">O elegí otra opción:</div>
+    <div class="next-alt">solo paso 1 (CSS_PATTERNS.md) y validá. no avancés sin OK.</div>
+    <div class="next-alt">hacé los 5 pasos en commits separados para poder revertir individualmente.</div>
+    <div class="next-alt">no ejecutés nada. explicame más el riesgo 3 (font pairings usados en todo).</div>
+    <div class="next-alt">no ejecutés nada. mostrame primero el contenido exacto que escribirías en CSS_PATTERNS.md para aprobarlo.</div>
+  </div>
+
+  <!-- MEMORY RECEIPT -->
+  <div style="margin-top:1.25rem;">
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:0.75rem 1rem;margin-bottom:0.5rem;">
+      <div style="font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--text-faint);margin-bottom:0.4rem;">Guardar esto? Save decision:</div>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;font-size:12px;color:var(--text-dim);">
+        <span>Save: sí</span>
+        <span>Validez sugerida: replaceable</span>
+        <span>Freshness risk: medium</span>
+        <span>Razón: guía el desarrollo del repo</span>
+      </div>
+    </div>
+    <div class="mem-line">
+      <span class="mem-item"><span class="mem-dot mem-dot--g"></span>Guardado para después</span>
+      <span class="mem-item"><span class="mem-dot mem-dot--g"></span>Decisión clara</span>
+      <span class="mem-item"><span class="mem-dot mem-dot--g"></span>6 para agregar</span>
+      <span class="mem-item"><span class="mem-dot mem-dot--r"></span>5 fuera</span>
+      <span class="mem-item"><span class="mem-dot mem-dot--a"></span>1 riesgo medio</span>
+      <span class="mem-item"><span class="mem-dot mem-dot--g"></span>Rollback listo</span>
+      <span class="mem-item"><span class="mem-dot mem-dot--g"></span>Sin scripts tocados</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

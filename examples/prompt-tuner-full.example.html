@@ -22,7 +22,7 @@ lines.push('- State intent, scope, risks, validation, and definition of done.');
 lines.push('- Do not invent files, APIs, commands, or test results.');
 document.getElementById('export').value=lines.join('\n')
 }
-function copyPrompt(){navigator.clipboard.writeText(document.getElementById('export').value)}
+function copyPrompt(btn){const text=document.getElementById('export').value;navigator.clipboard.writeText(text).then(()=>showCopy(btn)).catch(()=>{const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);showCopy(btn)})}function showCopy(btn){btn.textContent='Copied';btn.nextElementSibling.style.display='inline';setTimeout(()=>{btn.textContent='Copy prompt';btn.nextElementSibling.style.display='none'},2000)}
 window.addEventListener('DOMContentLoaded',buildPrompt)
 </script>
 </head>
@@ -48,6 +48,6 @@ window.addEventListener('DOMContentLoaded',buildPrompt)
 
 <section class="card good"><h2>Try it on these cases</h2><table><tr><th>Case</th><th>Expected behavior</th></tr><tr><td>User asks for repo review</td><td>Agent inspects the repo, chooses the right view, and produces an answer backed by checked facts.</td></tr><tr><td>User asks for one-line fix</td><td>Agent does not generate HTML; gives direct minimal answer.</td></tr><tr><td>User asks to accept diff</td><td>Agent uses the changed files and refuses to claim tests passed without proof.</td></tr></table></section>
 
-<section class="card"><h2>Exportable final prompt</h2><textarea id="export"></textarea><br><button onclick="copyPrompt()">Copy prompt</button></section>
+<section class="card"><h2>Exportable final prompt</h2><textarea id="export"></textarea><br><button onclick="copyPrompt(this)">Copy prompt</button> <span style="display:none;color:#166534;font-weight:700;">✓ Copied</span></section>
 <section class="card"><h2>Save this?</h2><p><strong>Not saved:</strong> this demo is only useful as a repo example.</p><p><strong>Save decision:</strong> do not save this demo as user knowledge. It is a reference example for the repo, not a live project artifact.</p><p><strong>Memory label:</strong> <code>do-not-reuse</code> for user memory; keep only as a repo example.</p><p><strong>When to review:</strong> low for the teaching model, medium if the matching pattern changes.</p></section>
 </main></body></html>

@@ -91,13 +91,29 @@ window.addEventListener('DOMContentLoaded',build);
     <li>Provide final instruction and next prompt.</li>
   </ul>
   <textarea id="out"></textarea>
-  <p><button class="btn" onclick="navigator.clipboard.writeText(document.getElementById('out').value)">Copy final instruction</button></p>
+  <p><button class="btn" onclick="copyById(this, 'out')">Copy final instruction</button> <span class="copy-msg" style="display:none;color:#166534;font-weight:700;">✓ Copied</span></p>
 </section>
 
 <section class="card">
   <h2>Continue from here</h2>
   <textarea id="next">/make-the-right-html create a prompt tuner artifact for this agent behavior. Preserve the primary intent: turn vague behavior into testable operating instructions. Include what was checked, what could go wrong, unclear points, real cases, what good looks like, final instructions, and a copy-ready next prompt.</textarea>
-  <p><button class="btn" onclick="navigator.clipboard.writeText(document.getElementById('next').value)">Copy next prompt</button></p>
+  <p><button class="btn" onclick="copyById(this, 'next')">Copy next prompt</button> <span class="copy-msg" style="display:none;color:#166534;font-weight:700;">✓ Copied</span></p>
+</section>
+<script>
+function copyById(btn, id) {
+  const text = document.getElementById(id).value;
+  navigator.clipboard.writeText(text).then(() => showCopy(btn)).catch(() => {
+    const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+    showCopy(btn);
+  });
+}
+function showCopy(btn) {
+  btn.nextElementSibling.style.display = 'inline';
+  btn.textContent = 'Copied';
+  setTimeout(() => { btn.nextElementSibling.style.display = 'none'; btn.textContent = btn.getAttribute('data-orig') || btn.textContent.replace('Copied', 'Copy'); }, 2000);
+}
+</script>
 </section>
 <section class="card"><h2>Save this?</h2><p><strong>Not saved:</strong> this demo is only useful as a repo example.</p><p><strong>Save decision:</strong> do not save this demo as user knowledge. It is a reference example for the repo, not a live project artifact.</p><p><strong>Memory label:</strong> <code>do-not-reuse</code> for user memory; keep only as a repo example.</p><p><strong>When to review:</strong> low for the teaching model, medium if the matching pattern changes.</p></section>
 </main>

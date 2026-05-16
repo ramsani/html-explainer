@@ -58,7 +58,7 @@
     <h2>Copy-ready re-entry prompt</h2>
     <p class="muted">Select an artifact to generate a practical next prompt.</p>
     <textarea id="prompt" readonly>Open an artifact to generate a re-entry prompt.</textarea>
-    <p><button class="btn" onclick="copyPrompt()">Copy prompt</button></p>
+    <p><button class="btn" onclick="copyPrompt(this)">Copy prompt</button> <span style="display:none;color:#166534;font-weight:700;">✓ Copied</span></p>
   </section>
 </main>
 <script>
@@ -74,7 +74,7 @@ function render(){const list=document.getElementById('artifact-list');list.inner
 function selectArtifact(id){selected=artifacts.find(a=>a.id===id);document.getElementById('prompt').value=reentryPrompt(selected)}
 function updateCounts(){document.getElementById('count-total').textContent=artifacts.length;document.getElementById('count-open-next').textContent=artifacts.filter(a=>['evergreen','replaceable'].includes(a.validity)).length;document.getElementById('count-review').textContent=artifacts.filter(a=>a.freshness_risk==='high'||a.validity==='temporal').length;document.getElementById('count-private').textContent=artifacts.filter(a=>a.privacy==='private'||a.validity==='private').length}
 function updateNextDecision(data){const target=data.find(a=>a.validity==='temporal'||a.freshness_risk==='high')||data.find(a=>a.validity==='replaceable')||data.find(a=>a.validity==='evergreen');document.getElementById('next-decision').textContent=target?`Open "${target.title}" and ${decisionFor(target)}.`:'No matching artifact. Clear filters or load a broader index.'}
-function copyPrompt(){navigator.clipboard&&navigator.clipboard.writeText(document.getElementById('prompt').value)}
+function copyPrompt(btn){const text=document.getElementById('prompt').value;navigator.clipboard.writeText(text).then(()=>showCopy(btn)).catch(()=>{const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);showCopy(btn)})}function showCopy(btn){btn.textContent='Copied';btn.nextElementSibling.style.display='inline';setTimeout(()=>{btn.textContent='Copy prompt';btn.nextElementSibling.style.display='none'},2000)}
 ['search','validity','freshness','project'].forEach(id=>document.getElementById(id).addEventListener('input',render));renderProjects();render();
 </script>
 </body>

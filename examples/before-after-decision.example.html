@@ -85,7 +85,23 @@
 <section class="card">
   <h2>Continue from here</h2>
   <textarea id="next">/make-the-right-html generate a compact Project Recap for this repo. Preserve the primary intent: help me understand the repo and choose the next highest-value action. Inspect README.md, install.sh, uninstall.sh, commands/, skills/, patterns/, examples/, scripts/, and .github/workflows/ before making claims. Separate what is known, what this suggests, and what is still unclear. Show why HTML is better than Markdown for this case. End with three copy-ready next prompts: fix, verify, or publish.</textarea>
-  <p><button class="copy" onclick="navigator.clipboard.writeText(document.getElementById('next').value)">Copy next prompt</button></p>
+  <p><button class="copy" onclick="copyPrompt(this)">Copy next prompt</button> <span class="copy-msg" style="display:none;color:#166534;font-weight:700;">✓ Copied</span></p>
+</section>
+<script>
+function copyPrompt(btn) {
+  const text = document.getElementById('next').value;
+  navigator.clipboard.writeText(text).then(() => showCopy(btn)).catch(() => {
+    const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+    showCopy(btn);
+  });
+}
+function showCopy(btn) {
+  btn.nextElementSibling.style.display = 'inline';
+  btn.textContent = 'Copied';
+  setTimeout(() => { btn.nextElementSibling.style.display = 'none'; btn.textContent = 'Copy next prompt'; }, 2000);
+}
+</script>
 </section>
 
 <section class="card">
